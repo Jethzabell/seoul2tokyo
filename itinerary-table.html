@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Japan 2026 — Itinerary Table</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5ede8; color: #3a2d32; padding: 24px; }
+  h1 { text-align: center; color: #9b3a3a; font-size: 28px; margin-bottom: 4px; }
+  .subtitle { text-align: center; color: #a07870; font-size: 13px; margin-bottom: 20px; }
+  .filters { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 16px; }
+  .filters select, .filters input { padding: 6px 10px; border: 1px solid #e0c8c0; border-radius: 8px; font-size: 12px; background: #fff; color: #3a2d32; }
+  .filters input { width: 200px; }
+  .stats { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
+  .stat { background: #fff; border: 1px solid #f0d8d0; border-radius: 12px; padding: 8px 16px; text-align: center; }
+  .stat-val { font-weight: 700; font-size: 18px; color: #9b3a3a; }
+  .stat-lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: #a08878; }
+  table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  thead { background: #9b3a3a; color: #fff; }
+  th { padding: 10px 8px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; text-align: left; white-space: nowrap; cursor: pointer; user-select: none; }
+  th:hover { background: #b04848; }
+  td { padding: 8px; font-size: 12px; border-bottom: 1px solid #f0e8e4; vertical-align: top; }
+  tr:hover td { background: #fdf6f2; }
+  tr.date-break td { background: #fde8e0; font-weight: 700; color: #9b3a3a; font-size: 13px; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 600; text-transform: uppercase; white-space: nowrap; }
+  .b-booked { background: #e8f4ea; color: #287040; }
+  .b-planned { background: #e8eef8; color: #4070a8; }
+  .b-not_booked { background: #fdf0e8; color: #c8705a; }
+  .b-must { background: #fde8f0; color: #9b284a; }
+  .b-nice_to_have { background: #f0e8fd; color: #6a40a8; }
+  .b-flex { background: #e8f4ea; color: #287040; }
+  .cat-Flight { color: #9b284a; font-weight: 600; }
+  .cat-Train { color: #1a5898; font-weight: 600; }
+  .cat-Food { color: #c8705a; }
+  .cat-Logistics { color: #7a5c56; }
+  .cat-Sightseeing { color: #287040; }
+  .cat-Shopping { color: #6a40a8; }
+  .cat-Experience { color: #9b284a; }
+  .cat-Explore { color: #4070a8; }
+  .cat-Nightlife { color: #8060a0; }
+  .notes { color: #a08878; font-size: 11px; max-width: 220px; }
+  .area { font-size: 11px; color: #7a5c56; }
+  .hidden { display: none; }
+  @media (max-width: 800px) {
+    td, th { padding: 6px 4px; font-size: 11px; }
+    .notes { max-width: 120px; }
+  }
+</style>
+</head>
+<body>
+<h1>Japan 2026 — Full Itinerary</h1>
+<p class="subtitle">Oct 17 – Oct 31 · 15 Days · Yamil, Jurializ, Jessy, Hilary</p>
+
+<div class="filters">
+  <input type="text" id="search" placeholder="Search activities…" oninput="applyFilters()">
+  <select id="filterDate" onchange="applyFilters()"><option value="">All Dates</option></select>
+  <select id="filterCat" onchange="applyFilters()"><option value="">All Categories</option></select>
+  <select id="filterStatus" onchange="applyFilters()">
+    <option value="">All Status</option>
+    <option value="booked">Booked</option>
+    <option value="planned">Planned</option>
+    <option value="not_booked">Not Booked</option>
+  </select>
+  <select id="filterPriority" onchange="applyFilters()">
+    <option value="">All Priority</option>
+    <option value="must">Must</option>
+    <option value="nice_to_have">Nice to Have</option>
+    <option value="flex">Flex</option>
+  </select>
+</div>
+
+<div class="stats" id="stats"></div>
+
+<table>
+  <thead>
+    <tr>
+      <th onclick="sortBy(0)">#</th>
+      <th onclick="sortBy(1)">Date</th>
+      <th onclick="sortBy(2)">Day</th>
+      <th onclick="sortBy(3)">Time</th>
+      <th onclick="sortBy(4)">Activity</th>
+      <th onclick="sortBy(5)">Category</th>
+      <th onclick="sortBy(6)">Area</th>
+      <th onclick="sortBy(7)">Priority</th>
+      <th onclick="sortBy(8)">Status</th>
+      <th onclick="sortBy(9)">Notes</th>
+    </tr>
+  </thead>
+  <tbody id="tbody"></tbody>
+</table>
+
+<script>
+const DATA = [{"date":"2026-10-17","day":"","time":"6:00 AM – 3:40 PM+1","activity":"RDU → HND (Air Canada AC 8835 / AC 1)","category":"Flight","area":"Raleigh → Tokyo","priority":"must","status":"booked","notes":"Yamil, Jurializ, Jessy, Hilary"},{"date":"2026-10-18","day":"Day 1","time":"3:40 PM – 5:30 PM","activity":"Arrive HND — Train to Shibuya","category":"Logistics","area":"Haneda","priority":"must","status":"booked","notes":"Air Canada AC 1 from YYZ · Ref CCS2UL · Yamil, Jurializ, Jessy, Hilary"},{"date":"2026-10-18","day":"Day 1","time":"5:30 PM – 7:30 PM","activity":"Hotel Check-in (Tokyu Stay Shibuya) + 7-Eleven Dinner","category":"Logistics","area":"Shibuya","priority":"must","status":"not_booked","notes":"Cross the street to 7-Eleven for dinner, everyone eats in their rooms"},{"date":"2026-10-18","day":"Day 1","time":"8:30 PM – 8:40 PM","activity":"Meet Up in Hotel Lobby","category":"Logistics","area":"Shibuya","priority":"must","status":"planned","notes":"Regroup in lobby before heading out"},{"date":"2026-10-18","day":"Day 1","time":"8:40 PM – 9:40 PM","activity":"Shibuya Crossing + Hachiko","category":"Sightseeing","area":"Shibuya","priority":"must","status":"planned","notes":""},{"date":"2026-10-19","day":"Day 2","time":"11:30 AM – 12:30 PM","activity":"Pokémon Center Shibuya","category":"Shopping","area":"Shibuya","priority":"must","status":"planned","notes":""},{"date":"2026-10-19","day":"Day 2","time":"12:30 PM – 1:30 PM","activity":"Don Quijote Shibuya","category":"Shopping","area":"Shibuya","priority":"must","status":"planned","notes":"28-6 Udagawacho · Tax-free shopping · Snacks, cosmetics, electronics, souvenirs · Open 24h"},{"date":"2026-10-19","day":"Day 2","time":"1:30 PM – 2:30 PM","activity":"Nintendo Tokyo (Shibuya PARCO)","category":"Shopping","area":"Shibuya","priority":"must","status":"planned","notes":"Same building as Pokémon Center (Shibuya PARCO 6F) · Exclusive merch, game demos, photo ops"},{"date":"2026-10-19","day":"Day 2","time":"2:30 PM – 4:00 PM","activity":"Harajuku / Takeshita Street","category":"Sightseeing","area":"Harajuku","priority":"must","status":"planned","notes":""},{"date":"2026-10-19","day":"Day 2","time":"8:00 PM – 9:30 PM","activity":"Tokyo Shinjuku Sumo Show & Experience with Photo","category":"Experience","area":"Shinjuku","priority":"must","status":"booked","notes":"Ref BR-1427929697 · $74.91 × 7 adults = $524.37 · Mobile ticket · Card charged Oct 16"},{"date":"2026-10-20","day":"Day 3","time":"10:30 AM – 12:00 PM","activity":"Senso-ji Temple","category":"Sightseeing","area":"Asakusa","priority":"must","status":"planned","notes":"Short version if crowds are heavy — Kaminarimon gate + main hall + Nakamise-dori is enough. Save extra time as buffer for Monkey Kart."},{"date":"2026-10-20","day":"Day 3","time":"7:45 PM – 9:00 PM","activity":"Monkey Adventure Kart — Shibuya Crossing · Harajuku · Omotesando","category":"Experience","area":"Shinagawa","priority":"must","status":"booked","notes":"Ref MAK-BKG-260726050008 · 7 × ¥16,000 = ¥112,000 · Arrive 20 min early · IDP + passport required · Gotanda Station"},{"date":"2026-10-21","day":"Day 4","time":"11:00 AM – 1:00 PM","activity":"Akihabara","category":"Shopping","area":"Akihabara","priority":"must","status":"planned","notes":""},{"date":"2026-10-21","day":"Day 4","time":"1:00 PM – 2:00 PM","activity":"UNIQLO Yodobashi Akiba","category":"Shopping","area":"Akihabara","priority":"nice_to_have","status":"planned","notes":""},{"date":"2026-10-21","day":"Day 4","time":"6:30 PM – 10:00 PM","activity":"Tokyo Bar Hopping Night Tour (Shinjuku)","category":"Nightlife","area":"Shinjuku","priority":"must","status":"booked","notes":"Booked by Jethzabell · 7 × Age 20+ · $709.31 total · Omoide Yokocho → Kabukicho (all-you-can-drink) → Golden Gai · English guide · Photos emailed after"},{"date":"2026-10-22","day":"Day 5","time":"10:30 AM – 12:30 PM","activity":"Ginza Shopping","category":"Shopping","area":"Ginza","priority":"must","status":"planned","notes":""},{"date":"2026-10-22","day":"Day 5","time":"12:30 PM – 1:30 PM","activity":"UNIQLO Ginza Flagship","category":"Shopping","area":"Ginza","priority":"nice_to_have","status":"planned","notes":""},{"date":"2026-10-22","day":"Day 5","time":"1:30 PM – 2:30 PM","activity":"Pokémon Center TOKYO DX","category":"Shopping","area":"Nihonbashi","priority":"must","status":"planned","notes":"One of the largest Pokémon Centers in Japan · Pokémon Café attached (reservation required)"},{"date":"2026-10-22","day":"Day 5","time":"4:00 PM – 5:00 PM","activity":"Animate Ikebukuro Flagship Store","category":"Shopping","area":"Ikebukuro","priority":"must","status":"planned","notes":"World's largest anime store · 10 floors · Exclusive merch"},{"date":"2026-10-22","day":"Day 5","time":"5:00 PM – 6:00 PM","activity":"Pokémon Center Mega Tokyo (Ikebukuro)","category":"Shopping","area":"Ikebukuro","priority":"must","status":"planned","notes":""},{"date":"2026-10-22","day":"Day 5","time":"7:00 PM – 8:00 PM","activity":"Pack for Kyoto","category":"Logistics","area":"Shibuya","priority":"must","status":"planned","notes":""},{"date":"2026-10-23","day":"Day 6","time":"9:00 AM – 10:00 AM","activity":"Hotel Checkout (Tokyu Stay Shibuya)","category":"Logistics","area":"Shibuya","priority":"must","status":"planned","notes":"Pack final items, checkout"},{"date":"2026-10-23","day":"Day 6","time":"10:00 AM – 10:10 AM","activity":"Meet Up in Hotel Lobby","category":"Logistics","area":"Shibuya","priority":"must","status":"planned","notes":"Regroup with luggage, head to Shibuya Station → Tokyo Station → Shinkansen"},{"date":"2026-10-23","day":"Day 1","time":"1:00 PM – 3:00 PM","activity":"Arrive Kyoto (Shinkansen)","category":"Logistics","area":"Kyoto Station","priority":"must","status":"planned","notes":"Shinkansen Tokyo → Kyoto (~2h 15m)"},{"date":"2026-10-23","day":"Day 1","time":"3:00 PM – 3:30 PM","activity":"Hotel Check-in (Mitsui Garden)","category":"Logistics","area":"Kawaramachi","priority":"must","status":"not_booked","notes":""},{"date":"2026-10-23","day":"Day 1","time":"3:30 PM – 4:15 PM","activity":"Nishiki Market (quick snack)","category":"Food","area":"Kawaramachi","priority":"nice_to_have","status":"planned","notes":"Quick snack run — don't linger, save the full market for Day 2"},{"date":"2026-10-23","day":"Day 1","time":"4:45 PM – 6:30 PM","activity":"Kiyomizu-dera (sunset)","category":"Sightseeing","area":"Higashiyama","priority":"must","status":"planned","notes":"One of the top sunset spots in all Japan — arrive before golden hour"},{"date":"2026-10-23","day":"Day 1","time":"6:30 PM – 7:00 PM","activity":"Walk Sannenzaka / Ninenzaka","category":"Sightseeing","area":"Higashiyama","priority":"must","status":"planned","notes":"Historic stone-paved slopes lined with traditional shops — downhill from Kiyomizu-dera"},{"date":"2026-10-23","day":"Day 1","time":"7:00 PM – 7:20 PM","activity":"Yasaka Pagoda","category":"Sightseeing","area":"Higashiyama","priority":"must","status":"planned","notes":"Iconic 5-story pagoda — great evening photo spot"},{"date":"2026-10-23","day":"Day 1","time":"7:30 PM – 8:00 PM","activity":"Gion Stroll (short version)","category":"Sightseeing","area":"Gion","priority":"must","status":"planned","notes":"Quick evening walk through the geisha district — Hanamikoji Street"},{"date":"2026-10-24","day":"Day 2","time":"12:00 PM – 2:30 PM","activity":"Kimono Tea Ceremony & Samurai Experience (Value Ticket)","category":"Experience","area":"Nakagyō-ku","priority":"must","status":"booked","notes":"Start at Samurai Ninja Museum (109 Horinouechō, Nakagyō-ku). Tea Ceremony begins 2h 30m after samurai start."},{"date":"2026-10-24","day":"Day 2","time":"3:00 PM – 4:30 PM","activity":"Nishiki Market","category":"Food","area":"Nishiki","priority":"must","status":"planned","notes":""},{"date":"2026-10-24","day":"Day 2","time":"5:30 PM – 7:30 PM","activity":"Gion District","category":"Sightseeing","area":"Gion","priority":"must","status":"planned","notes":""},{"date":"2026-10-24","day":"Day 2","time":"7:30 PM – 8:30 PM","activity":"Hanamikoji Street","category":"Sightseeing","area":"Gion","priority":"nice_to_have","status":"planned","notes":""},{"date":"2026-10-25","day":"Day 3","time":"8:30 AM – 10:30 AM","activity":"Fushimi Inari Shrine","category":"Sightseeing","area":"Fushimi","priority":"must","status":"planned","notes":""},{"date":"2026-10-25","day":"Day 3","time":"2:00 PM – 5:00 PM","activity":"teamLab Biovortex Kyoto","category":"Experience","area":"Higashiyama","priority":"must","status":"not_booked","notes":"Immersive digital art museum · Timed entry · Book tickets in advance"},{"date":"2026-10-26","day":"Day 4","time":"8:30 AM – 11:30 AM","activity":"Arashiyama Bamboo Grove","category":"Sightseeing","area":"Arashiyama","priority":"must","status":"planned","notes":""},{"date":"2026-10-26","day":"Day 4","time":"1:00 PM – 1:30 PM","activity":"Train to Osaka","category":"Logistics","area":"Kyoto Station","priority":"must","status":"planned","notes":""},{"date":"2026-10-26","day":"Day 1","time":"7:00 PM – 9:00 PM","activity":"Dotonbori Night (Arrival)","category":"Sightseeing","area":"Dotonbori","priority":"must","status":"planned","notes":""},{"date":"2026-10-27","day":"Day 2","time":"10:00 AM – 12:00 PM","activity":"Osaka Castle","category":"Sightseeing","area":"Chūō-ku","priority":"must","status":"planned","notes":""},{"date":"2026-10-27","day":"Day 2","time":"2:00 PM – 3:00 PM","activity":"Pokémon Center Osaka","category":"Shopping","area":"Shinsaibashi","priority":"must","status":"planned","notes":""},{"date":"2026-10-27","day":"Day 2","time":"9:00 PM – 11:00 PM","activity":"Karaoke Night","category":"Nightlife","area":"Namba","priority":"must","status":"planned","notes":""},{"date":"2026-10-28","day":"Day 3","time":"11:30 AM – 2:00 PM","activity":"Ramen and Gyoza Cooking Class","category":"Food","area":"Nishi-ku (Kitahorie)","priority":"must","status":"booked","notes":"Ref BR-1427934933 · $74.91 × 7 adults = $524.37 · PENDING — card charged Oct 26 once confirmed"},{"date":"2026-10-28","day":"Day 3","time":"4:00 PM – 9:00 PM","activity":"Kobe Beef Steak Ishida. Ikutashinmichi-shop","category":"Food","area":"Kobe","priority":"must","status":"not_booked","notes":"Train to Kobe (~30 min), dinner, return to Osaka same evening."},{"date":"2026-10-29","day":"Day 4","time":"10:00 AM – 11:00 AM","activity":"Kuromon Market","category":"Food","area":"Namba","priority":"must","status":"planned","notes":""},{"date":"2026-10-29","day":"Day 4","time":"12:30 PM – 3:30 PM","activity":"Free Time / Last Osaka Walk","category":"Explore","area":"Namba","priority":"flex","status":"planned","notes":""},{"date":"2026-10-29","day":"Day 4","time":"4:00 PM – 6:30 PM","activity":"Shinkansen to Tokyo","category":"Logistics","area":"Shin-Osaka","priority":"must","status":"planned","notes":""},{"date":"2026-10-30","day":"Day 2","time":"9:00 AM – 10:00 AM","activity":"Shinjuku Gyoen National Garden","category":"Sightseeing","area":"Shinjuku","priority":"nice_to_have","status":"planned","notes":"Calm green reset before the city rush — autumn foliage may be starting"},{"date":"2026-10-30","day":"Day 1","time":"7:00 PM – 9:00 PM","activity":"Omoide Yokocho","category":"Food","area":"Shinjuku","priority":"must","status":"planned","notes":""},{"date":"2026-10-30","day":"Day 1","time":"9:30 PM – 10:30 PM","activity":"Bar Centifolia","category":"Nightlife","area":"Shinjuku","priority":"nice_to_have","status":"not_booked","notes":""},{"date":"2026-10-31","day":"Day 2","time":"10:00 AM – 9:51 PM","activity":"Pack + Travel to HND + Fly Home","category":"Logistics","area":"Shinjuku","priority":"must","status":"booked","notes":"Air Canada AC 2 · HND 6:50 PM → RDU 9:51 PM via YYZ · Ref CCS2UL · Yamil, Jurializ, Jessy, Hilary · Seat selection complimentary"},{"date":"2026-10-31","day":"","time":"6:50 PM – 9:51 PM","activity":"HND → RDU (Air Canada AC 2 / AC 8838)","category":"Flight","area":"Tokyo → Raleigh","priority":"must","status":"booked","notes":"Yamil, Jurializ, Jessy, Hilary"}];
+
+const tbody = document.getElementById('tbody');
+const filterDate = document.getElementById('filterDate');
+const filterCat = document.getElementById('filterCat');
+const searchInput = document.getElementById('search');
+
+// Populate filter options
+const dates = [...new Set(DATA.map(r => r.date))].sort();
+const cats = [...new Set(DATA.map(r => r.category))].sort();
+dates.forEach(d => { const o = document.createElement('option'); o.value = d; o.textContent = fmtDate(d); filterDate.appendChild(o); });
+cats.forEach(c => { const o = document.createElement('option'); o.value = c; o.textContent = c; filterCat.appendChild(o); });
+
+function fmtDate(iso) {
+  const d = new Date(iso + 'T12:00:00');
+  return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+}
+
+let sortCol = 1, sortAsc = true;
+
+function sortBy(col) {
+  if (sortCol === col) sortAsc = !sortAsc;
+  else { sortCol = col; sortAsc = true; }
+  applyFilters();
+}
+
+function applyFilters() {
+  const fd = filterDate.value;
+  const fc = filterCat.value;
+  const fs = document.getElementById('filterStatus').value;
+  const fp = document.getElementById('filterPriority').value;
+  const sq = searchInput.value.toLowerCase();
+
+  let rows = DATA.filter(r => {
+    if (fd && r.date !== fd) return false;
+    if (fc && r.category !== fc) return false;
+    if (fs && r.status !== fs) return false;
+    if (fp && r.priority !== fp) return false;
+    if (sq && !(r.activity + r.area + r.notes + r.category).toLowerCase().includes(sq)) return false;
+    return true;
+  });
+
+  const keys = ['','date','day','time','activity','category','area','priority','status','notes'];
+  rows.sort((a, b) => {
+    const k = keys[sortCol] || 'date';
+    const va = (a[k] || '').toLowerCase();
+    const vb = (b[k] || '').toLowerCase();
+    return sortAsc ? va.localeCompare(vb) : vb.localeCompare(va);
+  });
+
+  // Stats
+  const total = rows.length;
+  const booked = rows.filter(r => r.status === 'booked').length;
+  const notBooked = rows.filter(r => r.status === 'not_booked').length;
+  const planned = rows.filter(r => r.status === 'planned').length;
+  const musts = rows.filter(r => r.priority === 'must').length;
+  document.getElementById('stats').innerHTML = `
+    <div class="stat"><div class="stat-val">${total}</div><div class="stat-lbl">Total</div></div>
+    <div class="stat"><div class="stat-val" style="color:#287040">${booked}</div><div class="stat-lbl">Booked</div></div>
+    <div class="stat"><div class="stat-val" style="color:#4070a8">${planned}</div><div class="stat-lbl">Planned</div></div>
+    <div class="stat"><div class="stat-val" style="color:#c8705a">${notBooked}</div><div class="stat-lbl">Not Booked</div></div>
+    <div class="stat"><div class="stat-val" style="color:#9b284a">${musts}</div><div class="stat-lbl">Must-Do</div></div>
+  `;
+
+  let html = '';
+  let lastDate = '';
+  rows.forEach((r, i) => {
+    if (r.date !== lastDate) {
+      lastDate = r.date;
+      html += `<tr class="date-break"><td colspan="10">📅 ${fmtDate(r.date)} — ${r.date}</td></tr>`;
+    }
+    const statusCls = 'b-' + r.status;
+    const prioCls = 'b-' + r.priority;
+    const catCls = 'cat-' + r.category;
+    html += `<tr>
+      <td>${i + 1}</td>
+      <td>${fmtDate(r.date)}</td>
+      <td>${r.day}</td>
+      <td style="white-space:nowrap">${r.time}</td>
+      <td><strong>${r.activity}</strong></td>
+      <td><span class="${catCls}">${r.category}</span></td>
+      <td class="area">${r.area}</td>
+      <td><span class="badge ${prioCls}">${r.priority.replace('_', ' ')}</span></td>
+      <td><span class="badge ${statusCls}">${r.status.replace('_', ' ')}</span></td>
+      <td class="notes">${r.notes}</td>
+    </tr>`;
+  });
+  tbody.innerHTML = html;
+}
+
+applyFilters();
+</script>
+</body>
+</html>
