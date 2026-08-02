@@ -1,0 +1,4827 @@
+{
+  "trip": {
+    "title": "Japan 2026 Trip",
+    "edition": "Sakura Dream",
+    "dates": {
+      "start": "2026-10-17",
+      "end": "2026-10-31",
+      "display": "October 17 – October 31, 2026"
+    },
+    "duration": "15 Days / 14 Nights",
+    "flight_party": {
+      "booking_ref": "CCS2UL",
+      "carrier": "Air Canada",
+      "fare_class": "Economy Standard",
+      "travelers": [
+        "Yamil",
+        "Jurializ",
+        "Jessy",
+        "Hilary"
+      ]
+    },
+    "route": [
+      "Tokyo (Shibuya)",
+      "Kyoto",
+      "Osaka",
+      "Tokyo (Shinjuku)"
+    ],
+    "metadata": {
+      "domain": "seoul2tokyo.online",
+      "dedication_line": "✨ Designed with love by Jethzabell for my Japan journey",
+      "footer_quote": "💕 Made with love - Jethzabell, 2026."
+    },
+    "rules": {
+      "transit_buffer_minutes": 25,
+      "transit_buffer_note": "Always assume +20–30 min delay on any transit between activities",
+      "crowd_buffer_note": "Popular spots (Senso-ji, Fushimi Inari, Dotonbori) may need extra time — treat as 'short version if needed'",
+      "booking_lead_days": 14,
+      "energy_pacing": "Alternate high-energy and low-energy blocks. Never stack 3+ high-energy activities."
+    },
+    "shared_drives": {
+      "receipts": [
+        {
+          "name": "Carlos",
+          "url": "https://drive.google.com/drive/folders/1tIwtcxft1DfKH_o5SZDFp24Ded9jqoGS?usp=sharing"
+        },
+        {
+          "name": "Jessy",
+          "url": "https://drive.google.com/drive/folders/1trpNYuV2hYXNCFygkK8Or0B5y-k2lJJQ?usp=sharing"
+        },
+        {
+          "name": "Frances",
+          "url": "https://drive.google.com/drive/folders/1YAIa11zTZEGWP5xOiQe16cLAYBZCYxEn?usp=sharing"
+        },
+        {
+          "name": "Yamil",
+          "url": "https://drive.google.com/drive/folders/1zExpEpXV3JLqI28rvN0EJijRyOPh0pNI?usp=sharing"
+        },
+        {
+          "name": "Jurializ",
+          "url": "https://drive.google.com/drive/folders/14qrf4-vnZpCdAGavqPC7YX8UA4p1U2Ht?usp=sharing"
+        },
+        {
+          "name": "James",
+          "url": "https://drive.google.com/drive/folders/1IB1mV34POws3YDZyi8jpYFLqtLGcOQ29?usp=sharing"
+        },
+        {
+          "name": "Hilary",
+          "url": "https://drive.google.com/drive/folders/1JQZ0ED233gHcSuSwgXn138QzJSM70VcP?usp=sharing"
+        },
+        {
+          "name": "All",
+          "url": "https://drive.google.com/drive/folders/102bJN23mQhKn8xe-yuzMMme_goQynfE6?usp=sharing"
+        }
+      ],
+      "photos": "https://photos.app.goo.gl/11vz2DuXE2MiJEJ56"
+    }
+  },
+  "theme": {
+    "name": "Sakura Dream",
+    "style": "Anime / Ghibli Cute",
+    "palette": {
+      "sakura_pink": "#F7CFE3",
+      "blush": "#FDECEF",
+      "cream": "#FFF7F2",
+      "sky": "#CFE9FF",
+      "rose": "#F2A2C0",
+      "accent": "#FF8AAE",
+      "text_primary": "#3A2D32"
+    },
+    "typography": {
+      "title_style": "Playful Handwriting",
+      "body_style": "Rounded Sans",
+      "fallback_fonts": [
+        "Helvetica-BoldOblique",
+        "Helvetica-Oblique",
+        "Helvetica"
+      ]
+    },
+    "background_style": "Soft Watercolor",
+    "decor_elements": [
+      "Sakura Petals",
+      "Torii Gates",
+      "Mt Fuji",
+      "Lantern Glow",
+      "Kawaii Stickers",
+      "Polaroid Frames"
+    ],
+    "ui_modes": {
+      "night_glow_mode": true
+    }
+  },
+  "ui_content_structure": {
+    "screens": [
+      {
+        "id": "cover",
+        "type": "cover_screen",
+        "layout": "vertical_scroll",
+        "hero": {
+          "title": "Japan 2026 Trip",
+          "subtitle": "Tokyo (Shibuya) → Kyoto → Osaka → Tokyo (Shinjuku)",
+          "trip_dates": "October 17 – October 31, 2026",
+          "illustration_elements": [
+            "Mt Fuji",
+            "Torii",
+            "Sakura Petals",
+            "Airplane Route"
+          ]
+        },
+        "cta": [
+          {
+            "label": "Start My Journey ➜",
+            "action": "scroll_to",
+            "target": "overview"
+          },
+          {
+            "label": "View Map",
+            "action": "scroll_to",
+            "target": "overview"
+          }
+        ]
+      },
+      {
+        "id": "overview",
+        "type": "overview_screen",
+        "layout": "vertical_scroll",
+        "title": "Trip Overview",
+        "route_map": {
+          "route": [
+            "Tokyo (Shibuya)",
+            "Kyoto",
+            "Osaka",
+            "Tokyo (Shinjuku)"
+          ],
+          "transport_icons": [
+            "✈️ Flights",
+            "🚅 Shinkansen",
+            "🚇 Metro"
+          ]
+        },
+        "quick_sections": [
+          {
+            "label": "Flights & Trains",
+            "action": "scroll_to",
+            "target": "transport"
+          },
+          {
+            "label": "Quick Info",
+            "action": "scroll_to",
+            "target": "quick_info"
+          },
+          {
+            "label": "City Guides",
+            "action": "scroll_to",
+            "target": "city_guides"
+          }
+        ],
+        "city_quick_nav": [
+          {
+            "label": "Tokyo (Shibuya)",
+            "action": "scroll_to",
+            "target": "city_tokyo_shibuya"
+          },
+          {
+            "label": "Kyoto",
+            "action": "scroll_to",
+            "target": "city_kyoto"
+          },
+          {
+            "label": "Osaka",
+            "action": "scroll_to",
+            "target": "city_osaka"
+          },
+          {
+            "label": "Tokyo (Shinjuku)",
+            "action": "scroll_to",
+            "target": "city_tokyo_shinjuku"
+          }
+        ]
+      },
+      {
+        "id": "transport",
+        "type": "transport_screen",
+        "layout": "vertical_scroll",
+        "title": "Flights & Trains",
+        "subtitle": "Tickets, terminals, and reservation details"
+      },
+      {
+        "id": "quick_info",
+        "type": "quick_info_screen",
+        "layout": "vertical_scroll",
+        "title": "Quick Info",
+        "subtitle": "Airports, stations, and QR placeholders"
+      },
+      {
+        "id": "city_guides",
+        "type": "city_guides_screen",
+        "layout": "vertical_scroll",
+        "title": "City Guides",
+        "subtitle": "Illustrated highlights at a glance"
+      },
+      {
+        "id": "memories",
+        "type": "notes_screen",
+        "layout": "vertical_scroll",
+        "title": "Memories & Notes 💕",
+        "prompts": [
+          "💭 Favorite moment…",
+          "🍜 Best thing I ate…",
+          "🎵 Song of the night…",
+          "🌸 I'd love to do next time…"
+        ],
+        "decor": [
+          "Sakura Petals",
+          "Kawaii Stickers"
+        ]
+      },
+      {
+        "id": "gallery",
+        "type": "gallery_screen",
+        "layout": "vertical_scroll",
+        "title": "Photo Gallery 📷",
+        "grid": {
+          "rows": 3,
+          "cols": 3,
+          "style": "polaroid_frames"
+        },
+        "tip": "Tip: Print and tape Polaroids here, or insert images in a PDF editor later."
+      }
+    ],
+    "components": {
+      "city_page": {
+        "hero_banner": {
+          "city_name": "",
+          "subtitle": "",
+          "illustration": []
+        },
+        "stay_card": {
+          "hotel_name": "",
+          "hotel_link": "",
+          "booking_button": true
+        },
+        "activity_cards": [
+          {
+            "id": "",
+            "icon": "",
+            "title": "",
+            "duration": "",
+            "category": "",
+            "description": "",
+            "cta_buttons": [
+              {
+                "label": "View on Map",
+                "url": ""
+              },
+              {
+                "label": "Website",
+                "url": ""
+              }
+            ]
+          }
+        ],
+        "nav_footer": [
+          "← Previous",
+          "🏠 Home",
+          "Next →"
+        ]
+      },
+      "timeline_block": {
+        "time": "09:00",
+        "activity": "Tea Ceremony",
+        "type": "Cultural",
+        "icon": "🍵",
+        "color_tag": "pastel-pink"
+      },
+      "transport_board": {
+        "segment_row": {
+          "left": [
+            "time_depart",
+            "time_arrive",
+            "route_codes"
+          ],
+          "middle": [
+            "carrier",
+            "number",
+            "reservation_code",
+            "seat_or_car"
+          ],
+          "right": [
+            "to.code",
+            "to.terminal_or_station",
+            "to.city",
+            "baggage_icons"
+          ],
+          "style": [
+            "style_tag",
+            "rounded_cards",
+            "pastel_bands"
+          ]
+        }
+      },
+      "quick_info_cards": {
+        "airport_card": {
+          "big_square": [
+            "terminal",
+            "airport_code"
+          ],
+          "details": [
+            "name",
+            "city"
+          ],
+          "cta": [
+            "map_optional"
+          ]
+        },
+        "qr_tile": {
+          "label": "",
+          "type": "qr_placeholder"
+        }
+      },
+      "city_guide_grid": {
+        "layout": "illustrated_grid",
+        "tile": [
+          "icon",
+          "title",
+          "blurb"
+        ]
+      }
+    }
+  },
+  "transport": {
+    "title": "Flights & Trains",
+    "segments": [
+      {
+        "id": "seg_01",
+        "mode": "flight",
+        "date": "2026-10-17",
+        "time_depart": "6:00 AM",
+        "time_arrive": "3:40 PM+1",
+        "from": {
+          "city": "Raleigh",
+          "code": "RDU",
+          "terminal": "TBD"
+        },
+        "to": {
+          "city": "Tokyo",
+          "code": "HND",
+          "terminal": "TBD"
+        },
+        "carrier": "Air Canada",
+        "number": "AC 8835 / AC 1",
+        "reservation_code": "CCS2UL",
+        "seat": "TBD",
+        "fare_class": "Economy Standard",
+        "passengers": [
+          "Yamil",
+          "Jurializ",
+          "Jessy",
+          "Hilary"
+        ],
+        "price": {
+          "amount": 4862.52,
+          "currency": "USD",
+          "per_person": true,
+          "approximate": false,
+          "status": "confirmed",
+          "travelers": 4,
+          "travelers_names": [
+            "Jessy",
+            "Jurializ",
+            "Hilary",
+            "Yamil"
+          ],
+          "per_person_amount": 1215.63
+        },
+        "legs": [
+          {
+            "from": "RDU",
+            "to": "YYZ",
+            "depart": "6:00 AM",
+            "arrive": "7:53 AM",
+            "duration": "1h 53m",
+            "flight": "AC 8835",
+            "aircraft": "Embraer 175",
+            "operated_by": "Air Canada Express – Jazz"
+          },
+          {
+            "layover": true,
+            "airport": "YYZ",
+            "city": "Toronto",
+            "duration": "5h 12m"
+          },
+          {
+            "from": "YYZ",
+            "to": "HND",
+            "depart": "1:05 PM",
+            "arrive": "3:40 PM+1",
+            "duration": "13h 35m",
+            "flight": "AC 1",
+            "aircraft": "Boeing 777",
+            "note": "Often delayed 30+ min"
+          }
+        ],
+        "baggage": {
+          "personal_item": true,
+          "carry_on": true,
+          "checked_bag": true
+        },
+        "style_tag": "sakura",
+        "notes": "Economy Standard · Yamil, Jurializ, Jessy, Hilary · Round-trip fare ($4,400 + $462.52 taxes) · Seat selection complimentary · Arrive Tokyo Oct 18 at 3:40 PM"
+      },
+      {
+        "id": "seg_02",
+        "mode": "train",
+        "date": "2026-10-23",
+        "time_depart": "TBD",
+        "time_arrive": "TBD",
+        "from": {
+          "city": "Tokyo",
+          "code": "TYO",
+          "station": "Tokyo Station"
+        },
+        "to": {
+          "city": "Kyoto",
+          "code": "KYO",
+          "station": "Kyoto Station"
+        },
+        "carrier": "Shinkansen",
+        "number": "TBD",
+        "reservation_code": "TBD",
+        "car": "TBD",
+        "seat": "TBD",
+        "price": {
+          "amount": 0,
+          "currency": "USD",
+          "per_person": false,
+          "approximate": false,
+          "status": "confirmed"
+        },
+        "baggage": {
+          "personal_item": true,
+          "carry_on": true,
+          "checked_bag": false
+        },
+        "style_tag": "matcha",
+        "notes": "Shinkansen Tokyo → Kyoto (~2h 15m) · Direct Tokaido line"
+      },
+      {
+        "id": "seg_03",
+        "mode": "train",
+        "date": "2026-10-26",
+        "time_depart": "TBD",
+        "time_arrive": "TBD",
+        "from": {
+          "city": "Kyoto",
+          "code": "KYO",
+          "station": "Kyoto Station"
+        },
+        "to": {
+          "city": "Osaka",
+          "code": "OSK",
+          "station": "Osaka Station"
+        },
+        "carrier": "JR",
+        "number": "TBD",
+        "reservation_code": "TBD",
+        "car": "TBD",
+        "seat": "TBD",
+        "price": {
+          "amount": 0,
+          "currency": "USD",
+          "per_person": false,
+          "approximate": false,
+          "status": "confirmed"
+        },
+        "baggage": {
+          "personal_item": true,
+          "carry_on": true,
+          "checked_bag": false
+        },
+        "style_tag": "sky",
+        "notes": "After Arashiyama Bamboo Forest — ~30 min ride"
+      },
+      {
+        "id": "seg_04",
+        "mode": "train",
+        "date": "2026-10-29",
+        "time_depart": "TBD",
+        "time_arrive": "TBD",
+        "from": {
+          "city": "Osaka",
+          "code": "OSK",
+          "station": "Shin-Osaka"
+        },
+        "to": {
+          "city": "Tokyo",
+          "code": "TYO",
+          "station": "Tokyo Station"
+        },
+        "carrier": "Shinkansen",
+        "number": "TBD",
+        "reservation_code": "TBD",
+        "car": "TBD",
+        "seat": "TBD",
+        "price": {
+          "amount": 0,
+          "currency": "USD",
+          "per_person": false,
+          "approximate": false,
+          "status": "confirmed"
+        },
+        "baggage": {
+          "personal_item": true,
+          "carry_on": true,
+          "checked_bag": false
+        },
+        "style_tag": "neon",
+        "notes": "~2.5h ride — final Tokyo stay in Shinjuku"
+      },
+      {
+        "id": "seg_05",
+        "mode": "flight",
+        "date": "2026-10-31",
+        "time_depart": "6:50 PM",
+        "time_arrive": "9:51 PM",
+        "from": {
+          "city": "Tokyo",
+          "code": "HND",
+          "terminal": "TBD"
+        },
+        "to": {
+          "city": "Raleigh",
+          "code": "RDU",
+          "terminal": "TBD"
+        },
+        "carrier": "Air Canada",
+        "number": "AC 2 / AC 8838",
+        "reservation_code": "CCS2UL",
+        "seat": "TBD",
+        "fare_class": "Economy Standard",
+        "passengers": [
+          "Yamil",
+          "Jurializ",
+          "Jessy",
+          "Hilary"
+        ],
+        "price": {
+          "amount": null,
+          "currency": "USD",
+          "per_person": true,
+          "approximate": false,
+          "status": "included",
+          "travelers": 4,
+          "travelers_names": [
+            "Jessy",
+            "Jurializ",
+            "Hilary",
+            "Yamil"
+          ],
+          "per_person_amount": 0
+        },
+        "legs": [
+          {
+            "from": "HND",
+            "to": "YYZ",
+            "depart": "6:50 PM",
+            "arrive": "6:05 PM",
+            "duration": "12h 15m",
+            "flight": "AC 2",
+            "aircraft": "Boeing 777",
+            "note": "Overnight · Often delayed 30+ min"
+          },
+          {
+            "layover": true,
+            "airport": "YYZ",
+            "city": "Toronto",
+            "duration": "2h 5m"
+          },
+          {
+            "from": "YYZ",
+            "to": "RDU",
+            "depart": "8:10 PM",
+            "arrive": "9:51 PM",
+            "duration": "1h 41m",
+            "flight": "AC 8838",
+            "aircraft": "Canadair RJ 900",
+            "operated_by": "Air Canada Express – Jazz"
+          }
+        ],
+        "baggage": {
+          "personal_item": true,
+          "carry_on": true,
+          "checked_bag": true
+        },
+        "style_tag": "sakura",
+        "notes": "Economy Standard · Yamil, Jurializ, Jessy, Hilary · Included in CCS2UL booking · 16h 1m total"
+      },
+      {
+        "id": "seg_fj_01",
+        "from": {
+          "code": "RDU",
+          "city": "Raleigh"
+        },
+        "to": {
+          "code": "DTW",
+          "city": "Detroit"
+        },
+        "date": "2026-10-17",
+        "time_depart": "5:45 AM",
+        "time_arrive": "7:39 AM",
+        "carrier": "Delta / Air France",
+        "flight_number": "DL1388",
+        "ref": "XMQ7JE",
+        "travelers": 2,
+        "travelers_names": [
+          "Frances",
+          "James"
+        ],
+        "booking_status": "booked",
+        "notes": "Layover in Detroit · Connect to Tokyo"
+      },
+      {
+        "id": "seg_fj_02",
+        "from": {
+          "code": "DTW",
+          "city": "Detroit"
+        },
+        "to": {
+          "code": "HND",
+          "city": "Tokyo"
+        },
+        "date": "2026-10-17",
+        "time_depart": "1:45 PM",
+        "time_arrive": "4:15 PM +1",
+        "carrier": "Delta / Air France",
+        "flight_number": "",
+        "ref": "XMQ7JE",
+        "travelers": 2,
+        "travelers_names": [
+          "Frances",
+          "James"
+        ],
+        "booking_status": "booked",
+        "notes": "Arrives Tokyo Oct 18 · 4:15 PM"
+      },
+      {
+        "id": "seg_fj_03",
+        "from": {
+          "code": "HND",
+          "city": "Tokyo"
+        },
+        "to": {
+          "code": "DTW",
+          "city": "Detroit"
+        },
+        "date": "2026-10-31",
+        "time_depart": "5:35 PM",
+        "time_arrive": "4:31 PM",
+        "carrier": "Delta / Air France",
+        "flight_number": "",
+        "ref": "XMQ7JE",
+        "travelers": 2,
+        "travelers_names": [
+          "Frances",
+          "James"
+        ],
+        "booking_status": "booked",
+        "notes": "Return leg · layover Detroit"
+      },
+      {
+        "id": "seg_fj_04",
+        "from": {
+          "code": "DTW",
+          "city": "Detroit"
+        },
+        "to": {
+          "code": "RDU",
+          "city": "Raleigh"
+        },
+        "date": "2026-10-31",
+        "time_depart": "9:20 PM",
+        "time_arrive": "11:04 PM",
+        "carrier": "Delta / Air France",
+        "flight_number": "",
+        "ref": "XMQ7JE",
+        "travelers": 2,
+        "travelers_names": [
+          "Frances",
+          "James"
+        ],
+        "booking_status": "booked",
+        "notes": "Home"
+      }
+    ]
+  },
+  "quick_info_cards": {
+    "title": "Quick Info",
+    "airport_cards": [
+      {
+        "id": "air_tokyo",
+        "airport_code": "HND",
+        "terminal": "TBD",
+        "name": "Haneda Airport",
+        "city": "Tokyo",
+        "notes": "Outbound arrive Sun Oct 18 · 3:40 PM (AC 1) · Return depart Oct 31 · 6:50 PM (AC 2) · Ref CCS2UL",
+        "map": "https://maps.google.com/?q=Haneda+Airport+Tokyo"
+      }
+    ],
+    "rail_cards": [
+      {
+        "id": "rail_tokyo",
+        "code": "Tokyo Station",
+        "notes": "Shinkansen hub — Tokaido line to Nagoya / Kyoto / Osaka",
+        "city": "Tokyo",
+        "map": "https://maps.google.com/?q=Tokyo+Station"
+      },
+      {
+        "id": "rail_nagoya",
+        "code": "Nagoya Station",
+        "notes": "Shinkansen stop on Tokaido line",
+        "city": "Nagoya",
+        "map": "https://maps.google.com/?q=Nagoya+Station"
+      },
+      {
+        "id": "rail_kyoto",
+        "code": "Kyoto Station",
+        "notes": "Shinkansen / JR transfers",
+        "city": "Kyoto",
+        "map": "https://maps.google.com/?q=Kyoto+Station"
+      },
+      {
+        "id": "rail_osaka",
+        "code": "Shin-Osaka",
+        "notes": "Shinkansen station for Osaka",
+        "city": "Osaka",
+        "map": "https://maps.google.com/?q=Shin-Osaka+Station"
+      }
+    ],
+    "qr_placeholders": [
+      {
+        "id": "qr_hotels",
+        "label": "Hotel Bookings QR",
+        "type": "qr_placeholder"
+      },
+      {
+        "id": "qr_tickets",
+        "label": "Tickets / Reservations QR",
+        "type": "qr_placeholder"
+      }
+    ]
+  },
+  "city_guides": {
+    "style": "illustrated_grid",
+    "cities": [
+      {
+        "city": "Tokyo",
+        "highlights": [
+          {
+            "id": "g_tokyo_shibuya",
+            "title": "Shibuya Crossing",
+            "icon": "crossing",
+            "blurb": "World's busiest intersection + Hachiko statue."
+          },
+          {
+            "id": "g_tokyo_fuji",
+            "title": "Arakurayama Sengen Park",
+            "icon": "fuji",
+            "blurb": "Chureito Pagoda + Mt. Fuji views."
+          },
+          {
+            "id": "g_tokyo_omoide",
+            "title": "Omoide Yokocho",
+            "icon": "lantern",
+            "blurb": "Lantern-lit alley for nostalgic night bites."
+          },
+          {
+            "id": "g_tokyo_pokemon",
+            "title": "Pokémon Centers",
+            "icon": "pokeball",
+            "blurb": "Shibuya + Mega Tokyo for merch heaven."
+          }
+        ]
+      },
+      {
+        "city": "Kyoto",
+        "highlights": [
+          {
+            "id": "g_kyoto_tea",
+            "title": "Kimono Tea Ceremony",
+            "icon": "tea",
+            "blurb": "Traditional tea with kimono experience."
+          },
+          {
+            "id": "g_kyoto_fushimi",
+            "title": "Fushimi Inari Shrine",
+            "icon": "torii",
+            "blurb": "Thousands of vermillion torii gates."
+          },
+          {
+            "id": "g_kyoto_arashiyama",
+            "title": "Arashiyama Bamboo Grove",
+            "icon": "bamboo",
+            "blurb": "Towering bamboo forest walk."
+          },
+          {
+            "id": "g_kyoto_samurai",
+            "title": "Samurai & Ninja Museum",
+            "icon": "katana",
+            "blurb": "Interactive history + exhibits."
+          }
+        ]
+      },
+      {
+        "city": "Osaka",
+        "highlights": [
+          {
+            "id": "g_osaka_ramen",
+            "title": "Ramen and Gyoza Cooking Class",
+            "icon": "ramen",
+            "blurb": "Make ramen from scratch (ends 12PM)."
+          },
+          {
+            "id": "g_osaka_kobe",
+            "title": "Kobe Beef Day Trip",
+            "icon": "steak",
+            "blurb": "Wagyu day trip + return Osaka."
+          },
+          {
+            "id": "g_osaka_castle",
+            "title": "Osaka Castle",
+            "icon": "castle",
+            "blurb": "Historic castle with panoramic city views."
+          }
+        ]
+      }
+    ]
+  },
+  "destinations": [
+    {
+      "id": "city_tokyo_shibuya",
+      "city": "Tokyo (Shibuya)",
+      "country": "Japan",
+      "dates": {
+        "arrival": "2026-10-18",
+        "departure": "2026-10-22"
+      },
+      "stay": {
+        "hotel_name": "Noël Shibuya Once — Luxury Residence",
+        "hotel_link": "https://www.booking.com/hotel/jp/noel-shibuya.html",
+        "address": "Casa Bella, Shibuya Ward, 150-0021 Tokyo",
+        "phone": "+81 90 3536 7337",
+        "checkin": "Oct 18 · from 4:00 PM",
+        "checkout": "Oct 23 · by 10:00 AM",
+        "confirmation": "5451.487.160",
+        "pin": "2262",
+        "room_type": "Five-Bedroom Deluxe Apartment",
+        "rating": null,
+        "nights": 5,
+        "price": {
+          "amount": 5597,
+          "currency": "USD"
+        },
+        "notes": "Private 5-bedroom apartment · All 7 guests · Hot tub · Sauna · Kitchen · No parties policy"
+      },
+      "city_ui": {
+        "hero_subtitle": "Neon crossings, Harajuku vibes, and Mt. Fuji views.",
+        "hero_illustration": [
+          "Tokyo Skyline",
+          "Shibuya Crossing",
+          "Sakura Petals"
+        ]
+      },
+      "activities": [
+        {
+          "id": "tokyo_s_arrive_hnd",
+          "name": "Arrive HND — Train to Shibuya",
+          "category": "Logistics",
+          "type": "Transit",
+          "day": 1,
+          "start_time": "3:40 PM",
+          "duration": "2 hours",
+          "notes": "Air Canada AC 1 from YYZ · Ref CCS2UL · Yamil, Jurializ, Jessy, Hilary",
+          "links": {
+            "map": "https://maps.google.com/?q=Haneda+Airport+Tokyo"
+          },
+          "area": "Haneda",
+          "distance_from_hotel": {
+            "text": "45 min train",
+            "minutes": 45,
+            "mode": "train"
+          },
+          "priority": "must",
+          "booking_status": "booked",
+          "date": "2026-10-18",
+          "icon": "transit",
+          "coordinates": {
+            "lat": 35.5494,
+            "lng": 139.7798
+          },
+          "end_time": "5:30 PM",
+          "duration_minutes": 120,
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "logistics"
+          ],
+          "energy_cost": "medium",
+          "fallback": null,
+          "transport_from_previous": null
+        },
+        {
+          "id": "tokyo_s_hotel_checkin",
+          "name": "Apartment Check-in (Noël Shibuya Once)",
+          "category": "Logistics",
+          "type": "Hotel",
+          "day": 1,
+          "start_time": "4:00 PM",
+          "duration": "2 hours",
+          "notes": "Noël Shibuya Once · Casa Bella, Shibuya · Arrive 4-5PM · 5-bedroom luxury apartment · All 7 together",
+          "links": {
+            "map": "https://maps.google.com/?q=Tokyu+Stay+Shibuya"
+          },
+          "area": "Shibuya",
+          "distance_from_hotel": {
+            "text": "0 min (at hotel)",
+            "minutes": 0,
+            "mode": "walk"
+          },
+          "priority": "must",
+          "booking_status": "booked",
+          "date": "2026-10-18",
+          "icon": "hotel",
+          "coordinates": {
+            "lat": 35.6595,
+            "lng": 139.699
+          },
+          "end_time": "7:30 PM",
+          "duration_minutes": 120,
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "logistics"
+          ],
+          "energy_cost": "low",
+          "fallback": null,
+          "transport_from_previous": {
+            "from": "Haneda Airport (HND)",
+            "mode": "train",
+            "duration_minutes": 45,
+            "notes": "Keikyu or Monorail toward Shibuya"
+          }
+        },
+        {
+          "id": "tokyo_s_lobby_meetup",
+          "name": "Meet Up in Hotel Lobby",
+          "category": "Logistics",
+          "type": "Meetup",
+          "day": 1,
+          "start_time": "8:30 PM",
+          "duration": "10 min",
+          "notes": "Regroup in lobby before heading out to Shibuya Crossing",
+          "links": {},
+          "area": "Shibuya",
+          "distance_from_hotel": {
+            "text": "0 min (at hotel)",
+            "minutes": 0,
+            "mode": "walk"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-18",
+          "icon": "hotel",
+          "coordinates": {
+            "lat": 35.6595,
+            "lng": 139.699
+          },
+          "end_time": "8:40 PM",
+          "duration_minutes": 10,
+          "tags": [
+            "indoor",
+            "logistics"
+          ],
+          "energy_cost": "low",
+          "fallback": null,
+          "transport_from_previous": {
+            "from": "Hotel rooms",
+            "mode": "walk",
+            "duration_minutes": 0
+          }
+        },
+        {
+          "id": "tokyo_s_shibuya_crossing",
+          "name": "Shibuya Crossing + Hachiko",
+          "category": "Sightseeing",
+          "type": "Landmark",
+          "day": 1,
+          "start_time": "8:40 PM",
+          "duration": "1 hour",
+          "links": {
+            "website": "https://www.google.com/search?q=Shibuya+Crossing",
+            "map": "https://maps.google.com/?q=Shibuya+Crossing+Tokyo"
+          },
+          "area": "Shibuya",
+          "distance_from_hotel": {
+            "text": "5 min walk",
+            "minutes": 5,
+            "mode": "walk"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-18",
+          "icon": "city",
+          "coordinates": {
+            "lat": 35.6595,
+            "lng": 139.7004
+          },
+          "end_time": "9:40 PM",
+          "duration_minutes": 60,
+          "tags": [
+            "outdoor",
+            "free",
+            "photo-spot",
+            "walkable",
+            "iconic"
+          ],
+          "energy_cost": "low",
+          "fallback": {
+            "if_rain": "Watch from Starbucks Shibuya Tsutaya (floor-to-ceiling windows overlooking the crossing)",
+            "if_tired": "Quick photo from Shibuya Sky observation deck instead"
+          },
+          "transport_from_previous": {
+            "from": "Hotel (Shibuya)",
+            "mode": "walk",
+            "duration_minutes": 5
+          }
+        },
+        {
+          "id": "tokyo_s_pokemon_shibuya",
+          "name": "Pokémon Center Shibuya",
+          "category": "Shopping",
+          "type": "Store",
+          "day": 2,
+          "start_time": "11:30 AM",
+          "duration": "1–2 hours",
+          "links": {
+            "website": "https://www.google.com/search?q=Pokemon+Center+Shibuya",
+            "map": "https://maps.google.com/?q=Pokemon+Center+Shibuya"
+          },
+          "area": "Shibuya",
+          "distance_from_hotel": {
+            "text": "5 min walk",
+            "minutes": 5,
+            "mode": "walk"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-19",
+          "icon": "pokeball",
+          "coordinates": {
+            "lat": 35.662,
+            "lng": 139.6982
+          },
+          "end_time": "12:30 PM",
+          "duration_minutes": 90,
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "shopping",
+            "kid-friendly"
+          ],
+          "energy_cost": "low",
+          "fallback": null,
+          "transport_from_previous": {
+            "from": "Breakfast (Shibuya)",
+            "mode": "walk",
+            "duration_minutes": 5
+          }
+        },
+        {
+          "id": "tokyo_s_donki",
+          "name": "Don Quijote Shibuya",
+          "category": "Shopping",
+          "type": "Store",
+          "day": 2,
+          "start_time": "12:30 PM",
+          "duration": "1 hour",
+          "notes": "28-6 Udagawacho, Shibuya · Tax-free shopping · Snacks, cosmetics, electronics, souvenirs · Open 24h",
+          "links": {
+            "website": "https://www.donki.com/en/store/shop_detail.php?add=shibuya",
+            "map": "https://maps.google.com/?q=Don+Quijote+Shibuya"
+          },
+          "area": "Shibuya",
+          "distance_from_hotel": {
+            "text": "5 min walk",
+            "minutes": 5,
+            "mode": "walk"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-19",
+          "icon": "shopping",
+          "coordinates": {
+            "lat": 35.6614,
+            "lng": 139.6976
+          },
+          "end_time": "1:30 PM",
+          "duration_minutes": 60,
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "shopping",
+            "souvenirs"
+          ],
+          "energy_cost": "low",
+          "fallback": null,
+          "transport_from_previous": {
+            "from": "Pokémon Center Shibuya",
+            "mode": "walk",
+            "duration_minutes": 2
+          }
+        },
+        {
+          "id": "tokyo_s_nintendo",
+          "name": "Nintendo Tokyo (Shibuya PARCO)",
+          "category": "Shopping",
+          "type": "Store",
+          "day": 2,
+          "start_time": "1:30 PM",
+          "duration": "1 hour",
+          "notes": "Same building as Pokémon Center (Shibuya PARCO 6F) · Exclusive merch, game demos, photo ops",
+          "links": {
+            "website": "https://www.nintendotokyo.jp/",
+            "map": "https://maps.google.com/?q=Nintendo+Tokyo+Shibuya+PARCO"
+          },
+          "area": "Shibuya",
+          "distance_from_hotel": {
+            "text": "5 min walk",
+            "minutes": 5,
+            "mode": "walk"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-19",
+          "icon": "gamepad",
+          "coordinates": {
+            "lat": 35.662,
+            "lng": 139.6982
+          },
+          "end_time": "2:30 PM",
+          "duration_minutes": 60,
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "shopping",
+            "gaming"
+          ],
+          "energy_cost": "low",
+          "fallback": null,
+          "transport_from_previous": {
+            "from": "Don Quijote Shibuya",
+            "mode": "walk",
+            "duration_minutes": 2
+          }
+        },
+        {
+          "id": "tokyo_s_harajuku",
+          "name": "Harajuku / Takeshita Street",
+          "category": "Sightseeing",
+          "type": "Neighborhood",
+          "day": 2,
+          "start_time": "2:30 PM",
+          "duration": "1.5 hours",
+          "links": {
+            "website": "https://www.google.com/search?q=Takeshita+Street+Harajuku",
+            "map": "https://maps.google.com/?q=Takeshita+Street+Tokyo"
+          },
+          "area": "Harajuku",
+          "distance_from_hotel": {
+            "text": "10 min walk",
+            "minutes": 10,
+            "mode": "walk"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-19",
+          "icon": "shopping",
+          "coordinates": {
+            "lat": 35.6702,
+            "lng": 139.7027
+          },
+          "end_time": "4:00 PM",
+          "duration_minutes": 150,
+          "tags": [
+            "outdoor",
+            "walkable",
+            "shopping",
+            "photo-spot",
+            "iconic"
+          ],
+          "energy_cost": "medium",
+          "fallback": {
+            "if_rain": "Explore Tokyu Plaza Omotesando or Laforet Harajuku (covered malls)",
+            "if_tired": "Shorten to Takeshita Street only (15 min walk-through)"
+          },
+          "transport_from_previous": {
+            "from": "Nintendo Tokyo",
+            "mode": "walk",
+            "duration_minutes": 10
+          }
+        },
+        {
+          "id": "tokyo_s_sumo",
+          "name": "Tokyo Shinjuku Sumo Show & Experience with Photo",
+          "category": "Experience",
+          "type": "Show",
+          "day": 2,
+          "start_time": "8:00 PM",
+          "duration": "1.5 hours",
+          "notes": "Ref BR-1427929697 · $74.91 × 7 adults · English · Meet at SHINJUKU SUMO CLUB (新宿相撲部屋), Ōkubo 2-chōme-5-2, SEKISAKU BLDG. 2F · Returns to same point",
+          "details": [
+            "1 welcome drink (bottled water)",
+            "Commentary by a live host (English & Japanese)",
+            "History and background information of Sumo",
+            "Opportunity to challenge a sumo wrestler (limited participants — lottery if too many apply)",
+            "Sumo Show"
+          ],
+          "reservation_code": "BR-1427929697",
+          "rating": {
+            "stars": 5,
+            "reviews": 3515,
+            "recommended_pct": 99,
+            "badge": "Badge of Excellence"
+          },
+          "price": {
+            "amount": 524.37,
+            "currency": "USD",
+            "status": "paid",
+            "approximate": false,
+            "per_person": false
+          },
+          "links": {
+            "website": "https://www.viator.com/tours/Tokyo/Tokyo-Shinjuku-Sumo-Show-and-Experience-with-Photo/d334-311898P1",
+            "map": "https://maps.google.com/?q=新宿相撲部屋+Shinjuku+Sumo+Club+169-0072+Tokyo+Shinjuku+City+Okubo+2-5-2+SEKISAKU+BLDG"
+          },
+          "area": "Shinjuku",
+          "distance_from_hotel": {
+            "text": "20 min train",
+            "minutes": 20,
+            "mode": "train"
+          },
+          "priority": "must",
+          "booking_status": "booked",
+          "date": "2026-10-19",
+          "icon": "sports",
+          "coordinates": {
+            "lat": 35.6938,
+            "lng": 139.7034
+          },
+          "end_time": "9:30 PM",
+          "duration_minutes": 90,
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "cultural",
+            "iconic"
+          ],
+          "energy_cost": "medium",
+          "fallback": null,
+          "transport_from_previous": {
+            "from": "BeBu-Ya (Shibuya)",
+            "mode": "train",
+            "duration_minutes": 20
+          },
+          "cancel_by": null
+        },
+        {
+          "id": "tokyo_s_sensoji",
+          "name": "Senso-ji Temple",
+          "category": "Sightseeing",
+          "type": "Temple",
+          "day": 3,
+          "start_time": "10:30 AM",
+          "duration": "1.5 hours",
+          "notes": "Short version if crowds are heavy — Kaminarimon gate + main hall + Nakamise-dori is enough. Save extra time as buffer for Monkey Kart.",
+          "links": {
+            "website": "https://www.google.com/search?q=Senso-ji+Temple+Asakusa",
+            "map": "https://maps.google.com/?q=Senso-ji+Temple+Asakusa"
+          },
+          "area": "Asakusa",
+          "distance_from_hotel": {
+            "text": "30 min train",
+            "minutes": 30,
+            "mode": "train"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-20",
+          "icon": "torii",
+          "coordinates": {
+            "lat": 35.7148,
+            "lng": 139.7967
+          },
+          "end_time": "12:00 PM",
+          "duration_minutes": 90,
+          "tags": [
+            "outdoor",
+            "free",
+            "cultural",
+            "photo-spot",
+            "iconic"
+          ],
+          "energy_cost": "medium",
+          "fallback": {
+            "if_rain": "Still worth visiting — Nakamise-dori is partially covered. Bring umbrella",
+            "if_tired": "See Kaminarimon gate + quick photo, skip inner grounds"
+          },
+          "transport_from_previous": {
+            "from": "Breakfast (Asakusa)",
+            "mode": "walk",
+            "duration_minutes": 10
+          }
+        },
+        {
+          "id": "tokyo_s_monkeykart",
+          "name": "Monkey Adventure Kart — Shibuya Crossing · Harajuku · Omotesando",
+          "category": "Experience",
+          "type": "Go-Kart",
+          "day": 3,
+          "start_time": "7:45 PM",
+          "end_time": "9:00 PM",
+          "duration": "1h 15m",
+          "reservation_code": "MAK-BKG-260726050008",
+          "notes": "Ref MAK-BKG-260726050008 · 7 × ¥16,000 = ¥112,000 · Arrive 20 min early · Bring valid IDP (Geneva 1949) + passport · Meet at Monkey Adventure Kart Shinagawa, 7-chōme-6-5 Nishigotanda, Shinagawa — nearest station: Gotanda",
+          "price": {
+            "amount": 684.47,
+            "currency": "USD",
+            "per_person": false,
+            "approximate": false,
+            "status": "paid"
+          },
+          "details": [
+            "1 hr 15 min tour: Shibuya Crossing → Harajuku → Omotesando",
+            "Bring valid International Driving Permit (Geneva Convention 1949) + passport",
+            "Arrive 20 minutes before tour time",
+            "Cancellation & full refund: notify 7 days before tour date"
+          ],
+          "links": {
+            "website": "https://monkey-kart.com",
+            "map": "https://maps.google.com/?q=Monkey+Adventure+Kart+Shinagawa+Nishigotanda+Tokyo"
+          },
+          "area": "Shinagawa",
+          "distance_from_hotel": {
+            "text": "30 min train",
+            "minutes": 30,
+            "mode": "train"
+          },
+          "priority": "must",
+          "booking_status": "booked",
+          "date": "2026-10-20",
+          "icon": "kart",
+          "coordinates": {
+            "lat": 35.71,
+            "lng": 139.794
+          },
+          "duration_minutes": 90,
+          "tags": [
+            "outdoor",
+            "reservation-required",
+            "adventure",
+            "group-fun"
+          ],
+          "energy_cost": "high",
+          "fallback": {
+            "if_rain": "Cancelled in rain — visit Tokyo Skytree + Solamachi mall instead",
+            "if_tired": "Skip and extend Asakusa exploration or rest at a café"
+          },
+          "transport_from_previous": {
+            "from": "Lunch (Asakusa)",
+            "mode": "walk",
+            "duration_minutes": 10
+          },
+          "cancel_by": "Oct 13, 2026 (7 days before — NO REFUND after)"
+        },
+        {
+          "id": "tokyo_s_akihabara",
+          "name": "Akihabara",
+          "category": "Shopping",
+          "type": "Neighborhood",
+          "day": 4,
+          "start_time": "11:00 AM",
+          "duration": "5 hours",
+          "links": {
+            "website": "https://www.google.com/search?q=Akihabara+Tokyo",
+            "map": "https://maps.google.com/?q=Akihabara+Tokyo"
+          },
+          "area": "Akihabara",
+          "distance_from_hotel": {
+            "text": "25 min train",
+            "minutes": 25,
+            "mode": "train"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-21",
+          "icon": "nightlife",
+          "coordinates": {
+            "lat": 35.6984,
+            "lng": 139.7731
+          },
+          "end_time": "4:00 PM",
+          "duration_minutes": 300,
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "shopping",
+            "walkable",
+            "iconic"
+          ],
+          "energy_cost": "medium",
+          "fallback": {
+            "if_tired": "Visit one mega-store (Yodobashi Akiba) instead of the full district"
+          },
+          "transport_from_previous": {
+            "from": "Breakfast (Shibuya)",
+            "mode": "train",
+            "duration_minutes": 25
+          }
+        },
+        {
+          "id": "tokyo_s_hardoff_akiba1",
+          "name": "Hard Off — Akihabara Rock Building",
+          "category": "Shopping",
+          "type": "Secondhand",
+          "day": 4,
+          "date": "2026-10-21",
+          "start_time": "TBD",
+          "duration": "1 hour",
+          "duration_minutes": 60,
+          "area": "Akihabara",
+          "priority": "nice_to_have",
+          "booking_status": "planned",
+          "icon": "shopping",
+          "notes": "3 Chome-11-2 Sotokanda, Chiyoda City · Rock Building 2F/3F B1 · Electronics, games, instruments",
+          "links": {
+            "map": "https://maps.google.com/?q=3+Chome-11-2+Sotokanda+Chiyoda+City+Tokyo"
+          },
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "shopping"
+          ],
+          "energy_cost": "low",
+          "sub_stop": true,
+          "parent_id": "tokyo_s_akihabara"
+        },
+        {
+          "id": "tokyo_s_hardoff_akiba2",
+          "name": "Hard Off — Akihabara Y's Building",
+          "category": "Shopping",
+          "type": "Secondhand",
+          "day": 4,
+          "date": "2026-10-21",
+          "start_time": "TBD",
+          "duration": "1 hour",
+          "duration_minutes": 60,
+          "area": "Akihabara",
+          "priority": "nice_to_have",
+          "booking_status": "planned",
+          "icon": "shopping",
+          "notes": "3 Chome-8-1 Sotokanda, Chiyoda City · Y's ビル · Electronics, games, collectibles",
+          "links": {
+            "map": "https://maps.google.com/?q=3+Chome-8-1+Sotokanda+Chiyoda+City+Tokyo"
+          },
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "shopping"
+          ],
+          "energy_cost": "low",
+          "sub_stop": true,
+          "parent_id": "tokyo_s_akihabara"
+        },
+        {
+          "id": "tokyo_s_surugaya_akiba",
+          "name": "Suruga-ya Akihabara (多店舗)",
+          "category": "Shopping",
+          "type": "Secondhand",
+          "day": 4,
+          "date": "2026-10-21",
+          "start_time": "TBD",
+          "duration": "1-2 hours",
+          "duration_minutes": 90,
+          "area": "Akihabara",
+          "priority": "nice_to_have",
+          "booking_status": "planned",
+          "icon": "shopping",
+          "notes": "① Anime & Hobby — 4 Chome-5-1 KHKビル 1-4F · ② Plastic Model — 4 Chome-4-2 共益外神田ビル 2F/3F · ③ Game Store — 3 Chome-9-8 東洋ビル 1F · All open 11AM",
+          "links": {
+            "website": "https://www.suruga-ya.jp/",
+            "map": "https://maps.google.com/?q=Surugaya+Akihabara+Sotokanda+Chiyoda+Tokyo"
+          },
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "shopping"
+          ],
+          "energy_cost": "low",
+          "sub_stop": true,
+          "parent_id": "tokyo_s_akihabara"
+        },
+        {
+          "id": "tokyo_s_donki_akiba",
+          "name": "Don Quijote Akihabara",
+          "category": "Shopping",
+          "type": "Discount Store",
+          "day": 4,
+          "date": "2026-10-21",
+          "start_time": "TBD",
+          "duration": "30-60 min",
+          "duration_minutes": 45,
+          "area": "Akihabara",
+          "priority": "nice_to_have",
+          "booking_status": "planned",
+          "icon": "shopping",
+          "sub_stop": true,
+          "parent_id": "tokyo_s_akihabara",
+          "notes": "ドン・キホーテ秋葉原店 · 4 Chome-3-3 Sotokanda, Chiyoda City · Discount store · Snacks, toys, electronics, souvenirs",
+          "links": {
+            "map": "https://maps.google.com/?q=Don+Quijote+Akihabara+4+Chome-3-3+Sotokanda+Chiyoda+City+Tokyo"
+          },
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "shopping"
+          ],
+          "energy_cost": "low"
+        },
+        {
+          "id": "tokyo_s_uniqlo_akiba",
+          "name": "UNIQLO Yodobashi Akiba",
+          "category": "Shopping",
+          "type": "Store",
+          "day": 4,
+          "start_time": "TBD",
+          "links": {
+            "website": "https://www.google.com/search?q=UNIQLO+Yodobashi+Akiba",
+            "map": "https://maps.google.com/?q=UNIQLO+Yodobashi+Akiba"
+          },
+          "area": "Akihabara",
+          "distance_from_hotel": {
+            "text": "25 min train",
+            "minutes": 25,
+            "mode": "train"
+          },
+          "priority": "nice_to_have",
+          "booking_status": "planned",
+          "date": "2026-10-21",
+          "icon": "shopping",
+          "coordinates": {
+            "lat": 35.6988,
+            "lng": 139.774
+          },
+          "duration_minutes": 90,
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "shopping"
+          ],
+          "energy_cost": "low",
+          "fallback": {
+            "if_tired": "Skip if shopped out from Akihabara"
+          },
+          "transport_from_previous": {
+            "from": "Akihabara",
+            "mode": "walk",
+            "duration_minutes": 2
+          },
+          "sub_stop": true,
+          "parent_id": "tokyo_s_akihabara"
+        },
+        {
+          "id": "tokyo_s_bar_hopping",
+          "name": "Tokyo Bar Hopping Night Tour (Shinjuku)",
+          "category": "Nightlife",
+          "type": "Tour",
+          "day": 4,
+          "start_time": "6:30 PM",
+          "end_time": "10:00 PM",
+          "duration": "3.5 hours",
+          "price": {
+            "amount": 709.32,
+            "currency": "USD",
+            "per_person": false,
+            "approximate": false,
+            "status": "paid"
+          },
+          "notes": "Booking ID f0739df8 · MagicalTrip · 7 × Age 20+ · Meet 6:20 PM at Black Pillar (next to Uniqlo Shinjuku Nishiguchi, exit D1) · Guide holds red/orange sign · Omoide Yokocho → Kabukicho → Golden Gai · PAID $709.32",
+          "details": [
+            "2 drinks at Omoide Yokocho (draft beer, sake, or local spirits)",
+            "All-you-can-drink in Kabukicho (beer, sake, cocktails)",
+            "One drink in Golden Gai",
+            "4+ local izakaya dishes (yakitori, gyoza, edamame — vegetarian available)",
+            "Tour photos delivered to email after the tour",
+            "English-speaking local guide"
+          ],
+          "links": {
+            "website": "https://www.magical-trip.com/product/59afbefb-b0d9-4e10-9273-b6c59b81e345",
+            "map": "https://maps.google.com/?q=Uniqlo+Shinjuku+Nishiguchi"
+          },
+          "area": "Shinjuku",
+          "distance_from_hotel": {
+            "text": "20 min train",
+            "minutes": 20,
+            "mode": "train"
+          },
+          "priority": "must",
+          "booking_status": "booked",
+          "date": "2026-10-21",
+          "icon": "nightlife",
+          "coordinates": {
+            "lat": 35.6938,
+            "lng": 139.6991
+          },
+          "duration_minutes": 210,
+          "tags": [
+            "indoor",
+            "nightlife",
+            "food",
+            "cultural",
+            "guided"
+          ],
+          "energy_cost": "medium",
+          "fallback": null,
+          "transport_from_previous": {
+            "from": "UNIQLO Yodobashi Akiba",
+            "mode": "train",
+            "duration_minutes": 20
+          },
+          "booking_id": "f0739df8-97e9-414d-a56b-23218a4a43c4",
+          "meeting_time": "6:20 PM",
+          "meeting_place": "In front of Black Pillar (next to Uniqlo Shinjuku Nishiguchi) — Nearest exit D1 · Guide holds red/orange Magical Trip sign",
+          "cancel_by": "Oct 20 · 6:30 PM JST (24h before)"
+        },
+        {
+          "id": "tokyo_s_ginza",
+          "name": "Ginza Shopping",
+          "category": "Shopping",
+          "type": "Neighborhood",
+          "day": 5,
+          "start_time": "11:00 AM",
+          "duration": "5 hours",
+          "links": {
+            "website": "https://www.google.com/search?q=Ginza+Shopping+Tokyo",
+            "map": "https://maps.google.com/?q=Ginza+Tokyo"
+          },
+          "area": "Ginza",
+          "distance_from_hotel": {
+            "text": "20 min train",
+            "minutes": 20,
+            "mode": "train"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-22",
+          "icon": "shopping",
+          "coordinates": {
+            "lat": 35.6717,
+            "lng": 139.7649
+          },
+          "end_time": "4:00 PM",
+          "duration_minutes": 300,
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "shopping",
+            "walkable"
+          ],
+          "energy_cost": "medium",
+          "fallback": null,
+          "transport_from_previous": {
+            "from": "Breakfast (Shibuya)",
+            "mode": "train",
+            "duration_minutes": 20
+          }
+        },
+        {
+          "id": "tokyo_s_uniqlo_ginza",
+          "name": "UNIQLO Ginza Flagship",
+          "category": "Shopping",
+          "type": "Store",
+          "day": 5,
+          "start_time": "TBD",
+          "links": {
+            "website": "https://www.google.com/search?q=UNIQLO+Ginza+Flagship",
+            "map": "https://maps.google.com/?q=UNIQLO+Ginza+Tokyo"
+          },
+          "area": "Ginza",
+          "distance_from_hotel": {
+            "text": "20 min train",
+            "minutes": 20,
+            "mode": "train"
+          },
+          "priority": "nice_to_have",
+          "booking_status": "planned",
+          "date": "2026-10-22",
+          "icon": "shopping",
+          "coordinates": {
+            "lat": 35.6717,
+            "lng": 139.7649
+          },
+          "duration_minutes": 60,
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "shopping"
+          ],
+          "energy_cost": "low",
+          "fallback": null,
+          "transport_from_previous": {
+            "from": "Ginza Shopping",
+            "mode": "walk",
+            "duration_minutes": 2
+          },
+          "sub_stop": true,
+          "parent_id": "tokyo_s_ginza"
+        },
+        {
+          "id": "tokyo_s_pokemon_dx",
+          "name": "Pokémon Center TOKYO DX",
+          "category": "Shopping",
+          "type": "Store",
+          "day": 5,
+          "start_time": "1:30 PM",
+          "duration": "1 hour",
+          "notes": "One of the largest Pokémon Centers in Japan · Nihonbashi · Pokémon Café attached (reservation required)",
+          "links": {
+            "website": "https://www.pokemon.co.jp/gp/pokecen/tokyodx/",
+            "map": "https://maps.google.com/?q=Pokemon+Center+TOKYO+DX+Nihonbashi"
+          },
+          "area": "Nihonbashi",
+          "distance_from_hotel": {
+            "text": "25 min train",
+            "minutes": 25,
+            "mode": "train"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-22",
+          "icon": "pokeball",
+          "coordinates": {
+            "lat": 35.6825,
+            "lng": 139.7747
+          },
+          "end_time": "2:30 PM",
+          "duration_minutes": 60,
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "shopping"
+          ],
+          "energy_cost": "low",
+          "fallback": null,
+          "transport_from_previous": {
+            "from": "UNIQLO Ginza",
+            "mode": "train",
+            "duration_minutes": 5
+          }
+        },
+        {
+          "id": "tokyo_s_ikebukuro",
+          "name": "Ikebukuro",
+          "category": "Shopping",
+          "type": "District",
+          "day": 5,
+          "date": "2026-10-22",
+          "start_time": "5:00 PM",
+          "end_time": "8:00 PM",
+          "duration": "3 hours",
+          "duration_minutes": 180,
+          "area": "Ikebukuro",
+          "priority": "must",
+          "booking_status": "planned",
+          "icon": "shopping",
+          "notes": "Anime, gaming & pop culture hub · Animate flagship + Pokémon Center Mega Tokyo",
+          "links": {
+            "map": "https://maps.google.com/?q=Ikebukuro+Tokyo"
+          },
+          "tags": [
+            "shopping",
+            "indoor"
+          ],
+          "energy_cost": "medium"
+        },
+        {
+          "id": "tokyo_s_animate",
+          "name": "Animate Ikebukuro Flagship Store",
+          "category": "Shopping",
+          "type": "Store",
+          "day": 5,
+          "start_time": "TBD",
+          "notes": "World's largest anime store · 10 floors · Exclusive merch",
+          "links": {
+            "website": "https://www.animate.co.jp/shop/ikebukuro/",
+            "map": "https://maps.google.com/?q=Animate+Ikebukuro+Tokyo"
+          },
+          "area": "Ikebukuro",
+          "distance_from_hotel": {
+            "text": "25 min train",
+            "minutes": 25,
+            "mode": "train"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-22",
+          "icon": "shopping",
+          "coordinates": {
+            "lat": 35.7295,
+            "lng": 139.7109
+          },
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "shopping",
+            "anime"
+          ],
+          "energy_cost": "low",
+          "fallback": null,
+          "transport_from_previous": {
+            "from": "Lunch (Nihonbashi)",
+            "mode": "train",
+            "duration_minutes": 20
+          },
+          "sub_stop": true,
+          "parent_id": "tokyo_s_ikebukuro"
+        },
+        {
+          "id": "tokyo_s_pokemon_mega",
+          "name": "Pokémon Center Mega Tokyo (Ikebukuro)",
+          "category": "Shopping",
+          "type": "Store",
+          "day": 5,
+          "start_time": "TBD",
+          "links": {
+            "website": "https://www.google.com/search?q=Pokemon+Center+Mega+Tokyo+Ikebukuro",
+            "map": "https://maps.google.com/?q=Pokemon+Center+Mega+Tokyo+Ikebukuro"
+          },
+          "area": "Ikebukuro",
+          "distance_from_hotel": {
+            "text": "25 min train",
+            "minutes": 25,
+            "mode": "train"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-22",
+          "icon": "pokeball",
+          "coordinates": {
+            "lat": 35.7295,
+            "lng": 139.7109
+          },
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "shopping"
+          ],
+          "energy_cost": "low",
+          "fallback": null,
+          "transport_from_previous": {
+            "from": "Animate Ikebukuro",
+            "mode": "walk",
+            "duration_minutes": 3
+          },
+          "sub_stop": true,
+          "parent_id": "tokyo_s_ikebukuro"
+        },
+        {
+          "id": "tokyo_s_pack_kyoto",
+          "name": "Pack for Kyoto",
+          "category": "Logistics",
+          "type": "Packing",
+          "day": 5,
+          "start_time": "7:00 PM",
+          "duration": "1 hour",
+          "links": {},
+          "area": "Shibuya",
+          "distance_from_hotel": {
+            "text": "0 min (at hotel)",
+            "minutes": 0,
+            "mode": "walk"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-22",
+          "icon": "transit",
+          "coordinates": {
+            "lat": 35.6595,
+            "lng": 139.699
+          },
+          "end_time": "8:00 PM",
+          "duration_minutes": 60,
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "logistics"
+          ],
+          "energy_cost": "low",
+          "fallback": null,
+          "transport_from_previous": {
+            "from": "Pokémon Center Mega Tokyo (Ikebukuro)",
+            "mode": "train",
+            "duration_minutes": 25
+          }
+        },
+        {
+          "id": "tokyo_s_checkout",
+          "name": "Hotel Checkout (Tokyu Stay Shibuya)",
+          "category": "Logistics",
+          "type": "Hotel",
+          "day": 6,
+          "start_time": "9:00 AM",
+          "duration": "1 hour",
+          "notes": "Pack final items, checkout",
+          "links": {},
+          "area": "Shibuya",
+          "distance_from_hotel": {
+            "text": "0 min (at hotel)",
+            "minutes": 0,
+            "mode": "walk"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-23",
+          "icon": "hotel",
+          "coordinates": {
+            "lat": 35.6595,
+            "lng": 139.699
+          },
+          "end_time": "10:00 AM",
+          "duration_minutes": 60,
+          "tags": [
+            "indoor",
+            "logistics"
+          ],
+          "energy_cost": "low",
+          "fallback": null,
+          "transport_from_previous": null
+        },
+        {
+          "id": "tokyo_s_lobby_meetup_kyoto",
+          "name": "Meet Up in Hotel Lobby",
+          "category": "Logistics",
+          "type": "Meetup",
+          "day": 6,
+          "start_time": "10:00 AM",
+          "duration": "10 min",
+          "notes": "Regroup with luggage, head to Shibuya Station → Tokyo Station → Shinkansen",
+          "links": {},
+          "area": "Shibuya",
+          "distance_from_hotel": {
+            "text": "0 min (at hotel)",
+            "minutes": 0,
+            "mode": "walk"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-23",
+          "icon": "hotel",
+          "coordinates": {
+            "lat": 35.6595,
+            "lng": 139.699
+          },
+          "end_time": "10:10 AM",
+          "duration_minutes": 10,
+          "tags": [
+            "indoor",
+            "logistics"
+          ],
+          "energy_cost": "low",
+          "fallback": null,
+          "transport_from_previous": {
+            "from": "Hotel rooms",
+            "mode": "walk",
+            "duration_minutes": 0
+          }
+        }
+      ],
+      "hourly_schedule_templates": [
+        {
+          "id": "tokyo_s_day1",
+          "label": "Day 2 — Oct 18 (Arrival + Light Shibuya)",
+          "blocks": [
+            {
+              "time": "15:40",
+              "title": "Arrive HND — train to Shibuya",
+              "category": "Transit"
+            },
+            {
+              "time": "17:30",
+              "title": "Hotel Check-in + 7-Eleven Dinner (eat in rooms)",
+              "category": "Check-in"
+            },
+            {
+              "time": "20:30",
+              "title": "Meet Up in Hotel Lobby",
+              "category": "Logistics"
+            },
+            {
+              "time": "20:40",
+              "title": "Shibuya Crossing + Hachiko",
+              "category": "Sightseeing"
+            }
+          ]
+        },
+        {
+          "id": "tokyo_s_day2",
+          "label": "Day 3 — Oct 19 (Shibuya + Harajuku)",
+          "blocks": [
+            {
+              "time": "11:30",
+              "title": "Pokémon Center Shibuya",
+              "category": "Shopping"
+            },
+            {
+              "time": "12:30",
+              "title": "Don Quijote Shibuya",
+              "category": "Shopping"
+            },
+            {
+              "time": "13:30",
+              "title": "Nintendo Tokyo (Shibuya PARCO)",
+              "category": "Shopping"
+            },
+            {
+              "time": "14:30",
+              "title": "Harajuku / Takeshita Street",
+              "category": "Sightseeing / Shopping"
+            },
+            {
+              "time": "18:00",
+              "title": "BeBu-Ya Dinner (Shibuya)",
+              "category": "Food"
+            },
+            {
+              "time": "20:00",
+              "title": "Sumo Show & Experience (Shinjuku)",
+              "category": "Experience"
+            }
+          ]
+        },
+        {
+          "id": "tokyo_s_day3",
+          "label": "Day 4 — Oct 20 (Asakusa + Monkey Kart)",
+          "blocks": [
+            {
+              "time": "10:30",
+              "title": "Senso-ji Temple",
+              "category": "Sightseeing"
+            },
+            {
+              "time": "18:00",
+              "title": "Monkey Kart — Tokyo Tower Route (6 PM)",
+              "category": "Experience"
+            }
+          ]
+        },
+        {
+          "id": "tokyo_s_day4",
+          "label": "Day 5 — Oct 21 (Akihabara + Shinjuku Bar Hopping)",
+          "blocks": [
+            {
+              "time": "10:00",
+              "title": "Breakfast",
+              "category": "Food"
+            },
+            {
+              "time": "11:00",
+              "title": "Akihabara",
+              "category": "Shopping"
+            },
+            {
+              "time": "13:00",
+              "title": "UNIQLO Yodobashi Akiba",
+              "category": "Shopping"
+            },
+            {
+              "time": "18:30",
+              "title": "Bar Hopping Night Tour (Shinjuku)",
+              "category": "Nightlife"
+            }
+          ]
+        },
+        {
+          "id": "tokyo_s_day5",
+          "label": "Day 6 — Oct 22 (Ginza + Nihonbashi + Ikebukuro + Pack)",
+          "blocks": [
+            {
+              "time": "10:30",
+              "title": "Ginza Shopping",
+              "category": "Shopping"
+            },
+            {
+              "time": "12:30",
+              "title": "UNIQLO Ginza Flagship",
+              "category": "Shopping"
+            },
+            {
+              "time": "13:30",
+              "title": "Pokémon Center TOKYO DX (Nihonbashi)",
+              "category": "Shopping"
+            },
+            {
+              "time": "16:00",
+              "title": "Animate Ikebukuro Flagship Store",
+              "category": "Shopping"
+            },
+            {
+              "time": "17:00",
+              "title": "Pokémon Center Mega Tokyo (Ikebukuro)",
+              "category": "Shopping"
+            },
+            {
+              "time": "19:00",
+              "title": "Pack for Kyoto",
+              "category": "Rest"
+            }
+          ]
+        }
+      ],
+      "day_summaries": {
+        "1": {
+          "focus": "Shibuya",
+          "energy": "low",
+          "transport": "walk-only",
+          "vibe": "Arrival night — settle in, first taste of Tokyo",
+          "day_type": "travel_light"
+        },
+        "2": {
+          "focus": "West Tokyo",
+          "energy": "medium",
+          "transport": "walk-only",
+          "vibe": "Harajuku fashion, Pokémon, and a serene shrine",
+          "day_type": "full_day"
+        },
+        "3": {
+          "focus": "East Tokyo",
+          "energy": "high",
+          "transport": "metro-heavy",
+          "vibe": "Temples, go-karts, and anime paradise",
+          "day_type": "full_day"
+        },
+        "4": {
+          "focus": "Akihabara + Shinjuku",
+          "energy": "medium",
+          "transport": "train",
+          "vibe": "Anime shopping by day, bar hopping through Shinjuku by night",
+          "day_type": "full_day"
+        },
+        "5": {
+          "focus": "Ginza + Ikebukuro",
+          "energy": "medium",
+          "transport": "metro-heavy",
+          "vibe": "Ginza flagship shopping, anime mega-store, Pokémon, then pack for Kyoto",
+          "day_type": "full_day"
+        }
+      },
+      "recommended_food_spots": [
+        {
+          "area": "Shibuya",
+          "spots": [
+            {
+              "name": "Afuri Shibuya",
+              "type": "Yuzu shio ramen",
+              "vibe": "Light, citrusy broth — perfect if you're ramen'd out on heavy tonkotsu",
+              "price_range": "¥1,000–1,500",
+              "maps": "https://maps.google.com/?q=Afuri+Ramen+Shibuya",
+              "meal": "lunch"
+            },
+            {
+              "name": "Sushi no Midori Shibuya",
+              "type": "Conveyor sushi",
+              "vibe": "High-quality sushi at insane value — long line but worth it",
+              "price_range": "¥2,000–4,000",
+              "maps": "https://maps.google.com/?q=Sushi+no+Midori+Shibuya",
+              "meal": "lunch"
+            },
+            {
+              "name": "BAKE Cheese Tart",
+              "type": "Dessert",
+              "vibe": "Warm, flaky cheese tart fresh from the oven — grab and go",
+              "price_range": "¥200–400",
+              "maps": "https://maps.google.com/?q=BAKE+Cheese+Tart+Shibuya",
+              "meal": "snack"
+            }
+          ]
+        },
+        {
+          "area": "Harajuku",
+          "spots": [
+            {
+              "name": "Harajuku Gyoza Lou",
+              "type": "Gyoza",
+              "vibe": "Tiny, legendary gyoza joint — crispy pan-fried perfection",
+              "price_range": "¥600–1,000",
+              "maps": "https://maps.google.com/?q=Harajuku+Gyoza+Lou",
+              "meal": "lunch"
+            },
+            {
+              "name": "Takeshita Street crêpes",
+              "type": "Crêpe / dessert",
+              "vibe": "Classic Harajuku move — Nutella-banana or matcha ice cream",
+              "price_range": "¥400–700",
+              "maps": "https://maps.google.com/?q=Takeshita+Street+crepes",
+              "meal": "snack"
+            }
+          ]
+        },
+        {
+          "area": "Asakusa",
+          "spots": [
+            {
+              "name": "Sometaro",
+              "type": "Monjayaki & okonomiyaki",
+              "vibe": "Cook your own on a table grill in a 100-year-old house",
+              "price_range": "¥1,000–2,000",
+              "maps": "https://maps.google.com/?q=Sometaro+Asakusa",
+              "meal": "lunch"
+            },
+            {
+              "name": "Nakamise-dori stalls",
+              "type": "Street food",
+              "vibe": "Melon pan, ningyo-yaki, and rice crackers on the walk to Sensō-ji",
+              "price_range": "¥200–500",
+              "maps": "https://maps.google.com/?q=Nakamise-dori+Asakusa",
+              "meal": "snack"
+            }
+          ]
+        },
+        {
+          "area": "Akihabara",
+          "spots": [
+            {
+              "name": "Kanda Matsuya",
+              "type": "Soba noodles",
+              "vibe": "130-year-old soba shop — the perfect reset after sensory-overload Akiba",
+              "price_range": "¥800–1,500",
+              "maps": "https://maps.google.com/?q=Kanda+Matsuya+Akihabara",
+              "meal": "lunch"
+            }
+          ]
+        }
+      ],
+      "map_center": {
+        "lat": 35.658,
+        "lng": 139.7016
+      }
+    },
+    {
+      "id": "city_kyoto",
+      "city": "Kyoto",
+      "country": "Japan",
+      "dates": {
+        "arrival": "2026-10-23",
+        "departure": "2026-10-26"
+      },
+      "stay": {
+        "hotel_name": "Tokyu Stay Kyoto Sakaiza Shijo Kawaramachi",
+        "hotel_link": "https://www.tokyustay.co.jp/e/hotel/KYO2/",
+        "address": "Nakagyo-ku Nakanocho 557, Kyoto 604-8042",
+        "phone": "+81 75 212 0109",
+        "checkin": "Oct 23 · 3:00 PM – midnight",
+        "checkout": "Oct 26 · by 11:00 AM",
+        "rooms": [
+          {
+            "conf": "5773.113.866",
+            "pin": "1490",
+            "type": "Superior Twin × 2 rooms",
+            "guests": 4
+          },
+          {
+            "conf": "6940.211.503",
+            "pin": "4188",
+            "type": "Deluxe Triple × 1 room",
+            "guests": 3
+          }
+        ],
+        "nights": 3,
+        "price": {
+          "amount": 2801,
+          "currency": "USD"
+        },
+        "notes": "3 rooms · 7 guests · Free WiFi · Shinkyogoku-dori area"
+      },
+      "city_ui": {
+        "hero_subtitle": "Temples, tradition, and slow mornings.",
+        "hero_illustration": [
+          "Temple Silhouette",
+          "Soft Gold Wash",
+          "Sakura Petals"
+        ]
+      },
+      "activities": [
+        {
+          "id": "kyoto_arrive",
+          "name": "Arrive Kyoto (Shinkansen)",
+          "category": "Logistics",
+          "type": "Transit",
+          "day": 1,
+          "start_time": "1:00 PM",
+          "duration": "2 hours",
+          "notes": "Shinkansen Tokyo → Kyoto (~2h 15m)",
+          "links": {},
+          "area": "Kyoto Station",
+          "distance_from_hotel": {
+            "text": "15 min taxi",
+            "minutes": 15,
+            "mode": "taxi"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-23",
+          "icon": "pin",
+          "coordinates": {
+            "lat": 34.9856,
+            "lng": 135.7585
+          },
+          "end_time": "3:00 PM",
+          "duration_minutes": 120,
+          "tags": [
+            "transit"
+          ],
+          "energy_cost": "low",
+          "fallback": null,
+          "transport_from_previous": null
+        },
+        {
+          "id": "kyoto_hotel_checkin",
+          "name": "Hotel Check-in (Tokyu Stay Kyoto)",
+          "category": "Logistics",
+          "type": "Hotel",
+          "day": 1,
+          "start_time": "3:00 PM",
+          "duration": "30 min",
+          "links": {
+            "map": "https://maps.google.com/?q=Mitsui+Garden+Hotel+Kyoto+Kawaramachi+Jokyoji"
+          },
+          "area": "Kawaramachi",
+          "distance_from_hotel": {
+            "text": "0 min (at hotel)",
+            "minutes": 0,
+            "mode": "walk"
+          },
+          "priority": "must",
+          "booking_status": "booked",
+          "date": "2026-10-23",
+          "icon": "hotel",
+          "coordinates": {
+            "lat": 35.0049,
+            "lng": 135.7696
+          },
+          "end_time": "3:30 PM",
+          "duration_minutes": 30,
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "logistics"
+          ],
+          "energy_cost": "low",
+          "fallback": null,
+          "transport_from_previous": {
+            "from": "Kyoto Station",
+            "mode": "taxi",
+            "duration_minutes": 15
+          },
+          "notes": "Nakagyo-ku Nakanocho 557 · Check-in from 3PM · Conf 5773.113.866 / 6940.211.503"
+        },
+        {
+          "id": "kyoto_nishiki_snack",
+          "name": "Nishiki Market (quick snack)",
+          "category": "Food",
+          "type": "Market",
+          "day": 1,
+          "start_time": "3:30 PM",
+          "duration": "45 min",
+          "notes": "Quick snack run — don't linger, save the full market for Day 2",
+          "links": {
+            "website": "https://www.google.com/search?q=Nishiki+Market+Kyoto",
+            "map": "https://maps.google.com/?q=Nishiki+Market+Kyoto"
+          },
+          "area": "Kawaramachi",
+          "distance_from_hotel": {
+            "text": "5 min walk",
+            "minutes": 5,
+            "mode": "walk"
+          },
+          "priority": "nice_to_have",
+          "booking_status": "planned",
+          "date": "2026-10-23",
+          "icon": "food",
+          "coordinates": {
+            "lat": 35.005,
+            "lng": 135.765
+          },
+          "end_time": "4:15 PM",
+          "duration_minutes": 45,
+          "tags": [
+            "outdoor",
+            "food",
+            "walkable",
+            "iconic"
+          ],
+          "energy_cost": "low",
+          "fallback": {
+            "if_rain": "Market is covered — still great in rain",
+            "if_tired": "Skip and grab konbini snacks instead"
+          },
+          "transport_from_previous": {
+            "from": "Hotel (Kawaramachi)",
+            "mode": "walk",
+            "duration_minutes": 5
+          }
+        },
+        {
+          "id": "kyoto_kiyomizudera",
+          "name": "Kiyomizu-dera (sunset)",
+          "category": "Sightseeing",
+          "type": "Temple",
+          "day": 1,
+          "start_time": "4:45 PM",
+          "duration": "1 hr 45 min",
+          "notes": "One of the top sunset spots in all Japan — arrive before golden hour",
+          "links": {
+            "website": "https://www.google.com/search?q=Kiyomizu-dera+Kyoto",
+            "map": "https://maps.google.com/?q=Kiyomizu-dera+Kyoto"
+          },
+          "area": "Higashiyama",
+          "distance_from_hotel": {
+            "text": "15 min bus",
+            "minutes": 15,
+            "mode": "bus"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-23",
+          "icon": "torii",
+          "coordinates": {
+            "lat": 34.9949,
+            "lng": 135.785
+          },
+          "end_time": "6:30 PM",
+          "duration_minutes": 105,
+          "tags": [
+            "outdoor",
+            "cultural",
+            "photo-spot",
+            "iconic",
+            "free"
+          ],
+          "energy_cost": "medium",
+          "fallback": {
+            "if_rain": "Still beautiful in rain — bring umbrella. Temple stage has partial cover",
+            "if_tired": "View from the main stage only, skip the hillside trails"
+          },
+          "transport_from_previous": {
+            "from": "Nishiki Market",
+            "mode": "bus",
+            "duration_minutes": 30
+          }
+        },
+        {
+          "id": "kyoto_sannenzaka",
+          "name": "Walk Sannenzaka / Ninenzaka",
+          "category": "Sightseeing",
+          "type": "Walk",
+          "day": 1,
+          "start_time": "6:30 PM",
+          "duration": "30 min",
+          "notes": "Historic stone-paved slopes lined with traditional shops — downhill from Kiyomizu-dera",
+          "links": {
+            "website": "https://www.google.com/search?q=Sannenzaka+Ninenzaka+Kyoto",
+            "map": "https://maps.google.com/?q=Sannenzaka+Ninenzaka+Kyoto"
+          },
+          "area": "Higashiyama",
+          "distance_from_hotel": {
+            "text": "15 min bus",
+            "minutes": 15,
+            "mode": "bus"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-23",
+          "icon": "pin",
+          "coordinates": {
+            "lat": 34.9969,
+            "lng": 135.781
+          },
+          "end_time": "7:00 PM",
+          "duration_minutes": 30,
+          "tags": [
+            "outdoor",
+            "walkable",
+            "photo-spot",
+            "iconic",
+            "free"
+          ],
+          "energy_cost": "low",
+          "fallback": {
+            "if_rain": "Atmospheric in rain — slippery, wear good shoes",
+            "if_tired": "Quick walk-through only, skip the shops"
+          },
+          "transport_from_previous": {
+            "from": "Kiyomizu-dera",
+            "mode": "walk",
+            "duration_minutes": 5
+          }
+        },
+        {
+          "id": "kyoto_yasaka_pagoda",
+          "name": "Yasaka Pagoda",
+          "category": "Sightseeing",
+          "type": "Landmark",
+          "day": 1,
+          "start_time": "7:00 PM",
+          "duration": "20 min",
+          "notes": "Iconic 5-story pagoda — great evening photo spot",
+          "links": {
+            "website": "https://www.google.com/search?q=Yasaka+Pagoda+Kyoto",
+            "map": "https://maps.google.com/?q=Yasaka+Pagoda+Kyoto"
+          },
+          "area": "Higashiyama",
+          "distance_from_hotel": {
+            "text": "15 min bus",
+            "minutes": 15,
+            "mode": "bus"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-23",
+          "icon": "pagoda",
+          "coordinates": {
+            "lat": 34.9981,
+            "lng": 135.7803
+          },
+          "end_time": "7:20 PM",
+          "duration_minutes": 20,
+          "tags": [
+            "outdoor",
+            "photo-spot",
+            "iconic",
+            "free"
+          ],
+          "energy_cost": "low",
+          "fallback": null,
+          "transport_from_previous": {
+            "from": "Sannenzaka",
+            "mode": "walk",
+            "duration_minutes": 3
+          }
+        },
+        {
+          "id": "kyoto_gion_stroll",
+          "name": "Gion Stroll (short version)",
+          "category": "Sightseeing",
+          "type": "Walk",
+          "day": 1,
+          "start_time": "7:30 PM",
+          "duration": "30 min",
+          "notes": "Quick evening walk through the geisha district — Hanamikoji Street",
+          "links": {
+            "website": "https://www.google.com/search?q=Gion+District+Kyoto",
+            "map": "https://maps.google.com/?q=Gion+District+Kyoto"
+          },
+          "area": "Gion",
+          "distance_from_hotel": {
+            "text": "10 min walk",
+            "minutes": 10,
+            "mode": "walk"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-23",
+          "icon": "pin",
+          "coordinates": {
+            "lat": 35.0037,
+            "lng": 135.7756
+          },
+          "end_time": "8:00 PM",
+          "duration_minutes": 30,
+          "tags": [
+            "outdoor",
+            "walkable",
+            "cultural",
+            "nighttime",
+            "iconic",
+            "free"
+          ],
+          "energy_cost": "low",
+          "fallback": {
+            "if_rain": "Walk with umbrella — atmospheric in rain",
+            "if_tired": "Skip and head straight to dinner"
+          },
+          "transport_from_previous": {
+            "from": "Yasaka Pagoda",
+            "mode": "walk",
+            "duration_minutes": 8
+          }
+        },
+        {
+          "id": "kyoto_tea",
+          "name": "Kimono Tea Ceremony & Samurai Experience (Value Ticket)",
+          "category": "Experience",
+          "type": "Cultural",
+          "day": 2,
+          "start_time": "12:00 PM",
+          "duration": "4h 30m",
+          "price": {
+            "amount": 799.98,
+            "currency": "USD",
+            "per_person": false,
+            "approximate": false,
+            "status": "paid",
+            "breakdown": "¥17,000 × 7 adults = ¥119,000 + ¥11,900 tax"
+          },
+          "notes": "Booking #3008553 · Oct 24 · 7 adults (3 men, 4 women) · ¥17,000 × 7 = ¥119,000 + ¥11,900 tax = ¥130,900 · PART 1: Samurai Ninja Museum 12:00 PM · PART 2: Tea Ceremony (Maikoya Nishiki) 2:30 PM · Cancel by Oct 23 noon for full refund",
+          "details": [
+            "PART 1 — Samurai Ninja Museum (12:00 PM): Dressing in samurai hakama, sword training, ninja star throw, museum history tour",
+            "PART 2 — Tea Ceremony Maikoya (2:30 PM): Dressing in kimono, Japanese sweets, traditional tea ceremony"
+          ],
+          "links": {
+            "website": "https://mai-ko.com/tour/value-ticket-kimono-tea-ceremony-and-samurai-experience-combo-in-kyoto-for-couples-and-small-groups2/",
+            "map": "https://maps.google.com/?q=Samurai+Ninja+Museum+Kyoto+109+Horinouecho"
+          },
+          "area": "Nakagyō-ku",
+          "distance_from_hotel": {
+            "text": "10 min walk",
+            "minutes": 10,
+            "mode": "walk"
+          },
+          "priority": "must",
+          "booking_status": "booked",
+          "date": "2026-10-24",
+          "icon": "tea",
+          "coordinates": {
+            "lat": 35.0082,
+            "lng": 135.7634
+          },
+          "end_time": "4:30 PM",
+          "duration_minutes": 270,
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "reservation-required",
+            "cultural",
+            "group-fun",
+            "immersive",
+            "iconic"
+          ],
+          "energy_cost": "medium",
+          "fallback": {
+            "if_tired": "Cannot skip — reservation is booked and paid. Pace yourself beforehand"
+          },
+          "transport_from_previous": {
+            "from": "Breakfast (Kawaramachi)",
+            "mode": "walk",
+            "duration_minutes": 10
+          },
+          "booking_number": "#3008553",
+          "operator": "MAIKOYA",
+          "contact": "kyoto.samurai@maikoya.com",
+          "cancel_by": "Oct 23 · 12:00 PM JST (24h before)"
+        },
+        {
+          "id": "kyoto_nishiki",
+          "name": "Nishiki Market",
+          "category": "Food",
+          "type": "Market",
+          "day": 2,
+          "start_time": "3:00 PM",
+          "duration": "1.5–2 hours",
+          "links": {
+            "website": "https://www.google.com/search?q=Nishiki+Market+Kyoto",
+            "map": "https://maps.google.com/?q=Nishiki+Market+Kyoto"
+          },
+          "area": "Nishiki",
+          "distance_from_hotel": {
+            "text": "5 min walk",
+            "minutes": 5,
+            "mode": "walk"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-24",
+          "icon": "food",
+          "coordinates": {
+            "lat": 35.005,
+            "lng": 135.765
+          },
+          "end_time": "4:30 PM",
+          "duration_minutes": 105,
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "food",
+            "walkable",
+            "iconic"
+          ],
+          "energy_cost": "medium",
+          "fallback": {
+            "if_tired": "Walk half the market and grab one signature item (tamagoyaki)"
+          },
+          "transport_from_previous": {
+            "from": "Samurai Ninja Museum",
+            "mode": "walk",
+            "duration_minutes": 5
+          }
+        },
+        {
+          "id": "kyoto_gion",
+          "name": "Gion District",
+          "category": "Sightseeing",
+          "type": "Neighborhood",
+          "day": 2,
+          "start_time": "5:30 PM",
+          "duration": "2 hours",
+          "links": {
+            "website": "https://www.google.com/search?q=Gion+District+Kyoto",
+            "map": "https://maps.google.com/?q=Gion+Kyoto"
+          },
+          "area": "Gion",
+          "distance_from_hotel": {
+            "text": "15 min walk",
+            "minutes": 15,
+            "mode": "walk"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-24",
+          "icon": "lantern",
+          "coordinates": {
+            "lat": 35.0037,
+            "lng": 135.7756
+          },
+          "end_time": "7:30 PM",
+          "duration_minutes": 120,
+          "tags": [
+            "outdoor",
+            "walkable",
+            "cultural",
+            "photo-spot",
+            "iconic",
+            "nighttime"
+          ],
+          "energy_cost": "medium",
+          "fallback": {
+            "if_rain": "Walk Gion with umbrella (atmospheric in rain) or visit Kennin-ji temple nearby (covered)",
+            "if_tired": "Taxi through instead of walking — or combine with Hanamikoji only"
+          },
+          "transport_from_previous": {
+            "from": "Nishiki Market",
+            "mode": "walk",
+            "duration_minutes": 15
+          }
+        },
+        {
+          "id": "kyoto_hanamikoji",
+          "name": "Hanamikoji Street",
+          "category": "Sightseeing",
+          "type": "Historic Street",
+          "day": 2,
+          "start_time": "7:30 PM",
+          "duration": "1 hour",
+          "links": {
+            "website": "https://www.google.com/search?q=Hanamikoji+Street+Kyoto",
+            "map": "https://maps.google.com/?q=Hanamikoji+Street+Kyoto"
+          },
+          "area": "Gion",
+          "distance_from_hotel": {
+            "text": "15 min walk",
+            "minutes": 15,
+            "mode": "walk"
+          },
+          "priority": "nice_to_have",
+          "booking_status": "planned",
+          "date": "2026-10-24",
+          "icon": "lantern",
+          "coordinates": {
+            "lat": 35.0032,
+            "lng": 135.7747
+          },
+          "end_time": "8:30 PM",
+          "duration_minutes": 60,
+          "tags": [
+            "outdoor",
+            "walkable",
+            "cultural",
+            "photo-spot",
+            "free"
+          ],
+          "energy_cost": "low",
+          "fallback": {
+            "if_rain": "Short street — doable with umbrella in 10 min",
+            "if_tired": "Skip if already walked Gion"
+          },
+          "transport_from_previous": {
+            "from": "Gion District",
+            "mode": "walk",
+            "duration_minutes": 2
+          }
+        },
+        {
+          "id": "kyoto_fushimi",
+          "name": "Fushimi Inari Shrine",
+          "category": "Sightseeing",
+          "type": "Shrine",
+          "day": 3,
+          "start_time": "8:30 AM",
+          "duration": "2 hours",
+          "links": {
+            "website": "https://www.google.com/search?q=Fushimi+Inari+Shrine+Kyoto",
+            "map": "https://maps.google.com/?q=Fushimi+Inari+Shrine+Kyoto"
+          },
+          "area": "Fushimi",
+          "distance_from_hotel": {
+            "text": "20 min train",
+            "minutes": 20,
+            "mode": "train"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-25",
+          "icon": "torii",
+          "coordinates": {
+            "lat": 34.9671,
+            "lng": 135.7727
+          },
+          "end_time": "10:30 AM",
+          "duration_minutes": 120,
+          "tags": [
+            "outdoor",
+            "free",
+            "cultural",
+            "photo-spot",
+            "iconic",
+            "early-morning"
+          ],
+          "energy_cost": "high",
+          "fallback": {
+            "if_rain": "Go anyway — the torii gates provide partial cover and rain photos are stunning. Bring umbrella",
+            "if_tired": "Hike only to the first overlook (Yotsutsuji intersection, ~30 min) instead of the full loop"
+          },
+          "transport_from_previous": {
+            "from": "Hotel (Kawaramachi)",
+            "mode": "train",
+            "duration_minutes": 15
+          }
+        },
+        {
+          "id": "kyoto_arashiyama_forest",
+          "name": "Arashiyama Bamboo Forest",
+          "category": "Sightseeing",
+          "type": "Nature Walk",
+          "day": 3,
+          "start_time": "11:30 AM",
+          "end_time": "1:00 PM",
+          "duration": "1.5 hours",
+          "duration_minutes": 90,
+          "notes": "Walk the iconic bamboo grove, cross Togetsukyo Bridge, explore Tenryu-ji garden area",
+          "links": {
+            "website": "https://www.google.com/search?q=Arashiyama+Bamboo+Forest+Kyoto",
+            "map": "https://maps.google.com/?q=Arashiyama+Bamboo+Forest+Kyoto"
+          },
+          "area": "Arashiyama",
+          "distance_from_hotel": {
+            "text": "40 min train from Fushimi",
+            "minutes": 40,
+            "mode": "train"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-25",
+          "icon": "bamboo",
+          "coordinates": {
+            "lat": 35.0094,
+            "lng": 135.6722
+          },
+          "tags": [
+            "outdoor",
+            "free",
+            "iconic",
+            "photo-spot",
+            "nature"
+          ],
+          "energy_cost": "low",
+          "fallback": {
+            "if_rain": "Still beautiful in rain — bamboo canopy provides cover",
+            "if_tired": "Walk just the main grove path (15 min) and skip Tenryu-ji"
+          },
+          "transport_from_previous": {
+            "from": "Fushimi Inari",
+            "mode": "train",
+            "duration_minutes": 40
+          }
+        },
+        {
+          "id": "kyoto_teamlab",
+          "name": "teamLab Biovortex Kyoto",
+          "category": "Experience",
+          "type": "Art / Immersive",
+          "day": 3,
+          "start_time": "2:00 PM",
+          "duration": "2–3 hours",
+          "notes": "Immersive digital art museum · Timed entry · Book tickets in advance · ¥4,600/pp × 7 = ¥32,200",
+          "links": {
+            "website": "https://www.teamlab.art/e/kyoto/",
+            "map": "https://maps.google.com/?q=teamLab+Biovortex+Kyoto"
+          },
+          "area": "Higashiyama",
+          "distance_from_hotel": {
+            "text": "15 min bus/train",
+            "minutes": 15,
+            "mode": "train"
+          },
+          "priority": "must",
+          "booking_status": "not_booked",
+          "date": "2026-10-25",
+          "icon": "art",
+          "coordinates": {
+            "lat": 34.9886,
+            "lng": 135.7823
+          },
+          "end_time": "5:00 PM",
+          "duration_minutes": 180,
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "immersive",
+            "photo-spot"
+          ],
+          "energy_cost": "medium",
+          "fallback": null,
+          "transport_from_previous": {
+            "from": "Lunch (Fushimi)",
+            "mode": "train",
+            "duration_minutes": 15
+          },
+          "price": {
+            "amount": 32200,
+            "currency": "JPY",
+            "per_person": false,
+            "approximate": false,
+            "status": "confirmed"
+          }
+        },
+        {
+          "id": "kyoto_checkout",
+          "name": "Hotel Check-out (Tokyu Stay Kyoto)",
+          "category": "Logistics",
+          "type": "Logistics",
+          "day": 4,
+          "date": "2026-10-26",
+          "start_time": "10:00 AM",
+          "end_time": "11:00 AM",
+          "duration": "1 hour",
+          "notes": "Pack, checkout by 11AM · Store luggage if needed",
+          "links": {},
+          "area": "Kawaramachi",
+          "distance_from_hotel": {
+            "text": "0 min (at hotel)",
+            "minutes": 0,
+            "mode": "walk"
+          },
+          "priority": "must",
+          "booking_status": "booked",
+          "icon": "hotel"
+        },
+        {
+          "id": "kyoto_train_osaka",
+          "name": "Train to Osaka",
+          "category": "Logistics",
+          "type": "Train",
+          "day": 4,
+          "start_time": "1:00 PM",
+          "duration": "30 min",
+          "links": {},
+          "area": "Kyoto Station",
+          "distance_from_hotel": {
+            "text": "15 min walk",
+            "minutes": 15,
+            "mode": "walk"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-26",
+          "icon": "transit",
+          "coordinates": {
+            "lat": 34.9858,
+            "lng": 135.7588
+          },
+          "end_time": "1:30 PM",
+          "duration_minutes": 30,
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "logistics"
+          ],
+          "energy_cost": "low",
+          "fallback": null,
+          "transport_from_previous": {
+            "from": "Arashiyama",
+            "mode": "train",
+            "duration_minutes": 15
+          }
+        }
+      ],
+      "hourly_schedule_templates": [
+        {
+          "id": "kyoto_day1",
+          "label": "Day 7 — Oct 23 (Tokyo → Kyoto)",
+          "blocks": [
+            {
+              "time": "11:00",
+              "title": "Shinkansen Tokyo → Kyoto",
+              "category": "Transit"
+            },
+            {
+              "time": "15:00",
+              "title": "Hotel Check-in + Nishiki Market snack",
+              "category": "Check-in"
+            },
+            {
+              "time": "17:00",
+              "title": "Kiyomizu-dera (sunset)",
+              "category": "Sightseeing"
+            },
+            {
+              "time": "18:30",
+              "title": "Sannenzaka → Yasaka Pagoda → Gion",
+              "category": "Sightseeing"
+            }
+          ]
+        },
+        {
+          "id": "kyoto_day2",
+          "label": "Day 8 — Oct 24 (Gion + Culture)",
+          "blocks": [
+            {
+              "time": "12:00",
+              "title": "Kimono Tea Ceremony & Samurai Experience (Value Ticket)",
+              "category": "Cultural"
+            },
+            {
+              "time": "15:00",
+              "title": "Nishiki Market",
+              "category": "Food / Sightseeing"
+            },
+            {
+              "time": "17:30",
+              "title": "Gion District",
+              "category": "Sightseeing"
+            },
+            {
+              "time": "19:30",
+              "title": "Hanamikoji Street",
+              "category": "Sightseeing"
+            }
+          ]
+        },
+        {
+          "id": "kyoto_day3",
+          "label": "Day 9 — Oct 25 (Fushimi Inari + teamLab Biovortex)",
+          "blocks": [
+            {
+              "time": "08:30",
+              "title": "Fushimi Inari Shrine",
+              "category": "Sightseeing"
+            },
+            {
+              "time": "11:00",
+              "title": "Lunch",
+              "category": "Food"
+            },
+            {
+              "time": "14:00",
+              "title": "teamLab Biovortex Kyoto",
+              "category": "Experience"
+            }
+          ]
+        },
+        {
+          "id": "kyoto_day4",
+          "label": "Day 10 — Oct 26 (Arashiyama + Osaka)",
+          "blocks": [
+            {
+              "time": "08:30",
+              "title": "Arashiyama Bamboo Grove",
+              "category": "Sightseeing"
+            },
+            {
+              "time": "12:30",
+              "title": "Lunch near Arashiyama",
+              "category": "Food"
+            },
+            {
+              "time": "13:00",
+              "title": "Train to Osaka",
+              "category": "Transit"
+            }
+          ]
+        }
+      ],
+      "day_summaries": {
+        "1": {
+          "focus": "Arrive Kyoto + Higashiyama sunset",
+          "energy": "medium",
+          "transport": "shinkansen + bus + walk",
+          "vibe": "Sunset at Kiyomizu-dera, then evening in Gion",
+          "day_type": "travel_light"
+        },
+        "2": {
+          "focus": "Central Kyoto + Gion",
+          "energy": "medium",
+          "transport": "walk-heavy",
+          "vibe": "Tea ceremony, samurai swords, and geisha streets",
+          "day_type": "full_day"
+        },
+        "3": {
+          "focus": "Fushimi + teamLab Biovortex",
+          "energy": "medium",
+          "transport": "metro-light",
+          "vibe": "Thousands of torii gates, then immersive digital art",
+          "day_type": "chill"
+        },
+        "4": {
+          "focus": "Arashiyama → Osaka",
+          "energy": "medium",
+          "transport": "train + transfer",
+          "vibe": "Bamboo forest morning, then onward to Osaka",
+          "day_type": "travel_light"
+        }
+      },
+      "recommended_food_spots": [
+        {
+          "area": "Nishiki / Kawaramachi",
+          "spots": [
+            {
+              "name": "Nishiki Market stalls",
+              "type": "Street food sampler",
+              "vibe": "Kyoto's kitchen — matcha dango, tsukemono, soy milk donuts",
+              "price_range": "¥200–800 per item",
+              "maps": "https://maps.google.com/?q=Nishiki+Market+Kyoto",
+              "meal": "snack"
+            },
+            {
+              "name": "Musubi Café",
+              "type": "Kyoto-style obanzai (home cooking)",
+              "vibe": "Seasonal small plates — calm, beautiful, very Kyoto",
+              "price_range": "¥1,500–2,500",
+              "maps": "https://maps.google.com/?q=Musubi+Cafe+Kyoto",
+              "meal": "lunch"
+            }
+          ]
+        },
+        {
+          "area": "Gion / Higashiyama",
+          "spots": [
+            {
+              "name": "Gion Kappa Sushi",
+              "type": "Conveyor belt sushi",
+              "vibe": "Fun, affordable sushi near the geisha district",
+              "price_range": "¥1,000–2,000",
+              "maps": "https://maps.google.com/?q=Kappa+Sushi+Gion+Kyoto",
+              "meal": "dinner"
+            },
+            {
+              "name": "% Arabica Higashiyama",
+              "type": "Coffee",
+              "vibe": "World-famous latte with a view of Yasaka Pagoda",
+              "price_range": "¥500–700",
+              "maps": "https://maps.google.com/?q=%25+Arabica+Higashiyama+Kyoto",
+              "meal": "snack"
+            },
+            {
+              "name": "Nishiki Warai",
+              "type": "Okonomiyaki",
+              "vibe": "Kyoto-style savory pancake — lighter than Osaka version",
+              "price_range": "¥1,000–1,500",
+              "maps": "https://maps.google.com/?q=Nishiki+Warai+Kyoto",
+              "meal": "dinner"
+            }
+          ]
+        },
+        {
+          "area": "Arashiyama",
+          "spots": [
+            {
+              "name": "Arashiyama Yoshimura",
+              "type": "Handmade soba",
+              "vibe": "River-view soba noodles — perfect post-bamboo-forest lunch",
+              "price_range": "¥1,200–2,000",
+              "maps": "https://maps.google.com/?q=Arashiyama+Yoshimura+Kyoto",
+              "meal": "lunch"
+            }
+          ]
+        }
+      ],
+      "map_center": {
+        "lat": 35.004,
+        "lng": 135.769
+      }
+    },
+    {
+      "id": "city_osaka",
+      "city": "Osaka",
+      "country": "Japan",
+      "dates": {
+        "arrival": "2026-10-26",
+        "departure": "2026-10-29"
+      },
+      "stay": {
+        "hotel_name": "Hotel Hankyu RESPIRE OSAKA",
+        "hotel_link": "https://www.hankyu-hotel.com/en/hotels/respire_osaka",
+        "address": "Kita-ku, Ofukacho 1-1, Osaka 530-0011",
+        "phone": "+81 6 6372 8006",
+        "checkin": "Oct 26 · from 3:00 PM",
+        "checkout": "Oct 28 · by 12:00 PM",
+        "confirmation": "5163.111.915",
+        "pin": "4732",
+        "room_type": "1 Triple Room + 2 Double Rooms",
+        "nights": 2,
+        "price": {
+          "amount": 1087,
+          "currency": "USD"
+        },
+        "notes": "3 rooms · 7 guests · Rooms requested close together · Arrive 11AM-12PM"
+      },
+      "city_ui": {
+        "hero_subtitle": "Food, fun, Pokémon, and neon nights.",
+        "hero_illustration": [
+          "Neon Glow",
+          "Ramen Icon",
+          "Sakura Petals"
+        ]
+      },
+      "activities": [
+        {
+          "id": "osaka_hotel_checkin",
+          "name": "Hotel Check-in (Hotel Hankyu RESPIRE OSAKA)",
+          "category": "Logistics",
+          "type": "Logistics",
+          "day": 1,
+          "date": "2026-10-26",
+          "start_time": "TBD",
+          "end_time": "",
+          "duration": "",
+          "notes": "Check-in time TBD · Hotel Hankyu RESPIRE OSAKA",
+          "links": {
+            "website": "https://www.hankyu-hotel.com/en/hotels/respire_osaka"
+          },
+          "area": "Osaka Umeda",
+          "distance_from_hotel": {
+            "text": "0 min (at hotel)",
+            "minutes": 0,
+            "mode": "walk"
+          },
+          "priority": "must",
+          "booking_status": "not_booked",
+          "icon": "hotel"
+        },
+        {
+          "id": "osaka_dotonbori_arrival",
+          "name": "Dotonbori Night (Arrival)",
+          "category": "Sightseeing",
+          "type": "Neighborhood",
+          "day": 1,
+          "start_time": "7:00 PM",
+          "duration": "2-3 hours",
+          "details": [
+            "Ebisu Bridge",
+            "Don Quijote"
+          ],
+          "links": {
+            "website": "https://www.google.com/search?q=Dotonbori+Osaka",
+            "map": "https://maps.google.com/?q=Dotonbori+Osaka"
+          },
+          "area": "Dotonbori",
+          "distance_from_hotel": {
+            "text": "15 min train",
+            "minutes": 15,
+            "mode": "train"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-26",
+          "icon": "neon",
+          "coordinates": {
+            "lat": 34.6687,
+            "lng": 135.5013
+          },
+          "end_time": "9:00 PM",
+          "duration_minutes": 150,
+          "tags": [
+            "outdoor",
+            "walkable",
+            "food",
+            "nighttime",
+            "photo-spot",
+            "iconic",
+            "free"
+          ],
+          "energy_cost": "medium",
+          "fallback": {
+            "if_rain": "Arcade-covered Shinsaibashi-suji is one block north — same vibe, no rain",
+            "if_tired": "Quick Glico sign photo + one street food item, then hotel"
+          },
+          "transport_from_previous": {
+            "from": "Hotel (Umeda)",
+            "mode": "train",
+            "duration_minutes": 15
+          }
+        },
+        {
+          "id": "osaka_castle",
+          "name": "Osaka Castle",
+          "category": "Sightseeing",
+          "type": "Landmark",
+          "day": 2,
+          "start_time": "10:00 AM",
+          "duration": "2-3 hours",
+          "links": {
+            "website": "https://www.google.com/search?q=Osaka+Castle",
+            "map": "https://maps.google.com/?q=Osaka+Castle"
+          },
+          "area": "Chūō-ku",
+          "distance_from_hotel": {
+            "text": "15 min train",
+            "minutes": 15,
+            "mode": "train"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-27",
+          "icon": "castle",
+          "coordinates": {
+            "lat": 34.6873,
+            "lng": 135.5262
+          },
+          "end_time": "12:00 PM",
+          "duration_minutes": 150,
+          "tags": [
+            "outdoor",
+            "cultural",
+            "photo-spot",
+            "iconic",
+            "walkable"
+          ],
+          "energy_cost": "medium",
+          "fallback": {
+            "if_rain": "Castle interior museum is indoors — skip the park walk and enter directly",
+            "if_tired": "View from outside only + explore Jo-Terrace Osaka (shops at gate)"
+          },
+          "transport_from_previous": {
+            "from": "Hotel (Umeda)",
+            "mode": "train",
+            "duration_minutes": 15
+          }
+        },
+        {
+          "id": "osaka_pokemon",
+          "name": "Pokémon Center Osaka",
+          "category": "Shopping",
+          "type": "Store",
+          "day": 2,
+          "start_time": "2:00 PM",
+          "duration": "1–2 hours",
+          "links": {
+            "website": "https://www.google.com/search?q=Pokemon+Center+Osaka",
+            "map": "https://maps.google.com/?q=Pokemon+Center+Osaka"
+          },
+          "area": "Shinsaibashi",
+          "distance_from_hotel": {
+            "text": "15 min train",
+            "minutes": 15,
+            "mode": "train"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-27",
+          "icon": "pokeball",
+          "coordinates": {
+            "lat": 34.674,
+            "lng": 135.5021
+          },
+          "end_time": "3:00 PM",
+          "duration_minutes": 90,
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "shopping",
+            "kid-friendly"
+          ],
+          "energy_cost": "low",
+          "fallback": null,
+          "transport_from_previous": {
+            "from": "Osaka Castle",
+            "mode": "train",
+            "duration_minutes": 10
+          }
+        },
+        {
+          "id": "osaka_kobe",
+          "name": "Kobe Steak Ishida — LINKS UMEDA",
+          "category": "Food",
+          "type": "Dinner",
+          "day": 2,
+          "start_time": "8:00 PM",
+          "duration": "2h",
+          "price": {
+            "amount": 1111.24,
+            "currency": "USD",
+            "per_person": false,
+            "approximate": false,
+            "status": "paid"
+          },
+          "notes": "ID 596212 · 7 adults · ¥23,100 × 7 + ¥550 garlic rice × 7 + 10% service = ¥182,105 · PAID · Oct 27 · 20:00 JST · Arrive on time (cancelled if 15min late)",
+          "links": {
+            "website": "https://kobebeef-ishida.com",
+            "map": "https://maps.google.com/?q=Kobe+Steak+Ishida+LINKS+UMEDA+Osaka"
+          },
+          "area": "Umeda",
+          "distance_from_hotel": {
+            "text": "15 min walk",
+            "minutes": 15,
+            "mode": "walk"
+          },
+          "priority": "must",
+          "booking_status": "booked",
+          "date": "2026-10-27",
+          "icon": "food",
+          "coordinates": {
+            "lat": 34.695,
+            "lng": 135.193
+          },
+          "end_time": "9:00 PM",
+          "duration_minutes": 300,
+          "tags": [
+            "day-trip",
+            "food",
+            "reservation-required",
+            "iconic"
+          ],
+          "energy_cost": "high",
+          "fallback": {
+            "if_rain": "Kobe is still fine — restaurant is indoors. Skip waterfront walk",
+            "if_tired": "Cancel Kobe trip — eat wagyu at a local Osaka restaurant instead"
+          },
+          "transport_from_previous": {
+            "from": "Ramen Class (Kitahorie)",
+            "mode": "train",
+            "duration_minutes": 40
+          },
+          "reservation_code": "596212",
+          "invoice": "Mycon1537900663",
+          "cancel_by": "Oct 24 · 3:00 PM JST (3 days before — NO REFUND after)"
+        },
+        {
+          "id": "osaka_karaoke",
+          "name": "Karaoke Night",
+          "category": "Nightlife",
+          "type": "Karaoke",
+          "day": 2,
+          "start_time": "10:30 PM",
+          "duration": "2 hours",
+          "links": {
+            "website": "https://www.google.com/search?q=karaoke+osaka",
+            "map": "https://maps.google.com/?q=Karaoke+Osaka"
+          },
+          "area": "Namba",
+          "distance_from_hotel": {
+            "text": "15 min train",
+            "minutes": 15,
+            "mode": "train"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-27",
+          "icon": "nightlife",
+          "coordinates": {
+            "lat": 34.6654,
+            "lng": 135.5013
+          },
+          "end_time": "11:00 PM",
+          "duration_minutes": 150,
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "nighttime",
+            "group-fun"
+          ],
+          "energy_cost": "medium",
+          "fallback": {
+            "if_tired": "One-hour session instead of two. Or swap for a chill izakaya"
+          },
+          "transport_from_previous": {
+            "from": "Pokémon Center Osaka",
+            "mode": "walk",
+            "duration_minutes": 10
+          }
+        },
+        {
+          "id": "osaka_ramen",
+          "name": "Ramen and Gyoza Cooking Class",
+          "category": "Food",
+          "type": "Class",
+          "day": 3,
+          "description": "Hand-craft your own bowl from scratch",
+          "start_time": "11:30 AM",
+          "end_time": "2:00 PM",
+          "duration": "2h 30m",
+          "price": {
+            "amount": 524.37,
+            "currency": "USD",
+            "per_person": false,
+            "approximate": false,
+            "status": "pay_later"
+          },
+          "reservation_code": "1427934933",
+          "notes": "Ref 1427934933 · Conf 1810158293 · Sakura Cook · $74.91 × 7 adults · Card auto-charged Oct 26 · Cancel 48h before for full refund",
+          "details": [
+            "All ingredients for the class (lunch or dinner)",
+            "Printed recipe to take home",
+            "Seasonal dessert",
+            "Use of kitchen utensils and equipment"
+          ],
+          "exclusions": [
+            "Hotel pickup and drop-off",
+            "Personal expenses or additional drinks"
+          ],
+          "location": "1 Chome-17-20 Kitahorie, Nishi Ward, Osaka",
+          "links": {
+            "website": "https://www.tripadvisor.com/AttractionProductReview-g298566-d19773994-Ramen_and_Gyoza_Cooking_Class_in_Osaka-Osaka_Osaka_Prefecture_Kinki.html",
+            "map": "https://maps.google.com/?q=1+Chome-17-20+Kitahorie,+Osaka"
+          },
+          "area": "Nishi-ku (Kitahorie)",
+          "distance_from_hotel": {
+            "text": "20 min train",
+            "minutes": 20,
+            "mode": "train"
+          },
+          "priority": "must",
+          "booking_status": "booked",
+          "date": "2026-10-28",
+          "icon": "food",
+          "coordinates": {
+            "lat": 34.6735,
+            "lng": 135.491
+          },
+          "duration_minutes": 150,
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "reservation-required",
+            "food",
+            "group-fun",
+            "immersive"
+          ],
+          "energy_cost": "medium",
+          "fallback": {
+            "if_tired": "Cannot skip — reservation is booked and paid. It is hands-on but seated"
+          },
+          "transport_from_previous": {
+            "from": "Hotel (Umeda)",
+            "mode": "train",
+            "duration_minutes": 15
+          },
+          "confirmation_code": "1810158293",
+          "operator": "Sakura Cook",
+          "cancel_by": "Oct 26 · 11:30 AM JST (48h before)"
+        },
+        {
+          "id": "osaka_kuromon",
+          "name": "Kuromon Market",
+          "category": "Food",
+          "type": "Market",
+          "day": 3,
+          "start_time": "2:30 PM",
+          "duration": "1-2 hours",
+          "links": {
+            "website": "https://www.google.com/search?q=Kuromon+Market+Osaka",
+            "map": "https://maps.google.com/?q=Kuromon+Market+Osaka"
+          },
+          "area": "Namba",
+          "distance_from_hotel": {
+            "text": "15 min train",
+            "minutes": 15,
+            "mode": "train"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-28",
+          "icon": "food",
+          "coordinates": {
+            "lat": 34.6688,
+            "lng": 135.507
+          },
+          "end_time": "4:00 PM",
+          "duration_minutes": 90,
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "food",
+            "walkable",
+            "iconic"
+          ],
+          "energy_cost": "medium",
+          "fallback": {
+            "if_tired": "Pick 2–3 stalls for sashimi and tamagoyaki, skip the full walk"
+          },
+          "transport_from_previous": {
+            "from": "Hotel (Umeda)",
+            "mode": "train",
+            "duration_minutes": 15
+          }
+        },
+        {
+          "id": "osaka_shinkansen_tokyo",
+          "name": "Shinkansen to Tokyo",
+          "category": "Logistics",
+          "type": "Train",
+          "day": 3,
+          "start_time": "5:00 PM",
+          "duration": "~2.5 hours",
+          "links": {},
+          "area": "Shin-Osaka",
+          "distance_from_hotel": {
+            "text": "5 min walk",
+            "minutes": 5,
+            "mode": "walk"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-28",
+          "icon": "transit",
+          "coordinates": {
+            "lat": 34.7334,
+            "lng": 135.5001
+          },
+          "end_time": "6:30 PM",
+          "duration_minutes": 150,
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "logistics"
+          ],
+          "energy_cost": "low",
+          "fallback": null,
+          "transport_from_previous": {
+            "from": "Namba area",
+            "mode": "train",
+            "duration_minutes": 15
+          }
+        }
+      ],
+      "hourly_schedule_templates": [
+        {
+          "id": "osaka_day1",
+          "label": "Day 10 — Oct 26 (Arrival + Dotonbori)",
+          "blocks": [
+            {
+              "time": "14:00",
+              "title": "Hotel Check-in",
+              "category": "Check-in"
+            },
+            {
+              "time": "15:00",
+              "title": "Rest / Settle in",
+              "category": "Rest"
+            },
+            {
+              "time": "19:00",
+              "title": "Dotonbori Night",
+              "category": "Sightseeing / Food"
+            }
+          ]
+        },
+        {
+          "id": "osaka_day2",
+          "label": "Day 11 — Oct 27 (Osaka Core + Nightlife)",
+          "blocks": [
+            {
+              "time": "10:00",
+              "title": "Osaka Castle",
+              "category": "Sightseeing"
+            },
+            {
+              "time": "14:00",
+              "title": "Pokémon Center Osaka",
+              "category": "Shopping"
+            },
+            {
+              "time": "18:00",
+              "title": "Dinner",
+              "category": "Food"
+            },
+            {
+              "time": "22:30",
+              "title": "Karaoke Night",
+              "category": "Nightlife"
+            }
+          ]
+        },
+        {
+          "id": "osaka_day3",
+          "label": "Day 12 — Oct 28 (Ramen + Kobe)",
+          "blocks": [
+            {
+              "time": "11:30",
+              "title": "Ramen and Gyoza Cooking Class",
+              "category": "Food"
+            },
+            {
+              "time": "14:30",
+              "title": "Train to Kobe",
+              "category": "Transit"
+            },
+            {
+              "time": "16:00",
+              "title": "Kobe Beef Steak Ishida",
+              "category": "Food"
+            },
+            {
+              "time": "19:00",
+              "title": "Return to Osaka",
+              "category": "Transit"
+            }
+          ]
+        },
+        {
+          "id": "osaka_day4",
+          "label": "Day 13 — Oct 29 (Osaka Flex + Tokyo Transfer)",
+          "blocks": [
+            {
+              "time": "10:00",
+              "title": "Kuromon Market",
+              "category": "Food"
+            },
+            {
+              "time": "12:30",
+              "title": "Free time / last Osaka walk",
+              "category": "Explore"
+            },
+            {
+              "time": "16:00",
+              "title": "Shinkansen Osaka → Tokyo",
+              "category": "Transit"
+            }
+          ]
+        }
+      ],
+      "day_summaries": {
+        "1": {
+          "focus": "Dotonbori",
+          "energy": "low",
+          "transport": "metro-light",
+          "vibe": "Arrival night — neon lights and street food",
+          "day_type": "travel_light"
+        },
+        "2": {
+          "focus": "Central Osaka",
+          "energy": "high",
+          "transport": "metro-heavy",
+          "vibe": "Castle, Pokémon, karaoke, and cocktails",
+          "day_type": "full_day"
+        },
+        "3": {
+          "focus": "Nishi-ku + Kobe",
+          "energy": "high",
+          "transport": "train-heavy",
+          "vibe": "Cook ramen, then train to Kobe for wagyu",
+          "day_type": "full_day"
+        },
+        "4": {
+          "focus": "Namba → Shin-Osaka",
+          "energy": "low",
+          "transport": "metro + shinkansen",
+          "vibe": "Last market run, then bullet train to Tokyo",
+          "day_type": "travel_light"
+        }
+      },
+      "recommended_food_spots": [
+        {
+          "area": "Dotonbori / Namba",
+          "spots": [
+            {
+              "name": "Ichiran Dotonbori",
+              "type": "Tonkotsu ramen",
+              "vibe": "Solo booth ramen — customize everything on a paper form",
+              "price_range": "¥1,000–1,500",
+              "maps": "https://maps.google.com/?q=Ichiran+Dotonbori",
+              "meal": "lunch"
+            },
+            {
+              "name": "Takoyaki Wanaka",
+              "type": "Takoyaki (octopus balls)",
+              "vibe": "Crispy outside, creamy inside — the Osaka street food king",
+              "price_range": "¥500–800",
+              "maps": "https://maps.google.com/?q=Takoyaki+Wanaka+Namba",
+              "meal": "snack"
+            },
+            {
+              "name": "Kushikatsu Daruma",
+              "type": "Kushikatsu (deep-fried skewers)",
+              "vibe": "No double-dipping! Iconic Osaka comfort food since 1929",
+              "price_range": "¥1,500–3,000",
+              "maps": "https://maps.google.com/?q=Kushikatsu+Daruma+Shinsekai",
+              "meal": "dinner"
+            }
+          ]
+        },
+        {
+          "area": "Kuromon Market",
+          "spots": [
+            {
+              "name": "Kuromon Market stalls",
+              "type": "Fresh seafood & street food",
+              "vibe": "Osaka's kitchen — uni, crab, tamagoyaki, and fresh fruit on sticks",
+              "price_range": "¥500–3,000",
+              "maps": "https://maps.google.com/?q=Kuromon+Market+Osaka",
+              "meal": "breakfast"
+            }
+          ]
+        },
+        {
+          "area": "Kobe (day trip)",
+          "spots": [
+            {
+              "name": "Mouriya Honten",
+              "type": "Kobe beef teppanyaki",
+              "vibe": "Melt-in-your-mouth A5 wagyu grilled in front of you",
+              "price_range": "¥5,000–15,000",
+              "maps": "https://maps.google.com/?q=Mouriya+Honten+Kobe",
+              "meal": "lunch"
+            }
+          ]
+        }
+      ],
+      "map_center": {
+        "lat": 34.6687,
+        "lng": 135.5013
+      }
+    },
+    {
+      "id": "city_tokyo_shinjuku",
+      "city": "Tokyo (Shinjuku)",
+      "country": "Japan",
+      "dates": {
+        "arrival": "2026-10-28",
+        "departure": "2026-10-31"
+      },
+      "stay": {
+        "hotel_name": "HOTEL AMANEK Shinjuku Kabukicho",
+        "hotel_link": "https://www.booking.com/hotel/jp/amanek-shinjuku-kabukicho.html",
+        "address": "2-24-10 Kabukicho, Shinjuku-ku, Tokyo 160-0021",
+        "phone": "+81 3 6265 9140",
+        "checkin": "Oct 28 · 3:00 PM – midnight",
+        "checkout": "Oct 31 · by 11:00 AM",
+        "confirmation": "6348.112.543",
+        "pin": "0272",
+        "room_type": "1 Corner Triple (3 adults) + 2 Standard Queen (2 adults each)",
+        "nights": 3,
+        "price": {
+          "amount": 2642,
+          "currency": "USD"
+        },
+        "notes": "3 rooms · 7 guests · Free WiFi · Kabukicho district · Cancel by Oct 21 (7 days before)"
+      },
+      "city_ui": {
+        "hero_subtitle": "Grand finale — shopping, nightlife, and goodbye bites.",
+        "hero_illustration": [
+          "Neon Signs",
+          "Lantern Glow",
+          "Sakura Petals"
+        ]
+      },
+      "activities": [
+        {
+          "id": "tokyo_n_day1_tbd",
+          "name": "Free Day — TBD",
+          "category": "Explore",
+          "type": "Free Time",
+          "day": 1,
+          "date": "2026-10-29",
+          "start_time": "All Day",
+          "duration": "All Day",
+          "notes": "Extra day in Tokyo — plans TBD. Explore Shinjuku or rest.",
+          "links": {},
+          "area": "Shinjuku",
+          "distance_from_hotel": {
+            "text": "0 min (at hotel)",
+            "minutes": 0,
+            "mode": "walk"
+          },
+          "priority": "flex",
+          "booking_status": "planned",
+          "icon": "explore"
+        },
+        {
+          "id": "tokyo_n_hardoff_shinjuku",
+          "name": "Hard Off — Shinjuku Marui Men",
+          "category": "Shopping",
+          "type": "Secondhand",
+          "day": 1,
+          "start_time": "TBD",
+          "duration": "1-2 hours",
+          "duration_minutes": 90,
+          "date": "2026-10-29",
+          "area": "Shinjuku",
+          "priority": "nice_to_have",
+          "booking_status": "planned",
+          "icon": "shopping",
+          "notes": "新宿マルイメン 5階 · 5 Chome-16-4 Shinjuku, Shinjuku City · Secondhand electronics, instruments, collectibles",
+          "links": {
+            "website": "https://www.hardoff.co.jp/",
+            "map": "https://maps.google.com/?q=5+Chome-16-4+Shinjuku+Shinjuku+City+Tokyo+160-0022"
+          },
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "shopping"
+          ],
+          "energy_cost": "low"
+        },
+        {
+          "id": "tokyo_n_gyoen",
+          "name": "Shinjuku Gyoen National Garden",
+          "category": "Sightseeing",
+          "type": "Garden",
+          "day": 3,
+          "start_time": "10:00 AM",
+          "duration": "1 hour",
+          "notes": "Calm green reset before the city rush — autumn foliage may be starting",
+          "links": {
+            "website": "https://fng.or.jp/shinjuku/en/",
+            "map": "https://maps.google.com/?q=Shinjuku+Gyoen+National+Garden"
+          },
+          "area": "Shinjuku",
+          "distance_from_hotel": {
+            "text": "10 min walk",
+            "minutes": 10,
+            "mode": "walk"
+          },
+          "priority": "nice_to_have",
+          "booking_status": "planned",
+          "date": "2026-10-30",
+          "icon": "sightseeing",
+          "coordinates": {
+            "lat": 35.6852,
+            "lng": 139.71
+          },
+          "end_time": "10:00 AM",
+          "duration_minutes": 60,
+          "tags": [
+            "outdoor",
+            "walkable",
+            "calm",
+            "photo-spot",
+            "iconic"
+          ],
+          "energy_cost": "low",
+          "fallback": {
+            "if_rain": "Skip — save it for a clear day or head straight to Ginza",
+            "if_tired": "Skip and sleep in — Ginza starts at 10:30"
+          },
+          "transport_from_previous": {
+            "from": "Hotel (Shinjuku)",
+            "mode": "walk",
+            "duration_minutes": 10
+          }
+        },
+        {
+          "id": "tokyo_n_omoide",
+          "name": "Omoide Yokocho",
+          "category": "Food",
+          "type": "Neighborhood",
+          "day": 2,
+          "start_time": "7:00 PM",
+          "duration": "2 hours",
+          "links": {
+            "website": "https://www.google.com/search?q=Omoide+Yokocho",
+            "map": "https://maps.google.com/?q=Omoide+Yokocho"
+          },
+          "area": "Shinjuku",
+          "distance_from_hotel": {
+            "text": "5 min walk",
+            "minutes": 5,
+            "mode": "walk"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-30",
+          "icon": "food",
+          "coordinates": {
+            "lat": 35.6945,
+            "lng": 139.6986
+          },
+          "end_time": "9:00 PM",
+          "duration_minutes": 120,
+          "tags": [
+            "outdoor",
+            "food",
+            "nighttime",
+            "photo-spot",
+            "iconic",
+            "walkable"
+          ],
+          "energy_cost": "medium",
+          "fallback": {
+            "if_rain": "Many stalls have counter seating with cover — still works in light rain. Heavy rain: eat in Shinjuku station restaurants",
+            "if_tired": "Pick one stall for yakitori and move on — no need to explore the full alley"
+          },
+          "transport_from_previous": {
+            "from": "Pokémon Center Ikebukuro",
+            "mode": "train",
+            "duration_minutes": 15
+          }
+        },
+        {
+          "id": "tokyo_n_bookoff",
+          "name": "Rehello by BOOKOFF 麻布十番店",
+          "category": "Shopping",
+          "type": "Secondhand",
+          "day": 2,
+          "start_time": "7:00 PM",
+          "end_time": "9:00 PM",
+          "duration": "1-2 hours",
+          "duration_minutes": 90,
+          "date": "2026-10-30",
+          "area": "Azabu-Juban",
+          "priority": "nice_to_have",
+          "booking_status": "planned",
+          "icon": "shopping",
+          "notes": "Rehello by BOOKOFF — secondhand fashion, bags, accessories · Azabu-Juban",
+          "links": {
+            "website": "https://www.google.com/search?q=Rehello+by+BOOKOFF+%E9%BA%BB%E5%B8%83%E5%8D%81%E7%95%AA%E5%BA%97",
+            "map": "https://maps.google.com/?q=Rehello+by+BOOKOFF+Azabujuban+Tokyo"
+          },
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "shopping"
+          ],
+          "energy_cost": "low"
+        },
+        {
+          "id": "tokyo_n_bar_centifolia",
+          "name": "Bar Centifolia",
+          "category": "Nightlife",
+          "type": "Speakeasy",
+          "day": 2,
+          "start_time": "9:30 PM",
+          "duration": "1-2 hours",
+          "links": {
+            "website": "https://www.google.com/search?q=Bar+Centifolia+Tokyo",
+            "map": "https://maps.google.com/?q=Bar+Centifolia+Tokyo"
+          },
+          "area": "Shinjuku",
+          "distance_from_hotel": {
+            "text": "5 min walk",
+            "minutes": 5,
+            "mode": "walk"
+          },
+          "priority": "nice_to_have",
+          "booking_status": "not_booked",
+          "date": "2026-10-30",
+          "icon": "nightlife",
+          "coordinates": {
+            "lat": 35.6938,
+            "lng": 139.701
+          },
+          "end_time": "10:30 PM",
+          "duration_minutes": 90,
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "nighttime"
+          ],
+          "energy_cost": "low",
+          "fallback": {
+            "if_tired": "Skip — hotel is 5 min walk. End the night early before departure day"
+          },
+          "transport_from_previous": {
+            "from": "Omoide Yokocho",
+            "mode": "walk",
+            "duration_minutes": 5
+          }
+        },
+        {
+          "id": "tokyo_n_departure",
+          "name": "Pack + Travel to HND + Fly Home",
+          "category": "Logistics",
+          "type": "Departure",
+          "day": 3,
+          "start_time": "10:00 AM",
+          "duration": "Full Day",
+          "notes": "Air Canada AC 2 · HND 6:50 PM → RDU 9:51 PM via YYZ · Ref CCS2UL · Yamil, Jurializ, Jessy, Hilary · Seat selection complimentary",
+          "links": {
+            "map": "https://maps.google.com/?q=Haneda+Airport+Tokyo"
+          },
+          "area": "Shinjuku",
+          "distance_from_hotel": {
+            "text": "0 min (at hotel)",
+            "minutes": 0,
+            "mode": "walk"
+          },
+          "priority": "must",
+          "booking_status": "booked",
+          "date": "2026-10-31",
+          "icon": "transit",
+          "coordinates": {
+            "lat": 35.6949,
+            "lng": 139.7024
+          },
+          "end_time": "9:51 PM",
+          "duration_minutes": 720,
+          "tags": [
+            "indoor",
+            "rain-safe",
+            "logistics"
+          ],
+          "energy_cost": "medium",
+          "fallback": null,
+          "transport_from_previous": {
+            "from": "Hotel (Shinjuku)",
+            "mode": "walk",
+            "duration_minutes": 0
+          }
+        }
+      ],
+      "hourly_schedule_templates": [
+        {
+          "id": "tokyo_n_day1",
+          "label": "Day 14 — Oct 30 (Gyoen + Explore + Finale)",
+          "blocks": [
+            {
+              "time": "09:00",
+              "title": "Shinjuku Gyoen National Garden",
+              "category": "Sightseeing"
+            },
+            {
+              "time": "10:30",
+              "title": "Free Afternoon / Explore Shinjuku",
+              "category": "Explore"
+            },
+            {
+              "time": "19:00",
+              "title": "Omoide Yokocho",
+              "category": "Food / Nightlife"
+            },
+            {
+              "time": "21:30",
+              "title": "Bar Centifolia",
+              "category": "Nightlife"
+            }
+          ]
+        },
+        {
+          "id": "tokyo_n_day2",
+          "label": "Day 15 — Oct 31 (Departure)",
+          "blocks": [
+            {
+              "time": "10:00",
+              "title": "Pack",
+              "category": "Rest"
+            },
+            {
+              "time": "13:00",
+              "title": "Travel to HND",
+              "category": "Transit"
+            },
+            {
+              "time": "18:50",
+              "title": "Flight: HND → RDU (AC 2 · CCS2UL)",
+              "category": "Transit"
+            }
+          ]
+        }
+      ],
+      "day_summaries": {
+        "1": {
+          "focus": "Gyoen + Ginza + Ikebukuro + Shinjuku",
+          "energy": "high",
+          "transport": "metro-heavy",
+          "vibe": "Grand finale — shopping spree and farewell drinks",
+          "day_type": "full_day"
+        },
+        "2": {
+          "focus": "Shinjuku → HND",
+          "energy": "low",
+          "transport": "airport transfer",
+          "vibe": "Pack up and fly home",
+          "day_type": "travel_light"
+        }
+      },
+      "recommended_food_spots": [
+        {
+          "area": "Shinjuku",
+          "spots": [
+            {
+              "name": "Fuunji",
+              "type": "Tsukemen (dipping ramen)",
+              "vibe": "Tiny counter shop with legendary broth — expect a line",
+              "price_range": "¥1,000–1,500",
+              "maps": "https://maps.google.com/?q=Fuunji+Shinjuku",
+              "meal": "lunch"
+            },
+            {
+              "name": "Omoide Yokocho stalls",
+              "type": "Yakitori & izakaya",
+              "vibe": "Smoky lantern-lit alley — point and order at any stall",
+              "price_range": "¥1,500–3,000",
+              "maps": "https://maps.google.com/?q=Omoide+Yokocho",
+              "meal": "dinner"
+            },
+            {
+              "name": "Shinjuku Gyoen Starbucks Roastery (nearby)",
+              "type": "Coffee & dessert",
+              "vibe": "After-garden coffee — or grab matcha soft serve from a street vendor",
+              "price_range": "¥500–800",
+              "maps": "https://maps.google.com/?q=Starbucks+Reserve+Roastery+Tokyo",
+              "meal": "snack"
+            }
+          ]
+        },
+        {
+          "area": "Ginza",
+          "spots": [
+            {
+              "name": "Ginza Kagari",
+              "type": "Tori Paitan ramen",
+              "vibe": "Creamy chicken broth ramen — Michelin-recognized, always a queue",
+              "price_range": "¥1,000–1,500",
+              "maps": "https://maps.google.com/?q=Ginza+Kagari",
+              "meal": "lunch"
+            },
+            {
+              "name": "Sushi Aoki",
+              "type": "Edomae sushi",
+              "vibe": "High-quality counter sushi without the ¥30k omakase price",
+              "price_range": "¥3,000–8,000",
+              "maps": "https://maps.google.com/?q=Sushi+Aoki+Ginza",
+              "meal": "lunch"
+            }
+          ]
+        },
+        {
+          "area": "Ikebukuro",
+          "spots": [
+            {
+              "name": "Ramen Misoya",
+              "type": "Miso ramen",
+              "vibe": "Rich Hokkaido-style miso — perfect post-Pokémon-Center fuel",
+              "price_range": "¥900–1,300",
+              "maps": "https://maps.google.com/?q=Ramen+Misoya+Ikebukuro",
+              "meal": "lunch"
+            }
+          ]
+        }
+      ],
+      "map_center": {
+        "lat": 35.6938,
+        "lng": 139.703
+      }
+    }
+  ],
+  "checklist": {
+    "activity_payments": [
+      {
+        "name": "Jessy",
+        "organizer": true,
+        "payment_history": []
+      },
+      {
+        "name": "Yamil",
+        "organizer": false,
+        "payment_history": [
+          {
+            "date": "2026-07-29",
+            "amount": 621.96,
+            "note": "Initial payment"
+          }
+        ]
+      },
+      {
+        "name": "Hilary",
+        "organizer": false,
+        "payment_history": [
+          {
+            "date": "2026-07-29",
+            "amount": 462,
+            "note": "Initial payment"
+          }
+        ]
+      },
+      {
+        "name": "Jurializ",
+        "organizer": false,
+        "payment_history": []
+      },
+      {
+        "name": "Carlos",
+        "organizer": false,
+        "payment_history": []
+      },
+      {
+        "name": "Frances",
+        "organizer": false,
+        "payment_history": []
+      }
+    ],
+    "reserve": [
+      {
+        "id": "res_flights",
+        "label": "Air Canada — RDU ↔ HND (Round Trip)",
+        "category": "Transport",
+        "notes": "Ref CCS2UL · Oct 17 outbound / Oct 31 return · Economy Standard · Yamil, Jurializ, Jessy, Hilary · $4,400 + $462.52 taxes · Seat selection complimentary · 4 travelers only (Jessy, Jurializ, Hilary, Yamil)",
+        "price": {
+          "amount": 4862.52,
+          "currency": "USD",
+          "per_person": false,
+          "approximate": false,
+          "status": "confirmed",
+          "travelers": 4,
+          "travelers_names": [
+            "Jessy",
+            "Jurializ",
+            "Hilary",
+            "Yamil"
+          ]
+        },
+        "link": "https://www.aircanada.com/aero/en/ca/flair/book/manage-booking.html",
+        "priority": "must",
+        "booking_status": "booked",
+        "payments": [
+          {
+            "name": "Jessy",
+            "organizer": true,
+            "payment_history": []
+          },
+          {
+            "name": "Yamil",
+            "organizer": false,
+            "payment_history": [
+              {
+                "date": "2026-07-29",
+                "amount": 1215.63,
+                "note": "Initial payment"
+              }
+            ]
+          },
+          {
+            "name": "Hilary",
+            "organizer": false,
+            "payment_history": [
+              {
+                "date": "2026-07-29",
+                "amount": 315.63,
+                "note": "Initial payment"
+              }
+            ]
+          },
+          {
+            "name": "Jurializ",
+            "organizer": false,
+            "payment_history": []
+          }
+        ]
+      },
+      {
+        "id": "res_jrpass",
+        "label": "JR Whole Japan Rail Pass (7-day Ordinary Adult)",
+        "category": "Transport",
+        "notes": "7-day Ordinary Adult · 7 travelers · $311.60/pp · Buy on Klook (cheaper than JRailPass)",
+        "price": {
+          "amount": 2181.2,
+          "currency": "USD",
+          "per_person": false,
+          "approximate": false,
+          "status": "confirmed"
+        },
+        "link": "https://www.klook.com/en-US/activity/6892-jr-pass-japan/",
+        "priority": "must",
+        "booking_status": "not_booked",
+        "guests_count": 7
+      },
+      {
+        "id": "res_teamlab_kyoto",
+        "label": "teamLab Biovortex Kyoto",
+        "category": "Experience",
+        "notes": "¥4,600/pp × 7 = ¥32,200 · Timed entry · Book in advance",
+        "price": {
+          "amount": 32200,
+          "currency": "JPY",
+          "per_person": false,
+          "approximate": false,
+          "status": "confirmed"
+        },
+        "link": "https://www.teamlab.art/e/kyoto/",
+        "priority": "must",
+        "booking_status": "not_booked",
+        "guests_count": 7
+      },
+      {
+        "id": "res_kimono",
+        "label": "Kimono Tea Ceremony & Samurai Experience — Value Ticket (Kyoto)",
+        "category": "Experience",
+        "notes": "Oct 24 · noon · 7 adults × ¥17,000 + ¥11,900 tax = ¥130,900 total",
+        "price": {
+          "amount": 799.98,
+          "currency": "USD",
+          "per_person": false,
+          "approximate": false,
+          "status": "confirmed"
+        },
+        "link": "https://mai-ko.com/tour/value-ticket-kimono-tea-ceremony-and-samurai-experience-combo-in-kyoto-for-couples-and-small-groups2/",
+        "priority": "must",
+        "booking_status": "booked"
+      },
+      {
+        "id": "res_ramen",
+        "label": "Ramen and Gyoza Cooking Class (Osaka)",
+        "category": "Experience",
+        "notes": "Oct 28 · 11:30 AM · Ref BR-1427934933",
+        "price": {
+          "amount": 524.37,
+          "currency": "USD",
+          "per_person": false,
+          "approximate": false,
+          "status": "confirmed"
+        },
+        "link": "https://www.tripadvisor.com/AttractionProductReview-g298566-d19773994-Ramen_and_Gyoza_Cooking_Class_in_Osaka-Osaka_Osaka_Prefecture_Kinki.html",
+        "priority": "must",
+        "booking_status": "booked"
+      },
+      {
+        "id": "res_kart",
+        "label": "Monkey Adventure Kart — Shibuya Crossing · Harajuku · Omotesando",
+        "category": "Experience",
+        "notes": "Oct 20 · 7:45 PM · Ref MAK-BKG-260726050008 · 7 × ¥16,000 = ¥112,000 · Bring IDP (Geneva 1949) + passport · Arrive 20 min early",
+        "price": {
+          "amount": 684.47,
+          "currency": "USD",
+          "per_person": false,
+          "approximate": false,
+          "status": "confirmed"
+        },
+        "link": "https://monkey-kart.com",
+        "priority": "must",
+        "booking_status": "booked"
+      },
+      {
+        "id": "res_bar_hopping",
+        "label": "Tokyo Bar Hopping Night Tour (Shinjuku)",
+        "category": "Experience",
+        "notes": "Oct 21 · Meet 6:20 PM · Black Pillar, next to Uniqlo Shinjuku Nishiguchi (exit D1) · Booking ID f0739df8 · PAID $709.32",
+        "price": {
+          "amount": 709.32,
+          "currency": "USD",
+          "per_person": false,
+          "approximate": false,
+          "status": "paid"
+        },
+        "link": "https://www.magical-trip.com/product/59afbefb-b0d9-4e10-9273-b6c59b81e345",
+        "priority": "must",
+        "booking_status": "booked"
+      },
+      {
+        "id": "res_kobe_beef",
+        "label": "Kobe Steak Ishida — LINKS UMEDA (Osaka)",
+        "category": "Food",
+        "notes": "Oct 27 · 8:00 PM · ID 596212 · 7 adults · ¥182,105 total (incl. 10% service) · PAID · Arrive on time",
+        "price": {
+          "amount": 1111.24,
+          "currency": "USD",
+          "per_person": false,
+          "approximate": true,
+          "status": "confirmed"
+        },
+        "link": "https://www.google.com/search?q=Kobe+Beef+Steak+Ishida+Ikutashinmichi",
+        "priority": "must",
+        "booking_status": "booked"
+      },
+      {
+        "id": "res_hotel_shibuya",
+        "label": "Noël Shibuya Once — Luxury Residence",
+        "category": "Hotel",
+        "notes": "Oct 18–23 · 5 nights · Conf 5451.487.160 · Check-in 4PM · Checkout 10AM · Casa Bella, Shibuya · All 7 guests · 5BR apartment",
+        "price": {
+          "amount": 5597,
+          "currency": "USD",
+          "per_person": false,
+          "approximate": true,
+          "status": "confirmed"
+        },
+        "link": "https://www.booking.com/hotel/jp/noel-shibuya.html",
+        "priority": "must",
+        "booking_status": "booked",
+        "cancel_by": "Sep 17, 2026 · 11:59 PM JST",
+        "guests": [
+          "Jessy",
+          "Jurializ",
+          "James",
+          "Frances",
+          "Hilary",
+          "Yamil",
+          "Carlos"
+        ],
+        "group": "shibuya",
+        "group_color": "#2a5cb8"
+      },
+      {
+        "id": "res_hotel_kyoto_fj",
+        "label": "Tokyu Stay Kyoto — Jessy & Jurializ",
+        "category": "Hotel",
+        "notes": "Oct 23–26 · 3 nights · Conf 6940.229.616 · 1 Superior Twin · 2 adults · Cancel free until Oct 9 · 50% fee within 14 days",
+        "booking_status": "booked",
+        "price": {
+          "amount": 1047,
+          "currency": "USD",
+          "per_person": false,
+          "approximate": true,
+          "status": "confirmed"
+        },
+        "link": null,
+        "cancel_by": "Oct 9, 2026 free · 50% fee Oct 10–Oct 22",
+        "_room_assignments": [
+          {
+            "guests": [
+              "Jessy",
+              "Jurializ"
+            ],
+            "room": "Superior Twin",
+            "cost": 949
+          }
+        ],
+        "guests": [
+          "Jessy",
+          "Jurializ"
+        ],
+        "group": "kyoto",
+        "group_color": "#286840"
+      },
+      {
+        "id": "res_hotel_kyoto_frances_james",
+        "label": "Kyoto Hotel · Frances & James (TBD)",
+        "category": "Hotel",
+        "booking_status": "not_booked",
+        "group": "kyoto",
+        "group_color": "#286840",
+        "price": {
+          "amount": null,
+          "currency": "USD",
+          "per_person": false,
+          "approximate": true,
+          "status": "tbd"
+        },
+        "notes": "Oct 23–26 · 3 nights · 2 adults · Booking separately",
+        "cancel_by": null,
+        "guests": [
+          "Frances",
+          "James"
+        ],
+        "link": null
+      },
+      {
+        "id": "res_hotel_kyoto_hyc",
+        "label": "Tokyu Stay Kyoto — Hilary, Yamil, Carlos",
+        "category": "Hotel",
+        "booking_status": "booked",
+        "price": {
+          "amount": 1047,
+          "currency": "USD",
+          "per_person": false,
+          "approximate": true,
+          "status": "confirmed"
+        },
+        "notes": "Oct 23–26 · 3 nights · Conf 6940.211.503 · 1 Deluxe Triple · 3 adults · Cancel free until Oct 9 · 50% fee within 14 days",
+        "cancel_by": "Oct 9, 2026 free · 50% fee within 14 days",
+        "_room_assignments": [
+          {
+            "guests": [
+              "Hilary",
+              "Yamil",
+              "Carlos"
+            ],
+            "room": "Deluxe Twin + Extra Bed",
+            "cost": 1008
+          }
+        ],
+        "link": null,
+        "guests": [
+          "Hilary",
+          "Yamil",
+          "Carlos"
+        ],
+        "group": "kyoto",
+        "group_color": "#286840"
+      },
+      {
+        "id": "res_hotel_osaka",
+        "label": "Hotel Hankyu RESPIRE OSAKA",
+        "category": "Hotel",
+        "notes": "Oct 26–28 · 2 nights · Conf 5163.111.915 · Check-in 3PM · Checkout 12PM · 3 rooms (1 triple + 2 double)",
+        "price": {
+          "amount": 1087,
+          "currency": "USD",
+          "per_person": false,
+          "approximate": true,
+          "status": "confirmed"
+        },
+        "link": "https://www.hankyu-hotel.com/en/hotels/respire_osaka",
+        "priority": "must",
+        "booking_status": "booked",
+        "cancel_by": "Oct 25, 2026 · (1 day before arrival)",
+        "guests": [
+          "Jessy",
+          "Jurializ",
+          "James",
+          "Frances",
+          "Hilary",
+          "Yamil",
+          "Carlos"
+        ],
+        "group": "osaka",
+        "group_color": "#c87020"
+      },
+      {
+        "id": "res_hotel_shinjuku",
+        "label": "HOTEL AMANEK Shinjuku Kabukicho",
+        "category": "Hotel",
+        "notes": "Oct 28–31 · 3 nights · Conf 6348.112.543 · Check-in 3PM · Checkout 11AM · 3 rooms (1 corner triple + 2 queen) · Booking.com pays $240 VAT",
+        "price": {
+          "amount": 2642,
+          "currency": "USD",
+          "per_person": false,
+          "approximate": true,
+          "status": "confirmed"
+        },
+        "link": "https://www.booking.com/hotel/jp/amanek-shinjuku-kabukicho.html",
+        "priority": "must",
+        "booking_status": "booked",
+        "cancel_by": "Oct 21, 2026 (7 days before — 1st night charge after)",
+        "guests": [
+          "Jessy",
+          "Jurializ",
+          "James",
+          "Frances",
+          "Hilary",
+          "Yamil",
+          "Carlos"
+        ],
+        "group": "shinjuku",
+        "group_color": "#6830a8"
+      }
+    ],
+    "buy": [
+      {
+        "id": "buy_adapter",
+        "label": "Travel Adapter",
+        "category": "Essential",
+        "notes": "Type A (Japan — same as US, but bring a converter for 3-prong)",
+        "price": {
+          "amount": null,
+          "currency": "USD",
+          "per_person": false,
+          "approximate": false,
+          "status": "tbd"
+        },
+        "link": null,
+        "priority": "nice_to_have",
+        "booking_status": "not_booked"
+      },
+      {
+        "id": "buy_idp_aaa",
+        "label": "AAA International Driving Permit (IDP)",
+        "category": "Documents",
+        "notes": "Apply through AAA before departure for Monkey Kart.",
+        "price": {
+          "amount": null,
+          "currency": "USD",
+          "per_person": false,
+          "approximate": false,
+          "status": "tbd"
+        },
+        "link": "https://www.aaa.com/vacation/idpf.html",
+        "priority": "nice_to_have",
+        "booking_status": "not_booked"
+      },
+      {
+        "id": "buy_iccard",
+        "label": "IC Card — Suica or Pasmo",
+        "category": "Transport",
+        "notes": "For Tokyo metro, buses & convenience stores",
+        "price": {
+          "amount": 5,
+          "currency": "USD",
+          "per_person": false,
+          "approximate": true,
+          "status": "confirmed"
+        },
+        "link": "https://www.klook.com/activity/16917-suica-ic-card-tokyo/",
+        "priority": "must",
+        "booking_status": "not_booked"
+      },
+      {
+        "id": "buy_wifi",
+        "label": "Pocket WiFi or SIM Card",
+        "category": "Essential",
+        "notes": "Rent at airport · Japan coverage",
+        "price": {
+          "amount": null,
+          "currency": "USD",
+          "per_person": false,
+          "approximate": false,
+          "status": "tbd"
+        },
+        "link": null,
+        "priority": "must",
+        "booking_status": "not_booked"
+      },
+      {
+        "id": "buy_yen",
+        "label": "Japanese Yen (¥)",
+        "category": "Currency",
+        "notes": "Withdraw at 7-Eleven ATMs in Japan or exchange before trip",
+        "price": {
+          "amount": null,
+          "currency": "USD",
+          "per_person": false,
+          "approximate": false,
+          "status": "tbd"
+        },
+        "link": null,
+        "priority": "must",
+        "booking_status": "not_booked"
+      }
+    ],
+    "hotel_payments": [
+      {
+        "name": "Jessy",
+        "organizer": true,
+        "payment_history": []
+      },
+      {
+        "name": "Yamil",
+        "organizer": false,
+        "payment_history": [
+          {
+            "date": "2026-07-29",
+            "amount": 1286.29,
+            "note": "Hotel share payment"
+          },
+          {
+            "date": "2026-07-30",
+            "amount": 147,
+            "note": "Additional payment"
+          }
+        ]
+      },
+      {
+        "name": "Hilary",
+        "organizer": false,
+        "payment_history": []
+      },
+      {
+        "name": "Jurializ",
+        "organizer": false,
+        "payment_history": []
+      },
+      {
+        "name": "Carlos",
+        "organizer": false,
+        "payment_history": []
+      },
+      {
+        "name": "Frances",
+        "organizer": false,
+        "payment_history": []
+      },
+      {
+        "name": "James",
+        "organizer": false,
+        "payment_history": []
+      }
+    ]
+  },
+  "meta": {
+    "start_date": "Oct 17, 2026",
+    "end_date": "Oct 31, 2026",
+    "total_nights": 15
+  },
+  "travelers": [
+    "Jessy",
+    "Yamil",
+    "Jurializ",
+    "Hilary",
+    "Carlos",
+    "Frances",
+    "James"
+  ]
+}
