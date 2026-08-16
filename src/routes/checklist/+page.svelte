@@ -2,7 +2,7 @@
   import { browser } from '$app/environment';
 
   export let data;
-  const { reserve, buy } = data;
+  const { buy } = data;
 
   function fmtPrice(p) {
     if (!p || typeof p !== 'object') return null;
@@ -18,7 +18,6 @@
     return [...items].sort((a, b) => (priorityOrder[a.priority] ?? 9) - (priorityOrder[b.priority] ?? 9));
   }
 
-  $: sortedReserve = sortByPriority(reserve);
   $: sortedBuy = sortByPriority(buy);
 
   function sectionSpend(items) {
@@ -87,15 +86,10 @@
     return categoryColors[cat] ?? { bg: '#f0ece8', text: '#7a5c56', border: '#e0c8c0' };
   }
 
-  $: reserveDone = sortedReserve.filter(i => checked.has(i.id)).length;
-  $: buyDone     = sortedBuy.filter(i => checked.has(i.id)).length;
-  $: totalItems  = sortedReserve.length + sortedBuy.length;
-  $: totalDone   = reserveDone + buyDone;
-  $: totalSpend  = (() => {
-    const r = sectionSpend(reserve);
-    const b = sectionSpend(buy);
-    return { usd: r.usd + b.usd, jpy: r.jpy + b.jpy };
-  })();
+  $: buyDone    = sortedBuy.filter(i => checked.has(i.id)).length;
+  $: totalItems = sortedBuy.length;
+  $: totalDone  = buyDone;
+  $: totalSpend = sectionSpend(buy);
 </script>
 
 <svelte:head><title>Trip Checklist</title></svelte:head>
@@ -133,9 +127,8 @@
         </div>
       </div>
 
-      <!-- Reserve section -->
+      <!-- Buy & Pack section -->
       {#each [
-        { title: 'Reserve', icon: 'event_available', items: sortedReserve, done: reserveDone, spend: sectionSpend(reserve) },
         { title: 'Buy & Pack', icon: 'shopping_bag', items: sortedBuy, done: buyDone, spend: sectionSpend(buy) },
       ] as section}
         <section>

@@ -29,8 +29,7 @@ export function load() {
     return { totalActs, booked, spend };
   })();
 
-  const travelerCount = flightParty?.travelers?.length
-    ?? (payload.trip.shared_drives?.receipts ?? []).filter(r => r.name !== 'All').length;
+  const travelerCount = payload.travelers?.length ?? 7;
 
   return {
     trip: payload.trip,

@@ -45,25 +45,7 @@
           </div>
           <div class="flex items-center gap-2 text-xs text-[#a08878] font-sans">
             <span class="material-symbols-rounded text-sm">group</span>
-            {#if flightParty?.travelers?.length}
-              {flightParty.travelers.join(', ')}
-            {:else}
-              {travelerCount} travelers
-            {/if}
-          </div>
-          <div class="grid grid-cols-3 gap-1.5 mt-1">
-            <div class="bg-[#fde8e0] rounded-lg p-2 text-center">
-              <p class="font-sans font-bold text-base text-[#c8705a]">{tripStats.totalActs}</p>
-              <p class="font-sans text-[7px] uppercase tracking-wide text-[#a08878]">Activities</p>
-            </div>
-            <div class="bg-[#e8f4ea] rounded-lg p-2 text-center">
-              <p class="font-sans font-bold text-base text-[#287040]">{tripStats.booked}</p>
-              <p class="font-sans text-[7px] uppercase tracking-wide text-[#a08878]">Booked</p>
-            </div>
-            <div class="bg-[#e8f4ea] rounded-lg p-2 text-center">
-              <p class="font-sans font-bold text-base text-[#287040]">${tripStats.spend.toLocaleString()}</p>
-              <p class="font-sans text-[7px] uppercase tracking-wide text-[#a08878]">Spend</p>
-            </div>
+            {travelerCount} travelers
           </div>
         </div>
       </section>
@@ -298,35 +280,6 @@
         </div>
       </section>
 
-      <!-- QR Placeholders -->
-      <section>
-        <h2 class="font-cursive text-[#9b3a3a] text-2xl mb-3 flex items-center gap-2">
-          <span class="material-symbols-rounded text-xl">qr_code_2</span> QR Codes
-        </h2>
-        <div class="grid grid-cols-2 gap-3">
-          {#each qr_placeholders as qr}
-            <div class="bg-white rounded-2xl border-2 border-dashed border-[#e8c8c0] flex flex-col items-center justify-center gap-2 p-4 aspect-square shadow-sm">
-              <svg viewBox="0 0 48 48" class="w-14 h-14 opacity-30" fill="none">
-                <rect x="2" y="2" width="16" height="16" rx="2" stroke="#c8705a" stroke-width="2" fill="none"/>
-                <rect x="6" y="6" width="8" height="8" rx="1" fill="#c8705a"/>
-                <rect x="30" y="2" width="16" height="16" rx="2" stroke="#c8705a" stroke-width="2" fill="none"/>
-                <rect x="34" y="6" width="8" height="8" rx="1" fill="#c8705a"/>
-                <rect x="2" y="30" width="16" height="16" rx="2" stroke="#c8705a" stroke-width="2" fill="none"/>
-                <rect x="6" y="34" width="8" height="8" rx="1" fill="#c8705a"/>
-                <rect x="30" y="30" width="3" height="3" rx="0.5" fill="#c8705a"/>
-                <rect x="35" y="30" width="3" height="3" rx="0.5" fill="#c8705a"/>
-                <rect x="40" y="30" width="3" height="3" rx="0.5" fill="#c8705a"/>
-                <rect x="30" y="35" width="3" height="3" rx="0.5" fill="#c8705a"/>
-                <rect x="40" y="35" width="3" height="3" rx="0.5" fill="#c8705a"/>
-                <rect x="35" y="40" width="3" height="3" rx="0.5" fill="#c8705a"/>
-                <rect x="40" y="40" width="3" height="3" rx="0.5" fill="#c8705a"/>
-              </svg>
-              <p class="font-sans text-xs font-semibold text-[#9b3a3a] text-center leading-tight">{qr.label}</p>
-              <p class="font-sans text-[10px] text-[#c0a8a0] italic">Add QR here</p>
-            </div>
-          {/each}
-        </div>
-      </section>
 
     </div>
 

@@ -4425,23 +4425,6 @@
         ]
       },
       {
-        "id": "res_jrpass",
-        "label": "JR Whole Japan Rail Pass (7-day Ordinary Adult)",
-        "category": "Transport",
-        "notes": "7-day Ordinary Adult · 7 travelers · $311.60/pp · Buy on Klook (cheaper than JRailPass)",
-        "price": {
-          "amount": 2181.2,
-          "currency": "USD",
-          "per_person": false,
-          "approximate": false,
-          "status": "confirmed"
-        },
-        "link": "https://www.klook.com/en-US/activity/6892-jr-pass-japan/",
-        "priority": "must",
-        "booking_status": "not_booked",
-        "guests_count": 7
-      },
-      {
         "id": "res_teamlab_kyoto",
         "label": "teamLab Biovortex Kyoto",
         "category": "Experience",
@@ -4776,6 +4759,23 @@
       }
     ],
     "buy": [
+      {
+        "id": "res_jrpass",
+        "label": "JR Whole Japan Rail Pass (7-day Ordinary Adult)",
+        "category": "Transport",
+        "notes": "7-day Ordinary Adult · 7 travelers · $311.60/pp · Buy on Klook (cheaper than JRailPass)",
+        "price": {
+          "amount": 2181.2,
+          "currency": "USD",
+          "per_person": false,
+          "approximate": false,
+          "status": "confirmed"
+        },
+        "link": "https://www.klook.com/en-US/activity/6892-jr-pass-japan/",
+        "priority": "must",
+        "booking_status": "not_booked",
+        "guests_count": 7
+      },
       {
         "id": "buy_adapter",
         "label": "Travel Adapter",

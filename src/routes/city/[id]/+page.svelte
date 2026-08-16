@@ -204,7 +204,7 @@
 
     <!-- Tab Bar -->
     <div class="flex items-center gap-1.5 px-4 pt-3 pb-0">
-      {#each [['summary','Summary'],['itinerary','Itinerary'],['extra','Extra Info']] as [tabKey, lbl]}
+      {#each [['summary','Summary'],['itinerary','Itinerary']] as [tabKey, lbl]}
         <a
           href={tabHrefs[tabKey]}
           class="flex-1 text-center font-sans text-xs font-semibold py-1.5 rounded-full border transition-colors"
@@ -691,81 +691,6 @@
 
       </div><!-- /itinerary fade wrapper -->
 
-      <!-- ═══════════ EXTRA INFO TAB ═══════════ -->
-      {:else if tab === 'extra'}
-      <div in:fade={{ duration: 220, delay: 40 }}>
-
-        {#if airportCard}
-          <p class="font-sans text-[10px] uppercase tracking-wider text-[#b08878] px-1 flex items-center gap-1">
-            <span class="material-symbols-rounded text-xs">flight</span> Airport
-          </p>
-          <div class="bg-white rounded-2xl border border-[#f0d8d0] shadow-sm overflow-hidden flex">
-            <div class="w-20 shrink-0 bg-gradient-to-br from-[#fde8f0] to-[#f4c8d8] flex flex-col items-center justify-center p-2 gap-0.5">
-              <span class="font-sans text-[9px] uppercase tracking-wide text-[#c8705a]">Terminal</span>
-              {#if tbd(airportCard.terminal)}
-                <span class="font-cursive text-2xl text-[#9b3a3a] leading-none">{airportCard.terminal}</span>
-              {:else}
-                <span class="font-sans text-xs italic text-[#c0a8a0] bg-white px-1.5 py-0.5 rounded-full border border-dashed border-[#e0ccc8]">TBD</span>
-              {/if}
-              <span class="font-sans font-bold text-sm text-[#9b3a3a] mt-1">{airportCard.airport_code}</span>
-            </div>
-            <div class="flex-1 p-3 flex flex-col justify-between">
-              <div>
-                <p class="font-sans font-bold text-sm text-[#3a2020] leading-tight">{airportCard.name}</p>
-                <p class="font-sans text-xs text-[#a08878] mt-0.5 flex items-center gap-1">
-                  <span class="material-symbols-rounded text-xs">location_on</span>{airportCard.city}
-                </p>
-              </div>
-              <a href={airportCard.map} target="_blank" rel="noopener"
-                title="View on Map" class="text-[#c8705a] hover:text-[#a85540] mt-1.5 self-start">
-                <span class="material-symbols-rounded text-xl leading-none">location_on</span>
-              </a>
-            </div>
-          </div>
-        {/if}
-
-        {#if railCard}
-          <p class="font-sans text-[10px] uppercase tracking-wider text-[#b08878] px-1 flex items-center gap-1">
-            <span class="material-symbols-rounded text-xs">train</span> Station
-          </p>
-          <div class="bg-white rounded-2xl border border-[#f0d8d0] shadow-sm overflow-hidden flex">
-            <div class="w-20 shrink-0 bg-gradient-to-br from-[#e8f4ea] to-[#c8e8c8] flex flex-col items-center justify-center p-2 gap-1">
-              <span class="material-symbols-rounded text-2xl text-[#287040]">directions_railway</span>
-              <span class="font-sans font-bold text-[10px] text-[#287040] text-center">{railCard.city}</span>
-            </div>
-            <div class="flex-1 p-3 flex flex-col justify-between">
-              <div>
-                <p class="font-sans font-bold text-sm text-[#3a2020]">{railCard.code}</p>
-                <p class="font-sans text-xs text-[#a08878] mt-0.5">{railCard.notes}</p>
-              </div>
-              <a href={railCard.map} target="_blank" rel="noopener"
-                title="View on Map" class="text-[#c8705a] hover:text-[#a85540] mt-1.5 self-start">
-                <span class="material-symbols-rounded text-xl leading-none">location_on</span>
-              </a>
-            </div>
-          </div>
-        {/if}
-
-        {#if cityGuide}
-          <p class="font-sans text-[10px] uppercase tracking-wider text-[#b08878] px-1 flex items-center gap-1">
-            <span class="material-symbols-rounded text-xs">map</span> City Highlights
-          </p>
-          <div class="grid grid-cols-2 gap-2.5">
-            {#each cityGuide.highlights as item}
-              <div class="rounded-2xl border border-[#f0d8d0] bg-white/70 shadow-sm flex flex-col gap-2 p-3">
-                <div class="w-10 h-10 rounded-xl bg-[#fde8e0] border border-[#f0ccc0] flex items-center justify-center p-2">
-                  <GuideIcon icon={item.icon} />
-                </div>
-                <div>
-                  <p class="font-sans font-bold text-xs text-[#3a2020] leading-tight">{item.title}</p>
-                  <p class="font-sans text-[10px] text-[#9a7070] mt-0.5 leading-snug">{item.blurb}</p>
-                </div>
-              </div>
-            {/each}
-          </div>
-        {/if}
-
-      </div><!-- /extra fade wrapper -->
       {/if}
     </div>
 

@@ -154,7 +154,6 @@
         {#each [
           ['/transport','flight','Transport','Flights & trains'],
           ['/quick-info','qr_code_2','Quick Info','Essentials & links'],
-          ['/city-guides','map','City Guides','Highlights at a glance'],
           ['/checklist','checklist','Checklist','Bookings & tasks'],
           ['/budget','payments','Budget','Confirmed spend & costs']
         ] as [href, icon, label, subtitle]}
