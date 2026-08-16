@@ -38,8 +38,8 @@ export function load() {
           city: dest.city,
           date: a.date,
           amount: toUSD(a.price.amount, a.price.currency ?? 'USD'),
+          approximate: a.price.approximate ?? false,
           status: a.price.status ?? 'confirmed',
-          cancel_by: a.cancel_by ?? null,
         });
       }
     }

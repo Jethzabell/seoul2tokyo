@@ -54,27 +54,23 @@
           <span class="ml-auto font-sans text-[10px] bg-white/20 rounded-full px-2 py-0.5 text-white/90">4 travelers</span>
         </div>
 
-        <div class="flex flex-col gap-2">
+        <div class="glass-card p-2 flex flex-col divide-y divide-white/30">
           {#each flights as f}
-            <div class="glass-card p-3">
-              <div class="flex items-start justify-between gap-2">
-                <div class="min-w-0">
-                  <p class="font-sans font-bold text-sm text-[#3a2020]">{f.label}</p>
-                  <p class="font-sans text-[10px] text-[#a08878] mt-0.5">{f.carrier}{f.date ? ' · ' + fmtDate(f.date) : ''}</p>
-                  <p class="font-sans text-[10px] text-[#b08878] mt-0.5 leading-snug">{f.travelers_names?.join(', ')}</p>
-                </div>
-                <div class="text-right shrink-0">
-                  <p class="font-sans font-bold text-sm text-[#3a2020]">{fmtUSD(f.amount)}</p>
-                  <p class="font-sans text-[10px] text-[#287040]">{perPerson(f.amount, f.currency, f.travelers)}/pp</p>
-                  <span class="font-sans text-[7px] font-bold uppercase px-1.5 py-0.5 rounded-full border {statusColor(f.status)}">{f.status}</span>
-                </div>
+            <div class="flex items-center justify-between gap-2 px-1 py-1.5">
+              <div class="min-w-0 flex-1">
+                <p class="font-sans font-bold text-[11px] text-[#3a2020] truncate">{f.label}</p>
+                <p class="font-sans text-[9px] text-[#a08878]">{f.carrier}{f.date ? ' · ' + fmtDate(f.date) : ''}</p>
+              </div>
+              <div class="text-right shrink-0">
+                <p class="font-sans font-bold text-[12px] text-[#3a2020]">{fmtUSD(f.amount)}</p>
+                <p class="font-sans text-[9px] text-[#287040]">{perPerson(f.amount, f.currency, f.travelers)}/pp</p>
               </div>
             </div>
           {/each}
-          <div class="glass-subtle rounded-xl px-3 py-2 flex items-center justify-between">
-            <span class="font-sans text-[10px] text-[#9b284a]">Flight subtotal</span>
-            <span class="font-sans font-bold text-xs text-[#9b284a]">{fmtUSD(flightTotal)} · {fmtUSD(+(flightTotal/4).toFixed(2))}/pp</span>
-          </div>
+        </div>
+        <div class="glass-subtle rounded-xl px-3 py-1.5 flex items-center justify-between mt-1">
+          <span class="font-sans text-[9px] text-[#9b284a]">Subtotal</span>
+          <span class="font-sans font-bold text-[11px] text-[#9b284a]">{fmtUSD(flightTotal)} · {fmtUSD(+(flightTotal/4).toFixed(2))}/pp</span>
         </div>
       </section>
 
@@ -85,38 +81,24 @@
           <h2 class="font-cursive text-white text-2xl leading-none">Hotels</h2>
           <span class="ml-auto font-sans text-[10px] bg-white/20 rounded-full px-2 py-0.5 text-white/90">7 travelers</span>
         </div>
-        <div class="flex flex-col gap-2">
+        <div class="glass-card p-2 flex flex-col divide-y divide-white/30">
           {#each hotels as h}
-            <div class="glass-card p-3 overflow-hidden relative"
-                 style={h.group_color ? `border-left: 3px solid ${h.group_color}` : ''}>
-              <div class="flex items-start justify-between gap-2">
-                <div class="min-w-0 flex-1">
-                  {#if h.link}
-                    <a href={h.link} target="_blank" rel="noopener"
-                       class="font-sans font-bold text-[12px] text-[#c8705a] leading-snug hover:underline">{h.label}</a>
-                  {:else}
-                    <p class="font-sans font-bold text-[12px] text-[#3a2020] leading-snug">{h.label}</p>
-                  {/if}
-                  <p class="font-sans text-[10px] text-[#a08878] mt-0.5 leading-snug">{h.notes.split('·')[0].trim()}</p>
-                  {#if h.cancel_by}
-                    <p class="font-sans text-[9px] text-[#287040] mt-0.5">
-                      <span class="material-symbols-rounded text-[10px] align-middle">event_available</span>
-                      Free cancel by {h.cancel_by}
-                    </p>
-                  {/if}
-                </div>
-                <div class="text-right shrink-0">
-                  <p class="font-sans font-bold text-sm text-[#3a2020]">{h.approximate ? '~' : ''}{fmtUSD(toUSD(h.amount, h.currency))}</p>
-                  <p class="font-sans text-[10px] text-[#287040]">{fmtUSD(+(toUSD(h.amount, h.currency)/h.guests).toFixed(2))}/pp</p>
-                  <span class="font-sans text-[7px] font-bold uppercase px-1.5 py-0.5 rounded-full border {statusColor(h.status)}">{h.status}</span>
-                </div>
+            <div class="flex items-center justify-between gap-2 px-1 py-1.5"
+                 style={h.group_color ? `border-left: 3px solid ${h.group_color}; padding-left:8px` : ''}>
+              <div class="min-w-0 flex-1">
+                <p class="font-sans font-bold text-[11px] text-[#3a2020] truncate">{h.label}</p>
+                <p class="font-sans text-[9px] text-[#a08878]">{h.notes.split('·')[0].trim()}</p>
+              </div>
+              <div class="text-right shrink-0">
+                <p class="font-sans font-bold text-[12px] text-[#3a2020]">{h.approximate ? '~' : ''}{fmtUSD(toUSD(h.amount, h.currency))}</p>
+                <p class="font-sans text-[9px] text-[#287040]">{fmtUSD(+(toUSD(h.amount, h.currency)/h.guests).toFixed(2))}/pp</p>
               </div>
             </div>
           {/each}
-          <div class="glass-subtle rounded-xl px-3 py-2 flex items-center justify-between">
-            <span class="font-sans text-[10px] text-[#2a5cb8]">Hotel subtotal</span>
-            <span class="font-sans font-bold text-xs text-[#2a5cb8]">{fmtUSD(hotelTotal)} · {fmtUSD(+(hotelTotal/7).toFixed(2))}/pp</span>
-          </div>
+        </div>
+        <div class="glass-subtle rounded-xl px-3 py-1.5 flex items-center justify-between mt-1">
+          <span class="font-sans text-[9px] text-[#2a5cb8]">Subtotal</span>
+          <span class="font-sans font-bold text-[11px] text-[#2a5cb8]">{fmtUSD(hotelTotal)} · {fmtUSD(+(hotelTotal/7).toFixed(2))}/pp</span>
         </div>
       </section>
 
@@ -128,27 +110,21 @@
           <span class="ml-auto font-sans text-[10px] bg-white/20 rounded-full px-2 py-0.5 text-white/90">7 travelers</span>
         </div>
 
-        <div class="flex flex-col gap-2">
+        <div class="glass-card p-2 flex flex-col divide-y divide-white/30">
           {#each activities as a}
             {@const usd = toUSD(a.amount, a.currency)}
-            <div class="glass-card p-3">
-              <div class="flex items-start justify-between gap-2">
-                <div class="min-w-0 flex-1">
-                  <p class="font-sans font-bold text-[12px] text-[#3a2020] leading-snug">{a.label}</p>
-                  <p class="font-sans text-[10px] text-[#a08878] mt-0.5">{a.city}{a.date ? ' · ' + fmtDate(a.date) : ''}</p>
-                </div>
-                <div class="text-right shrink-0">
-                  <p class="font-sans font-bold text-sm text-[#3a2020]">{fmtUSD(usd)}</p>
-                  <p class="font-sans text-[10px] text-[#287040]">{perPerson(a.amount, a.currency, a.travelers)}/pp</p>
-                  <span class="font-sans text-[7px] font-bold uppercase px-1.5 py-0.5 rounded-full border {statusColor(a.status)}">{a.status}</span>
-                </div>
+            <div class="flex items-center justify-between gap-2 px-1 py-1.5">
+              <div class="min-w-0 flex-1">
+                <p class="font-sans font-bold text-[11px] text-[#3a2020] truncate">{a.label}</p>
+                <p class="font-sans text-[9px] text-[#a08878]">{a.city}{a.date ? ' · ' + fmtDate(a.date) : ''}</p>
               </div>
+              <p class="font-sans font-bold text-[12px] text-[#3a2020] shrink-0">{fmtUSD(usd)}</p>
             </div>
           {/each}
-          <div class="glass-subtle rounded-xl px-3 py-2 flex items-center justify-between">
-            <span class="font-sans text-[10px] text-[#c8705a]">Activity subtotal</span>
-            <span class="font-sans font-bold text-xs text-[#c8705a]">{fmtUSD(activityTotal)} · {fmtUSD(+(activityTotal/7).toFixed(2))}/pp</span>
-          </div>
+        </div>
+        <div class="glass-subtle rounded-xl px-3 py-1.5 flex items-center justify-between mt-1">
+          <span class="font-sans text-[9px] text-[#c8705a]">Subtotal</span>
+          <span class="font-sans font-bold text-[11px] text-[#c8705a]">{fmtUSD(activityTotal)} · {fmtUSD(+(activityTotal/7).toFixed(2))}/pp</span>
         </div>
       </section>
 

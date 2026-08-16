@@ -166,12 +166,6 @@
                 <div class="min-w-0 flex-1">
                   <p class="font-sans font-bold text-[11px] text-[#3a2020] leading-snug">{h.label}</p>
                   <p class="font-sans text-[9px] text-[#a08878] mt-0.5 leading-snug">{h.notes.split('·')[0].trim()}</p>
-                  {#if h.cancel_by}
-                    <p class="font-sans text-[9px] text-[#287040] mt-0.5">
-                      <span class="material-symbols-rounded text-[10px] align-middle">event_available</span>
-                      Free cancel by {h.cancel_by}
-                    </p>
-                  {/if}
                 </div>
                 <p class="font-sans font-bold text-sm text-[#3a2020] shrink-0">{h.approximate ? '~' : ''}{fmtUSD(h.amount)}</p>
               </div>
@@ -244,14 +238,8 @@
                 <div class="min-w-0 flex-1">
                   <p class="font-sans font-bold text-[11px] text-[#3a2020] leading-snug">{a.label}</p>
                   <p class="font-sans text-[9px] text-[#a08878]">{a.city}{a.date ? ' · ' + fmtDate(a.date) : ''}</p>
-                  {#if a.cancel_by}
-                    <p class="font-sans text-[9px] text-[#287040] mt-0.5">
-                      <span class="material-symbols-rounded text-[10px] align-middle">event_available</span>
-                      Free cancel by {a.cancel_by}
-                    </p>
-                  {/if}
                 </div>
-                <p class="font-sans font-bold text-sm text-[#3a2020] shrink-0">{fmtUSD(a.amount)}</p>
+                <p class="font-sans font-bold text-sm text-[#3a2020] shrink-0">{a.approximate ? '~' : ''}{fmtUSD(a.amount)}</p>
               </div>
             {/each}
           </div>

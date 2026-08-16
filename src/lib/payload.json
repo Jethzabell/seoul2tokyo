@@ -4450,7 +4450,7 @@
           "amount": 799.98,
           "currency": "USD",
           "per_person": false,
-          "approximate": false,
+          "approximate": true,
           "status": "confirmed"
         },
         "link": "https://mai-ko.com/tour/value-ticket-kimono-tea-ceremony-and-samurai-experience-combo-in-kyoto-for-couples-and-small-groups2/",
@@ -4466,7 +4466,7 @@
           "amount": 524.37,
           "currency": "USD",
           "per_person": false,
-          "approximate": false,
+          "approximate": true,
           "status": "confirmed"
         },
         "link": "https://www.tripadvisor.com/AttractionProductReview-g298566-d19773994-Ramen_and_Gyoza_Cooking_Class_in_Osaka-Osaka_Osaka_Prefecture_Kinki.html",
@@ -4482,7 +4482,7 @@
           "amount": 684.47,
           "currency": "USD",
           "per_person": false,
-          "approximate": false,
+          "approximate": true,
           "status": "confirmed"
         },
         "link": "https://monkey-kart.com",
@@ -4498,7 +4498,7 @@
           "amount": 709.32,
           "currency": "USD",
           "per_person": false,
-          "approximate": false,
+          "approximate": true,
           "status": "paid"
         },
         "link": "https://www.magical-trip.com/product/59afbefb-b0d9-4e10-9273-b6c59b81e345",
@@ -4530,7 +4530,7 @@
           "amount": 5763,
           "currency": "USD",
           "per_person": false,
-          "approximate": false,
+          "approximate": true,
           "status": "confirmed"
         },
         "link": "https://www.booking.com/hotel/jp/noel-shibuya.html",
@@ -4719,7 +4719,7 @@
           "amount": 668,
           "currency": "USD",
           "per_person": false,
-          "approximate": false,
+          "approximate": true,
           "status": "confirmed"
         },
         "link": "https://www.booking.com/hotel/jp/amanek-shinjuku-kabukicho.html",
@@ -4742,7 +4742,7 @@
           "amount": 1252,
           "currency": "USD",
           "per_person": false,
-          "approximate": false,
+          "approximate": true,
           "status": "confirmed"
         },
         "link": "https://www.booking.com/hotel/jp/amanek-shinjuku-kabukicho.html",
@@ -4869,13 +4869,8 @@
         "payment_history": [
           {
             "date": "2026-07-29",
-            "amount": 1286.29,
+            "amount": 1433,
             "note": "Hotel share payment"
-          },
-          {
-            "date": "2026-07-30",
-            "amount": 147,
-            "note": "Additional payment"
           }
         ]
       },
