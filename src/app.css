@@ -18,14 +18,98 @@
   -webkit-font-smoothing: antialiased;
 }
 
-/* Smooth focus ring for keyboard users */
+/* ── Glassmorphism utilities ── */
+.glass {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+}
+.glass-strong {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.glass-subtle {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.glass-card {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 1rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+.glass-dark {
+  background: rgba(58, 45, 50, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+/* Phone frame with glass bg */
+.phone-frame {
+  background: rgba(250, 240, 235, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 2.5rem;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(232, 208, 200, 0.6);
+  overflow: hidden;
+}
+
+/* Gradient page headers */
+.page-gradient {
+  background: linear-gradient(135deg, #c8705a 0%, #e88870 50%, #f4a888 100%);
+}
+.page-gradient-rose {
+  background: linear-gradient(135deg, #9b284a 0%, #c84868 100%);
+}
+.page-gradient-blue {
+  background: linear-gradient(135deg, #2a5cb8 0%, #4888d8 100%);
+}
+.page-gradient-coral {
+  background: linear-gradient(135deg, #c8705a 0%, #e89878 100%);
+}
+
+/* Hover glow for glass cards */
+.glass-hover {
+  transition: all 0.2s ease;
+}
+.glass-hover:hover {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 20px rgba(200, 112, 90, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+}
+
+/* Section divider: mini torii */
+.torii-divider {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+}
+.torii-divider::before,
+.torii-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #e8c0b8, transparent);
+}
+
+/* ── Focus & transitions ── */
 :focus-visible {
   outline: 2px solid #c8705a;
   outline-offset: 2px;
   border-radius: 4px;
 }
 
-/* Page fade-in on every route */
 main {
   animation: pageFadeIn 0.35s ease both;
 }
@@ -34,10 +118,21 @@ main {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Smooth link/button hover globally */
 a, button {
   transition: opacity 0.15s ease, transform 0.15s ease;
 }
 a:active, button:active {
   transform: scale(0.96);
+}
+
+/* Cherry blossom petal keyframes (reusable) */
+@keyframes petalDrift {
+  0%   { transform: translateY(-20px) rotate(0deg);   opacity: 0; }
+  10%  { opacity: 0.7; }
+  90%  { opacity: 0.4; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+.petal-drift {
+  animation: petalDrift linear infinite;
+  pointer-events: none;
 }

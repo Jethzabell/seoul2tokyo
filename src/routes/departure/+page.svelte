@@ -14,7 +14,7 @@
 <svelte:head><title>Departure · Raleigh</title></svelte:head>
 
 <main class="min-h-screen flex items-center justify-center bg-[#f5ede8] py-8 px-4">
-  <div class="w-[340px] bg-[#faf0eb] rounded-[2.5rem] shadow-2xl overflow-hidden border border-[#e8d0c8] flex flex-col">
+  <div class="w-[340px] phone-frame flex flex-col">
 
     <!-- Hero banner -->
     <div class="relative overflow-hidden" style="height:170px;">
@@ -58,9 +58,11 @@
 
       <!-- Title -->
       <div class="absolute inset-0 flex flex-col items-center justify-center pb-6">
-        <p class="font-sans text-[10px] uppercase tracking-widest text-[#b08878] mb-1">Step {index} / {total}</p>
-        <h1 class="font-cursive text-[#9b3a3a] text-4xl leading-tight text-center">It Begins!</h1>
-        <p class="font-sans text-[#7a5c56] text-xs mt-1">Raleigh, NC → Tokyo, Japan</p>
+        <div class="glass-subtle rounded-2xl px-5 py-3 text-center">
+          <p class="font-sans text-[10px] uppercase tracking-widest text-[#b08878] mb-1">Step {index} / {total}</p>
+          <h1 class="font-cursive text-[#9b3a3a] text-4xl leading-tight text-center">It Begins!</h1>
+          <p class="font-sans text-[#7a5c56] text-xs mt-1">Raleigh, NC → Tokyo, Japan</p>
+        </div>
       </div>
     </div>
 
@@ -94,14 +96,14 @@
             <div class="flex flex-col gap-1.5">
               {#each seg.legs as leg}
                 {#if leg.layover}
-                  <div class="flex items-center gap-1.5 bg-white/70 rounded-lg px-2.5 py-1 border" style="border-color:{c.border}">
+                  <div class="flex items-center gap-1.5 glass-subtle rounded-lg px-2.5 py-1 border" style="border-color:{c.border}">
                     <span class="material-symbols-rounded text-xs" style="color:{c.text}">connecting_airports</span>
                     <span class="font-sans text-[10px] text-[#7a5c56]">
                       <strong>{leg.duration}</strong> layover · {leg.city} ({leg.airport})
                     </span>
                   </div>
                 {:else}
-                  <div class="bg-white rounded-xl p-2.5 shadow-sm flex flex-col gap-1">
+                  <div class="glass rounded-xl p-2.5 shadow-sm flex flex-col gap-1">
                     <div class="flex items-center justify-between">
                       <span class="font-sans font-bold text-sm" style="color:{c.text}">{leg.from} → {leg.to}</span>
                       <span class="font-sans text-[10px] text-[#a08878]">{leg.duration}</span>
@@ -154,7 +156,7 @@
               <div class="flex items-center gap-1.5 px-1 flex-wrap">
                 <span class="font-sans text-[10px] text-[#a08878]">Pax</span>
                 {#each seg.passengers as name}
-                  <span class="font-sans text-[10px] font-semibold text-[#5a3d38] bg-white px-2 py-0.5 rounded-full border" style="border-color:{c.border}">{name}</span>
+                  <span class="font-sans text-[10px] font-semibold text-[#5a3d38] glass px-2 py-0.5 rounded-full border" style="border-color:{c.border}">{name}</span>
                 {/each}
               </div>
             {/if}
@@ -164,17 +166,17 @@
           <div class="border-t border-dashed my-0.5" style="border-color:{c.border}"></div>
           <div class="flex items-center gap-2 flex-wrap">
             {#if seg.baggage?.personal_item}
-              <div class="flex items-center gap-1 bg-white rounded-full px-2 py-0.5 border text-[10px] font-sans" style="border-color:{c.border}; color:{c.text}">
+              <div class="flex items-center gap-1 glass rounded-full px-2 py-0.5 border text-[10px] font-sans" style="border-color:{c.border}; color:{c.text}">
                 <span class="material-symbols-rounded text-xs">backpack</span> Personal
               </div>
             {/if}
             {#if seg.baggage?.carry_on}
-              <div class="flex items-center gap-1 bg-white rounded-full px-2 py-0.5 border text-[10px] font-sans" style="border-color:{c.border}; color:{c.text}">
+              <div class="flex items-center gap-1 glass rounded-full px-2 py-0.5 border text-[10px] font-sans" style="border-color:{c.border}; color:{c.text}">
                 <span class="material-symbols-rounded text-xs">luggage</span> Carry-on
               </div>
             {/if}
             {#if seg.baggage?.checked_bag}
-              <div class="flex items-center gap-1 bg-white rounded-full px-2 py-0.5 border text-[10px] font-sans" style="border-color:{c.border}; color:{c.text}">
+              <div class="flex items-center gap-1 glass rounded-full px-2 py-0.5 border text-[10px] font-sans" style="border-color:{c.border}; color:{c.text}">
                 <span class="material-symbols-rounded text-xs">cases</span> Checked
               </div>
             {/if}

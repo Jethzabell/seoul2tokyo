@@ -94,18 +94,18 @@
 
 <svelte:head><title>Trip Checklist</title></svelte:head>
 
-<main class="min-h-screen flex items-center justify-center bg-[#f5ede8] py-8 px-4">
-  <div class="w-[340px] bg-[#faf0eb] rounded-[2.5rem] shadow-2xl overflow-hidden border border-[#e8d0c8]">
+<main class="min-h-screen flex items-center justify-center page-gradient py-8 px-4">
+  <div class="w-[340px] phone-frame">
 
-    <div class="px-6 pt-7 pb-3 text-center">
-      <h1 class="font-cursive text-[#9b3a3a] text-4xl leading-tight">Checklist</h1>
-      <p class="font-sans text-[#a07870] text-xs mt-1">Tap to check off as you go</p>
+    <div class="page-gradient px-6 pt-7 pb-4 text-center">
+      <h1 class="font-cursive text-white text-4xl leading-tight">Checklist</h1>
+      <p class="font-sans text-white/80 text-xs mt-1">Tap to check off as you go</p>
     </div>
 
     <div class="flex flex-col gap-5 px-4 pb-6">
 
       <!-- Overall summary -->
-      <div class="bg-white rounded-2xl border border-[#f0d8d0] p-3.5 shadow-sm">
+      <div class="glass-card p-3.5">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-2">
             <div class="w-10 h-10 rounded-full bg-[#fde8e0] flex items-center justify-center">
@@ -121,7 +121,7 @@
               class="font-sans text-[9px] text-[#c8705a] hover:text-[#a85540] underline">Reset</button>
           {/if}
         </div>
-        <div class="h-2 bg-[#f0d8d0] rounded-full mt-3 overflow-hidden">
+        <div class="h-2 bg-[#f0d8d0] backdrop-blur-sm rounded-full mt-3 overflow-hidden">
           <div class="h-full bg-gradient-to-r from-[#c8705a] to-[#e88870] rounded-full transition-all duration-500"
             style="width:{totalItems ? (totalDone/totalItems)*100 : 0}%"></div>
         </div>
@@ -144,7 +144,7 @@
             </div>
           </div>
 
-          <div class="h-1.5 bg-[#f0d8d0] rounded-full mb-3 overflow-hidden">
+          <div class="h-1.5 bg-[#f0d8d0] backdrop-blur-sm rounded-full mb-3 overflow-hidden">
             <div class="h-full bg-[#c8705a] rounded-full transition-all duration-300"
               style="width:{section.items.length ? (section.done/section.items.length)*100 : 0}%"></div>
           </div>
@@ -157,12 +157,12 @@
               {@const isMust = item.priority === 'must'}
               <button
                 on:click={() => toggle(item.id)}
-                class="w-full text-left rounded-2xl border p-3 flex items-start gap-3 shadow-sm transition-all duration-150
-                  {done ? 'opacity-50 bg-[#f8f4f0] border-[#e0d0c8]' : 'bg-white border-[#f0d8d0] hover:border-[#e8b8a8]'}
+                class="w-full text-left p-3 flex items-start gap-3 transition-all duration-150
+                  {done ? 'opacity-50 glass-card' : 'glass-card glass-hover'}
                   {isMust && !done ? 'border-l-[3px] border-l-[#c8705a]' : ''}"
               >
                 <div class="shrink-0 mt-0.5 w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all duration-200
-                  {done ? 'bg-[#c8705a] border-[#c8705a]' : 'border-[#e0c8c0] bg-white'}
+                  {done ? 'bg-[#c8705a] border-[#c8705a] shadow-[0_0_8px_rgba(200,112,90,0.4)]' : 'border-[#e0c8c0] bg-white'}
                   {popping.has(item.id) ? 'scale-125' : 'scale-100'}">
                   {#if done}
                     <span class="material-symbols-rounded text-white text-xs leading-none">check</span>

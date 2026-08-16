@@ -5,6 +5,13 @@
   const photosUrl = trip.shared_drives?.photos;
 
   const daysUntil = Math.ceil((new Date(trip.dates.start) - new Date()) / 86400000);
+
+  const cityColors = {
+    'Tokyo (Shibuya)': '#2a5cb8',
+    'Kyoto': '#286840',
+    'Osaka': '#c87020',
+    'Tokyo (Shinjuku)': '#6830a8',
+  };
 </script>
 
 <svelte:head>
@@ -12,61 +19,64 @@
 </svelte:head>
 
 <main class="min-h-screen flex items-center justify-center bg-[#f5ede8] p-4">
-  <div class="relative w-[380px] bg-[#faf0eb] rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col items-center border border-[#e8d0c8]">
+  <div class="relative w-[380px] phone-frame flex flex-col items-center">
 
-    <!-- Animated floating petals -->
+    <!-- Floating cherry blossom petals -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
       {#each Array(10) as _, i}
-        {@const size = 16 + (i % 3) * 6}
+        {@const size = 14 + (i % 3) * 5}
         {@const fill = ['#f4b8b0','#e8a8b8','#f0c0b8','#eaafb8'][i % 4]}
-        {@const initRot = [15, -25, 40, -10, 55, -35, 20, -45, 30, -20][i]}
         <svg
-          class="absolute petal"
-          style="
-            width: {size}px;
-            height: {size}px;
-            left: {5 + i * 10}%;
-            top: {-8 - (i % 4) * 6}%;
-            opacity: {0.35 + (i % 3) * 0.1};
-            animation-delay: {i * 1.6}s;
-            animation-duration: {9 + i * 1.5}s;
-            --init-rot: {initRot}deg;
-          "
+          class="absolute petal-drift"
+          style="width:{size}px; height:{size}px; left:{5 + i * 10}%; top:-8%; opacity:0; animation-delay:{i * 1.6}s; animation-duration:{9 + i * 1.5}s;"
           viewBox="0 0 24 24" fill="none"
         >
-          <!-- Sakura petal: two rounded lobes with V-notch at top, tapers to a point at bottom -->
           <path d="M12,22 C7,17 1,12 3,6 C4,2 8,0 11,3 L12,5.5 L13,3 C16,0 20,2 21,6 C23,12 17,17 12,22Z" fill={fill}/>
           <path d="M12,22 C9,17 5,12 6,8 C7,5 9,3.5 11,3 L12,5.5" fill="white" opacity="0.15"/>
         </svg>
       {/each}
     </div>
 
-    <!-- Soft cloud blobs -->
-    <div class="absolute top-16 left-0 w-28 h-14 bg-[#f0d8d0] rounded-full opacity-30 blur-md -translate-x-6"></div>
-    <div class="absolute top-24 right-0 w-24 h-12 bg-[#f0d8d0] rounded-full opacity-25 blur-md translate-x-4"></div>
+    <!-- Soft blurred shapes behind content -->
+    <div class="absolute top-20 left-0 w-32 h-16 bg-[#f0d0c8] rounded-full opacity-20 blur-xl -translate-x-8"></div>
+    <div class="absolute top-32 right-0 w-28 h-14 bg-[#e0c8d8] rounded-full opacity-20 blur-xl translate-x-6"></div>
+    <div class="absolute bottom-40 left-0 w-24 h-12 bg-[#d8c8e0] rounded-full opacity-15 blur-xl -translate-x-4"></div>
 
-    <!-- ========== HEADER ========== -->
+    <!-- ===== HEADER ===== -->
     <div class="relative z-10 text-center pt-10 pb-2 px-6 w-full">
-      <!-- Countdown pill -->
       {#if daysUntil > 0}
-        <div class="inline-flex items-center gap-1.5 bg-white/70 backdrop-blur-sm border border-[#f0d0c8] rounded-full px-3 py-1 mb-4 shadow-sm">
+        <div class="inline-flex items-center gap-1.5 glass rounded-full px-3.5 py-1.5 mb-4 shadow-sm">
           <span class="text-[11px] font-bold text-[#c8705a] tabular-nums">{daysUntil}</span>
           <span class="text-[10px] text-[#9b7a70] font-medium">days to go</span>
         </div>
       {/if}
 
-      <h1 class="font-cursive text-[#9b3a3a] text-5xl tracking-tight leading-none">
-        Japan 2026
-      </h1>
+      <!-- Cherry blossom branches flanking the title -->
+      <div class="relative inline-block">
+        <svg class="absolute -left-10 -top-2 w-8 h-8 opacity-40" viewBox="0 0 32 32" fill="none">
+          <path d="M28,28 Q18,20 12,8" stroke="#c8a098" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <circle cx="12" cy="8" r="3" fill="#f4c0d0" opacity="0.8"/>
+          <circle cx="16" cy="14" r="2.5" fill="#f8d0dc" opacity="0.7"/>
+          <circle cx="9" cy="12" r="2" fill="#f0b8c8" opacity="0.6"/>
+        </svg>
+        <svg class="absolute -right-10 -top-2 w-8 h-8 opacity-40" viewBox="0 0 32 32" fill="none">
+          <path d="M4,28 Q14,20 20,8" stroke="#c8a098" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <circle cx="20" cy="8" r="3" fill="#f4c0d0" opacity="0.8"/>
+          <circle cx="16" cy="14" r="2.5" fill="#f8d0dc" opacity="0.7"/>
+          <circle cx="23" cy="12" r="2" fill="#f0b8c8" opacity="0.6"/>
+        </svg>
+        <h1 class="font-cursive text-[#9b3a3a] text-5xl tracking-tight leading-none">
+          Japan 2026
+        </h1>
+      </div>
 
       <p class="font-sans text-[#7a5c56] text-sm mt-3 font-medium tracking-wide">
         {trip.dates.display}
       </p>
 
-      <!-- Route pills -->
       <div class="flex items-center justify-center gap-1 mt-3">
         {#each trip.route as city, i}
-          <span class="text-[10px] font-semibold text-[#9b3a3a] bg-white/60 border border-[#f0d0c8] rounded-full px-2 py-0.5">{city.replace('Tokyo (Shibuya)','Tokyo').replace('Tokyo (Shinjuku)','Tokyo')}</span>
+          <span class="text-[10px] font-semibold text-[#9b3a3a] glass rounded-full px-2 py-0.5">{city.replace('Tokyo (Shibuya)','Tokyo').replace('Tokyo (Shinjuku)','Tokyo')}</span>
           {#if i < trip.route.length - 1}
             <span class="text-[#d0a89a] text-[8px]">→</span>
           {/if}
@@ -74,7 +84,7 @@
       </div>
     </div>
 
-    <!-- ========== ILLUSTRATION ========== -->
+    <!-- ===== ILLUSTRATION ===== -->
     <div class="relative z-10 w-full px-4 mt-2 flex justify-center">
       <svg viewBox="0 0 300 180" class="w-full max-w-[260px]" fill="none" xmlns="http://www.w3.org/2000/svg">
         <ellipse cx="150" cy="160" rx="145" ry="30" fill="#f0dbd4" opacity="0.4"/>
@@ -103,9 +113,9 @@
       </svg>
     </div>
 
-    <!-- ========== STATS BAR ========== -->
+    <!-- ===== STATS BAR ===== -->
     <div class="relative z-10 w-full px-5 mt-2">
-      <div class="flex justify-between bg-white/50 backdrop-blur-sm border border-[#f0d0c8] rounded-2xl px-4 py-2.5">
+      <div class="glass-strong rounded-2xl px-4 py-3 flex justify-between shadow-md">
         {#each [
           [stats.days, 'days'],
           [stats.cities, 'cities'],
@@ -113,57 +123,61 @@
           [stats.foodSpots, 'food spots']
         ] as [val, label]}
           <div class="text-center">
-            <div class="text-base font-bold text-[#9b3a3a] tabular-nums leading-tight">{val}</div>
-            <div class="text-[9px] text-[#a0887e] font-medium uppercase tracking-wider">{label}</div>
+            <div class="text-lg font-bold text-[#9b3a3a] tabular-nums leading-tight">{val}</div>
+            <div class="text-[8px] text-[#a0887e] font-bold uppercase tracking-wider">{label}</div>
           </div>
         {/each}
       </div>
     </div>
 
-    <!-- ========== CTA ========== -->
+    <!-- ===== CTA ===== -->
     <div class="relative z-10 w-full px-5 mt-5">
       <a
         href="/departure"
-        class="w-full bg-[#c8705a] hover:bg-[#b85a48] active:scale-[0.97] text-white font-sans font-bold text-base py-3.5 rounded-full shadow-lg transition-all duration-150 flex items-center justify-center gap-2"
+        class="w-full page-gradient hover:opacity-90 active:scale-[0.97] text-white font-sans font-bold text-base py-3.5 rounded-full shadow-lg transition-all duration-150 flex items-center justify-center gap-2"
       >
         Start Our Journey
         <span class="text-lg">→</span>
       </a>
     </div>
 
-    <!-- ========== CITY GRID ========== -->
+    <!-- ===== CITY GRID ===== -->
     <div class="relative z-10 w-full px-5 mt-4">
       <div class="grid grid-cols-2 gap-2">
         {#each cities as { id, city }}
+          {@const accent = cityColors[city] ?? '#c8705a'}
           <a
             href="/city/{id}"
-            class="flex items-center gap-2 bg-white/60 hover:bg-white border border-[#f0d0c8] hover:border-[#d8a898] rounded-xl px-3 py-2.5 transition-all group"
+            class="glass-card glass-hover flex items-center gap-2.5 px-3 py-2.5 group"
           >
-            <span class="w-7 h-7 rounded-full flex items-center justify-center text-xs bg-[#fde8e0] text-[#c8705a] group-hover:bg-[#c8705a] group-hover:text-white transition-colors font-bold">
+            <span class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white font-bold shadow-sm transition-all"
+                  style="background:{accent}">
               {city.charAt(0)}
             </span>
-            <span class="font-sans text-xs font-semibold text-[#7a5c56] group-hover:text-[#9b3a3a] transition-colors leading-tight">{city}</span>
+            <span class="font-sans text-xs font-semibold text-[#5a3d38] group-hover:text-[#9b3a3a] transition-colors leading-tight">{city}</span>
           </a>
         {/each}
       </div>
     </div>
 
-    <!-- ========== SECTION NAV ========== -->
+    <!-- ===== SECTION NAV ===== -->
     <div class="relative z-10 w-full px-5 mt-4">
       <div class="grid grid-cols-2 gap-2">
         {#each [
           ['/transport','flight','Transport','Flights & trains'],
-          ['/quick-info','qr_code_2','Quick Info','Essentials & links'],
+          ['/quick-info','info','Quick Info','Essentials & links'],
           ['/checklist','checklist','Checklist','Bookings & tasks'],
-          ['/budget','payments','Budget','Confirmed spend & costs']
+          ['/budget','payments','Budget','Confirmed spend']
         ] as [href, icon, label, subtitle]}
           <a
             {href}
-            class="flex items-center gap-2.5 bg-white/40 hover:bg-white/70 border border-[#ecdcd6] hover:border-[#d8a898] rounded-xl px-3 py-2.5 transition-all group"
+            class="glass-card glass-hover flex items-center gap-2.5 px-3 py-2.5 group"
           >
-            <span class="material-symbols-rounded text-lg text-[#c8705a] group-hover:scale-110 transition-transform">{icon}</span>
+            <div class="w-8 h-8 rounded-xl bg-[#fde8e0] flex items-center justify-center shrink-0 group-hover:bg-[#c8705a] transition-colors">
+              <span class="material-symbols-rounded text-base text-[#c8705a] group-hover:text-white transition-colors">{icon}</span>
+            </div>
             <div class="min-w-0">
-              <div class="font-sans text-xs font-semibold text-[#7a5c56] group-hover:text-[#9b3a3a] transition-colors">{label}</div>
+              <div class="font-sans text-xs font-bold text-[#5a3d38] group-hover:text-[#9b3a3a] transition-colors">{label}</div>
               <div class="text-[9px] text-[#b09a90] leading-tight truncate">{subtitle}</div>
             </div>
           </a>
@@ -171,11 +185,13 @@
       </div>
     </div>
 
-    <!-- ========== GROUP / SHARED DRIVES ========== -->
+    <!-- ===== THE CREW ===== -->
     <div class="relative z-10 w-full px-5 mt-5 mb-3">
-      <div class="bg-white/40 border border-[#ecdcd6] rounded-2xl p-3.5">
-        <div class="flex items-center justify-between mb-2.5">
-          <span class="text-[11px] font-bold text-[#9b7a70] uppercase tracking-wider">The Crew</span>
+      <div class="glass-card p-4">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-[11px] font-bold text-[#9b7a70] uppercase tracking-wider flex items-center gap-1.5">
+            <span class="material-symbols-rounded text-sm">group</span> The Crew
+          </span>
           {#if photosUrl}
             <a href={photosUrl} target="_blank" rel="noopener" class="flex items-center gap-1 text-[10px] font-semibold text-[#c8705a] hover:text-[#9b3a3a] transition-colors">
               <span class="material-symbols-rounded text-sm">photo_library</span>Photos
@@ -188,12 +204,12 @@
               href={url}
               target="_blank"
               rel="noopener"
-              class="flex items-center gap-1 bg-white/70 hover:bg-white border border-[#f0d0c8] hover:border-[#d8a898] rounded-full pl-1.5 pr-2.5 py-1 transition-all group"
+              class="flex items-center gap-1.5 glass rounded-full pl-1.5 pr-2.5 py-1 glass-hover group"
             >
-              <span class="w-5 h-5 rounded-full bg-[#fde8e0] flex items-center justify-center text-[9px] font-bold text-[#c8705a] group-hover:bg-[#c8705a] group-hover:text-white transition-colors">
+              <span class="w-5 h-5 rounded-full bg-gradient-to-br from-[#c8705a] to-[#e88870] flex items-center justify-center text-[9px] font-bold text-white shadow-sm">
                 {name.charAt(0)}
               </span>
-              <span class="text-[10px] font-semibold text-[#7a5c56] group-hover:text-[#9b3a3a] transition-colors">{name}</span>
+              <span class="text-[10px] font-semibold text-[#5a3d38] group-hover:text-[#9b3a3a] transition-colors">{name}</span>
             </a>
           {/each}
         </div>
@@ -201,7 +217,7 @@
           href="https://drive.google.com/drive/folders/102bJN23mQhKn8xe-yuzMMme_goQynfE6?usp=sharing"
           target="_blank"
           rel="noopener"
-          class="flex items-center justify-center gap-1 mt-2.5 text-[10px] font-semibold text-[#b09a90] hover:text-[#9b3a3a] transition-colors"
+          class="flex items-center justify-center gap-1 mt-3 text-[10px] font-semibold text-[#b09a90] hover:text-[#9b3a3a] transition-colors"
         >
           <span class="material-symbols-rounded text-sm">folder_shared</span>
           Shared Receipts Folder
@@ -209,8 +225,14 @@
       </div>
     </div>
 
-    <!-- ========== FOOTER ========== -->
+    <!-- ===== FOOTER ===== -->
     <div class="relative z-10 w-full text-center pb-8 pt-1">
+      <svg viewBox="0 0 40 20" class="w-6 mx-auto mb-2 opacity-15" fill="#c8705a">
+        <rect x="6" y="6" width="2" height="14" rx="1"/>
+        <rect x="32" y="6" width="2" height="14" rx="1"/>
+        <rect x="3" y="3" width="34" height="3" rx="1.5"/>
+        <rect x="8" y="8" width="24" height="2" rx="1"/>
+      </svg>
       <p class="font-sans text-[9px] text-[#c0a89a] leading-relaxed">
         {trip.metadata.footer_quote}
       </p>
@@ -218,25 +240,3 @@
 
   </div>
 </main>
-
-<style>
-  @keyframes petal-fall {
-    0% {
-      transform: translateY(0) rotate(var(--init-rot, 0deg)) translateX(0) scale(1);
-      opacity: 0;
-    }
-    6% { opacity: 0.5; }
-    20% { transform: translateY(160px) rotate(calc(var(--init-rot, 0deg) + 80deg)) translateX(-18px) scale(0.95); }
-    40% { transform: translateY(330px) rotate(calc(var(--init-rot, 0deg) + 170deg)) translateX(22px) scale(0.9); }
-    60% { transform: translateY(500px) rotate(calc(var(--init-rot, 0deg) + 260deg)) translateX(-12px) scale(0.85); }
-    80% { transform: translateY(670px) rotate(calc(var(--init-rot, 0deg) + 320deg)) translateX(15px) scale(0.8); }
-    93% { opacity: 0.25; }
-    100% {
-      transform: translateY(850px) rotate(calc(var(--init-rot, 0deg) + 400deg)) translateX(5px) scale(0.75);
-      opacity: 0;
-    }
-  }
-  .petal {
-    animation: petal-fall 12s ease-in-out infinite;
-  }
-</style>

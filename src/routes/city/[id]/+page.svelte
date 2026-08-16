@@ -167,7 +167,7 @@
 <svelte:head><title>{city} · {tab.charAt(0).toUpperCase() + tab.slice(1)}</title></svelte:head>
 
 <main class="min-h-screen flex items-center justify-center py-8 px-4" style="background:{t.pageBg}">
-  <div class="w-[340px] rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col" style="background:{t.cardBg}; border:1px solid {t.cardBorder}">
+  <div class="phone-frame w-[340px] overflow-hidden flex flex-col" style="background:{t.cardBg}">
 
     <!-- Hero Banner -->
     <div class="relative overflow-hidden" style="height:160px;">
@@ -197,7 +197,19 @@
       </svg>
       <div class="absolute inset-0 flex flex-col items-center justify-center pb-4">
         <p class="font-sans text-[10px] uppercase tracking-widest mt-0.5" style="color:{t.accentMuted}">Step {index} / {total}</p>
-        <h1 class="font-cursive text-4xl leading-none mt-0.5" style="color:{t.accent}">{city}</h1>
+        <div class="relative flex items-center justify-center">
+          <svg class="absolute -left-6 top-1 w-6 h-6 opacity-30" viewBox="0 0 24 24" fill="none">
+            <path d="M20,22 Q14,16 10,6" stroke="{t.accent}" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+            <circle cx="10" cy="6" r="2.5" fill="#f4c0d0" opacity="0.8"/>
+            <circle cx="14" cy="12" r="2" fill="#f8d0dc" opacity="0.7"/>
+          </svg>
+          <h1 class="font-cursive text-4xl leading-none mt-0.5" style="color:{t.accent}">{city}</h1>
+          <svg class="absolute -right-6 top-1 w-6 h-6 opacity-30" viewBox="0 0 24 24" fill="none">
+            <path d="M4,22 Q10,16 14,6" stroke="{t.accent}" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+            <circle cx="14" cy="6" r="2.5" fill="#f4c0d0" opacity="0.8"/>
+            <circle cx="10" cy="12" r="2" fill="#f8d0dc" opacity="0.7"/>
+          </svg>
+        </div>
         <p class="font-sans text-xs mt-1" style="color:{t.accentMuted}">{stayRange}</p>
       </div>
     </div>
@@ -210,7 +222,7 @@
           class="flex-1 text-center font-sans text-xs font-semibold py-1.5 rounded-full border transition-colors"
           style={tab === tabKey
             ? `background:${t.accent}; color:white; border-color:${t.accent}`
-            : `background:white; color:${t.accent}; border-color:${t.accentBg}`}
+            : `background:rgba(255,255,255,0.5); backdrop-filter:blur(8px); color:${t.accent}; border-color:${t.accentBg}`}
         >{lbl}</a>
       {/each}
     </div>
@@ -506,7 +518,7 @@
           <!-- Day header -->
           <div class="flex flex-col gap-1.5 pt-1">
             <div class="flex items-center gap-2">
-              <div class="flex items-center gap-1.5 bg-[#c8705a] text-white rounded-full px-3 py-1 shadow-sm shrink-0">
+              <div class="flex items-center gap-1.5 text-white rounded-full px-3 py-1 shadow-sm shrink-0" style="background:{t.accent}">
                 <span class="font-sans font-bold text-xs">Day {day}</span>
               </div>
               {#if day > 0}
@@ -526,7 +538,7 @@
 
             <!-- Day summary bar -->
             {#if ds}
-              <div class="flex items-center gap-1.5 px-1 flex-wrap">
+              <div class="glass-subtle rounded-lg px-2 py-1.5 flex items-center gap-1.5 flex-wrap">
                 {#if ds.focus}
                   <span class="font-sans text-[9px] font-semibold text-[#5a3d38]">{ds.focus}</span>
                 {/if}
@@ -561,8 +573,8 @@
             <!-- Transport connector -->
             {#if hasTransport}
               <div class="flex items-center gap-2 px-5 -my-1">
-                <div class="w-px h-3 bg-[#e0d0c8] ml-4"></div>
-                <div class="flex items-center gap-1 bg-[#f8f0ec] rounded-full px-2 py-0.5 border border-[#e8d8d0]">
+                <div class="w-px h-3 ml-4" style="background:{t.accent}40"></div>
+                <div class="flex items-center gap-1 glass-subtle rounded-full px-2 py-0.5 border border-[#e8d8d0]">
                   <span class="material-symbols-rounded text-[10px] text-[#a08878]">{transportIcons[activity.transport_from_previous.mode] || 'swap_horiz'}</span>
                   <span class="font-sans text-[8px] text-[#a08878]">{activity.transport_from_previous.duration_minutes} min {activity.transport_from_previous.mode}</span>
                 </div>
@@ -572,20 +584,20 @@
             <!-- Sub-stop connector line -->
             {#if activity.sub_stop}
               <div class="flex items-center gap-2 pl-6 -my-0.5">
-                <div class="w-px h-3 bg-[#e0d0c8]"></div>
+                <div class="w-px h-3" style="background:{t.accent}40"></div>
                 <span class="font-sans text-[8px] text-[#b09888] tracking-wide">↳ stop inside</span>
               </div>
             {/if}
 
             <!-- Activity card -->
-            <div class="{activity.sub_stop ? 'ml-4 border-l-2 rounded-l-none' : ''} bg-white/70 rounded-2xl border border-[#f0d8d0] shadow-sm overflow-hidden
+            <div class="{activity.sub_stop ? 'ml-4 border-l-2 rounded-l-none' : ''} glass-card glass-hover shadow-sm overflow-hidden
               {isMust && !activity.sub_stop ? 'border-l-[3px] border-l-[#c8705a]' : ''}
               {activity.sub_stop ? 'border-l-[#c8d0e0] bg-[#f8faff]/70' : ''}"
               style={activity.sub_stop ? 'border-left-color:#c8d8e8' : ''}>
               <div class="p-3 flex flex-col gap-2">
                 <!-- Row 1: icon + name + price -->
                 <div class="flex items-start gap-2.5">
-                  <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#fde8e0] border border-[#f0ccc0] flex items-center justify-center p-2">
+                  <div class="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center p-2" style="background:{t.accentBg}; border:1px solid {t.accent}30">
                     <ActivityIcon icon={iconKey} />
                   </div>
                   <div class="flex-1 min-w-0">
@@ -606,7 +618,7 @@
                 <!-- Row 2: time range + area + category/type -->
                 <div class="flex items-center gap-1.5 flex-wrap">
                   {#if displayStart(activity)}
-                    <span class="font-sans font-semibold text-[10px] text-[#5a3d38] bg-[#f8f0ec] px-1.5 py-0.5 rounded">
+                    <span class="font-sans font-semibold text-[10px] text-[#5a3d38] glass-subtle px-1.5 py-0.5 rounded">
                       {displayStart(activity)}{#if activity.end_time} – {activity.end_time}{/if}
                     </span>
                   {/if}
@@ -697,7 +709,7 @@
 
               <!-- Card footer: links -->
               {#if activity.links?.map || activity.links?.website}
-                <div class="flex items-center justify-end gap-2 px-3 py-1.5 bg-[#faf4f0] border-t border-[#f0e0d8]">
+                <div class="flex items-center justify-end gap-2 px-3 py-1.5 glass-subtle border-t border-white/30">
                   {#if activity.links?.map}
                     <a href={activity.links.map} target="_blank" rel="noopener"
                       title="View on Map" class="flex items-center gap-0.5 text-[#c8705a] hover:text-[#a85540] font-sans text-[9px]">
@@ -722,7 +734,7 @@
     </div>
 
     <!-- Journey Nav Footer -->
-    <div class="flex items-center justify-between px-5 pb-6 pt-2" style="border-top:1px solid {t.cardBorder}">
+    <div class="glass-subtle rounded-t-2xl flex items-center justify-between px-5 pb-6 pt-2">
       <a href={prevHref} class="font-sans text-[10px] font-semibold flex items-center gap-0.5 max-w-[130px]" style="color:{t.accent}">
         <span class="material-symbols-rounded text-sm shrink-0">arrow_back</span>
         <span class="truncate">{prevLabel}</span>

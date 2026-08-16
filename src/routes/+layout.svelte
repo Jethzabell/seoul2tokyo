@@ -66,88 +66,85 @@
       </div>
     {/each}
 
-    <div class="w-[320px] flex flex-col items-center gap-6 text-center relative z-10"
+    <div class="w-[340px] flex flex-col items-center relative z-10"
          in:fly={{ y: 24, duration: 600, delay: 100 }}>
 
       <!-- Illustration -->
-      <div class="illustration-breathe">
-        <svg viewBox="0 0 180 140" class="w-44 drop-shadow-sm" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Sky gradient circle -->
+      <div class="illustration-breathe mb-4">
+        <svg viewBox="0 0 180 140" class="w-48 drop-shadow-sm" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="90" cy="70" r="65" fill="#fde8f0" opacity="0.4"/>
-          <!-- Mt Fuji -->
           <polygon points="90,16 44,92 136,92" fill="#e8d0c8" stroke="#c8a098" stroke-width="1.5"/>
           <polygon points="90,16 72,46 108,46" fill="white" opacity="0.75"/>
-          <!-- Snow detail -->
           <path d="M72,46 Q90,38 108,46" stroke="#e0c8d0" stroke-width="1" fill="none"/>
-          <!-- Base ground -->
           <rect x="30" y="90" width="120" height="8" rx="4" fill="#e8d0c8" opacity="0.5"/>
-          <!-- Torii gate -->
           <rect x="66" y="76" width="5" height="30" rx="2.5" fill="#c8705a"/>
           <rect x="109" y="76" width="5" height="30" rx="2.5" fill="#c8705a"/>
           <rect x="60" y="70" width="60" height="7" rx="3.5" fill="#c8705a"/>
           <rect x="62" y="71" width="6" height="4" rx="2" fill="#c8705a" opacity="0.6"/>
           <rect x="112" y="71" width="6" height="4" rx="2" fill="#c8705a" opacity="0.6"/>
           <rect x="68" y="80" width="44" height="4" rx="2" fill="#c8705a"/>
-          <!-- Lantern -->
           <rect x="87" y="84" width="6" height="8" rx="2" fill="#f0d060" opacity="0.9"/>
           <rect x="88" y="92" width="4" height="2" rx="1" fill="#c8a040"/>
-          <!-- Cherry blossom clusters left -->
           <circle cx="22" cy="38" r="7" fill="#f4c0d0" opacity="0.7"/>
           <circle cx="30" cy="30" r="5" fill="#f8d0dc" opacity="0.6"/>
           <circle cx="14" cy="28" r="4" fill="#f0b8c8" opacity="0.5"/>
           <circle cx="34" cy="42" r="4" fill="#f4c0d0" opacity="0.5"/>
-          <!-- Branch left -->
           <path d="M10,50 Q22,35 35,28" stroke="#c8a098" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-          <!-- Cherry blossom clusters right -->
           <circle cx="158" cy="35" r="7" fill="#f4c0d0" opacity="0.7"/>
           <circle cx="150" cy="26" r="5" fill="#f8d0dc" opacity="0.6"/>
           <circle cx="165" cy="26" r="4" fill="#f0b8c8" opacity="0.5"/>
           <circle cx="148" cy="40" r="4" fill="#f4c0d0" opacity="0.5"/>
-          <!-- Branch right -->
           <path d="M170,50 Q158,32 148,26" stroke="#c8a098" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-          <!-- Stars/dots -->
-          <circle cx="50"  cy="22" r="1.5" fill="#c8a098" opacity="0.6"/>
+          <circle cx="50" cy="22" r="1.5" fill="#c8a098" opacity="0.6"/>
           <circle cx="130" cy="18" r="1.5" fill="#c8a098" opacity="0.6"/>
-          <circle cx="160" cy="55" r="1"   fill="#c8a098" opacity="0.5"/>
-          <circle cx="20"  cy="60" r="1"   fill="#c8a098" opacity="0.5"/>
-          <!-- Moon -->
           <circle cx="148" cy="22" r="10" fill="#fef0d0" opacity="0.5"/>
-          <circle cx="152" cy="20" r="9"  fill="#f5ede8" opacity="0.6"/>
+          <circle cx="152" cy="20" r="9" fill="#f5ede8" opacity="0.6"/>
         </svg>
       </div>
 
-      <div>
-        <h1 class="font-cursive text-[#9b3a3a] text-4xl leading-tight">Japan 2026</h1>
-        <p class="font-sans text-[#a07870] text-sm mt-1">Jessy's Japan 2026 trip planner</p>
-      </div>
-
-      <div class="w-full flex flex-col gap-3">
-        <div class="{shake ? 'shake' : ''}">
-          <input
-            type="password"
-            bind:value={input}
-            on:keydown={handleKey}
-            placeholder="Enter password to continue"
-            autofocus
-            class="w-full rounded-2xl border-2 {error ? 'border-[#c8705a]' : 'border-[#e0c8c0]'} bg-white px-4 py-3.5 font-sans text-sm text-[#3a2020] placeholder-[#c0a8a0] focus:outline-none focus:border-[#c8705a] text-center tracking-widest transition-colors"
-          />
+      <!-- Glass panel -->
+      <div class="glass-strong rounded-3xl p-6 w-full flex flex-col items-center gap-5 text-center shadow-xl">
+        <div>
+          <h1 class="font-cursive text-[#9b3a3a] text-4xl leading-tight">Japan 2026</h1>
+          <p class="font-sans text-[#a07870] text-sm mt-1.5">Jessy's Japan 2026 trip planner</p>
         </div>
 
-        {#if error}
-          <p class="font-sans text-[11px] text-[#c8705a] -mt-1" in:fly={{ y: -6, duration: 200 }}>
-            Wrong password — try again 🙈
-          </p>
-        {/if}
+        <div class="w-full flex flex-col gap-3">
+          <div class="{shake ? 'shake' : ''}">
+            <input
+              type="password"
+              bind:value={input}
+              on:keydown={handleKey}
+              placeholder="Enter password to continue"
+              autofocus
+              class="w-full rounded-2xl border-2 {error ? 'border-[#c8705a]' : 'border-white/60'} bg-white/70 backdrop-blur-sm px-4 py-3.5 font-sans text-sm text-[#3a2020] placeholder-[#c0a8a0] focus:outline-none focus:border-[#c8705a] text-center tracking-widest transition-colors"
+            />
+          </div>
 
-        <button
-          on:click={attempt}
-          class="w-full bg-[#c8705a] hover:bg-[#a85540] active:scale-95 text-white font-sans font-bold text-sm py-3.5 rounded-2xl transition-all shadow-md hover:shadow-lg"
-        >
-          {mounted ? "Let's go" : 'Loading…'}
-        </button>
+          {#if error}
+            <p class="font-sans text-[11px] text-[#c8705a] -mt-1" in:fly={{ y: -6, duration: 200 }}>
+              Wrong password — try again
+            </p>
+          {/if}
+
+          <button
+            on:click={attempt}
+            class="w-full page-gradient hover:opacity-90 active:scale-95 text-white font-sans font-bold text-sm py-3.5 rounded-2xl transition-all shadow-lg hover:shadow-xl"
+          >
+            {mounted ? "Let's go" : 'Loading...'}
+          </button>
+        </div>
+
+        <!-- Mini torii silhouette divider -->
+        <svg viewBox="0 0 40 20" class="w-8 opacity-20" fill="#c8705a">
+          <rect x="6" y="6" width="2" height="14" rx="1"/>
+          <rect x="32" y="6" width="2" height="14" rx="1"/>
+          <rect x="3" y="3" width="34" height="3" rx="1.5"/>
+          <rect x="8" y="8" width="24" height="2" rx="1"/>
+        </svg>
+
+        <p class="font-sans text-[10px] text-[#c8b0a8]">Made with love - Jethzabell, 2026</p>
       </div>
-
-      <p class="font-sans text-[10px] text-[#c8b0a8]">💕 Made with love - Jethzabell, 2026.</p>
     </div>
   </main>
 

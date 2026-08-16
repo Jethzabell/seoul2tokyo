@@ -16,19 +16,19 @@
   <title>Quick Info</title>
 </svelte:head>
 
-<main class="min-h-screen flex items-center justify-center bg-[#f5ede8] py-8 px-4">
-  <div class="w-[340px] bg-[#faf0eb] rounded-[2.5rem] shadow-2xl overflow-hidden border border-[#e8d0c8]">
+<main class="min-h-screen flex items-center justify-center page-gradient py-8 px-4">
+  <div class="w-[340px] phone-frame">
 
-    <div class="px-6 pt-7 pb-4 text-center">
-      <h1 class="font-cursive text-[#9b3a3a] text-4xl leading-tight">Quick Info</h1>
-      <p class="font-sans text-[#a07870] text-xs mt-1">Everything you need at a glance</p>
+    <div class="page-gradient px-6 pt-7 pb-4 text-center">
+      <h1 class="font-cursive text-white text-4xl leading-tight">Quick Info</h1>
+      <p class="font-sans text-white/80 text-xs mt-1">Everything you need at a glance</p>
     </div>
 
     <div class="flex flex-col gap-5 px-4 pb-6">
 
       <!-- Trip at a Glance -->
       <section>
-        <div class="bg-white rounded-2xl border border-[#f0d8d0] p-4 shadow-sm flex flex-col gap-2.5">
+        <div class="glass-card p-4 flex flex-col gap-2.5">
           <div class="flex items-center gap-2">
             <span class="material-symbols-rounded text-lg text-[#c8705a]">flight_takeoff</span>
             <span class="font-sans font-bold text-sm text-[#3a2020]">{trip.duration}</span>
@@ -53,13 +53,14 @@
       <!-- Flights -->
       {#if flightSegments.length}
         <section>
+          <svg viewBox="0 0 40 20" class="w-6 mx-auto opacity-15 mb-2" fill="#c8705a"><rect x="6" y="6" width="2" height="14" rx="1"/><rect x="32" y="6" width="2" height="14" rx="1"/><rect x="3" y="3" width="34" height="3" rx="1.5"/><rect x="8" y="8" width="24" height="2" rx="1"/></svg>
           <h2 class="font-cursive text-[#9b3a3a] text-2xl mb-3 flex items-center gap-2">
             <span class="material-symbols-rounded text-xl">flight</span> Flights
           </h2>
           <div class="flex flex-col gap-2">
             {#each flightSegments as seg, i}
               {@const c = { bg: '#fde8f0', border: '#f4a8c4', band: '#f09ab8', text: '#9b284a' }}
-              <div class="bg-white rounded-xl border border-[#f0d8d0] p-3 shadow-sm flex flex-col gap-2">
+              <div class="glass-card p-3 flex flex-col gap-2">
                 <div class="flex items-center justify-between gap-2">
                   <span class="font-sans font-bold text-xs text-[#5a3d38]">{i === 0 ? 'Outbound' : 'Return'} · {seg.from.code} → {seg.to.code}</span>
                   {#if seg.reservation_code && seg.reservation_code !== 'TBD'}
@@ -90,12 +91,13 @@
 
       <!-- Hotels -->
       <section>
+        <svg viewBox="0 0 40 20" class="w-6 mx-auto opacity-15 mb-2" fill="#c8705a"><rect x="6" y="6" width="2" height="14" rx="1"/><rect x="32" y="6" width="2" height="14" rx="1"/><rect x="3" y="3" width="34" height="3" rx="1.5"/><rect x="8" y="8" width="24" height="2" rx="1"/></svg>
         <h2 class="font-cursive text-[#9b3a3a] text-2xl mb-3 flex items-center gap-2">
           <span class="material-symbols-rounded text-xl">hotel</span> Hotels
         </h2>
         <div class="flex flex-col gap-2">
           {#each hotels as h}
-            <div class="bg-white rounded-xl border border-[#f0d8d0] p-3 shadow-sm">
+            <div class="glass-card p-3">
               <div class="flex items-start justify-between gap-2">
                 <div class="flex-1 min-w-0">
                   {#if h.link}
@@ -124,12 +126,13 @@
 
       <!-- Airports -->
       <section>
+        <svg viewBox="0 0 40 20" class="w-6 mx-auto opacity-15 mb-2" fill="#c8705a"><rect x="6" y="6" width="2" height="14" rx="1"/><rect x="32" y="6" width="2" height="14" rx="1"/><rect x="3" y="3" width="34" height="3" rx="1.5"/><rect x="8" y="8" width="24" height="2" rx="1"/></svg>
         <h2 class="font-cursive text-[#9b3a3a] text-2xl mb-3 flex items-center gap-2">
           <span class="material-symbols-rounded text-xl">flight</span> Airports
         </h2>
         <div class="flex flex-col gap-3">
           {#each airport_cards as card}
-            <div class="bg-white rounded-2xl border border-[#f0d8d0] shadow-sm overflow-hidden flex">
+            <div class="glass-card overflow-hidden flex">
               <div class="w-20 shrink-0 bg-gradient-to-br from-[#fde8f0] to-[#f4c8d8] flex flex-col items-center justify-center p-2 gap-0.5">
                 <span class="font-sans text-[9px] uppercase tracking-wider text-[#c8705a]">Terminal</span>
                 {#if tbd(card.terminal)}
@@ -161,12 +164,13 @@
 
       <!-- Rail Stations -->
       <section>
+        <svg viewBox="0 0 40 20" class="w-6 mx-auto opacity-15 mb-2" fill="#c8705a"><rect x="6" y="6" width="2" height="14" rx="1"/><rect x="32" y="6" width="2" height="14" rx="1"/><rect x="3" y="3" width="34" height="3" rx="1.5"/><rect x="8" y="8" width="24" height="2" rx="1"/></svg>
         <h2 class="font-cursive text-[#9b3a3a] text-2xl mb-3 flex items-center gap-2">
           <span class="material-symbols-rounded text-xl">train</span> Rail Stations
         </h2>
         <div class="flex flex-col gap-2">
           {#each rail_cards as card}
-            <div class="bg-white rounded-xl border border-[#f0d8d0] shadow-sm overflow-hidden flex">
+            <div class="glass-card overflow-hidden flex">
               <div class="w-16 shrink-0 bg-gradient-to-br from-[#e8f4ea] to-[#c8e8c8] flex flex-col items-center justify-center p-2 gap-0.5">
                 <span class="material-symbols-rounded text-xl text-[#287040]">directions_railway</span>
                 <span class="font-sans font-bold text-[9px] text-[#287040] text-center leading-tight">{card.city}</span>
@@ -188,36 +192,37 @@
 
       <!-- Essential Japan Tips -->
       <section>
+        <svg viewBox="0 0 40 20" class="w-6 mx-auto opacity-15 mb-2" fill="#c8705a"><rect x="6" y="6" width="2" height="14" rx="1"/><rect x="32" y="6" width="2" height="14" rx="1"/><rect x="3" y="3" width="34" height="3" rx="1.5"/><rect x="8" y="8" width="24" height="2" rx="1"/></svg>
         <h2 class="font-cursive text-[#9b3a3a] text-2xl mb-3 flex items-center gap-2">
           <span class="material-symbols-rounded text-xl">lightbulb</span> Japan Essentials
         </h2>
         <div class="grid grid-cols-2 gap-2">
-          <div class="bg-white rounded-xl border border-[#f0d8d0] p-3 shadow-sm flex flex-col gap-1">
+          <div class="glass-card glass-hover p-3 flex flex-col gap-1">
             <span class="material-symbols-rounded text-lg text-[#c8705a]">currency_yen</span>
             <p class="font-sans font-bold text-[11px] text-[#3a2020]">Currency</p>
             <p class="font-sans text-[9px] text-[#a08878] leading-snug">Japanese Yen (¥). Use 7-Eleven ATMs. ~¥150 = $1</p>
           </div>
-          <div class="bg-white rounded-xl border border-[#f0d8d0] p-3 shadow-sm flex flex-col gap-1">
+          <div class="glass-card glass-hover p-3 flex flex-col gap-1">
             <span class="material-symbols-rounded text-lg text-[#c8705a]">power</span>
             <p class="font-sans font-bold text-[11px] text-[#3a2020]">Power</p>
             <p class="font-sans text-[9px] text-[#a08878] leading-snug">Type A plugs (same as US 2-prong). Bring converter for 3-prong.</p>
           </div>
-          <div class="bg-white rounded-xl border border-[#f0d8d0] p-3 shadow-sm flex flex-col gap-1">
+          <div class="glass-card glass-hover p-3 flex flex-col gap-1">
             <span class="material-symbols-rounded text-lg text-[#c8705a]">contactless</span>
             <p class="font-sans font-bold text-[11px] text-[#3a2020]">IC Card</p>
             <p class="font-sans text-[9px] text-[#a08878] leading-snug">Get Suica or Pasmo for metro, buses, and konbini payments.</p>
           </div>
-          <div class="bg-white rounded-xl border border-[#f0d8d0] p-3 shadow-sm flex flex-col gap-1">
+          <div class="glass-card glass-hover p-3 flex flex-col gap-1">
             <span class="material-symbols-rounded text-lg text-[#c8705a]">wifi</span>
             <p class="font-sans font-bold text-[11px] text-[#3a2020]">WiFi / SIM</p>
             <p class="font-sans text-[9px] text-[#a08878] leading-snug">Rent pocket WiFi or buy SIM at airport. Station WiFi is spotty.</p>
           </div>
-          <div class="bg-white rounded-xl border border-[#f0d8d0] p-3 shadow-sm flex flex-col gap-1">
+          <div class="glass-card glass-hover p-3 flex flex-col gap-1">
             <span class="material-symbols-rounded text-lg text-[#c8705a]">do_not_disturb_on</span>
             <p class="font-sans font-bold text-[11px] text-[#3a2020]">No Tipping</p>
             <p class="font-sans text-[9px] text-[#a08878] leading-snug">Tipping is not customary and can be seen as rude.</p>
           </div>
-          <div class="bg-white rounded-xl border border-[#f0d8d0] p-3 shadow-sm flex flex-col gap-1">
+          <div class="glass-card glass-hover p-3 flex flex-col gap-1">
             <span class="material-symbols-rounded text-lg text-[#c8705a]">delete</span>
             <p class="font-sans font-bold text-[11px] text-[#3a2020]">Trash</p>
             <p class="font-sans text-[9px] text-[#a08878] leading-snug">No public bins. Carry a small bag for trash until you find one.</p>
@@ -227,10 +232,11 @@
 
       <!-- Useful Phrases -->
       <section>
+        <svg viewBox="0 0 40 20" class="w-6 mx-auto opacity-15 mb-2" fill="#c8705a"><rect x="6" y="6" width="2" height="14" rx="1"/><rect x="32" y="6" width="2" height="14" rx="1"/><rect x="3" y="3" width="34" height="3" rx="1.5"/><rect x="8" y="8" width="24" height="2" rx="1"/></svg>
         <h2 class="font-cursive text-[#9b3a3a] text-2xl mb-3 flex items-center gap-2">
           <span class="material-symbols-rounded text-xl">translate</span> Key Phrases
         </h2>
-        <div class="bg-white rounded-2xl border border-[#f0d8d0] shadow-sm overflow-hidden">
+        <div class="glass-card overflow-hidden">
           {#each [
             ['Hello', 'Konnichiwa', 'こんにちは'],
             ['Thank you', 'Arigatō gozaimasu', 'ありがとうございます'],
@@ -241,7 +247,7 @@
             ['Delicious!', 'Oishii!', 'おいしい！'],
             ['Check, please', 'Okaikei onegaishimasu', 'お会計お願いします'],
           ] as [en, romaji, jp], i}
-            <div class="flex items-center gap-2 px-3.5 py-2 {i % 2 === 0 ? 'bg-white' : 'bg-[#faf5f2]'}">
+            <div class="flex items-center gap-2 px-3.5 py-2 {i % 2 === 0 ? 'bg-transparent' : 'glass-subtle'}">
               <span class="font-sans font-bold text-[10px] text-[#5a3d38] w-[72px] shrink-0">{en}</span>
               <span class="font-sans text-[10px] text-[#a08878] flex-1">{romaji}</span>
               <span class="font-sans text-[11px] text-[#9b3a3a] shrink-0">{jp}</span>
@@ -252,10 +258,11 @@
 
       <!-- Emergency -->
       <section>
+        <svg viewBox="0 0 40 20" class="w-6 mx-auto opacity-15 mb-2" fill="#c8705a"><rect x="6" y="6" width="2" height="14" rx="1"/><rect x="32" y="6" width="2" height="14" rx="1"/><rect x="3" y="3" width="34" height="3" rx="1.5"/><rect x="8" y="8" width="24" height="2" rx="1"/></svg>
         <h2 class="font-cursive text-[#9b3a3a] text-2xl mb-3 flex items-center gap-2">
           <span class="material-symbols-rounded text-xl">emergency</span> Emergency
         </h2>
-        <div class="bg-white rounded-2xl border border-[#f0d8d0] p-4 shadow-sm flex flex-col gap-2">
+        <div class="glass-card p-4 flex flex-col gap-2">
           <div class="flex items-center gap-3">
             <span class="material-symbols-rounded text-lg text-[#e84c4c]">local_police</span>
             <div>
