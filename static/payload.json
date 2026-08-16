@@ -4551,7 +4551,7 @@
       },
       {
         "id": "res_hotel_kyoto_fj",
-        "label": "Tokyu Stay Kyoto — Jessy & Jurializ",
+        "label": "Tokyu Stay Kyoto — Room 1",
         "category": "Hotel",
         "notes": "Oct 23–26 · 3 nights · Tokyu Stay Kyoto Sakaiza Shijo-Kawaramachi · Room 2 · 2 adults · Avg $327.47/night + $100.24 taxes · Check-in 3:00 PM · Checkout 11:00 AM · Combined booking total $2,165.32",
         "booking_status": "booked",
@@ -4609,7 +4609,7 @@
       },
       {
         "id": "res_hotel_kyoto_hyc",
-        "label": "Tokyu Stay Kyoto — Hilary, Yamil, Carlos",
+        "label": "Tokyu Stay Kyoto — Room 2",
         "category": "Hotel",
         "booking_status": "booked",
         "price": {
