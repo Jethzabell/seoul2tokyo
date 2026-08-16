@@ -104,7 +104,7 @@
 </style>
 <script>
 async function load() {
-  const res = await fetch('./src/lib/payload.json');
+  const res = await fetch('/payload.json');
   const data = await res.json();
   render(data);
 }

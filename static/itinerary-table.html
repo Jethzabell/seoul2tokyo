@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Japan 2026 — Itinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: #f5ede8;
+    color: #3a2d32;
+    min-height: 100vh;
+  }
+
+  /* ── Header ── */
+  .page-header {
+    background: linear-gradient(135deg, #9b3a3a 0%, #c8705a 100%);
+    color: white;
+    padding: 28px 24px 20px;
+    text-align: center;
+  }
+  .page-header h1 {
+    font-family: 'Caveat', cursive;
+    font-size: 36px;
+    letter-spacing: 0.5px;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .page-header .subtitle {
+    font-size: 13px;
+    opacity: 0.85;
+    font-weight: 600;
+  }
+
+  /* ── Toolbar ── */
+  .toolbar {
+    background: white;
+    border-bottom: 1px solid #f0e0d8;
+    padding: 12px 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .toolbar input, .toolbar select {
+    padding: 7px 12px;
+    border: 1.5px solid #e8d0c8;
+    border-radius: 20px;
+    font-size: 12px;
+    font-family: 'Nunito', sans-serif;
+    background: #fdf8f6;
+    color: #3a2d32;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .toolbar input { width: 200px; }
+  .toolbar input:focus, .toolbar select:focus { border-color: #c8705a; }
+
+  /* ── Stats bar ── */
+  .stats-bar {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 12px 20px;
+    background: #faf4f0;
+    border-bottom: 1px solid #f0e0d8;
+  }
+  .stat {
+    background: white;
+    border: 1px solid #f0d8d0;
+    border-radius: 20px;
+    padding: 4px 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .stat-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+  /* ── Table wrapper ── */
+  .table-wrap { padding: 16px 20px 40px; overflow-x: auto; }
+
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+
+  /* ── Thead ── */
+  thead tr { background: #3a2d32; }
+  th {
+    padding: 11px 12px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: rgba(255,255,255,0.75);
+    text-align: left;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 2px solid #c8705a;
+    transition: color 0.15s;
+  }
+  th:hover { color: white; }
+  th.sort-asc::after  { content: ' ↑'; color: #f4a878; }
+  th.sort-desc::after { content: ' ↓'; color: #f4a878; }
+
+  /* ── Body rows ── */
+  td {
+    padding: 9px 12px;
+    font-size: 12.5px;
+    border-bottom: 1px solid #f5ede8;
+    vertical-align: middle;
+    transition: background 0.1s;
+  }
+  tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #fdf6f2; }
+
+  /* ── Date break rows ── */
+  tr.date-break td {
+    padding: 8px 12px;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+  }
+  tr.date-break:hover td { filter: brightness(0.97); }
+
+  /* ── City color bands ── */
+  tr.city-shibuya td  { border-left: 4px solid #2a5cb8; }
+  tr.city-kyoto td    { border-left: 4px solid #286840; }
+  tr.city-osaka td    { border-left: 4px solid #c87020; }
+  tr.city-shinjuku td { border-left: 4px solid #6830a8; }
+  tr.city-flight td   { border-left: 4px solid #9b284a; }
+
+  tr.date-break.city-shibuya td  { background:#dde8f8; color:#1a4090; border-left:5px solid #2a5cb8; }
+  tr.date-break.city-kyoto td    { background:#d4eedd; color:#1a5030; border-left:5px solid #286840; }
+  tr.date-break.city-osaka td    { background:#fde4c0; color:#8a4c00; border-left:5px solid #c87020; }
+  tr.date-break.city-shinjuku td { background:#ecdcf8; color:#4a1880; border-left:5px solid #6830a8; }
+  tr.date-break.city-flight td   { background:#fde0e8; color:#7a1830; border-left:5px solid #9b284a; }
+
+  /* ── City pills ── */
+  .city-pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 10px;
+    vertical-align: middle;
+    opacity: 0.85;
+  }
+  .pill-shibuya  { background:#2a5cb8; color:white; }
+  .pill-kyoto    { background:#286840; color:white; }
+  .pill-osaka    { background:#c87020; color:white; }
+  .pill-shinjuku { background:#6830a8; color:white; }
+  .pill-flight   { background:#9b284a; color:white; }
+
+  /* ── Sub-stop rows ── */
+  tr.sub-stop td {
+    background: #f8fbff;
+    border-left: 4px solid #b8cce0 !important;
+    color: #4a5a6a;
+    font-size: 12px;
+    padding-left: 22px;
+  }
+  tr.sub-stop:hover td { background: #eef4fc; }
+  tr.sub-stop .act-name { color: #3a5070; }
+
+  /* ── Activity name cell ── */
+  .act-name { font-weight: 700; font-size: 13px; color: #3a2d32; line-height: 1.3; }
+  .act-sub  { font-size: 10.5px; color: #a08878; margin-top: 1px; line-height: 1.4; max-width: 240px; }
+
+  /* ── Time chip ── */
+  .time-chip {
+    display: inline-block;
+    background: #f5ede8;
+    border: 1px solid #e8d0c8;
+    border-radius: 8px;
+    padding: 2px 7px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #7a5040;
+    white-space: nowrap;
+  }
+
+  /* ── Badges ── */
+  .badge {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+  }
+  .b-booked     { background: #dcf2e4; color: #1a6030; }
+  .b-planned    { background: #dde8f8; color: #1a4090; }
+  .b-not_booked { background: #fde8d8; color: #9a4820; }
+  .b-cancelled  { background: #f0e8e8; color: #8a4040; }
+
+  .b-must         { background: #fce8f0; color: #8a1840; }
+  .b-nice_to_have { background: #ede8fc; color: #5028a0; }
+  .b-flex         { background: #e8f4e8; color: #286028; }
+
+  /* ── Category dots ── */
+  .cat-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .cat-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .cat-Flight    .cat-dot { background: #9b284a; }
+  .cat-Train     .cat-dot { background: #1a5898; }
+  .cat-Food      .cat-dot { background: #c8705a; }
+  .cat-Logistics .cat-dot { background: #a08878; }
+  .cat-Hotel     .cat-dot { background: #c8705a; }
+  .cat-Sightseeing .cat-dot { background: #287040; }
+  .cat-Shopping  .cat-dot { background: #6a40a8; }
+  .cat-Experience .cat-dot { background: #9b284a; }
+  .cat-Explore   .cat-dot { background: #4070a8; }
+  .cat-Nightlife .cat-dot { background: #8060a0; }
+  .cat-Flight    { color: #9b284a; }
+  .cat-Train     { color: #1a5898; }
+  .cat-Food      { color: #c8705a; }
+  .cat-Logistics { color: #a08878; }
+  .cat-Hotel     { color: #c8705a; }
+  .cat-Sightseeing { color: #287040; }
+  .cat-Shopping  { color: #6a40a8; }
+  .cat-Experience { color: #9b284a; }
+  .cat-Explore   { color: #4070a8; }
+  .cat-Nightlife { color: #8060a0; }
+
+  /* ── Area pill ── */
+  .area-pill {
+    display: inline-block;
+    background: #f0ece8;
+    border: 1px solid #e0d0c8;
+    border-radius: 10px;
+    padding: 2px 8px;
+    font-size: 10.5px;
+    font-weight: 600;
+    color: #7a5c56;
+    white-space: nowrap;
+  }
+
+  /* ── Number cell ── */
+  .row-num { color: #c0a898; font-size: 11px; font-weight: 700; text-align: right; }
+
+  #loading { text-align: center; padding: 60px; color: #a08878; font-size: 14px; }
+
+  @media (max-width: 800px) {
+    .toolbar input { width: 150px; }
+    td, th { padding: 7px 8px; font-size: 11px; }
+    .act-sub { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Japan 2026 — Full Itinerary</h1>
+  <p class="subtitle" id="subtitle">Loading…</p>
+</div>
+
+<div class="toolbar">
+  <input type="text" id="search" placeholder="🔍  Search activities…" oninput="applyFilters()">
+  <select id="filterDate" onchange="applyFilters()"><option value="">All Dates</option></select>
+  <select id="filterCat" onchange="applyFilters()"><option value="">All Categories</option></select>
+  <select id="filterStatus" onchange="applyFilters()">
+    <option value="">All Status</option>
+    <option value="booked">Booked</option>
+    <option value="planned">Planned</option>
+    <option value="not_booked">Not Booked</option>
+  </select>
+  <select id="filterPriority" onchange="applyFilters()">
+    <option value="">All Priority</option>
+    <option value="must">Must</option>
+    <option value="nice_to_have">Nice to Have</option>
+    <option value="flex">Flex</option>
+  </select>
+  <select id="filterCity" onchange="applyFilters()">
+    <option value="">All Cities</option>
+    <option value="shibuya">Tokyo (Shibuya)</option>
+    <option value="kyoto">Kyoto</option>
+    <option value="osaka">Osaka</option>
+    <option value="shinjuku">Tokyo (Shinjuku)</option>
+  </select>
+</div>
+
+<div class="stats-bar" id="stats"></div>
+<div id="loading">Loading itinerary…</div>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr>
+      <th onclick="sortBy(0)" style="width:36px">#</th>
+      <th onclick="sortBy(1)">Date</th>
+      <th onclick="sortBy(2)">Day</th>
+      <th onclick="sortBy(3)">Time</th>
+      <th onclick="sortBy(4)">Activity</th>
+      <th onclick="sortBy(5)">Category</th>
+      <th onclick="sortBy(6)">Area</th>
+      <th onclick="sortBy(7)">Priority</th>
+      <th onclick="sortBy(8)">Status</th>
+      <th onclick="sortBy(9)">Notes</th>
+    </tr>
+  </thead>
+  <tbody id="tbody"></tbody>
+</table>
+</div>
+
+<script>
+// ── City detection by date ────────────────────────────────────────────────
+// Built dynamically from payload after fetch
+let cityDateMap = {};
+
+function getCity(date) {
+  if (!date) return 'flight';
+  return cityDateMap[date] ?? 'flight';
+}
+
+const cityLabels = {
+  shibuya:  '🔵 Tokyo (Shibuya)',
+  kyoto:    '🟢 Kyoto',
+  osaka:    '🟠 Osaka',
+  shinjuku: '🟣 Tokyo (Shinjuku)',
+  flight:   '✈️ Flight/Transit',
+};
+
+const destCityKey = {
+  city_tokyo_shibuya: 'shibuya',
+  city_kyoto:         'kyoto',
+  city_osaka:         'osaka',
+  city_tokyo_shinjuku:'shinjuku',
+};
+
+let DATA = [];
+let sortCol = 1, sortAsc = true;
+
+// ── Transform payload.json → flat row array ───────────────────────────────
+function transformPayload(payload) {
+  const rows = [];
+
+  // Build cityDateMap from destination date ranges
+  for (const dest of payload.destinations) {
+    const key = destCityKey[dest.id];
+    if (!key || !dest.dates) continue;
+    const start = dest.dates.arrival;
+    const end   = dest.dates.departure;
+    if (!start || !end) continue;
+    let d = new Date(start + 'T12:00:00');
+    const last = new Date(end + 'T12:00:00');
+    while (d <= last) {
+      const iso = d.toISOString().slice(0, 10);
+      if (!cityDateMap[iso]) cityDateMap[iso] = key;
+      d.setDate(d.getDate() + 1);
+    }
+  }
+
+  // Flight / transport segments
+  for (const seg of (payload.transport?.segments ?? [])) {
+    if (!seg.date) continue;
+    const timeStr = seg.time_depart
+      ? (seg.time_arrive ? `${seg.time_depart} – ${seg.time_arrive}` : seg.time_depart)
+      : '';
+    const names = seg.price?.travelers_names?.join(', ') ?? '';
+    const isTrainSeg = seg.type === 'train';
+    const segLabel = isTrainSeg
+      ? `${seg.from?.city ?? seg.from?.code ?? ''} → ${seg.to?.city ?? seg.to?.code ?? ''} (${seg.carrier})`
+      : `${seg.from?.code ?? ''} → ${seg.to?.code ?? ''} (${seg.carrier} ${seg.flight_number ?? ''})`.trim();
+    rows.push({
+      date:     seg.date,
+      day:      '',
+      time:     timeStr,
+      activity: segLabel,
+      category: isTrainSeg ? 'Train' : 'Flight',
+      area:     `${seg.from?.city ?? ''} → ${seg.to?.city ?? ''}`,
+      priority: 'must',
+      status:   seg.booking_status ?? 'booked',
+      notes:    [seg.ref, names].filter(Boolean).join(' · '),
+    });
+  }
+
+  // Destination activities
+  for (const dest of payload.destinations) {
+    for (const a of (dest.activities ?? [])) {
+      if (!a.date && !a.day) continue;
+      const timeStr = a.start_time
+        ? (a.end_time ? `${a.start_time} – ${a.end_time}` : a.start_time)
+        : (a.time ?? 'TBD');
+      rows.push({
+        date:      a.date ?? '',
+        day:       a.day ? `Day ${a.day}` : '',
+        time:      timeStr,
+        activity:  a.name,
+        category:  a.category ?? '',
+        area:      a.area ?? dest.city ?? '',
+        priority:  a.priority ?? 'flex',
+        status:    a.booking_status ?? 'planned',
+        notes:     a.notes ?? '',
+        sub_stop:  a.sub_stop ?? false,
+        parent_id: a.parent_id ?? null,
+        id:        a.id ?? null,
+      });
+    }
+  }
+
+  // Sort: parents by date+time, sub-stops injected immediately after their parent
+  const parents  = rows.filter(r => !r.sub_stop);
+  const subStops = rows.filter(r => r.sub_stop);
+
+  parents.sort((a, b) => {
+    const dc = a.date.localeCompare(b.date);
+    if (dc !== 0) return dc;
+    return (a.time || 'ZZ').localeCompare(b.time || 'ZZ');
+  });
+
+  // Build a map: parent_id → ordered sub-stops (preserve payload insertion order)
+  const subByParent = {};
+  subStops.forEach(s => {
+    const key = s.parent_id ?? `__orphan_${s.date}`;
+    if (!subByParent[key]) subByParent[key] = [];
+    subByParent[key].push(s);
+  });
+
+  const sorted = [];
+  parents.forEach(p => {
+    sorted.push(p);
+    const children = subByParent[p.id] ?? [];
+    children.forEach(c => sorted.push(c));
+  });
+
+  // Orphan sub-stops (no matching parent found)
+  Object.entries(subByParent).forEach(([key, children]) => {
+    if (key.startsWith('__orphan_')) children.forEach(c => sorted.push(c));
+  });
+
+  return sorted;
+}
+
+// ── Render helpers ────────────────────────────────────────────────────────
+function fmtDate(iso) {
+  if (!iso) return '';
+  const d = new Date(iso + 'T12:00:00');
+  return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+}
+
+function sortBy(col) {
+  if (sortCol === col) sortAsc = !sortAsc;
+  else { sortCol = col; sortAsc = true; }
+  applyFilters();
+}
+
+function applyFilters() {
+  const fd    = document.getElementById('filterDate').value;
+  const fc    = document.getElementById('filterCat').value;
+  const fs    = document.getElementById('filterStatus').value;
+  const fp    = document.getElementById('filterPriority').value;
+  const fCity = document.getElementById('filterCity').value;
+  const sq    = document.getElementById('search').value.toLowerCase();
+
+  let rows = DATA.filter(r => {
+    if (fd    && r.date !== fd)             return false;
+    if (fc    && r.category !== fc)         return false;
+    if (fs    && r.status !== fs)           return false;
+    if (fp    && r.priority !== fp)         return false;
+    if (fCity && getCity(r.date) !== fCity) return false;
+    if (sq && !(r.activity + r.area + r.notes + r.category).toLowerCase().includes(sq)) return false;
+    return true;
+  });
+
+  const keys = ['','date','day','time','activity','category','area','priority','status','notes'];
+  rows.sort((a, b) => {
+    const k  = keys[sortCol] || 'date';
+    const va = (a[k] || '').toLowerCase();
+    const vb = (b[k] || '').toLowerCase();
+    return sortAsc ? va.localeCompare(vb) : vb.localeCompare(va);
+  });
+
+  // Stats
+  const total     = rows.length;
+  const booked    = rows.filter(r => r.status === 'booked').length;
+  const notBooked = rows.filter(r => r.status === 'not_booked').length;
+  const planned   = rows.filter(r => r.status === 'planned').length;
+  const musts     = rows.filter(r => r.priority === 'must').length;
+  document.getElementById('stats').innerHTML = `
+    <div class="stat"><span class="stat-dot" style="background:#888"></span> ${total} total</div>
+    <div class="stat"><span class="stat-dot" style="background:#1a6030"></span> ${booked} booked</div>
+    <div class="stat"><span class="stat-dot" style="background:#1a4090"></span> ${planned} planned</div>
+    <div class="stat"><span class="stat-dot" style="background:#9a4820"></span> ${notBooked} not booked</div>
+    <div class="stat"><span class="stat-dot" style="background:#8a1840"></span> ${musts} must-do</div>
+  `;
+
+  let html = '';
+  let lastDate = '';
+  let rowNum = 0;
+  rows.forEach(r => {
+    const city = getCity(r.date);
+    if (r.date !== lastDate) {
+      lastDate = r.date;
+      const cityLabel = cityLabels[city] ?? '';
+      html += `<tr class="date-break city-${city}">
+        <td colspan="10" style="font-size:12.5px">
+          <strong>${fmtDate(r.date)}</strong>
+          <span style="opacity:0.6; font-weight:400; margin:0 6px">·</span>
+          <span style="opacity:0.65; font-size:11px">${r.date}</span>
+          <span class="city-pill pill-${city}">${cityLabel}</span>
+        </td>
+      </tr>`;
+    }
+    if (!r.sub_stop) rowNum++;
+    const statusCls = 'b-' + r.status;
+    const prioCls   = 'b-' + r.priority;
+    const catCls    = 'cat-chip cat-' + r.category;
+    const subCls    = r.sub_stop ? 'sub-stop' : '';
+    const actLabel  = r.sub_stop ? `↳ ${r.activity}` : r.activity;
+    const notesHtml = r.notes
+      ? `<div class="act-sub">${r.notes}</div>`
+      : '';
+    html += `<tr class="city-${city} ${subCls}">
+      <td class="row-num" style="color:#b8a098;padding-right:4px">${r.sub_stop ? '' : rowNum}</td>
+      <td style="white-space:nowrap;font-size:11.5px;color:#7a5c56">${fmtDate(r.date)}</td>
+      <td style="font-size:11px;white-space:nowrap;color:#a08878;font-weight:700">${r.day}</td>
+      <td><span class="time-chip">${r.time || 'TBD'}</span></td>
+      <td>
+        <div class="act-name">${actLabel}</div>
+        ${notesHtml}
+      </td>
+      <td><span class="${catCls}"><span class="cat-dot"></span>${r.category}</span></td>
+      <td><span class="area-pill">${r.area}</span></td>
+      <td><span class="badge ${prioCls}">${r.priority.replace('_', ' ')}</span></td>
+      <td><span class="badge ${statusCls}">${r.status.replace('_', ' ')}</span></td>
+      <td style="font-size:11px;color:#a08878;max-width:0"></td>
+    </tr>`;
+  });
+  document.getElementById('tbody').innerHTML = html;
+}
+
+// ── Boot: fetch payload and render ────────────────────────────────────────
+fetch('/payload.json')
+  .then(r => r.json())
+  .then(payload => {
+    document.getElementById('loading').style.display = 'none';
+
+    DATA = transformPayload(payload);
+
+    // Subtitle from payload meta
+    const meta = payload.meta ?? {};
+    const names = payload.destinations
+      .flatMap(d => d.travelers ?? [])
+      .filter((v, i, a) => v && a.indexOf(v) === i);
+    document.getElementById('subtitle').textContent =
+      `${meta.start_date ?? ''} – ${meta.end_date ?? ''} · ${meta.total_nights ?? ''} Days · ${payload.travelers?.join(', ') ?? ''}`;
+
+    // Populate filter dropdowns
+    const dates = [...new Set(DATA.map(r => r.date).filter(Boolean))].sort();
+    const cats  = [...new Set(DATA.map(r => r.category).filter(Boolean))].sort();
+    const fd = document.getElementById('filterDate');
+    const fc = document.getElementById('filterCat');
+    dates.forEach(d => { const o = document.createElement('option'); o.value = d; o.textContent = fmtDate(d); fd.appendChild(o); });
+    cats.forEach(c =>  { const o = document.createElement('option'); o.value = c; o.textContent = c;           fc.appendChild(o); });
+
+    applyFilters();
+  })
+  .catch(err => {
+    document.getElementById('loading').textContent = 'Failed to load payload.json — ' + err.message;
+  });
+</script>
+</body>
+</html>

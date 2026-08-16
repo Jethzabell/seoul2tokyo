@@ -1,0 +1,10 @@
+export const segmentColors = {
+  sakura: { bg: '#fde8f0', border: '#f4a8c4', band: '#f09ab8', text: '#9b284a' },
+  sky:    { bg: '#e8f2fd', border: '#98c4f0', band: '#78aae8', text: '#1a5898' },
+  matcha: { bg: '#e8f4ea', border: '#98d098', band: '#70b878', text: '#286838' },
+  neon:   { bg: '#f0e8fd', border: '#c898f0', band: '#a870e8', text: '#4828a8' }
+};
+
+export function tbd(val) {
+  return (!val || val === 'TBD') ? null : val;
+}
