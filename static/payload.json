@@ -4586,28 +4586,6 @@
         "address": "557 Nakanocho, Nakagyo-ku, Kyoto JP 604-8042"
       },
       {
-        "id": "res_hotel_kyoto_frances_james",
-        "label": "Kyoto Hotel · Frances & James (TBD)",
-        "category": "Hotel",
-        "booking_status": "not_booked",
-        "group": "kyoto",
-        "group_color": "#286840",
-        "price": {
-          "amount": null,
-          "currency": "USD",
-          "per_person": false,
-          "approximate": true,
-          "status": "tbd"
-        },
-        "notes": "Oct 23–26 · 3 nights · 2 adults · Booking separately",
-        "cancel_by": null,
-        "guests": [
-          "Frances",
-          "James"
-        ],
-        "link": null
-      },
-      {
         "id": "res_hotel_kyoto_hyc",
         "label": "Tokyu Stay Kyoto — Room 2",
         "category": "Hotel",
@@ -4687,28 +4665,6 @@
         "hotel_confirmation": "20260809219887545",
         "room_type": "Connecting Room For 5 People, Non Smoking",
         "address": "1-1 Ofukacho, Kita Osaka, JP 530-0011"
-      },
-      {
-        "id": "res_hotel_osaka_frances_james",
-        "label": "Osaka Hotel · Frances & James (TBD)",
-        "category": "Hotel",
-        "booking_status": "not_booked",
-        "group": "osaka",
-        "group_color": "#c87020",
-        "price": {
-          "amount": null,
-          "currency": "USD",
-          "per_person": false,
-          "approximate": true,
-          "status": "tbd"
-        },
-        "notes": "Oct 26–28 · 2 nights · 2 adults · Booking separately",
-        "cancel_by": null,
-        "guests": [
-          "Frances",
-          "James"
-        ],
-        "link": null
       },
       {
         "id": "res_hotel_shinjuku_jj",

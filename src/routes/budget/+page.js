@@ -30,6 +30,7 @@ export function load() {
           date: a.date,
           amount: a.price.amount,
           currency: a.price.currency ?? 'USD',
+          approximate: a.price.approximate ?? true,
           status: a.price.status ?? 'confirmed',
           travelers: a.price.travelers ?? 7,
         });
@@ -47,10 +48,10 @@ export function load() {
       currency: r.price.currency ?? 'USD',
       approximate: r.price?.approximate ?? false,
       status: r.price.status ?? 'confirmed',
-      cancel_by: r.cancel_by ?? null,
       link: r.link ?? null,
       group_color: r.group_color ?? null,
       guests: r.guests?.length ?? 7,
+      guestNames: r.guests ?? [],
     }));
 
   // ── Not-yet-booked reserve items (shown but NOT in total) ─────────────────
@@ -72,5 +73,21 @@ export function load() {
   const activityTotal = activities.reduce((s, a) => s + toUSD(a.amount, a.currency), 0);
   const hotelTotal = hotels.reduce((s, h) => s + toUSD(h.amount, h.currency), 0);
 
-  return { flights, activities, hotels, tbd, flightTotal, activityTotal, hotelTotal };
+  // Per-group hotel costs
+  const groups = [
+    { label: 'Group 1', members: ['Jessy', 'Jurializ'] },
+    { label: 'Group 2', members: ['Hilary', 'Carlos', 'Yamil'] },
+    { label: 'Group 3', members: ['James', 'Frances'] },
+  ];
+  const hotelGroups = groups.map(g => {
+    let perPerson = 0;
+    for (const h of hotels) {
+      const usd = toUSD(h.amount, h.currency);
+      const isGuest = h.guestNames.length === 0 || g.members.some(m => h.guestNames.includes(m));
+      if (isGuest) perPerson += usd / h.guests;
+    }
+    return { ...g, perPerson: +perPerson.toFixed(2) };
+  });
+
+  return { flights, activities, hotels, tbd, flightTotal, activityTotal, hotelTotal, hotelGroups };
 }

@@ -1,6 +1,6 @@
 <script>
   export let data;
-  const { flights, activities, hotels, tbd, flightTotal, activityTotal, hotelTotal } = data;
+  const { flights, activities, hotels, tbd, flightTotal, activityTotal, hotelTotal, hotelGroups } = data;
 
   const toUSD = (amount, currency) =>
     currency === 'JPY' ? +(amount / 163.88).toFixed(2) : amount;
@@ -96,9 +96,17 @@
             </div>
           {/each}
         </div>
-        <div class="glass-subtle rounded-xl px-3 py-1.5 flex items-center justify-between mt-1">
-          <span class="font-sans text-[9px] text-[#2a5cb8]">Subtotal</span>
-          <span class="font-sans font-bold text-[11px] text-[#2a5cb8]">{fmtUSD(hotelTotal)} · {fmtUSD(+(hotelTotal/7).toFixed(2))}/pp</span>
+        <div class="glass-subtle rounded-xl px-3 py-2 mt-1 flex flex-col gap-1">
+          <div class="flex items-center justify-between">
+            <span class="font-sans text-[9px] text-[#2a5cb8]">Subtotal</span>
+            <span class="font-sans font-bold text-[11px] text-[#2a5cb8]">{fmtUSD(hotelTotal)}</span>
+          </div>
+          {#each hotelGroups as g}
+            <div class="flex items-center justify-between">
+              <span class="font-sans text-[8px] text-[#7a8898]">{g.label}</span>
+              <span class="font-sans font-bold text-[10px] text-[#2a5cb8]">{fmtUSD(g.perPerson)}/pp</span>
+            </div>
+          {/each}
         </div>
       </section>
 
@@ -118,7 +126,7 @@
                 <p class="font-sans font-bold text-[11px] text-[#3a2020] truncate">{a.label}</p>
                 <p class="font-sans text-[9px] text-[#a08878]">{a.city}{a.date ? ' · ' + fmtDate(a.date) : ''}</p>
               </div>
-              <p class="font-sans font-bold text-[12px] text-[#3a2020] shrink-0">{fmtUSD(usd)}</p>
+              <p class="font-sans font-bold text-[12px] text-[#3a2020] shrink-0">{a.approximate ? '~' : ''}{fmtUSD(usd)}</p>
             </div>
           {/each}
         </div>
@@ -187,6 +195,18 @@
         </section>
       {/if}
 
+    </div>
+
+    <!-- Venmo -->
+    <div class="flex justify-center px-6 pb-3">
+      <a href="https://venmo.com/code?user_id=2169929423912960072&created=1786910339"
+         target="_blank" rel="noopener"
+         class="glass-card glass-hover flex items-center gap-2 px-4 py-2.5 w-full justify-center">
+        <svg viewBox="0 0 24 24" class="w-5 h-5" fill="#3D95CE">
+          <path d="M19.5 1.5c.8 1.3 1.2 2.7 1.2 4.4 0 5.5-4.7 12.6-8.5 17.6H5.2L2.3 3.3l6.2-.6 1.7 13.4c1.6-2.6 3.5-6.7 3.5-9.5 0-1.6-.3-2.7-.7-3.5l6.5-1.6z"/>
+        </svg>
+        <span class="font-sans text-sm font-bold text-[#3D95CE]">Pay with Venmo</span>
+      </a>
     </div>
 
     <!-- Footer nav -->
