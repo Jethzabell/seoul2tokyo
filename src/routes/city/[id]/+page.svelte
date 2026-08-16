@@ -222,93 +222,123 @@
       {#if tab === 'summary'}
       <div in:fade={{ duration: 220, delay: 40 }}>
 
-        <div class="bg-white rounded-2xl border border-[#f0d8d0] p-4 flex flex-col gap-2.5 shadow-sm">
-          <p class="font-sans font-semibold text-sm text-[#5a3d38] leading-snug">{city_ui.hero_subtitle}</p>
-          <div class="flex items-center gap-3 text-xs text-[#a07870] font-sans flex-wrap">
-            <span class="flex items-center gap-1"><span class="material-symbols-rounded text-sm">calendar_month</span>{stayRange}</span>
-            <span class="flex items-center gap-1"><span class="material-symbols-rounded text-sm">dark_mode</span>{nightCount} night{nightCount !== 1 ? 's' : ''}</span>
+        <!-- Overview card -->
+        <div class="rounded-2xl overflow-hidden shadow-sm border" style="border-color:{t.accentBg}">
+          <div class="px-4 py-3" style="background:linear-gradient(135deg, {t.accent}, {t.headerBg})">
+            <p class="font-sans font-semibold text-sm text-white/95 leading-snug">{city_ui.hero_subtitle}</p>
+          </div>
+          <div class="bg-white px-4 py-3 flex flex-col gap-2">
+            <div class="flex items-center gap-4 text-xs text-[#7a5c56] font-sans">
+              <span class="flex items-center gap-1.5">
+                <span class="material-symbols-rounded text-sm" style="color:{t.accent}">calendar_month</span>{stayRange}
+              </span>
+              <span class="flex items-center gap-1.5">
+                <span class="material-symbols-rounded text-sm" style="color:{t.accent}">dark_mode</span>{nightCount}N
+              </span>
+            </div>
             {#if mapUrl}
-              <a href={mapUrl} target="_blank" rel="noopener" class="flex items-center gap-1 text-[#c8705a] hover:underline">
-                <span class="material-symbols-rounded text-sm">map</span>Map
+              <a href={mapUrl} target="_blank" rel="noopener"
+                class="flex items-center gap-1 text-xs font-semibold hover:underline" style="color:{t.accent}">
+                <span class="material-symbols-rounded text-sm">map</span>View all on map
               </a>
             {/if}
           </div>
         </div>
 
-        <div class="bg-white rounded-2xl border border-[#f0d8d0] p-3.5 flex flex-col gap-2 shadow-sm">
-          {#if stay?.hotel_name}
-            <div class="flex items-center justify-between gap-2">
-              <a href={stay.hotel_link} target="_blank" rel="noopener"
-                class="flex items-center gap-1.5 font-sans text-xs font-semibold text-[#c8705a] hover:underline min-w-0">
-                <span class="material-symbols-rounded text-sm shrink-0">hotel</span>
-                <span class="truncate">{stay.hotel_name}</span>
-              </a>
-              {#if stay.price_per_night}
-                <span class="shrink-0 font-sans text-[11px] font-bold text-[#287040] bg-[#e8f4ea] border border-[#98d098] px-2 py-0.5 rounded-full whitespace-nowrap">
-                  {stay.price_per_night}<span class="font-normal text-[9px]">/night</span>
-                </span>
-              {/if}
-            </div>
-            {#if stay.checkin_time || stay.checkout_time}
-              <div class="flex items-center gap-3 text-[10px] text-[#a08878] font-sans">
-                {#if stay.checkin_time}
-                  <span class="flex items-center gap-0.5"><span class="material-symbols-rounded text-xs">login</span>In {stay.checkin_time}</span>
-                {/if}
-                {#if stay.checkout_time}
-                  <span class="flex items-center gap-0.5"><span class="material-symbols-rounded text-xs">logout</span>Out {stay.checkout_time}</span>
+        <!-- Hotel card -->
+        <div class="rounded-2xl overflow-hidden shadow-sm border" style="border-color:{t.accentBg}">
+          <div class="flex items-center gap-2 px-4 py-2" style="background:{t.accentBg}">
+            <span class="material-symbols-rounded text-sm" style="color:{t.accent}">hotel</span>
+            <span class="font-sans text-[10px] font-bold uppercase tracking-wider" style="color:{t.accent}">Accommodation</span>
+          </div>
+          <div class="bg-white px-4 py-3">
+            {#if stay?.hotel_name}
+              <div class="flex items-start justify-between gap-2">
+                <div class="min-w-0">
+                  <a href={stay.hotel_link} target="_blank" rel="noopener"
+                    class="font-sans text-sm font-bold hover:underline truncate block" style="color:{t.accent}">
+                    {stay.hotel_name}
+                  </a>
+                  {#if stay.checkin_time || stay.checkout_time}
+                    <div class="flex items-center gap-3 text-[10px] text-[#a08878] font-sans mt-1">
+                      {#if stay.checkin_time}
+                        <span class="flex items-center gap-0.5"><span class="material-symbols-rounded text-xs">login</span>{stay.checkin_time}</span>
+                      {/if}
+                      {#if stay.checkout_time}
+                        <span class="flex items-center gap-0.5"><span class="material-symbols-rounded text-xs">logout</span>{stay.checkout_time}</span>
+                      {/if}
+                    </div>
+                  {/if}
+                </div>
+                {#if stay.price_per_night}
+                  <span class="shrink-0 font-sans text-[11px] font-bold text-[#287040] bg-[#e8f4ea] border border-[#98d098] px-2 py-0.5 rounded-full whitespace-nowrap">
+                    {stay.price_per_night}<span class="font-normal text-[9px]">/night</span>
+                  </span>
                 {/if}
               </div>
-            {/if}
-          {:else}
-            <p class="flex items-center gap-1.5 font-sans text-xs italic text-[#c0a8a0]">
-              <span class="material-symbols-rounded text-sm">hotel</span>Hotel TBD
-            </p>
-          {/if}
-        </div>
-
-        <div class="grid grid-cols-4 gap-1.5">
-          <div class="bg-white rounded-xl border border-[#f0d8d0] p-2 text-center shadow-sm">
-            <p class="font-sans font-bold text-base text-[#5a3d38]">{cityStats.totalActs}</p>
-            <p class="font-sans text-[8px] uppercase tracking-wide text-[#b08878]">Activities</p>
-          </div>
-          <div class="bg-white rounded-xl border border-[#f0d8d0] p-2 text-center shadow-sm">
-            <p class="font-sans font-bold text-base text-[#287040]">{cityStats.booked}</p>
-            <p class="font-sans text-[8px] uppercase tracking-wide text-[#b08878]">Booked</p>
-          </div>
-          <div class="bg-white rounded-xl border border-[#f0d8d0] p-2 text-center shadow-sm">
-            <p class="font-sans font-bold text-base text-[#c8705a]">{cityStats.planned}</p>
-            <p class="font-sans text-[8px] uppercase tracking-wide text-[#b08878]">Planned</p>
-          </div>
-          <div class="bg-white rounded-xl border border-[#f0d8d0] p-2 text-center shadow-sm">
-            {#if cityStats.spend > 0}
-              <p class="font-sans font-bold text-base text-[#287040]">${cityStats.spend}</p>
             {:else}
-              <p class="font-sans font-bold text-base text-[#b08878]">—</p>
+              <p class="font-sans text-xs italic text-[#c0a8a0]">Hotel TBD</p>
             {/if}
-            <p class="font-sans text-[8px] uppercase tracking-wide text-[#b08878]">Spend</p>
           </div>
         </div>
 
+        <!-- Stats ring + row -->
+        <div class="bg-white rounded-2xl border p-4 shadow-sm flex items-center gap-4" style="border-color:{t.accentBg}">
+          <div class="relative shrink-0 w-16 h-16">
+            <svg viewBox="0 0 36 36" class="w-16 h-16 -rotate-90">
+              <circle cx="18" cy="18" r="15.9" fill="none" stroke="{t.accentBg}" stroke-width="3" />
+              <circle cx="18" cy="18" r="15.9" fill="none" stroke="{t.accent}" stroke-width="3"
+                stroke-dasharray="{cityStats.totalActs > 0 ? (cityStats.booked / cityStats.totalActs) * 100 : 0} 100"
+                stroke-linecap="round" />
+            </svg>
+            <div class="absolute inset-0 flex flex-col items-center justify-center">
+              <span class="font-sans font-bold text-sm" style="color:{t.accent}">{cityStats.booked}</span>
+              <span class="font-sans text-[7px] text-[#a08878] -mt-0.5">of {cityStats.totalActs}</span>
+            </div>
+          </div>
+          <div class="flex-1 grid grid-cols-2 gap-x-4 gap-y-1.5">
+            <div class="flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-[#287040]"></span>
+              <span class="font-sans text-[11px] text-[#5a3d38]"><strong>{cityStats.booked}</strong> booked</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-[#4070a8]"></span>
+              <span class="font-sans text-[11px] text-[#5a3d38]"><strong>{cityStats.planned}</strong> planned</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-[#c8705a]"></span>
+              <span class="font-sans text-[11px] text-[#5a3d38]"><strong>{cityStats.notBooked}</strong> not booked</span>
+            </div>
+            {#if cityStats.spend > 0}
+              <div class="flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-[#287040]"></span>
+                <span class="font-sans text-[11px] text-[#5a3d38]"><strong>${cityStats.spend.toLocaleString()}</strong></span>
+              </div>
+            {/if}
+          </div>
+        </div>
+
+        <!-- Day by day timeline -->
         {#if daySummaries.length > 0}
-          <p class="font-sans text-[10px] uppercase tracking-wider text-[#b08878] px-1">Day by day</p>
-          <div class="flex flex-col gap-1.5">
-            {#each daySummaries as ds}
+          <div class="flex items-center gap-2 px-1">
+            <span class="material-symbols-rounded text-sm" style="color:{t.accent}">view_timeline</span>
+            <span class="font-sans text-[10px] font-bold uppercase tracking-wider" style="color:{t.accent}">Day by day</span>
+          </div>
+          <div class="flex flex-col relative">
+            <div class="absolute left-[18px] top-2 bottom-2 w-px" style="background:{t.accentBg}"></div>
+            {#each daySummaries as ds, dsIdx}
               <a href={tabHrefs.itinerary}
-                class="flex items-center gap-2.5 bg-white/70 rounded-xl border border-[#f0d8d0] p-2.5 shadow-sm hover:bg-[#fde8e0] transition-colors">
-                <div class="shrink-0 w-9 h-9 rounded-lg flex flex-col items-center justify-center
-                  {ds.day_type === 'full_day' ? 'bg-[#fde8e0] text-[#c8705a]' : ds.day_type === 'chill' ? 'bg-[#e8f4ea] text-[#287040]' : 'bg-[#f0e8f8] text-[#8060a0]'}">
-                  <span class="font-sans font-bold text-xs leading-none">{ds.day}</span>
+                class="flex items-start gap-3 pl-1 pr-1 py-2 rounded-xl hover:bg-white/60 transition-colors relative z-[1]">
+                <div class="shrink-0 w-9 h-9 rounded-full flex items-center justify-center shadow-sm border-2" style="background:white; border-color:{t.accent}">
+                  <span class="font-sans font-bold text-xs" style="color:{t.accent}">{ds.day}</span>
                 </div>
-                <div class="flex-1 min-w-0">
-                  <div class="flex items-center gap-1.5">
-                    <span class="font-sans font-semibold text-[11px] text-[#3a2020] truncate">{ds.focus}</span>
-                    <span class="shrink-0 font-sans text-[8px] uppercase tracking-wide px-1.5 py-0.5 rounded-full
-                      {ds.day_type === 'full_day' ? 'bg-[#fde8e0] text-[#c8705a]' : ds.day_type === 'chill' ? 'bg-[#e8f4ea] text-[#287040]' : 'bg-[#f0e8f8] text-[#8060a0]'}">{ds.day_type?.replace(/_/g, ' ') || ''}</span>
-                  </div>
-                  <p class="font-sans text-[10px] text-[#a08878] truncate mt-0.5">{ds.vibe}</p>
+                <div class="flex-1 min-w-0 pt-0.5">
+                  <p class="font-sans font-semibold text-xs text-[#3a2020] truncate">{ds.focus}</p>
+                  <p class="font-sans text-[10px] text-[#a08878] truncate">{ds.vibe}</p>
                 </div>
-                <div class="shrink-0 flex flex-col items-center gap-0.5">
-                  <span class="font-sans font-bold text-xs text-[#5a3d38]">{ds.actCount}</span>
+                <div class="shrink-0 flex flex-col items-end gap-0.5 pt-0.5">
+                  <span class="font-sans text-[10px] font-bold px-2 py-0.5 rounded-full"
+                    style="background:{t.accentBg}; color:{t.accent}">{ds.actCount} acts</span>
                   <div class="flex gap-0.5">
                     {#if ds.energy === 'high'}
                       <span class="w-1.5 h-1.5 rounded-full bg-[#e84c4c]"></span>
@@ -330,38 +360,35 @@
           </div>
         {/if}
 
+        <!-- Must-do highlights -->
         {#if cityStats.mustDos.length > 0}
-          <p class="font-sans text-[10px] uppercase tracking-wider text-[#b08878] px-1">Must-do highlights</p>
-          {#each cityStats.mustDos as act}
-            {@const iconKey = act.icon || getIconKey(act.id, act.category)}
-            <div class="flex items-center gap-2.5 bg-white/70 rounded-xl border border-[#f0d8d0] p-2.5 shadow-sm">
-              <div class="shrink-0 w-9 h-9 rounded-full bg-[#fde8e0] border border-[#f0ccc0] flex items-center justify-center p-1.5">
-                <ActivityIcon icon={iconKey} />
-              </div>
-              <div class="flex-1 min-w-0">
-                <p class="font-sans font-semibold text-[11px] text-[#3a2020] truncate">{act.name}</p>
-                <div class="flex items-center gap-1.5 mt-0.5">
+          <div class="flex items-center gap-2 px-1">
+            <span class="material-symbols-rounded text-sm" style="color:{t.accent}">star</span>
+            <span class="font-sans text-[10px] font-bold uppercase tracking-wider" style="color:{t.accent}">Must-do highlights</span>
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            {#each cityStats.mustDos as act}
+              {@const iconKey = act.icon || getIconKey(act.id, act.category)}
+              <div class="rounded-2xl border bg-white/80 shadow-sm p-3 flex flex-col gap-2" style="border-color:{t.accentBg}">
+                <div class="w-8 h-8 rounded-xl flex items-center justify-center p-1.5" style="background:{t.accentBg}">
+                  <ActivityIcon icon={iconKey} />
+                </div>
+                <p class="font-sans font-bold text-[11px] text-[#3a2020] leading-tight">{act.name}</p>
+                <div class="flex items-center gap-1 flex-wrap mt-auto">
                   {#if act.start_time}
-                    <span class="font-sans text-[9px] text-[#a07870]">Day {act.day} · {act.start_time}</span>
+                    <span class="font-sans text-[8px] text-[#a07870]">Day {act.day}</span>
                   {/if}
                   {#if act.booking_status === 'booked'}
-                    <span class="font-sans text-[8px] font-bold uppercase px-1.5 py-0.5 rounded-full bg-[#e8f4ea] text-[#287040] border border-[#98d098]">Booked</span>
+                    <span class="font-sans text-[7px] font-bold uppercase px-1.5 py-0.5 rounded-full bg-[#e8f4ea] text-[#287040]">Booked</span>
                   {:else if act.booking_status === 'planned'}
-                    <span class="font-sans text-[8px] font-bold uppercase px-1.5 py-0.5 rounded-full bg-[#e8eef8] text-[#4070a8] border border-[#98b0d8]">Planned</span>
-                  {:else if act.booking_status === 'waitlist'}
-                    <span class="font-sans text-[8px] font-bold uppercase px-1.5 py-0.5 rounded-full bg-[#f0e8f8] text-[#8060a0] border border-[#c098d8]">Waitlist</span>
+                    <span class="font-sans text-[7px] font-bold uppercase px-1.5 py-0.5 rounded-full bg-[#e8eef8] text-[#4070a8]">Planned</span>
                   {:else}
-                    <span class="font-sans text-[8px] font-bold uppercase px-1.5 py-0.5 rounded-full bg-[#fdf0e8] text-[#c8705a] border border-[#e8c098]">Not booked</span>
+                    <span class="font-sans text-[7px] font-bold uppercase px-1.5 py-0.5 rounded-full bg-[#fdf0e8] text-[#c8705a]">Not booked</span>
                   {/if}
                 </div>
               </div>
-              {#if displayPrice(act.price)}
-                <span class="shrink-0 font-sans text-[10px] font-bold text-[#287040] bg-[#e8f4ea] border border-[#98d098] px-2 py-0.5 rounded-full">
-                  {displayPrice(act.price)}
-                </span>
-              {/if}
-            </div>
-          {/each}
+            {/each}
+          </div>
         {/if}
 
         {#each transportSegments as seg, segIdx}

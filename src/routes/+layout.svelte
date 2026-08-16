@@ -1,28 +1,27 @@
 <script>
   import '../app.css';
-  import { browser } from '$app/environment';
+  import { onMount } from 'svelte';
   import { fade, fly } from 'svelte/transition';
 
   const PASSWORD   = 'ready!';
   const STORAGE_KEY = 'jp26_access';
 
+  let mounted = false;
   let unlocked = false;
   let input = '';
   let error = false;
   let shake = false;
-  let justUnlocked = false;
 
-  if (browser) {
+  onMount(() => {
+    mounted = true;
     unlocked = localStorage.getItem(STORAGE_KEY) === '1';
-  }
+  });
 
   function attempt() {
-    if (input.trim() === PASSWORD) {
-      justUnlocked = true;
+    if (input.trim().toLowerCase() === PASSWORD) {
       error = false;
-      if (browser) localStorage.setItem(STORAGE_KEY, '1');
-      // small delay so the gate fades out before content fades in
-      setTimeout(() => { unlocked = true; }, 300);
+      localStorage.setItem(STORAGE_KEY, '1');
+      unlocked = true;
     } else {
       error = true;
       input = '';
@@ -50,10 +49,12 @@
   ];
 </script>
 
-{#if !unlocked}
+{#if !mounted}
+  <!-- Wait for hydration -->
+  <main class="min-h-screen bg-[#f5ede8]"></main>
+{:else if !unlocked}
   <!-- ── Password gate ── -->
-  <main class="min-h-screen flex items-center justify-center bg-[#f5ede8] px-4 overflow-hidden relative"
-        out:fade={{ duration: 300 }}>
+  <main class="min-h-screen flex items-center justify-center bg-[#f5ede8] px-4 overflow-hidden relative">
 
     <!-- Floating cherry petals -->
     {#each petals as [x, delay, size, dur]}
@@ -142,7 +143,7 @@
           on:click={attempt}
           class="w-full bg-[#c8705a] hover:bg-[#a85540] active:scale-95 text-white font-sans font-bold text-sm py-3.5 rounded-2xl transition-all shadow-md hover:shadow-lg"
         >
-          Let's go ✈️
+          {mounted ? "Let's go" : 'Loading…'}
         </button>
       </div>
 
