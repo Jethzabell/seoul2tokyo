@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Japan 2026 — Full Schedule Overview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #1a1a2e; color: #e0e0e0; padding: 2rem; max-width: 960px; margin: 0 auto; }
+  h1 { color: #f7cfe3; font-size: 1.8rem; margin-bottom: .3rem; }
+  .subtitle { color: #888; font-size: .9rem; margin-bottom: 1.2rem; }
+  a { color: #78aae8; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Stats bar */
+  .stats-bar { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 2rem; }
+  .stat-card { background: #16213e; border-radius: 8px; padding: .6rem 1rem; font-size: .78rem; display: flex; flex-direction: column; gap: .15rem; min-width: 120px; flex: 1; }
+  .stat-card .stat-val { font-size: 1.3rem; font-weight: 700; color: #cfe9ff; }
+  .stat-card .stat-label { color: #888; font-size: .7rem; text-transform: uppercase; letter-spacing: .04em; }
+
+  /* Transport segments */
+  .section-title { color: #cfe9ff; font-size: 1.1rem; font-weight: 700; margin: 2rem 0 .8rem; }
+  .transport-seg { background: #16213e; border-radius: 8px; padding: .8rem 1rem; margin-bottom: .75rem; font-size: .82rem; }
+  .transport-seg .route { color: #cfe9ff; font-weight: 700; font-size: .95rem; }
+  .transport-seg .meta { color: #888; margin-top: .25rem; }
+  .transport-seg .meta .price-tag { color: #4ecb71; font-weight: 600; }
+  .leg { margin-left: 1rem; margin-top: .3rem; color: #aaa; font-size: .78rem; }
+  .leg .layover { color: #f2a2c0; }
+
+  /* City blocks */
+  .city-block { margin-bottom: 2.5rem; border-left: 3px solid var(--accent); padding-left: 1.2rem; }
+  .city-header { font-size: 1.3rem; font-weight: 700; color: var(--accent); margin-bottom: .15rem; }
+  .city-meta { font-size: .78rem; color: #999; margin-bottom: .15rem; line-height: 1.6; }
+  .city-meta .hotel-times { color: #777; }
+
+  /* Day blocks */
+  .day-block { margin-bottom: 1.8rem; }
+  .day-label { font-size: .95rem; font-weight: 700; color: #ccc; margin-bottom: .2rem; padding-bottom: .25rem; border-bottom: 1px solid #333; }
+  .day-summary { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; font-size: .72rem; color: #888; margin-bottom: .7rem; }
+  .day-summary .vibe { font-style: italic; color: #aaa; }
+
+  /* Badges */
+  .badge { display: inline-block; font-size: .65rem; font-weight: 600; padding: .15rem .45rem; border-radius: 4px; text-transform: uppercase; letter-spacing: .03em; vertical-align: middle; }
+  .badge-must { background: #1a3a2a; color: #4ecb71; border: 1px solid #2a5a3a; }
+  .badge-nice { background: #3a2e1a; color: #e8a84c; border: 1px solid #5a4a2a; }
+  .badge-flex { background: #2a2a2a; color: #999; border: 1px solid #444; }
+  .badge-booked { background: #1a3a2a; color: #4ecb71; }
+  .badge-planned { background: #1a2a3e; color: #78aae8; }
+  .badge-not-booked { background: #3a2a1a; color: #e8944c; }
+  .badge-waitlist { background: #2a1a3a; color: #b478e8; }
+  .badge-day-type { background: #222; color: #bbb; border: 1px solid #444; font-size: .62rem; }
+  .badge-energy-low { background: #1a3a2a; color: #4ecb71; }
+  .badge-energy-med { background: #3a2e1a; color: #e8a84c; }
+  .badge-energy-high { background: #3a1a1a; color: #e84c4c; }
+
+  /* Tag pills */
+  .tags { display: flex; flex-wrap: wrap; gap: .25rem; margin-top: .3rem; }
+  .tag { font-size: .6rem; padding: .1rem .35rem; border-radius: 3px; background: #222; color: #888; border: 1px solid #333; }
+  .tag-rain { background: #1a2a3e; color: #78aae8; border-color: #2a3a5a; }
+  .tag-iconic { background: #3a2e1a; color: #e8a84c; border-color: #5a4a2a; }
+  .tag-outdoor { background: #1a3a2a; color: #4ecb71; border-color: #2a5a3a; }
+
+  /* Energy dot */
+  .energy-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; vertical-align: middle; margin-right: .25rem; }
+  .energy-dot.low { background: #4ecb71; }
+  .energy-dot.medium { background: #e8a84c; }
+  .energy-dot.high { background: #e84c4c; }
+
+  /* Transport connector between activities */
+  .transport-connector { display: flex; align-items: center; gap: .4rem; padding: .2rem 0 .2rem 2rem; font-size: .68rem; color: #555; }
+  .transport-connector::before { content: ''; display: block; width: 1px; height: 12px; background: #333; margin-left: 1.5rem; }
+  .transport-connector .mode-icon { color: #78aae8; }
+
+  /* Activity rows */
+  .activity-row { display: grid; grid-template-columns: 90px 1fr 110px; gap: .5rem; padding: .55rem 0; border-bottom: 1px solid #222; font-size: .82rem; align-items: start; }
+  .activity-row:hover { background: #ffffff06; border-radius: 4px; }
+  .time-col { color: #f2a2c0; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1.5; }
+  .time-col .end-time { color: #886; font-weight: 400; font-size: .72rem; }
+  .main-col { color: #e8e8e8; }
+  .main-col .act-name { font-weight: 600; }
+  .main-col .act-sub { color: #777; font-size: .72rem; margin-top: .1rem; }
+  .main-col .badge-row { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: .25rem; align-items: center; }
+  .details-list { margin: .25rem 0 .2rem 1rem; font-size: .72rem; color: #888; list-style: disc; }
+  .notes { font-size: .72rem; color: #777; margin-top: .15rem; font-style: italic; }
+  .fallback-block { margin-top: .3rem; padding: .3rem .5rem; background: #16213e; border-radius: 4px; font-size: .68rem; color: #aaa; line-height: 1.5; }
+  .fallback-block strong { color: #ccc; font-weight: 600; }
+  .side-col { text-align: right; font-size: .78rem; line-height: 1.6; }
+  .side-col .duration { color: #999; }
+  .side-col .dur-min { color: #666; font-size: .68rem; }
+  .side-col .price { color: #4ecb71; font-weight: 600; }
+
+  /* Checklist */
+  .checklist-section { margin-bottom: 2rem; }
+  .checklist-group { margin-bottom: 1.2rem; }
+  .checklist-group-title { font-size: .85rem; font-weight: 700; color: #ccc; margin-bottom: .5rem; }
+  .checklist-item { display: grid; grid-template-columns: 1fr 100px; gap: .5rem; padding: .4rem 0; border-bottom: 1px solid #222; font-size: .8rem; align-items: start; }
+  .checklist-item:hover { background: #ffffff06; }
+  .cl-main .cl-label { font-weight: 600; color: #e0e0e0; }
+  .cl-main .cl-notes { font-size: .7rem; color: #777; margin-top: .1rem; }
+  .cl-main .badge-row { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: .2rem; align-items: center; }
+  .cl-side { text-align: right; }
+  .cl-side .price { color: #4ecb71; font-weight: 600; font-size: .8rem; }
+  .cl-side a { font-size: .72rem; }
+</style>
+<script>
+async function load() {
+  const res = await fetch('/payload.json');
+  const data = await res.json();
+  render(data);
+}
+
+function fmtPrice(p) {
+  if (!p || typeof p !== 'object') return '';
+  if (p.status === 'tbd' || p.amount == null) return 'TBD';
+  if (p.amount === 0) return 'Free';
+  const sym = p.currency === 'JPY' ? '¥' : p.currency === 'KRW' ? '₩' : '$';
+  const val = `${p.approximate ? '~' : ''}${sym}${p.amount.toLocaleString()}`;
+  return p.per_person ? `${val}/pp` : val;
+}
+
+function fmtDate(iso, dayNum) {
+  const d = new Date(iso + 'T12:00:00');
+  d.setDate(d.getDate() + dayNum - 1);
+  return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+}
+
+function parseTime(t) {
+  if (!t) return 9999;
+  const m = t.match(/^(\d{1,2}):(\d{2})\s*(AM|PM)$/i);
+  if (!m) return 9999;
+  let h = +m[1]; const min = +m[2]; const ap = m[3].toUpperCase();
+  if (ap === 'AM' && h === 12) h = 0;
+  if (ap === 'PM' && h !== 12) h += 12;
+  return h * 60 + min;
+}
+
+function nightCount(a, d) {
+  const da = new Date(a + 'T12:00:00'), dd = new Date(d + 'T12:00:00');
+  return Math.round((dd - da) / 86400000);
+}
+
+function priorityBadge(p) {
+  if (!p) return '';
+  const cls = p === 'must' ? 'badge-must' : p === 'nice_to_have' ? 'badge-nice' : 'badge-flex';
+  const label = p === 'nice_to_have' ? 'nice' : p;
+  return `<span class="badge ${cls}">${label}</span>`;
+}
+
+function bookingBadge(s) {
+  if (!s) return '';
+  const cls = { booked: 'badge-booked', planned: 'badge-planned', not_booked: 'badge-not-booked', waitlist: 'badge-waitlist' }[s] || '';
+  const label = s.replace(/_/g, ' ');
+  return `<span class="badge ${cls}">${label}</span>`;
+}
+
+function energyBadge(e) {
+  if (!e) return '';
+  const cls = { low: 'badge-energy-low', medium: 'badge-energy-med', high: 'badge-energy-high' }[e] || '';
+  return `<span class="badge ${cls}">${e} energy</span>`;
+}
+
+function energyDot(e) {
+  if (!e) return '';
+  return `<span class="energy-dot ${e}"></span>`;
+}
+
+function dayTypeBadge(t) {
+  if (!t) return '';
+  return `<span class="badge badge-day-type">${t.replace(/_/g, ' ')}</span>`;
+}
+
+function renderTags(tags) {
+  if (!tags || !tags.length) return '';
+  return '<div class="tags">' + tags.map(t => {
+    let cls = 'tag';
+    if (t === 'rain-safe') cls += ' tag-rain';
+    else if (t === 'iconic') cls += ' tag-iconic';
+    else if (t === 'outdoor' || t === 'weather-dependent') cls += ' tag-outdoor';
+    return `<span class="${cls}">${t}</span>`;
+  }).join('') + '</div>';
+}
+
+function renderFallback(fb) {
+  if (!fb) return '';
+  let h = '<div class="fallback-block">';
+  if (fb.if_rain) h += `<div><strong>If rain:</strong> ${fb.if_rain}</div>`;
+  if (fb.if_tired) h += `<div><strong>If tired:</strong> ${fb.if_tired}</div>`;
+  h += '</div>';
+  return h;
+}
+
+function renderTransportConnector(t) {
+  if (!t) return '';
+  const icon = t.mode === 'train' ? '🚃' : '🚶';
+  return `<div class="transport-connector"><span class="mode-icon">${icon}</span> ${t.duration_minutes} min ${t.mode} from ${t.from}</div>`;
+}
+
+function render(data) {
+  const app = document.getElementById('app');
+  let html = '';
+
+  // ── Trip Stats ──
+  let totalActs = 0, totalTransitMin = 0, totalSpend = 0;
+  const bookingCounts = { booked: 0, planned: 0, not_booked: 0, waitlist: 0 };
+  for (const dest of data.destinations) {
+    for (const act of dest.activities) {
+      totalActs++;
+      if (act.transport_from_previous) totalTransitMin += act.transport_from_previous.duration_minutes || 0;
+      if (act.price?.status === 'confirmed' && act.price.amount > 0) totalSpend += act.price.amount;
+      if (act.booking_status) bookingCounts[act.booking_status] = (bookingCounts[act.booking_status] || 0) + 1;
+    }
+  }
+  for (const sec of ['reserve', 'buy']) {
+    for (const item of (data.checklist?.[sec] || [])) {
+      if (item.price?.status === 'confirmed' && item.price.amount > 0) totalSpend += item.price.amount;
+    }
+  }
+
+  html += '<div class="stats-bar">';
+  html += `<div class="stat-card"><span class="stat-val">${totalActs}</span><span class="stat-label">Activities</span></div>`;
+  html += `<div class="stat-card"><span class="stat-val">${Math.round(totalTransitMin / 60 * 10) / 10}h</span><span class="stat-label">Transit Time</span></div>`;
+  html += `<div class="stat-card"><span class="stat-val">$${totalSpend.toLocaleString()}</span><span class="stat-label">Confirmed Spend</span></div>`;
+  html += `<div class="stat-card"><span class="stat-val">${bookingCounts.booked}</span><span class="stat-label">Booked</span></div>`;
+  html += `<div class="stat-card"><span class="stat-val">${bookingCounts.planned}</span><span class="stat-label">Planned</span></div>`;
+  html += `<div class="stat-card"><span class="stat-val">${bookingCounts.not_booked}</span><span class="stat-label">Not Booked</span></div>`;
+  html += `<div class="stat-card"><span class="stat-val">${bookingCounts.waitlist}</span><span class="stat-label">Waitlist</span></div>`;
+  html += '</div>';
+
+  // ── Transport Segments ──
+  html += '<div class="section-title">Flights & Trains</div>';
+  for (const seg of data.transport.segments) {
+    html += `<div class="transport-seg">`;
+    html += `<div class="route">${seg.from.code} → ${seg.to.code} · ${seg.mode === 'flight' ? '✈️' : '🚅'} ${seg.carrier || ''} ${seg.number || ''}</div>`;
+    const priceStr = fmtPrice(seg.price);
+    html += `<div class="meta">${seg.date} · Depart ${seg.time_depart} · Arrive ${seg.time_arrive}${priceStr ? ' · <span class="price-tag">' + priceStr + '</span>' : ''}</div>`;
+    if (seg.notes) html += `<div class="meta" style="color:#f2a2c0">${seg.notes}</div>`;
+    if (seg.legs) {
+      for (const leg of seg.legs) {
+        if (leg.layover) {
+          html += `<div class="leg"><span class="layover">⏳ ${leg.duration} layover · ${leg.city} (${leg.airport})</span></div>`;
+        } else {
+          html += `<div class="leg">${leg.from}→${leg.to} · ${leg.depart}–${leg.arrive} (${leg.duration}) · ${leg.flight} · ${leg.aircraft}${leg.operated_by ? ' · ' + leg.operated_by : ''}${leg.note ? ' · ⚠️ ' + leg.note : ''}</div>`;
+        }
+      }
+    }
+    html += `</div>`;
+  }
+
+  // ── Destinations ──
+  const colors = {
+    city_tokyo_shibuya: '#ff8aae',
+    city_kyoto: '#a8d8a8',
+    city_osaka: '#f09ab8',
+    city_tokyo_shinjuku: '#78aae8'
+  };
+
+  for (const dest of data.destinations) {
+    const accent = colors[dest.id] || '#ccc';
+    const nights = nightCount(dest.dates.arrival, dest.dates.departure);
+    const stay = dest.stay || {};
+    const mapUrl = dest.map_center ? `https://maps.google.com/?q=${dest.map_center.lat},${dest.map_center.lng}` : '';
+
+    html += `<div class="city-block" style="--accent:${accent}">`;
+    html += `<div class="city-header">${dest.city}</div>`;
+    html += `<div class="city-meta">`;
+    html += `${dest.dates.arrival} → ${dest.dates.departure} · ${nights} night${nights !== 1 ? 's' : ''}`;
+    if (stay.hotel_name) {
+      html += ` · <a href="${stay.hotel_link || '#'}" target="_blank">${stay.hotel_name}</a>`;
+    }
+    if (mapUrl) html += ` · <a href="${mapUrl}" target="_blank">Map</a>`;
+    html += `</div>`;
+    if (stay.checkin_time || stay.checkout_time) {
+      html += `<div class="city-meta hotel-times">Check-in ${stay.checkin_time || '—'} · Check-out ${stay.checkout_time || '—'}</div>`;
+    }
+
+    const groups = {};
+    for (const a of dest.activities) {
+      const d = a.day ?? 0;
+      if (!groups[d]) groups[d] = [];
+      groups[d].push(a);
+    }
+
+    for (const [day, items] of Object.entries(groups).sort((a, b) => +a[0] - +b[0])) {
+      const dateStr = fmtDate(dest.dates.arrival, +day);
+      const ds = dest.day_summaries?.[day];
+
+      html += `<div class="day-block">`;
+      html += `<div class="day-label">Day ${day} · ${dateStr}</div>`;
+
+      if (ds) {
+        html += `<div class="day-summary">`;
+        if (ds.focus) html += `<span>${ds.focus}</span>`;
+        if (ds.day_type) html += dayTypeBadge(ds.day_type);
+        if (ds.energy) html += `<span>${energyDot(ds.energy)} ${ds.energy}</span>`;
+        if (ds.transport) html += `<span>· ${ds.transport}</span>`;
+        if (ds.vibe) html += `<span class="vibe">— ${ds.vibe}</span>`;
+        html += `</div>`;
+      }
+
+      items.sort((a, b) => parseTime(a.start_time) - parseTime(b.start_time));
+
+      for (let i = 0; i < items.length; i++) {
+        const a = items[i];
+
+        if (i > 0 && a.transport_from_previous) {
+          html += renderTransportConnector(a.transport_from_previous);
+        } else if (i === 0 && a.transport_from_previous) {
+          html += renderTransportConnector(a.transport_from_previous);
+        }
+
+        html += `<div class="activity-row">`;
+
+        // Time column
+        html += `<div class="time-col">${a.start_time || '—'}`;
+        if (a.end_time) html += `<br><span class="end-time">→ ${a.end_time}</span>`;
+        html += `</div>`;
+
+        // Main column
+        html += `<div class="main-col">`;
+        html += `<span class="act-name">${a.name}</span>`;
+        if (a.area) html += ` <span class="badge badge-day-type">${a.area}</span>`;
+        html += `<div class="act-sub">${a.category || ''}${a.type ? ' · ' + a.type : ''}</div>`;
+        html += `<div class="badge-row">`;
+        html += priorityBadge(a.priority);
+        html += bookingBadge(a.booking_status);
+        html += energyBadge(a.energy_cost);
+        html += `</div>`;
+        if (a.details) {
+          html += `<ul class="details-list">${a.details.map(d => `<li>${d}</li>`).join('')}</ul>`;
+        }
+        if (a.notes) html += `<div class="notes">${a.notes}</div>`;
+        html += renderTags(a.tags);
+        html += renderFallback(a.fallback);
+        html += `</div>`;
+
+        // Side column
+        html += `<div class="side-col">`;
+        if (a.duration) html += `<div class="duration">${a.duration}</div>`;
+        if (a.duration_minutes) html += `<div class="dur-min">${a.duration_minutes} min</div>`;
+        const priceStr = fmtPrice(a.price);
+        if (priceStr) html += `<div class="price">${priceStr}</div>`;
+        html += `</div>`;
+
+        html += `</div>`;
+      }
+      html += `</div>`;
+    }
+    html += `</div>`;
+  }
+
+  // ── Checklist ──
+  html += '<div class="section-title">Checklist</div>';
+  html += '<div class="checklist-section">';
+  for (const [section, label] of [['reserve', 'Reserve / Book'], ['buy', 'Buy / Prepare']]) {
+    const items = data.checklist?.[section] || [];
+    if (!items.length) continue;
+    html += `<div class="checklist-group">`;
+    html += `<div class="checklist-group-title">${label}</div>`;
+    for (const item of items) {
+      html += `<div class="checklist-item">`;
+      html += `<div class="cl-main">`;
+      html += `<div class="cl-label">${item.label}</div>`;
+      if (item.notes) html += `<div class="cl-notes">${item.notes}</div>`;
+      html += `<div class="badge-row">`;
+      html += priorityBadge(item.priority);
+      html += bookingBadge(item.booking_status);
+      html += `</div>`;
+      html += `</div>`;
+      html += `<div class="cl-side">`;
+      const p = fmtPrice(item.price);
+      if (p) html += `<div class="price">${p}</div>`;
+      if (item.link) html += `<a href="${item.link}" target="_blank">Link →</a>`;
+      html += `</div>`;
+      html += `</div>`;
+    }
+    html += `</div>`;
+  }
+  html += '</div>';
+
+  app.innerHTML = html;
+}
+
+load();
+</script>
+</head>
+<body>
+<h1>Japan 2026 — Full Schedule</h1>
+<p class="subtitle">Oct 17 – Oct 31 · 15 Days / 14 Nights · Tokyo → Kyoto → Osaka → Tokyo</p>
+<div id="app">Loading...</div>
+</body>
+</html>
