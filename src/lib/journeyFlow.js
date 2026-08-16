@@ -1,6 +1,6 @@
 // Linear journey step sequence + navigation helpers
 
-const VALID_TABS = ['summary', 'itinerary', 'extra'];
+const VALID_TABS = ['summary', 'itinerary'];
 
 /** Normalise a raw tab string → valid tab, defaulting to 'summary' */
 export function normalizeTab(raw, cityId) {
@@ -12,16 +12,12 @@ export const steps = [
   { id: 'departure',                  path: '/departure',                    city: 'Raleigh',           dates: 'Oct 17',      label: 'Departure',  type: 'departure' },
   { id: 'tokyo-shibuya-summary',      path: '/city/city_tokyo_shibuya',      city: 'Tokyo (Shibuya)',   dates: 'Oct 18–22',   label: 'Summary',    tab: 'summary'    },
   { id: 'tokyo-shibuya-itinerary',    path: '/city/city_tokyo_shibuya',      city: 'Tokyo (Shibuya)',   dates: 'Oct 18–22',   label: 'Itinerary',  tab: 'itinerary'  },
-  { id: 'tokyo-shibuya-extra',        path: '/city/city_tokyo_shibuya',      city: 'Tokyo (Shibuya)',   dates: 'Oct 18–22',   label: 'Extra Info', tab: 'extra'      },
   { id: 'kyoto-summary',              path: '/city/city_kyoto',              city: 'Kyoto',             dates: 'Oct 23–26',   label: 'Summary',    tab: 'summary'    },
   { id: 'kyoto-itinerary',            path: '/city/city_kyoto',              city: 'Kyoto',             dates: 'Oct 23–26',   label: 'Itinerary',  tab: 'itinerary'  },
-  { id: 'kyoto-extra',                path: '/city/city_kyoto',              city: 'Kyoto',             dates: 'Oct 23–26',   label: 'Extra Info', tab: 'extra'      },
-  { id: 'osaka-summary',              path: '/city/city_osaka',              city: 'Osaka',             dates: 'Oct 26–30',   label: 'Summary',    tab: 'summary'    },
-  { id: 'osaka-itinerary',            path: '/city/city_osaka',              city: 'Osaka',             dates: 'Oct 26–30',   label: 'Itinerary',  tab: 'itinerary'  },
-  { id: 'osaka-extra',                path: '/city/city_osaka',              city: 'Osaka',             dates: 'Oct 26–30',   label: 'Extra Info', tab: 'extra'      },
-  { id: 'tokyo-shinjuku-summary',     path: '/city/city_tokyo_shinjuku',     city: 'Tokyo (Shinjuku)',  dates: 'Oct 30–31',   label: 'Summary',    tab: 'summary'    },
-  { id: 'tokyo-shinjuku-itinerary',   path: '/city/city_tokyo_shinjuku',     city: 'Tokyo (Shinjuku)',  dates: 'Oct 30–31',   label: 'Itinerary',  tab: 'itinerary'  },
-  { id: 'tokyo-shinjuku-extra',       path: '/city/city_tokyo_shinjuku',     city: 'Tokyo (Shinjuku)',  dates: 'Oct 30–31',   label: 'Extra Info', tab: 'extra'      },
+  { id: 'osaka-summary',              path: '/city/city_osaka',              city: 'Osaka',             dates: 'Oct 26–28',   label: 'Summary',    tab: 'summary'    },
+  { id: 'osaka-itinerary',            path: '/city/city_osaka',              city: 'Osaka',             dates: 'Oct 26–28',   label: 'Itinerary',  tab: 'itinerary'  },
+  { id: 'tokyo-shinjuku-summary',     path: '/city/city_tokyo_shinjuku',     city: 'Tokyo (Shinjuku)',  dates: 'Oct 28–31',   label: 'Summary',    tab: 'summary'    },
+  { id: 'tokyo-shinjuku-itinerary',   path: '/city/city_tokyo_shinjuku',     city: 'Tokyo (Shinjuku)',  dates: 'Oct 28–31',   label: 'Itinerary',  tab: 'itinerary'  },
 ];
 
 export function stepHref(step) {

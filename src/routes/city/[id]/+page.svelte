@@ -406,100 +406,62 @@
         {#each transportSegments as seg, segIdx}
           {@const c = segmentColor(seg)}
           {@const segIsFlight = seg.mode === 'flight'}
-          <p class="font-sans text-[10px] uppercase tracking-wider text-[#b08878] px-1">{segLabel(seg, segIdx, transportSegments.length)}</p>
-          <div class="rounded-2xl overflow-hidden border shadow-sm" style="background:{c.bg}; border-color:{c.border}">
+          <div class="flex items-center gap-2 px-1">
+            <span class="material-symbols-rounded text-sm" style="color:{t.accent}">{segIsFlight ? 'flight' : 'train'}</span>
+            <span class="font-sans text-[10px] font-bold uppercase tracking-wider" style="color:{t.accent}">{segLabel(seg, segIdx, transportSegments.length)}</span>
+          </div>
+          <div class="glass-card overflow-hidden" style="border-color:{c.border}">
             <div class="h-1.5 w-full" style="background:{c.band}"></div>
-            <div class="p-3 flex flex-col gap-2">
+            <div class="px-3 py-2 flex flex-col gap-1.5">
               <div class="flex items-center gap-2">
-                <span class="material-symbols-rounded text-sm" style="color:{c.text}">{segIsFlight ? (segIdx === transportSegments.length - 1 && transportSegments.length > 1 ? 'flight_takeoff' : 'flight_land') : 'train'}</span>
-                <span class="font-sans font-bold text-xs" style="color:{c.text}">
+                <span class="font-sans font-bold text-[11px]" style="color:{c.text}">{seg.from.code} → {seg.to.code}</span>
+                <span class="font-sans text-[9px] text-[#a08878]">
                   {new Date(seg.date + 'T12:00:00').toLocaleDateString('en-US', { weekday:'short', month:'short', day:'numeric' })}
                 </span>
-                <span class="ml-auto font-sans text-[10px] bg-white px-2 py-0.5 rounded-full border capitalize" style="color:{c.text}; border-color:{c.border}">{seg.mode}</span>
               </div>
               {#if seg.legs?.length}
-                <div class="flex flex-col gap-1.5">
-                  {#each seg.legs as leg}
-                    {#if leg.layover}
-                      <div class="flex items-center gap-1.5 bg-white/70 rounded-lg px-2 py-1 border text-[10px] font-sans text-[#7a5c56]" style="border-color:{c.border}">
-                        <span class="material-symbols-rounded text-xs" style="color:{c.text}">connecting_airports</span>
-                        <strong>{leg.duration}</strong> layover · {leg.city} ({leg.airport})
-                      </div>
-                    {:else}
-                      <div class="bg-white rounded-lg p-2 shadow-sm">
-                        <div class="flex items-center justify-between">
-                          <span class="font-sans font-bold text-[11px]" style="color:{c.text}">{leg.from} → {leg.to}</span>
-                          <span class="font-sans text-[9px] text-[#a08878]">{leg.duration}</span>
-                        </div>
-                        <div class="flex items-center justify-between mt-0.5">
-                          <span class="font-sans font-bold text-[10px] text-[#3a2020]">{leg.depart}</span>
-                          <span class="font-sans font-bold text-[10px] text-[#3a2020]">{leg.arrive}</span>
-                        </div>
-                        <p class="font-sans text-[9px] text-[#7a5c56] mt-0.5">{leg.flight} · {leg.aircraft}</p>
-                      </div>
-                    {/if}
-                  {/each}
-                </div>
-              {:else}
-                <div class="grid gap-2" style="grid-template-columns: 68px 1fr 72px">
-                  <div class="flex flex-col gap-1">
-                    <div class="bg-white rounded-lg p-1.5 text-center shadow-sm">
-                      <p class="font-sans font-bold text-xs text-[#3a2020]">
-                        {#if tbd(seg.time_depart)}{seg.time_depart}{:else}<span class="italic text-[#c0a8a0]">TBD</span>{/if}
-                      </p>
-                      <p class="text-[9px] text-[#c0a8a0]">↓</p>
-                      <p class="font-sans font-bold text-xs text-[#3a2020]">
-                        {#if tbd(seg.time_arrive)}{seg.time_arrive}{:else}<span class="italic text-[#c0a8a0]">TBD</span>{/if}
-                      </p>
+                {#each seg.legs as leg}
+                  {#if leg.layover}
+                    <div class="flex items-center gap-1.5 px-2 py-0.5">
+                      <span class="material-symbols-rounded text-[10px]" style="color:{c.text}">connecting_airports</span>
+                      <span class="font-sans text-[9px] text-[#7a5c56]"><strong>{leg.duration}</strong> layover · {leg.city}</span>
                     </div>
-                    <p class="font-sans font-bold text-[10px] text-center" style="color:{c.text}">{seg.from.code}→{seg.to.code}</p>
-                  </div>
-                  <div class="flex flex-col gap-1 px-1 justify-center">
-                    {#each [['Carrier', seg.carrier], [segIsFlight ? 'Flight' : 'Train', seg.number], ['Res.', seg.reservation_code]] as [lbl, val]}
-                      <div class="flex items-baseline gap-1">
-                        <span class="font-sans text-[9px] text-[#a08878] shrink-0 w-9">{lbl}</span>
-                        {#if tbd(val)}
-                          <span class="font-sans font-semibold text-[10px] text-[#3a2020] truncate">{val}</span>
-                        {:else}
-                          <span class="font-sans text-[9px] italic text-[#c0a8a0] bg-white px-1.5 rounded-full border border-dashed border-[#e0ccc8]">TBD</span>
-                        {/if}
+                  {:else}
+                    <div class="glass-subtle rounded-lg px-2.5 py-1.5">
+                      <div class="flex items-center gap-1.5">
+                        <span class="font-sans font-bold text-[11px]" style="color:{c.text}">{leg.from} → {leg.to}</span>
+                        <span class="font-sans text-[9px] text-[#a08878]">{leg.duration}</span>
                       </div>
-                    {/each}
-                  </div>
-                  <div class="bg-white rounded-lg p-1.5 flex flex-col items-center justify-center gap-0.5 shadow-sm text-center">
-                    <span class="font-sans text-[8px] uppercase tracking-wide text-[#a08878]">{segIsFlight ? 'Terminal' : 'Station'}</span>
-                    {#if tbd(seg.to.terminal ?? seg.to.station)}
-                      <span class="font-cursive text-lg leading-none" style="color:{c.text}">{seg.to.terminal ?? seg.to.station}</span>
-                    {:else}
-                      <span class="font-sans text-[9px] italic text-[#c0a8a0]">TBD</span>
-                    {/if}
-                    <span class="font-sans font-bold text-xs text-[#3a2020]">{seg.to.code}</span>
+                      <div class="flex items-center gap-2 mt-0.5">
+                        <span class="font-sans font-bold text-[10px] text-[#3a2020]">{leg.depart} → {leg.arrive}</span>
+                        <span class="font-sans text-[9px] text-[#7a5c56]">{leg.flight} · {leg.aircraft}</span>
+                      </div>
+                    </div>
+                  {/if}
+                {/each}
+              {:else}
+                <div class="glass-subtle rounded-lg px-2.5 py-1.5">
+                  <div class="flex items-center gap-2">
+                    <span class="font-sans font-bold text-[10px] text-[#3a2020]">
+                      {#if tbd(seg.time_depart)}{seg.time_depart}{:else}TBD{/if} → {#if tbd(seg.time_arrive)}{seg.time_arrive}{:else}TBD{/if}
+                    </span>
+                    <span class="font-sans text-[9px] text-[#7a5c56]">{seg.carrier}{seg.number ? ` ${seg.number}` : ''}</span>
                   </div>
                 </div>
               {/if}
-              {#if seg.passengers?.length}
-                <div class="flex items-center gap-1 flex-wrap px-0.5">
-                  <span class="font-sans text-[9px] text-[#a08878]">Pax</span>
-                  {#each seg.passengers as name}
-                    <span class="font-sans text-[9px] font-semibold text-[#5a3d38] bg-white px-1.5 py-0.5 rounded-full border" style="border-color:{c.border}">{name}</span>
-                  {/each}
-                </div>
-              {/if}
-              <div class="flex gap-1.5 flex-wrap">
-                {#if seg.baggage?.personal_item}
-                  <div class="flex items-center gap-0.5 bg-white rounded-full px-1.5 py-0.5 border text-[9px] font-sans" style="border-color:{c.border}; color:{c.text}">
-                    <span class="material-symbols-rounded text-[10px]">backpack</span> Personal
-                  </div>
+              <div class="flex items-center gap-2 flex-wrap px-0.5 text-[9px] font-sans text-[#a08878]">
+                {#if seg.reservation_code && tbd(seg.reservation_code)}
+                  <span>Res: <strong class="text-[#5a3d38]">{seg.reservation_code}</strong></span>
                 {/if}
-                {#if seg.baggage?.carry_on}
-                  <div class="flex items-center gap-0.5 bg-white rounded-full px-1.5 py-0.5 border text-[9px] font-sans" style="border-color:{c.border}; color:{c.text}">
-                    <span class="material-symbols-rounded text-[10px]">luggage</span> Carry-on
-                  </div>
+                {#if seg.passengers?.length}
+                  <span>{seg.passengers.join(', ')}</span>
                 {/if}
-                {#if seg.baggage?.checked_bag}
-                  <div class="flex items-center gap-0.5 bg-white rounded-full px-1.5 py-0.5 border text-[9px] font-sans" style="border-color:{c.border}; color:{c.text}">
-                    <span class="material-symbols-rounded text-[10px]">cases</span> Checked
-                  </div>
+                {#if seg.baggage}
+                  <span class="flex items-center gap-1">
+                    {#if seg.baggage.personal_item}<span class="material-symbols-rounded text-[10px]">backpack</span>{/if}
+                    {#if seg.baggage.carry_on}<span class="material-symbols-rounded text-[10px]">luggage</span>{/if}
+                    {#if seg.baggage.checked_bag}<span class="material-symbols-rounded text-[10px]">cases</span>{/if}
+                  </span>
                 {/if}
               </div>
             </div>
@@ -734,16 +696,23 @@
     </div>
 
     <!-- Journey Nav Footer -->
-    <div class="glass-subtle rounded-t-2xl flex items-center justify-between px-5 pb-6 pt-2">
-      <a href={prevHref} class="font-sans text-[10px] font-semibold flex items-center gap-0.5 max-w-[130px]" style="color:{t.accent}">
-        <span class="material-symbols-rounded text-sm shrink-0">arrow_back</span>
-        <span class="truncate">{prevLabel}</span>
-      </a>
-      <span class="font-sans text-[10px] shrink-0 px-1" style="color:{t.accentMuted}">{index} / {total}</span>
-      <a href={nextHref} class="font-sans text-[10px] font-semibold flex items-center gap-0.5 max-w-[130px]" style="color:{t.accent}">
-        <span class="truncate text-right">{nextLabel}</span>
-        <span class="material-symbols-rounded text-sm shrink-0">arrow_forward</span>
-      </a>
+    <div class="glass-subtle rounded-t-2xl flex flex-col gap-2 px-5 pb-6 pt-3">
+      <div class="flex items-center justify-between">
+        <a href={prevHref} class="font-sans text-[10px] font-semibold flex items-center gap-0.5 max-w-[120px]" style="color:{t.accent}">
+          <span class="material-symbols-rounded text-sm shrink-0">arrow_back</span>
+          <span class="truncate">{prevLabel}</span>
+        </a>
+        <a href="/" class="flex items-center gap-0.5 font-sans text-[10px] font-bold shrink-0" style="color:{t.accentMuted}">
+          <span class="material-symbols-rounded text-sm">home</span>
+        </a>
+        <a href={nextHref} class="font-sans text-[10px] font-semibold flex items-center gap-0.5 max-w-[120px]" style="color:{t.accent}">
+          <span class="truncate text-right">{nextLabel}</span>
+          <span class="material-symbols-rounded text-sm shrink-0">arrow_forward</span>
+        </a>
+      </div>
+      <div class="text-center">
+        <span class="font-sans text-[9px]" style="color:{t.accentMuted}">{index} / {total}</span>
+      </div>
     </div>
 
   </div>
