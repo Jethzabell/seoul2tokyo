@@ -3,6 +3,7 @@ import payload from '$lib/payload.json';
 export function load() {
   const toUSD = (amount, currency) =>
     currency === 'JPY' ? +(amount / 163.88).toFixed(2) : amount;
+  const sumHistory = (history) => +(history ?? []).reduce((s, e) => s + e.amount, 0).toFixed(2);
 
   // ── Confirmed flights (4 travelers) ──────────────────────────────────────
   const flights = payload.transport.segments
@@ -75,6 +76,35 @@ export function load() {
   const activityTotal = activities.reduce((s, a) => s + toUSD(a.amount, a.currency), 0);
   const hotelTotal = hotels.reduce((s, h) => s + toUSD(h.amount, h.currency), 0);
 
+  // ── Payment tracker ──────────────────────────────────────────────────────
+  const travelers = 7;
+  const flightEntry = payload.checklist.reserve.find(r => r.id === 'res_flights');
+  const flightPerPerson = +(flightEntry.price.amount / (flightEntry.price.travelers ?? 4)).toFixed(2);
+  const flightPayments = (flightEntry.payments ?? []).map(p => {
+    const paid = p.organizer ? flightPerPerson : sumHistory(p.payment_history);
+    return { name: p.name, paid, share: flightPerPerson, owes: p.organizer ? 0 : +(Math.max(0, flightPerPerson - paid)).toFixed(2), history: p.payment_history ?? [] };
+  });
+
+  const hotelShareByPerson = {};
+  payload.checklist.reserve
+    .filter(r => r.category === 'Hotel' && r.booking_status === 'booked' && r.price?.amount > 0 && r.guests?.length)
+    .forEach(r => {
+      const share = +(r.price.amount / r.guests.length).toFixed(2);
+      r.guests.forEach(g => { hotelShareByPerson[g] = +((hotelShareByPerson[g] ?? 0) + share).toFixed(2); });
+    });
+  const hotelPayments = (payload.checklist.hotel_payments ?? []).map(p => {
+    const share = hotelShareByPerson[p.name] ?? +(hotelTotal / travelers).toFixed(2);
+    const paid = p.organizer ? share : sumHistory(p.payment_history);
+    return { name: p.name, paid, share, owes: p.organizer ? 0 : +(Math.max(0, share - paid)).toFixed(2), history: p.payment_history ?? [] };
+  });
+
+  const activityPerPerson = +(activityTotal / travelers).toFixed(2);
+  const activityPayments = (payload.checklist.activity_payments ?? []).map(p => {
+    const paid = p.organizer ? activityPerPerson : sumHistory(p.payment_history);
+    return { name: p.name, paid, share: activityPerPerson, owes: p.organizer ? 0 : +(Math.max(0, activityPerPerson - paid)).toFixed(2), history: p.payment_history ?? [] };
+  });
+  const paymentTracker = { flights: flightPayments, hotels: hotelPayments, activities: activityPayments };
+
   // Per-group hotel costs
   const groups = [
     { label: 'Group 1', members: ['Jessy', 'Jurializ'] },
@@ -91,5 +121,5 @@ export function load() {
     return { ...g, perPerson: +perPerson.toFixed(2) };
   });
 
-  return { flights, activities, hotels, tbd, flightTotal, activityTotal, hotelTotal, hotelGroups };
+  return { flights, activities, hotels, tbd, flightTotal, activityTotal, hotelTotal, hotelGroups, paymentTracker };
 }

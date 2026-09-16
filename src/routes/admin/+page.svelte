@@ -5,7 +5,8 @@
   const PASSWORD = 'admin!';
   const SESSION_KEY = 'jp26_admin';
 
-  let unlocked = false;
+  // Payment tracking is intentionally public from the budget tab.
+  let unlocked = true;
   let input = '';
   let error = false;
 

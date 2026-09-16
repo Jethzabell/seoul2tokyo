@@ -4362,6 +4362,11 @@
             "date": "2026-08-08",
             "amount": 622,
             "note": "Activity payment"
+          },
+          {
+            "date": "2026-09-16",
+            "amount": 0.43,
+            "note": "Hotel overpayment credited to activities"
           }
         ]
       },
@@ -4373,6 +4378,11 @@
             "date": "2026-08-08",
             "amount": 622,
             "note": "Activity payment"
+          },
+          {
+            "date": "2026-09-16",
+            "amount": 0.43,
+            "note": "Hotel overpayment credited to activities"
           }
         ]
       }
@@ -4901,12 +4911,24 @@
       {
         "name": "Frances",
         "organizer": false,
-        "payment_history": []
+        "payment_history": [
+          {
+            "date": "2026-09-16",
+            "amount": 848.97,
+            "note": "Hotel payment"
+          }
+        ]
       },
       {
         "name": "James",
         "organizer": false,
-        "payment_history": []
+        "payment_history": [
+          {
+            "date": "2026-09-16",
+            "amount": 848.97,
+            "note": "Hotel payment"
+          }
+        ]
       }
     ]
   },

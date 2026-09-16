@@ -1,6 +1,7 @@
 <script>
   export let data;
-  const { flights, activities, hotels, tbd, flightTotal, activityTotal, hotelTotal, hotelGroups } = data;
+  const { flights, activities, hotels, tbd, flightTotal, activityTotal, hotelTotal, hotelGroups, paymentTracker } = data;
+  let activeTab = 'budget';
 
   const toUSD = (amount, currency) =>
     currency === 'JPY' ? +(amount / 163.88).toFixed(2) : amount;
@@ -44,8 +45,13 @@
       <p class="font-sans text-white/80 text-xs mt-1 relative">Confirmed trip spend</p>
     </div>
 
+    <div class="flex gap-2 px-4 pt-4">
+      <button class="flex-1 rounded-xl py-2 font-sans text-[10px] font-bold transition-colors {activeTab === 'budget' ? 'bg-[#c8705a] text-white' : 'bg-white/60 text-[#a08878]'}" on:click={() => activeTab = 'budget'}>Budget</button>
+      <button class="flex-1 rounded-xl py-2 font-sans text-[10px] font-bold transition-colors {activeTab === 'payments' ? 'bg-[#c8705a] text-white' : 'bg-white/60 text-[#a08878]'}" on:click={() => activeTab = 'payments'}>Payment Tracker</button>
+    </div>
 
-    <div class="flex flex-col gap-4 px-4 pb-6 pt-4">
+    {#if activeTab === 'budget'}
+      <div class="flex flex-col gap-4 px-4 pb-6 pt-4">
 
       <!-- ── Flights ── -->
       <section>
@@ -202,7 +208,45 @@
         </section>
       {/if}
 
-    </div>
+      </div>
+    {:else}
+      <div class="flex flex-col gap-4 px-4 pb-6 pt-4">
+        <div class="glass-subtle rounded-xl px-3 py-2 text-center">
+          <p class="font-sans text-[9px] text-[#a08878]">What each person has paid and still owes</p>
+        </div>
+
+        {#each [{ label: 'Flights', icon: 'flight', items: paymentTracker.flights }, { label: 'Activities', icon: 'confirmation_number', items: paymentTracker.activities }, { label: 'Hotels', icon: 'hotel', items: paymentTracker.hotels }] as section}
+          <section>
+            <div class="page-gradient-coral rounded-xl px-3 py-2 flex items-center gap-2 mb-2 shadow-sm">
+              <span class="material-symbols-rounded text-base text-white">{section.icon}</span>
+              <h2 class="font-cursive text-white text-2xl leading-none">{section.label}</h2>
+            </div>
+            <div class="glass-card p-3 flex flex-col gap-3">
+              {#each section.items as p}
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="font-sans text-[12px] font-semibold text-[#3a2020]">{p.name}</span>
+                    <span class="font-sans text-[10px] {p.owes === 0 ? 'text-[#287040]' : 'text-[#c8705a]'}">
+                      {#if p.owes === 0}✓ Paid in full{:else if p.paid > 0}${p.paid.toFixed(2)} paid · owes ${p.owes.toFixed(2)}{:else}Owes ${p.share.toFixed(2)}{/if}
+                    </span>
+                  </div>
+                  <div class="h-2 rounded-full bg-[#f0e0d8] overflow-hidden">
+                    <div class="h-full rounded-full {p.owes === 0 ? 'bg-[#287040]' : 'bg-[#c8705a]'}" style="width: {Math.min(100, Math.round((p.paid / p.share) * 100))}%"></div>
+                  </div>
+                  {#if p.history?.length > 0}
+                    <div class="mt-1 pl-1 border-l-2 border-[#f0e0d8] flex flex-col gap-0.5">
+                      {#each p.history as h}
+                        <div class="flex justify-between font-sans text-[9px] text-[#a08878]"><span>{h.date} · {h.note}</span><span class="font-semibold text-[#3a2020]">${h.amount.toFixed(2)}</span></div>
+                      {/each}
+                    </div>
+                  {/if}
+                </div>
+              {/each}
+            </div>
+          </section>
+        {/each}
+      </div>
+    {/if}
 
     <!-- Venmo -->
     <div class="flex justify-center px-6 pb-3">
