@@ -21,7 +21,8 @@
   const grandTotal = flightTotal + activityTotal + hotelTotal;
 
   const statusColor = s =>
-    s === 'confirmed' ? 'text-[#287040] bg-[#e8f4ea] border-[#98d098]'
+    s === 'paid' ? 'text-[#287040] bg-[#e8f4ea] border-[#98d098]'
+    : s === 'confirmed' ? 'text-[#287040] bg-[#e8f4ea] border-[#98d098]'
     : s === 'pending'  ? 'text-[#c8705a] bg-[#fdf0e8] border-[#e8c098]'
     : 'text-[#a08878] bg-[#f0ece8] border-[#e0d0c8]';
 </script>
@@ -88,6 +89,9 @@
               <div class="min-w-0 flex-1">
                 <p class="font-sans font-bold text-[11px] text-[#3a2020] truncate">{h.label}</p>
                 <p class="font-sans text-[9px] text-[#a08878]">{h.notes.split('·')[0].trim()}</p>
+                {#if h.cardConfirmed}
+                  <span class="inline-block mt-1 font-sans text-[7px] font-bold uppercase tracking-wide px-1.5 py-0.5 rounded-full border {statusColor(h.status)}">CARD CHARGED · FINAL USD</span>
+                {/if}
               </div>
               <div class="text-right shrink-0">
                 <p class="font-sans font-bold text-[12px] text-[#3a2020]">{h.approximate ? '~' : ''}{fmtUSD(toUSD(h.amount, h.currency))}</p>
@@ -125,6 +129,9 @@
               <div class="min-w-0 flex-1">
                 <p class="font-sans font-bold text-[11px] text-[#3a2020] truncate">{a.label}</p>
                 <p class="font-sans text-[9px] text-[#a08878]">{a.city}{a.date ? ' · ' + fmtDate(a.date) : ''}</p>
+                {#if a.cardConfirmed}
+                  <span class="inline-block mt-1 font-sans text-[7px] font-bold uppercase tracking-wide px-1.5 py-0.5 rounded-full border {statusColor(a.status)}">CARD CHARGED · FINAL USD</span>
+                {/if}
               </div>
               <p class="font-sans font-bold text-[12px] text-[#3a2020] shrink-0">{a.approximate ? '~' : ''}{fmtUSD(usd)}</p>
             </div>

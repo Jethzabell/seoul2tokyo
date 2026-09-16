@@ -1264,7 +1264,8 @@
             "currency": "USD",
             "status": "paid",
             "approximate": false,
-            "per_person": false
+            "per_person": false,
+            "card_confirmed": true
           },
           "links": {
             "website": "https://www.viator.com/tours/Tokyo/Tokyo-Shinjuku-Sumo-Show-and-Experience-with-Photo/d334-311898P1",
@@ -1362,11 +1363,12 @@
           "price": {
             "amount": 684.47,
             "currency": "USD",
-            "per_person": false,
-            "approximate": false,
-            "status": "paid"
-          },
-          "details": [
+          "per_person": false,
+          "approximate": false,
+          "status": "paid",
+          "card_confirmed": true
+        },
+        "details": [
             "1 hr 15 min tour: Shibuya Crossing → Harajuku → Omotesando",
             "Bring valid International Driving Permit (Geneva Convention 1949) + passport",
             "Arrive 20 minutes before tour time",
@@ -1616,11 +1618,12 @@
           "end_time": "10:00 PM",
           "duration": "3.5 hours",
           "price": {
-            "amount": 709.32,
-            "currency": "USD",
-            "per_person": false,
-            "approximate": false,
-            "status": "paid"
+          "amount": 709.32,
+          "currency": "USD",
+          "per_person": false,
+          "approximate": false,
+          "status": "paid",
+          "card_confirmed": true
           },
           "notes": "Booking ID f0739df8 · MagicalTrip · 7 × Age 20+ · Meet 6:20 PM at Black Pillar (next to Uniqlo Shinjuku Nishiguchi, exit D1) · Guide holds red/orange sign · Omoide Yokocho → Kabukicho → Golden Gai · PAID $709.32",
           "details": [
@@ -2641,12 +2644,13 @@
           "start_time": "12:00 PM",
           "duration": "4h 30m",
           "price": {
-            "amount": 799.98,
-            "currency": "USD",
-            "per_person": false,
-            "approximate": false,
-            "status": "paid",
-            "breakdown": "¥17,000 × 7 adults = ¥119,000 + ¥11,900 tax"
+          "amount": 799.98,
+          "currency": "USD",
+          "per_person": false,
+          "approximate": false,
+          "status": "paid",
+          "card_confirmed": true,
+          "breakdown": "¥17,000 × 7 adults = ¥119,000 + ¥11,900 tax"
           },
           "notes": "Booking #3008553 · Oct 24 · 7 adults (3 men, 4 women) · ¥17,000 × 7 = ¥119,000 + ¥11,900 tax = ¥130,900 · PART 1: Samurai Ninja Museum 12:00 PM · PART 2: Tea Ceremony (Maikoya Nishiki) 2:30 PM · Cancel by Oct 23 noon for full refund",
           "details": [
@@ -3442,11 +3446,12 @@
           "start_time": "8:00 PM",
           "duration": "2h",
           "price": {
-            "amount": 1111.24,
+            "amount": 1152.86,
             "currency": "USD",
             "per_person": false,
             "approximate": false,
-            "status": "paid"
+            "status": "paid",
+            "card_confirmed": true
           },
           "notes": "ID 596212 · 7 adults · ¥23,100 × 7 + ¥550 garlic rice × 7 + 10% service = ¥182,105 · PAID · Oct 27 · 20:00 JST · Arrive on time (cancelled if 15min late)",
           "links": {
@@ -4330,7 +4335,13 @@
       {
         "name": "Jurializ",
         "organizer": false,
-        "payment_history": []
+        "payment_history": [
+          {
+            "date": "2026-09-16",
+            "amount": 627.91,
+            "note": "Activity payment — complete"
+          }
+        ]
       },
       {
         "name": "Carlos",
@@ -4414,13 +4425,24 @@
                 "date": "2026-07-29",
                 "amount": 315.63,
                 "note": "Initial payment"
+              },
+              {
+                "date": "2026-09-15",
+                "amount": 300,
+                "note": "Plane payment"
               }
             ]
           },
           {
             "name": "Jurializ",
             "organizer": false,
-            "payment_history": []
+            "payment_history": [
+              {
+                "date": "2026-09-16",
+                "amount": 1215.63,
+                "note": "Flight payment — complete"
+              }
+            ]
           }
         ]
       },
@@ -4450,8 +4472,9 @@
           "amount": 799.98,
           "currency": "USD",
           "per_person": false,
-          "approximate": true,
-          "status": "confirmed"
+          "approximate": false,
+          "status": "confirmed",
+          "card_confirmed": true
         },
         "link": "https://mai-ko.com/tour/value-ticket-kimono-tea-ceremony-and-samurai-experience-combo-in-kyoto-for-couples-and-small-groups2/",
         "priority": "must",
@@ -4482,8 +4505,9 @@
           "amount": 684.47,
           "currency": "USD",
           "per_person": false,
-          "approximate": true,
-          "status": "confirmed"
+          "approximate": false,
+          "status": "confirmed",
+          "card_confirmed": true
         },
         "link": "https://monkey-kart.com",
         "priority": "must",
@@ -4495,11 +4519,12 @@
         "category": "Experience",
         "notes": "Oct 21 · Meet 6:20 PM · Black Pillar, next to Uniqlo Shinjuku Nishiguchi (exit D1) · Booking ID f0739df8 · PAID $709.32",
         "price": {
-          "amount": 709.32,
-          "currency": "USD",
-          "per_person": false,
-          "approximate": true,
-          "status": "paid"
+        "amount": 709.32,
+        "currency": "USD",
+        "per_person": false,
+        "approximate": true,
+        "status": "paid",
+        "card_confirmed": true
         },
         "link": "https://www.magical-trip.com/product/59afbefb-b0d9-4e10-9273-b6c59b81e345",
         "priority": "must",
@@ -4511,11 +4536,12 @@
         "category": "Food",
         "notes": "Oct 27 · 8:00 PM · ID 596212 · 7 adults · ¥182,105 total (incl. 10% service) · PAID · Arrive on time",
         "price": {
-          "amount": 1111.24,
+          "amount": 1152.86,
           "currency": "USD",
           "per_person": false,
-          "approximate": true,
-          "status": "confirmed"
+          "approximate": false,
+          "status": "confirmed",
+          "card_confirmed": true
         },
         "link": "https://www.google.com/search?q=Kobe+Beef+Steak+Ishida+Ikutashinmichi",
         "priority": "must",
@@ -4527,11 +4553,12 @@
         "category": "Hotel",
         "notes": "Oct 18–23 · 5 nights · Conf 5451.487.160 · Check-in 4PM · Checkout 10AM · All 7 guests · 5BR apartment",
         "price": {
-          "amount": 5763,
+          "amount": 5942.82,
           "currency": "USD",
           "per_person": false,
-          "approximate": true,
-          "status": "confirmed"
+          "approximate": false,
+          "status": "confirmed",
+          "card_confirmed": true
         },
         "link": "https://www.booking.com/hotel/jp/noel-shibuya.html",
         "priority": "must",
@@ -4560,7 +4587,8 @@
           "currency": "USD",
           "per_person": false,
           "approximate": false,
-          "status": "confirmed"
+          "status": "confirmed",
+          "card_confirmed": true
         },
         "link": null,
         "cancel_by": null,
@@ -4595,7 +4623,8 @@
           "currency": "USD",
           "per_person": false,
           "approximate": false,
-          "status": "confirmed"
+          "status": "confirmed",
+          "card_confirmed": true
         },
         "notes": "Oct 23–26 · 3 nights · Tokyu Stay Kyoto Sakaiza Shijo-Kawaramachi · Room 1 · 3 adults · Avg $327.47/night + $100.24 taxes · Check-in 3:00 PM · Checkout 11:00 AM · Combined booking total $2,165.32",
         "cancel_by": null,
@@ -4633,7 +4662,8 @@
           "currency": "USD",
           "per_person": false,
           "approximate": false,
-          "status": "confirmed"
+          "status": "confirmed",
+          "card_confirmed": true
         },
         "link": "https://www.hankyu-hotel.com/en/hotels/respire_osaka",
         "priority": "must",
@@ -4833,17 +4863,40 @@
       {
         "name": "Hilary",
         "organizer": false,
-        "payment_history": []
+        "payment_history": [
+          {
+            "date": "2026-09-15",
+            "amount": 445.50,
+            "note": "Hotel payment"
+          },
+          {
+            "date": "2026-09-16",
+            "amount": 315.63,
+            "note": "Hotel payment"
+          }
+        ]
       },
       {
         "name": "Jurializ",
         "organizer": false,
-        "payment_history": []
+        "payment_history": [
+          {
+            "date": "2026-09-16",
+            "amount": 14.96,
+            "note": "Hotel payment"
+          }
+        ]
       },
       {
         "name": "Carlos",
         "organizer": false,
-        "payment_history": []
+        "payment_history": [
+          {
+            "date": "2026-09-16",
+            "amount": 891,
+            "note": "Hotel payment"
+          }
+        ]
       },
       {
         "name": "Frances",

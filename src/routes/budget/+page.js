@@ -32,6 +32,7 @@ export function load() {
           currency: a.price.currency ?? 'USD',
           approximate: a.price.approximate ?? true,
           status: a.price.status ?? 'confirmed',
+          cardConfirmed: a.price.card_confirmed ?? false,
           travelers: a.price.travelers ?? 7,
         });
       }
@@ -48,6 +49,7 @@ export function load() {
       currency: r.price.currency ?? 'USD',
       approximate: r.price?.approximate ?? false,
       status: r.price.status ?? 'confirmed',
+      cardConfirmed: r.price.card_confirmed ?? false,
       link: r.link ?? null,
       group_color: r.group_color ?? null,
       guests: r.guests?.length ?? 7,
