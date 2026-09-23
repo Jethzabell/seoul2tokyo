@@ -103,7 +103,16 @@ export function load() {
     const paid = p.organizer ? activityPerPerson : sumHistory(p.payment_history);
     return { name: p.name, paid, share: activityPerPerson, owes: p.organizer ? 0 : +(Math.max(0, activityPerPerson - paid)).toFixed(2), history: p.payment_history ?? [] };
   });
-  const paymentTracker = { flights: flightPayments, hotels: hotelPayments, activities: activityPayments };
+  const travelerNames = payload.travelers ?? ['Jessy', 'Yamil', 'Jurializ', 'Hilary', 'Carlos', 'Frances', 'James'];
+  const people = travelerNames.map(name => {
+    const entries = [flightPayments, activityPayments, hotelPayments].map(group => group.find(p => p.name === name)).filter(Boolean);
+    const share = +entries.reduce((s, p) => s + p.share, 0).toFixed(2);
+    const paid = +entries.reduce((s, p) => s + p.paid, 0).toFixed(2);
+    return { name, share, paid, owes: +Math.max(0, share - paid).toFixed(2), history: entries.flatMap(p => p.history ?? []) };
+  });
+  const totalShare = +people.reduce((s, p) => s + p.share, 0).toFixed(2);
+  const totalPaid = +people.reduce((s, p) => s + p.paid, 0).toFixed(2);
+  const paymentTracker = { flights: flightPayments, hotels: hotelPayments, activities: activityPayments, people, totalShare, totalPaid, totalOutstanding: +(totalShare - totalPaid).toFixed(2) };
 
   // Per-group hotel costs
   const groups = [

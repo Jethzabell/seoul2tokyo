@@ -211,8 +211,28 @@
       </div>
     {:else}
       <div class="flex flex-col gap-4 px-4 pb-6 pt-4">
-        <div class="glass-subtle rounded-xl px-3 py-2 text-center">
-          <p class="font-sans text-[9px] text-[#a08878]">What each person has paid and still owes</p>
+        <div class="glass-card p-3">
+          <p class="font-sans text-[9px] uppercase tracking-wider text-[#a08878] mb-3">Everyone’s payment progress</p>
+          <div class="flex flex-col gap-2.5">
+            {#each paymentTracker.people as person}
+              <div>
+                <div class="flex items-center justify-between mb-1">
+                  <span class="font-sans text-[11px] font-semibold text-[#3a2020]">{person.name}</span>
+                  <span class="font-sans text-[9px] {person.owes === 0 ? 'text-[#287040]' : 'text-[#a08878]'}">${person.paid.toFixed(2)} / ${person.share.toFixed(2)}</span>
+                </div>
+                <div class="h-2 rounded-full bg-[#f0e0d8] overflow-hidden">
+                  <div class="h-full rounded-full {person.owes === 0 ? 'bg-[#287040]' : 'bg-[#c8705a]'}" style="width: {Math.min(100, Math.round((person.paid / person.share) * 100))}%"></div>
+                </div>
+                {#if person.history?.length > 0}
+                  <div class="mt-1.5 pl-1.5 border-l-2 border-[#f0e0d8] flex flex-col gap-0.5">
+                    {#each person.history as h}
+                      <div class="flex justify-between font-sans text-[9px] text-[#a08878]"><span>{h.date} · {h.note}</span><span class="font-semibold text-[#3a2020]">${h.amount.toFixed(2)}</span></div>
+                    {/each}
+                  </div>
+                {/if}
+              </div>
+            {/each}
+          </div>
         </div>
 
         {#each [{ label: 'Flights', icon: 'flight', items: paymentTracker.flights }, { label: 'Activities', icon: 'confirmation_number', items: paymentTracker.activities }, { label: 'Hotels', icon: 'hotel', items: paymentTracker.hotels }] as section}
