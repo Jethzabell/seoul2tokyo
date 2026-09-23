@@ -95,9 +95,6 @@
               <div class="min-w-0 flex-1">
                 <p class="font-sans font-bold text-[11px] text-[#3a2020] truncate">{h.label}</p>
                 <p class="font-sans text-[9px] text-[#a08878]">{h.notes.split('·')[0].trim()}</p>
-                {#if h.cardConfirmed}
-                  <span class="inline-block mt-1 font-sans text-[7px] font-bold uppercase tracking-wide px-1.5 py-0.5 rounded-full border {statusColor(h.status)}">CARD CHARGED · FINAL USD</span>
-                {/if}
               </div>
               <div class="text-right shrink-0">
                 <p class="font-sans font-bold text-[12px] text-[#3a2020]">{h.approximate ? '~' : ''}{fmtUSD(toUSD(h.amount, h.currency))}</p>
@@ -135,9 +132,6 @@
               <div class="min-w-0 flex-1">
                 <p class="font-sans font-bold text-[11px] text-[#3a2020] truncate">{a.label}</p>
                 <p class="font-sans text-[9px] text-[#a08878]">{a.city}{a.date ? ' · ' + fmtDate(a.date) : ''}</p>
-                {#if a.cardConfirmed}
-                  <span class="inline-block mt-1 font-sans text-[7px] font-bold uppercase tracking-wide px-1.5 py-0.5 rounded-full border {statusColor(a.status)}">CARD CHARGED · FINAL USD</span>
-                {/if}
               </div>
               <p class="font-sans font-bold text-[12px] text-[#3a2020] shrink-0">{a.approximate ? '~' : ''}{fmtUSD(usd)}</p>
             </div>
@@ -146,23 +140,6 @@
         <div class="glass-subtle rounded-xl px-3 py-1.5 flex items-center justify-between mt-1">
           <span class="font-sans text-[9px] text-[#c8705a]">Subtotal</span>
           <span class="font-sans font-bold text-[11px] text-[#c8705a]">{fmtUSD(activityTotal)} · {fmtUSD(+(activityTotal/7).toFixed(2))}/pp</span>
-        </div>
-      </section>
-
-      <!-- ── Per-person summary ── -->
-      <section>
-        <p class="font-sans text-[10px] uppercase tracking-wider text-[#b08878] mb-3 px-1">Per-Person Estimate</p>
-        <div class="grid grid-cols-2 gap-2">
-          <div class="glass-card p-3 flex flex-col">
-            <p class="font-sans text-[9px] text-[#a08878] leading-snug mb-2">Jessy / Jurializ / Hilary / Yamil</p>
-            <p class="font-sans font-bold text-lg text-[#c8705a] mt-auto">{fmtUSD(+(flightTotal/4 + hotelTotal/7 + activityTotal/7).toFixed(2))}</p>
-            <p class="font-sans text-[8px] text-[#a08878] mt-1">(flights + hotels + activities)</p>
-          </div>
-          <div class="glass-card p-3 flex flex-col">
-            <p class="font-sans text-[9px] text-[#a08878] leading-snug mb-2">Carlos / Frances / James</p>
-            <p class="font-sans font-bold text-lg text-[#c8705a] mt-auto">{fmtUSD(+(hotelTotal/7 + activityTotal/7).toFixed(2))}</p>
-            <p class="font-sans text-[8px] text-[#a08878] mt-1">(hotels + activities)</p>
-          </div>
         </div>
       </section>
 
