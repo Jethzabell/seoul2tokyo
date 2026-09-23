@@ -161,7 +161,7 @@
           {
             "label": "Flights & Trains",
             "action": "scroll_to",
-            "target": "transport"
+            "target": "itinerary-table.html"
           },
           {
             "label": "Quick Info",
