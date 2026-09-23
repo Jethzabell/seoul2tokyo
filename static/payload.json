@@ -2938,9 +2938,9 @@
           "category": "Experience",
           "type": "Art / Immersive",
           "day": 3,
-          "start_time": "2:00 PM",
-          "duration": "2–3 hours",
-          "notes": "Immersive digital art museum · Timed entry · Book tickets in advance · ¥4,600/pp × 7 = ¥32,200",
+          "start_time": "5:30 PM",
+          "duration": "Open-ended after entry",
+          "notes": "Admission window 5:30–6:00 PM · 7 Adult Entrance Passes · Tickets purchased in two orders · ¥33,600 incl. tax · Credit card charges $152.10 + $60.84 = $212.94 · Inquiry numbers KYL3YXKFYXPTR-0001 and KYFVUPXHJCHVT-0001 · 21-5 Higashikujo Higashi-Iwamotocho, Minami-ku, Kyoto",
           "links": {
             "website": "https://www.teamlab.art/e/kyoto/",
             "map": "https://maps.google.com/?q=teamLab+Biovortex+Kyoto"
@@ -2952,15 +2952,15 @@
             "mode": "train"
           },
           "priority": "must",
-          "booking_status": "not_booked",
+          "booking_status": "booked",
           "date": "2026-10-25",
           "icon": "art",
           "coordinates": {
             "lat": 34.9886,
             "lng": 135.7823
           },
-          "end_time": "5:00 PM",
-          "duration_minutes": 180,
+          "end_time": "6:00 PM",
+          "duration_minutes": null,
           "tags": [
             "indoor",
             "rain-safe",
@@ -2975,12 +2975,18 @@
             "duration_minutes": 15
           },
           "price": {
-            "amount": 32200,
-            "currency": "JPY",
+            "amount": 212.94,
+            "currency": "USD",
             "per_person": false,
             "approximate": false,
-            "status": "confirmed"
-          }
+            "status": "paid",
+            "card_confirmed": true
+          },
+          "ticket_count": 7,
+          "remaining_tickets": 0,
+          "ticket_number": "KYL3YXKFYXPTR-0001",
+          "ticket_numbers": ["KYL3YXKFYXPTR-0001", "KYFVUPXHJCHVT-0001"],
+          "venue_address": "21-5 Higashikujo Higashi-Iwamotocho, Minami-ku, Kyoto"
         },
         {
           "id": "kyoto_checkout",
@@ -3111,7 +3117,7 @@
               "category": "Food"
             },
             {
-              "time": "14:00",
+              "time": "17:30",
               "title": "teamLab Biovortex Kyoto",
               "category": "Experience"
             }
@@ -4460,18 +4466,24 @@
         "id": "res_teamlab_kyoto",
         "label": "teamLab Biovortex Kyoto",
         "category": "Experience",
-        "notes": "¥4,600/pp × 7 = ¥32,200 · Timed entry · Book in advance",
+        "notes": "7 Adult Entrance Passes · ¥33,600 incl. tax · Credit card charges $152.10 + $60.84 = $212.94 · Admission window 5:30–6:00 PM · Inquiry numbers KYL3YXKFYXPTR-0001 and KYFVUPXHJCHVT-0001",
         "price": {
-          "amount": 32200,
-          "currency": "JPY",
+          "amount": 212.94,
+          "currency": "USD",
           "per_person": false,
           "approximate": false,
-          "status": "confirmed"
+          "status": "paid",
+          "card_confirmed": true
         },
         "link": "https://www.teamlab.art/e/kyoto/",
         "priority": "must",
-        "booking_status": "not_booked",
-        "guests_count": 7
+        "booking_status": "booked",
+        "guests_count": 7,
+        "ticket_count": 7,
+        "remaining_tickets": 0,
+        "ticket_number": "KYL3YXKFYXPTR-0001",
+        "ticket_numbers": ["KYL3YXKFYXPTR-0001", "KYFVUPXHJCHVT-0001"],
+        "venue_address": "21-5 Higashikujo Higashi-Iwamotocho, Minami-ku, Kyoto"
       },
       {
         "id": "res_kimono",
