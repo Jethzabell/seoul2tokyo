@@ -140,8 +140,9 @@
                   <div class="rounded-lg border border-[#ead7e4] bg-white/60 px-2 py-1.5">
                     <p class="font-bold text-[#74549a]">HND · Tokyo departure</p>
                     <p><strong>Best stop:</strong> Terminal 3 Centurion Lounge after 3:50 PM — access is within 3 hours of the 6:50 PM departure.</p>
+                    <p class="mt-1"><strong>Party of 4:</strong> you enter free; the standard rate is <strong>$50 per adult guest</strong> — about <strong>$150</strong> for 3 guests if complimentary guest access is not active. Verify your account status in the Amex app; HND guest rules can vary internationally.</p>
                     <p class="mt-1"><strong>Centurion amenities:</strong> premium food, food/snacks, drinks, charging, seating, beer/wine, Wi‑Fi, and flight information.</p>
-                    <p class="mt-1"><strong>Second choice:</strong> Priority Pass Sky Lounge South near Gate 108; open 24 hours, max 3 hours, subject to space.</p>
+                    <p class="mt-1"><strong>Second choice:</strong> Priority Pass Sky Lounge South near Gate 108; open 24 hours, max 3 hours, subject to space. For 4 people, Priority Pass covers you + 2 guests; guest 4 is about <strong>$27</strong>.</p>
                     <p class="mt-1"><strong>Sky Lounge amenities:</strong> food/snacks, drinks, charging, seating, beer/wine, Wi‑Fi, and flight monitors.</p>
                     <div class="mt-2 rounded-lg border border-dashed border-[#e2c9d8] bg-white/70 px-2 py-1.5">
                       <p class="font-bold text-[#74549a]">HND lounge path · same terminal</p>
@@ -161,6 +162,7 @@
                   <div class="rounded-lg border border-[#f0d0c5] bg-[#fffaf7] px-2 py-1.5">
                     <p class="font-bold text-[#c8705a]">YYZ · Toronto connection</p>
                     <p><strong>Backup only:</strong> Plaza Premium Terminal 1 Transborder near Gate F55 only if customs, security, and the connection are moving quickly.</p>
+                    <p class="mt-1"><strong>Party of 4:</strong> if entering with Priority Pass and the lounge accepts it, you + 2 guests are included and guest 4 is about <strong>$27</strong>; Plaza Premium rules can vary.</p>
                     <p class="mt-1"><strong>YYZ amenities:</strong> premium food, food/snacks, drinks, charging, seating, beer/wine, Wi‑Fi, flight monitors, and paid showers; maximum stay is 2 hours.</p>
                     <div class="mt-2 rounded-lg border border-dashed border-[#f0d0c5] bg-white/70 px-2 py-1.5">
                       <p class="font-bold text-[#c8705a]">YYZ lounge path</p>
