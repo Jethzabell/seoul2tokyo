@@ -549,12 +549,12 @@
         "from": {
           "city": "Tokyo",
           "code": "HND",
-          "terminal": "TBD"
+          "terminal": "3"
         },
         "to": {
           "city": "Raleigh",
           "code": "RDU",
-          "terminal": "TBD"
+          "terminal": "2"
         },
         "carrier": "Air Canada",
         "number": "AC 2 / AC 8838",
@@ -586,9 +586,11 @@
           {
             "from": "HND",
             "to": "YYZ",
+            "from_terminal": "3",
+            "to_terminal": "1",
             "depart": "6:50 PM",
-            "arrive": "6:05 PM",
-            "duration": "12h 15m",
+            "arrive": "5:55 PM",
+            "duration": "12h 05m",
             "flight": "AC 2",
             "aircraft": "Boeing 777",
             "note": "Overnight · Often delayed 30+ min"
@@ -597,11 +599,14 @@
             "layover": true,
             "airport": "YYZ",
             "city": "Toronto",
+            "terminal": "1",
             "duration": "2h 5m"
           },
           {
             "from": "YYZ",
             "to": "RDU",
+            "from_terminal": "1",
+            "to_terminal": "2",
             "depart": "8:10 PM",
             "arrive": "9:51 PM",
             "duration": "1h 41m",
@@ -616,7 +621,7 @@
           "checked_bag": true
         },
         "style_tag": "sakura",
-        "notes": "Economy Standard · Yamil, Jurializ, Jessy, Hilary · 16h 1m total",
+        "notes": "Economy Standard · HND Terminal 3 → Toronto Pearson Terminal 1 → RDU Terminal 2 · Yamil, Jurializ, Jessy, Hilary · 16h 5m total",
         "type": "flight"
       },
       {
@@ -675,17 +680,19 @@
         "id": "seg_fj_03",
         "from": {
           "code": "HND",
-          "city": "Tokyo"
+          "city": "Tokyo",
+          "terminal": "3"
         },
         "to": {
           "code": "DTW",
-          "city": "Detroit"
+          "city": "Detroit",
+          "terminal": "McNamara"
         },
         "date": "2026-10-31",
         "time_depart": "5:35 PM",
         "time_arrive": "4:31 PM",
         "carrier": "Delta / Air France",
-        "flight_number": "",
+        "flight_number": "DL274",
         "ref": "XMQ7JE",
         "travelers": 3,
         "travelers_names": [
@@ -694,24 +701,27 @@
           "Carlos"
         ],
         "booking_status": "booked",
-        "notes": "Return leg · layover Detroit",
+        "aircraft": "Airbus A350-900",
+        "notes": "Return leg · HND Terminal 3 → Detroit McNamara · arrives 4:31 PM next day",
         "type": "flight"
       },
       {
         "id": "seg_fj_04",
         "from": {
           "code": "DTW",
-          "city": "Detroit"
+          "city": "Detroit",
+          "terminal": "McNamara"
         },
         "to": {
           "code": "RDU",
-          "city": "Raleigh"
+          "city": "Raleigh",
+          "terminal": "2"
         },
         "date": "2026-10-31",
-        "time_depart": "9:20 PM",
-        "time_arrive": "11:04 PM",
+        "time_depart": "9:59 PM",
+        "time_arrive": "11:42 PM",
         "carrier": "Delta / Air France",
-        "flight_number": "",
+        "flight_number": "DL2839",
         "ref": "XMQ7JE",
         "travelers": 3,
         "travelers_names": [
@@ -720,7 +730,8 @@
           "Carlos"
         ],
         "booking_status": "booked",
-        "notes": "Home",
+        "aircraft": "Airbus A321",
+        "notes": "Home · Detroit McNamara → Raleigh Terminal 2",
         "type": "flight"
       }
     ]

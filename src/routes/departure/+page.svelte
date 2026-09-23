@@ -77,6 +77,34 @@
         </span>
       </div>
 
+      <!-- Visit Japan Web reminder -->
+      <div class="glass-subtle rounded-2xl border border-[#d8c0b8] px-3.5 py-3">
+        <div class="flex items-start gap-2.5">
+          <span class="material-symbols-rounded text-lg text-[#c8705a]">verified_user</span>
+          <div class="min-w-0 flex-1">
+            <div class="flex items-center justify-between gap-2">
+              <p class="font-sans font-bold text-[11px] text-[#5a3d38]">Before landing in Japan</p>
+              <span class="font-sans text-[8px] font-bold uppercase tracking-wide text-[#9b7a70]">Do before arrival</span>
+            </div>
+            <p class="font-sans text-[9px] leading-relaxed text-[#7a5c56] mt-1">
+              Complete Visit Japan Web before the flight: register each traveler’s passport, flight, and first accommodation, then finish the immigration and customs forms.
+            </p>
+            <p class="font-sans text-[9px] leading-relaxed text-[#7a5c56] mt-1.5">
+              Save the confirmation QR code on your phone so it is ready when you land.
+            </p>
+            <a
+              href="https://www.vjw.digital.go.jp/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1 mt-2 font-sans text-[10px] font-bold text-[#c8705a] hover:text-[#a85540] transition-colors"
+            >
+              Open Visit Japan Web
+              <span class="material-symbols-rounded text-xs">open_in_new</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
       <!-- Compact flight card -->
       <div class="glass-card overflow-hidden" style="border-color:{c.border}">
         <div class="h-1.5 w-full" style="background:{c.band}"></div>
@@ -97,9 +125,12 @@
           {#if seg.legs?.length}
             {#each seg.legs as leg}
               {#if leg.layover}
-                <div class="flex items-center gap-1.5 px-2 py-0.5">
-                  <span class="material-symbols-rounded text-[10px]" style="color:{c.text}">connecting_airports</span>
-                  <span class="font-sans text-[9px] text-[#7a5c56]"><strong>{leg.duration}</strong> layover · {leg.city}</span>
+                <div class="flex items-center gap-2 rounded-lg border border-dashed border-[#d8b8c8] bg-[#fff8f4] px-2.5 py-2">
+                  <span class="material-symbols-rounded text-sm" style="color:{c.text}">connecting_airports</span>
+                  <div class="min-w-0">
+                    <p class="font-sans text-[9px] font-bold text-[#74549a]">Layover · {leg.city}</p>
+                    <p class="font-sans text-[9px] text-[#7a5c56]">{leg.duration} · clear connections, then continue to HND</p>
+                  </div>
                 </div>
               {:else}
                 <div class="flex items-center gap-2 glass-subtle rounded-lg px-2.5 py-1.5">
@@ -136,6 +167,96 @@
                   {#if seg.baggage.checked_bag}<span class="material-symbols-rounded text-[10px]">cases</span>{/if}
                 </span>
               {/if}
+            </div>
+
+            <p class="font-sans text-[9px] leading-relaxed text-[#7a5c56]">
+              Connect in Toronto (YYZ), then continue to Tokyo Haneda Terminal 3.
+            </p>
+
+            <!-- Airport timeline -->
+            <div class="rounded-xl border border-[#ead7e4] bg-white/55 px-2.5 py-2">
+              <div class="flex items-center justify-between gap-1">
+                <div class="min-w-0 text-center">
+                  <span class="material-symbols-rounded text-sm text-[#74549a]">flight_takeoff</span>
+                  <p class="font-sans text-[9px] font-bold text-[#5a3d38]">RDU</p>
+                  <p class="font-sans text-[8px] text-[#a08878]">Depart</p>
+                </div>
+                <div class="flex min-w-0 flex-1 items-center gap-1">
+                  <span class="h-px flex-1 bg-[#d8b8c8]"></span>
+                  <span class="material-symbols-rounded text-xs text-[#c8705a]">arrow_forward</span>
+                  <span class="h-px flex-1 bg-[#d8b8c8]"></span>
+                </div>
+                <div class="min-w-0 text-center">
+                  <span class="material-symbols-rounded text-sm text-[#c8705a]">connecting_airports</span>
+                  <p class="font-sans text-[9px] font-bold text-[#5a3d38]">YYZ</p>
+                  <p class="font-sans text-[8px] text-[#c8705a]">5h 12m</p>
+                </div>
+                <div class="flex min-w-0 flex-1 items-center gap-1">
+                  <span class="h-px flex-1 bg-[#d8b8c8]"></span>
+                  <span class="material-symbols-rounded text-xs text-[#c8705a]">arrow_forward</span>
+                  <span class="h-px flex-1 bg-[#d8b8c8]"></span>
+                </div>
+                <div class="min-w-0 text-center">
+                  <span class="material-symbols-rounded text-sm text-[#74549a]">flight_land</span>
+                  <p class="font-sans text-[9px] font-bold text-[#5a3d38]">HND</p>
+                  <p class="font-sans text-[8px] text-[#a08878]">Arrive</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- AMEX Platinum reminders mixed with Jessy's flight -->
+            <div class="rounded-xl border border-[#e2c9d8] bg-[#fff8f4] px-2.5 py-2.5">
+              <div class="flex items-start gap-2">
+                <span class="material-symbols-rounded text-lg text-[#74549a]">credit_card</span>
+                <div class="min-w-0 flex-1">
+                  <p class="font-sans font-bold text-[11px] text-[#5a3d38]">Jessy’s AMEX Platinum</p>
+                  <p class="font-sans text-[9px] leading-relaxed text-[#7a5c56] mt-1">
+                    Before departure, confirm the flight was paid with the eligible Card, save the itinerary and receipts, and check the current travel-protection terms in your Amex account.
+                  </p>
+                  <p class="font-sans text-[9px] leading-relaxed text-[#7a5c56] mt-1">
+                    Future-booking tip: eligible flights booked directly with the airline or through Amex Travel may earn 5X points; verify the current terms first.
+                  </p>
+                  <div class="mt-2 space-y-2 font-sans text-[9px] leading-relaxed text-[#5a3d38]">
+                    <div class="rounded-lg border border-[#ead7e4] bg-white/60 px-2 py-1.5">
+                      <p class="font-bold text-[#74549a]">RDU · origin</p>
+                      <p><strong>Recommendation:</strong> skip the lounge and use the extra time for check-in and security. The Terminal 2 Delta Sky Club is not the right fit for this Air Canada itinerary, and RDU does not show a Priority Pass lounge.</p>
+                    </div>
+                    <div class="rounded-lg border border-[#f0d0c5] bg-[#fffaf7] px-2 py-1.5">
+                      <p class="font-bold text-[#c8705a]">YYZ · Toronto connection</p>
+                      <p><strong>Two-stop plan:</strong> spend about 1 hour at the Terminal 1 Plaza Premium domestic substitute, then about 1 hour at the Infield Concourse lounge.</p>
+                      <p class="mt-1"><strong>Plaza Premium amenities:</strong> premium food, food/snacks, drinks, charging, seating, beer/wine, Wi‑Fi, and flight monitors.</p>
+                      <p class="mt-1"><strong>Infield amenities:</strong> food/snacks, drinks, charging, seating, beer/wine, Wi‑Fi, and flight monitors.</p>
+                      <p class="mt-1"><strong>Hard cutoff:</strong> leave the second lounge by about 11:15 AM for the 1:05 PM Tokyo flight; keep at least 60–75 minutes for the shuttle, E gates, and boarding.</p>
+                      <div class="mt-2 rounded-lg border border-dashed border-[#e2c9d8] bg-white/70 px-2 py-1.5">
+                        <p class="font-bold text-[#74549a]">YYZ lounge path</p>
+                        <div class="mt-1 flex flex-wrap items-center gap-x-1 gap-y-1 text-[8px] text-[#7a5c56]">
+                          <span class="rounded-full bg-[#f1e8f5] px-1.5 py-0.5 font-bold text-[#74549a]">T1 Domestic</span>
+                          <span class="material-symbols-rounded text-[10px] text-[#c8705a]">arrow_forward</span>
+                          <span class="rounded-full bg-[#fff0ea] px-1.5 py-0.5">PPL · T1 D20</span>
+                          <span class="material-symbols-rounded text-[10px] text-[#c8705a]">arrow_forward</span>
+                          <span class="rounded-full bg-[#fff0ea] px-1.5 py-0.5">shuttle → IFC</span>
+                          <span class="material-symbols-rounded text-[10px] text-[#c8705a]">arrow_forward</span>
+                          <span class="rounded-full bg-[#fff0ea] px-1.5 py-0.5">shuttle back → T1</span>
+                          <span class="material-symbols-rounded text-[10px] text-[#c8705a]">arrow_forward</span>
+                          <span class="rounded-full bg-[#f1e8f5] px-1.5 py-0.5 font-bold text-[#74549a]">E gates</span>
+                        </div>
+                        <p class="mt-1 text-[8px] text-[#a08878]">Approx. timing: 7:53 AM arrive → ~8:20 D20 → ~9:20 shuttle to IFC → ~9:35 IFC → leave ~11:15 → ~11:30 shuttle back → ~11:45–12:00 E gates.</p>
+                        <p class="mt-1 text-[8px] text-[#a08878]">Yes: D20 is in T1 Domestic; IFC is separate. Take the shuttle out and back, then follow signs through T1 to the international E gates before the cutoff.</p>
+                      </div>
+                    </div>
+                    <div class="rounded-lg border border-[#d8b8c8] bg-[#faf7fc] px-2 py-1.5">
+                      <p class="font-bold text-[#74549a]">HND · arrival</p>
+                      <p><strong>After landing:</strong> no lounge stop is planned because you arrive at Haneda without a same-day connection. Complete immigration and baggage first; the Centurion Lounge is for departing/connecting passengers, so save the Haneda lounge visit for the return flight.</p>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-x-3 gap-y-1 mt-2">
+                    <a href="https://global.americanexpress.com/card-benefits/detail/the-lounge-collection/platinum" target="_blank" rel="noopener noreferrer" class="font-sans text-[9px] font-bold text-[#74549a]">Check lounge access ↗</a>
+                    <a href="https://www.prioritypass.com/en-GB/airport-lounges" target="_blank" rel="noopener noreferrer" class="font-sans text-[9px] font-bold text-[#74549a]">Priority Pass ↗</a>
+                    <a href="https://www.americanexpress.com/en-us/travel/lounges/the-platinum-card/YYZ/plaza-premium-lounge-terminal-1-international-non-usa-0fHzcGQtud" target="_blank" rel="noopener noreferrer" class="font-sans text-[9px] font-bold text-[#74549a]">YYZ lounge details ↗</a>
+                    <a href="https://www.americanexpress.com/en-us/account/get-started/platinum/" target="_blank" rel="noopener noreferrer" class="font-sans text-[9px] font-bold text-[#74549a]">Review benefits ↗</a>
+                  </div>
+                </div>
+              </div>
             </div>
           {/if}
 
@@ -176,34 +297,6 @@
           </div>
         </div>
       {/if}
-
-      <!-- Visit Japan Web reminder -->
-      <div class="glass-subtle rounded-2xl border border-[#d8c0b8] px-3.5 py-3">
-        <div class="flex items-start gap-2.5">
-          <span class="material-symbols-rounded text-lg text-[#c8705a]">verified_user</span>
-          <div class="min-w-0 flex-1">
-            <div class="flex items-center justify-between gap-2">
-              <p class="font-sans font-bold text-[11px] text-[#5a3d38]">Before landing in Japan</p>
-              <span class="font-sans text-[8px] font-bold uppercase tracking-wide text-[#9b7a70]">Do before arrival</span>
-            </div>
-            <p class="font-sans text-[9px] leading-relaxed text-[#7a5c56] mt-1">
-              Complete Visit Japan Web before the flight: register each traveler’s passport, flight, and first accommodation, then finish the immigration and customs forms.
-            </p>
-            <p class="font-sans text-[9px] leading-relaxed text-[#7a5c56] mt-1.5">
-              Save the confirmation QR code on your phone so it is ready when you land.
-            </p>
-            <a
-              href="https://www.vjw.digital.go.jp/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-1 mt-2 font-sans text-[10px] font-bold text-[#c8705a] hover:text-[#a85540] transition-colors"
-            >
-              Open Visit Japan Web
-              <span class="material-symbols-rounded text-xs">open_in_new</span>
-            </a>
-          </div>
-        </div>
-      </div>
 
     </div>
 

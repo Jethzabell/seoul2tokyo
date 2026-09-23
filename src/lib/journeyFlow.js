@@ -18,6 +18,7 @@ export const steps = [
   { id: 'osaka-itinerary',            path: '/city/city_osaka',              city: 'Osaka',             dates: 'Oct 26–28',   label: 'Itinerary',  tab: 'itinerary'  },
   { id: 'tokyo-shinjuku-summary',     path: '/city/city_tokyo_shinjuku',     city: 'Tokyo (Shinjuku)',  dates: 'Oct 28–31',   label: 'Summary',    tab: 'summary'    },
   { id: 'tokyo-shinjuku-itinerary',   path: '/city/city_tokyo_shinjuku',     city: 'Tokyo (Shinjuku)',  dates: 'Oct 28–31',   label: 'Itinerary',  tab: 'itinerary'  },
+  { id: 'return',                     path: '/return',                       city: 'Return flight',     dates: 'Oct 31',      label: 'Return flight', type: 'return' },
 ];
 
 export function stepHref(step) {
