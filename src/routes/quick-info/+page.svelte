@@ -2,7 +2,7 @@
   import { tbd } from '$lib/segmentColors.js';
 
   export let data;
-  const { trip, travelerCount, flightSegments, flightParty, airport_cards, rail_cards, qr_placeholders, hotels, tripStats } = data;
+  const { trip, travelerCount, flightSegments, companionFlightSegments, flightParty, airport_cards, rail_cards, qr_placeholders, hotels, tripStats } = data;
 
   function fmtDate(iso) {
     return new Date(iso + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
@@ -50,6 +50,46 @@
         </div>
       </section>
 
+      <!-- Before You Travel -->
+      <section>
+        <h2 class="font-cursive text-[#9b3a3a] text-2xl mb-3 flex items-center gap-2">
+          <span class="material-symbols-rounded text-xl">event_available</span> Before You Travel
+        </h2>
+        <div class="flex flex-col gap-2">
+          <div class="glass-card p-3 border border-[#e0c4bc]">
+            <div class="flex items-start gap-2.5">
+              <span class="material-symbols-rounded text-lg text-[#c8705a]">verified_user</span>
+              <div class="min-w-0 flex-1">
+                <p class="font-sans font-bold text-xs text-[#3a2020]">Visit Japan Web</p>
+                <p class="font-sans text-[9px] leading-relaxed text-[#7a5c56] mt-1">
+                  Before flying, register each traveler’s passport, flight, and first accommodation. Complete immigration and customs, then save the QR code on your phone.
+                </p>
+                <a href="https://www.vjw.digital.go.jp/" target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 mt-2 font-sans text-[10px] font-bold text-[#c8705a] hover:text-[#a85540]">
+                  Open Visit Japan Web <span class="material-symbols-rounded text-xs">open_in_new</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card p-3 border border-[#bfd2c1]">
+            <div class="flex items-start gap-2.5">
+              <span class="material-symbols-rounded text-lg text-[#286838]">train</span>
+              <div class="min-w-0 flex-1">
+                <p class="font-sans font-bold text-xs text-[#3a2020]">Shinkansen · SmartEX</p>
+                <p class="font-sans text-[9px] leading-relaxed text-[#7a5c56] mt-1">
+                  Book long-distance trains separately. Tokyo → Kyoto is open now; Osaka → Tokyo opens Sep 29 at 10:00 AM JST. Buy Kyoto → Osaka at Kyoto Station on Oct 26.
+                </p>
+                <a href="https://smart-ex.jp/en/index.php" target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 mt-2 font-sans text-[10px] font-bold text-[#286838] hover:text-[#1d512b]">
+                  Open official SmartEX <span class="material-symbols-rounded text-xs">open_in_new</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Flights -->
       {#if flightSegments.length}
         <section>
@@ -68,7 +108,7 @@
                   {/if}
                 </div>
                 <div class="font-sans text-[10px] text-[#7a5c56]">
-                  {fmtDate(seg.date)} · {seg.time_depart} → {seg.time_arrive} · {seg.carrier} {seg.number}
+                  {fmtDate(seg.date)} · {seg.time_depart} → {seg.time_arrive} · {seg.carrier} {seg.number || seg.flight_number}
                 </div>
                 {#if seg.fare_class}
                   <div class="font-sans text-[10px] text-[#a08878]">{seg.fare_class}</div>
@@ -84,6 +124,26 @@
             {/each}
             {#if flightParty?.booking_ref}
               <p class="font-sans text-[10px] italic text-[#a08878] px-1">Booking ref {flightParty.booking_ref} · {flightParty.fare_class ?? 'Economy'}</p>
+            {/if}
+
+            {#if companionFlightSegments.length}
+              <div class="glass-card p-3 border border-[#c8b8d8]">
+                <div class="flex items-center justify-between gap-2 mb-2">
+                  <span class="font-sans font-bold text-xs text-[#5a3d38]">Frances, James &amp; Carlos</span>
+                  <span class="font-sans text-[9px] font-bold text-[#74549a] bg-[#f0e8f8] px-2 py-0.5 rounded-full">3 travelers</span>
+                </div>
+                <div class="flex flex-col gap-1.5">
+                  {#each companionFlightSegments as seg}
+                    <div class="glass-subtle rounded-lg px-2.5 py-1.5">
+                      <div class="flex items-center justify-between gap-2">
+                        <span class="font-sans font-bold text-[10px] text-[#74549a]">{seg.from.code} → {seg.to.code}</span>
+                        <span class="font-sans text-[9px] text-[#7a5c56]">{seg.flight_number}</span>
+                      </div>
+                      <p class="font-sans text-[9px] text-[#7a5c56] mt-0.5">{fmtDate(seg.date)} · {seg.time_depart} → {seg.time_arrive}</p>
+                    </div>
+                  {/each}
+                </div>
+              </div>
             {/if}
           </div>
         </section>

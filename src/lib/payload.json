@@ -9,7 +9,7 @@
     },
     "duration": "15 Days / 14 Nights",
     "flight_party": {
-      "booking_ref": "CCS2UL",
+      "booking_ref": null,
       "carrier": "Air Canada",
       "fare_class": "Economy Standard",
       "travelers": [
@@ -368,7 +368,7 @@
         },
         "carrier": "Air Canada",
         "number": "AC 8835 / AC 1",
-        "reservation_code": "CCS2UL",
+        "reservation_code": null,
         "seat": "TBD",
         "fare_class": "Economy Standard",
         "passengers": [
@@ -558,7 +558,7 @@
         },
         "carrier": "Air Canada",
         "number": "AC 2 / AC 8838",
-        "reservation_code": "CCS2UL",
+        "reservation_code": null,
         "seat": "TBD",
         "fare_class": "Economy Standard",
         "passengers": [
@@ -616,7 +616,7 @@
           "checked_bag": true
         },
         "style_tag": "sakura",
-        "notes": "Economy Standard · Yamil, Jurializ, Jessy, Hilary · Included in CCS2UL booking · 16h 1m total",
+        "notes": "Economy Standard · Yamil, Jurializ, Jessy, Hilary · 16h 1m total",
         "type": "flight"
       },
       {
@@ -734,7 +734,7 @@
         "terminal": "TBD",
         "name": "Haneda Airport",
         "city": "Tokyo",
-        "notes": "Outbound arrive Sun Oct 18 · 3:40 PM (AC 1) · Return depart Oct 31 · 6:50 PM (AC 2) · Ref CCS2UL",
+        "notes": "Outbound arrive Sun Oct 18 · 3:40 PM (AC 1) · Return depart Oct 31 · 6:50 PM (AC 2)",
         "map": "https://maps.google.com/?q=Haneda+Airport+Tokyo"
       }
     ],
@@ -911,7 +911,7 @@
           "day": 1,
           "start_time": "3:40 PM",
           "duration": "2 hours",
-          "notes": "Air Canada AC 1 from YYZ · Ref CCS2UL · Yamil, Jurializ, Jessy, Hilary",
+          "notes": "Air Canada AC 1 from YYZ · Yamil, Jurializ, Jessy, Hilary",
           "links": {
             "map": "https://maps.google.com/?q=Haneda+Airport+Tokyo"
           },
@@ -4143,7 +4143,7 @@
           "day": 3,
           "start_time": "10:00 AM",
           "duration": "Full Day",
-          "notes": "Air Canada AC 2 · HND 6:50 PM → RDU 9:51 PM via YYZ · Ref CCS2UL · Yamil, Jurializ, Jessy, Hilary · Seat selection complimentary",
+          "notes": "Air Canada AC 2 · HND 6:50 PM → RDU 9:51 PM via YYZ · Yamil, Jurializ, Jessy, Hilary · Seat selection complimentary",
           "links": {
             "map": "https://maps.google.com/?q=Haneda+Airport+Tokyo"
           },
@@ -4220,7 +4220,7 @@
             },
             {
               "time": "18:50",
-              "title": "Flight: HND → RDU (AC 2 · CCS2UL)",
+              "title": "Flight: HND → RDU (AC 2)",
               "category": "Transit"
             }
           ]
@@ -4402,7 +4402,7 @@
         "id": "res_flights",
         "label": "Air Canada — RDU ↔ HND (Round Trip)",
         "category": "Transport",
-        "notes": "Ref CCS2UL · Oct 17 outbound / Oct 31 return · Economy Standard · Yamil, Jurializ, Jessy, Hilary · $4,400 + $462.52 taxes · Seat selection complimentary · 4 travelers only (Jessy, Jurializ, Hilary, Yamil)",
+        "notes": "Oct 17 outbound / Oct 31 return · Economy Standard · Yamil, Jurializ, Jessy, Hilary · $4,400 + $462.52 taxes · Seat selection complimentary · 4 travelers only (Jessy, Jurializ, Hilary, Yamil)",
         "price": {
           "amount": 4862.52,
           "currency": "USD",
@@ -4772,18 +4772,69 @@
     ],
     "buy": [
       {
-        "id": "res_jrpass",
-        "label": "JR Whole Japan Rail Pass (7-day Ordinary Adult)",
+        "id": "buy_smartex_tokyo_kyoto",
+        "label": "Shinkansen — Tokyo → Kyoto",
         "category": "Transport",
-        "notes": "7-day Ordinary Adult · 7 travelers · $311.60/pp · Buy on Klook (cheaper than JRailPass)",
+        "notes": "Oct 23 · Reserve now through SmartEX · Reservations opened Sep 23 at 10:00 AM JST · 7 travelers",
         "price": {
-          "amount": 2181.2,
+          "amount": null,
           "currency": "USD",
           "per_person": false,
           "approximate": false,
-          "status": "confirmed"
+          "status": "tbd"
         },
-        "link": "https://www.klook.com/en-US/activity/6892-jr-pass-japan/",
+        "link": "https://smart-ex.jp/en/index.php",
+        "priority": "must",
+        "booking_status": "not_booked",
+        "guests_count": 7
+      },
+      {
+        "id": "buy_jr_kyoto_osaka",
+        "label": "JR ticket — Kyoto → Osaka",
+        "category": "Transport",
+        "notes": "Oct 26 · Buy a regular JR ticket at Kyoto Station on the day · No advance reservation needed",
+        "price": {
+          "amount": null,
+          "currency": "USD",
+          "per_person": false,
+          "approximate": false,
+          "status": "tbd"
+        },
+        "link": "https://www.jr-odekake.net/railroad/ticket/",
+        "priority": "must",
+        "booking_status": "not_booked",
+        "guests_count": 7
+      },
+      {
+        "id": "buy_smartex_osaka_tokyo",
+        "label": "Shinkansen — Osaka → Tokyo",
+        "category": "Transport",
+        "notes": "Oct 29 · Reserve Sep 29 at 10:00 AM JST through SmartEX · 7 travelers",
+        "price": {
+          "amount": null,
+          "currency": "USD",
+          "per_person": false,
+          "approximate": false,
+          "status": "tbd"
+        },
+        "link": "https://smart-ex.jp/en/index.php",
+        "priority": "must",
+        "booking_status": "not_booked",
+        "guests_count": 7
+      },
+      {
+        "id": "buy_visit_japan_web",
+        "label": "Visit Japan Web registration",
+        "category": "Documents",
+        "notes": "Complete before flying: register each passport, flight, and first accommodation; finish immigration and customs; save the QR code",
+        "price": {
+          "amount": null,
+          "currency": "USD",
+          "per_person": false,
+          "approximate": false,
+          "status": "tbd"
+        },
+        "link": "https://www.vjw.digital.go.jp/",
         "priority": "must",
         "booking_status": "not_booked",
         "guests_count": 7

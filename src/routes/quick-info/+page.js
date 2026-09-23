@@ -12,6 +12,9 @@ export function load() {
   }));
 
   const flightSegments = payload.transport.segments.filter(s => s.mode === 'flight');
+  const companionFlightSegments = payload.transport.segments.filter(s =>
+    s.travelers_names?.includes('Carlos') && s.date === '2026-10-17'
+  );
   const flightParty = payload.trip.flight_party ?? null;
 
   const tripStats = (() => {
@@ -35,6 +38,7 @@ export function load() {
     trip: payload.trip,
     travelerCount,
     flightSegments,
+    companionFlightSegments,
     flightParty,
     airport_cards: payload.quick_info_cards.airport_cards,
     rail_cards: payload.quick_info_cards.rail_cards,
