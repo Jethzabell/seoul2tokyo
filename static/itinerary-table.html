@@ -273,6 +273,100 @@
     td, th { padding: 7px 8px; font-size: 11px; }
     .act-sub { display: none; }
   }
+
+  /* ── Mobile card layout ── */
+  @media (max-width: 600px) {
+    .page-header { padding: 22px 16px 16px; }
+    .page-header h1 { font-size: 30px; }
+    .page-header .subtitle { font-size: 11px; line-height: 1.4; }
+
+    .toolbar {
+      padding: 10px 12px;
+      gap: 7px;
+    }
+    .toolbar input {
+      width: 100%;
+      flex: 1 1 100%;
+      min-height: 36px;
+    }
+    .toolbar select {
+      flex: 1 1 calc(50% - 4px);
+      min-width: 0;
+      padding: 8px 9px;
+      font-size: 11px;
+    }
+
+    .stats-bar {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding: 10px 12px;
+      scrollbar-width: none;
+    }
+    .stats-bar::-webkit-scrollbar { display: none; }
+    .stat { flex: 0 0 auto; padding: 5px 11px; font-size: 11px; }
+
+    .table-wrap {
+      padding: 10px 12px 28px;
+      overflow: visible;
+    }
+    table {
+      display: block;
+      background: transparent;
+      box-shadow: none;
+      overflow: visible;
+    }
+    thead { display: none; }
+    tbody, tbody tr { display: block; }
+
+    tbody tr:not(.date-break) {
+      position: relative;
+      margin: 8px 0;
+      padding: 11px 12px 11px 14px;
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    }
+    tbody tr.city-shibuya:not(.date-break)  { border-left: 4px solid #2a5cb8; }
+    tbody tr.city-kyoto:not(.date-break)    { border-left: 4px solid #286840; }
+    tbody tr.city-osaka:not(.date-break)    { border-left: 4px solid #c87020; }
+    tbody tr.city-shinjuku:not(.date-break) { border-left: 4px solid #6830a8; }
+    tbody tr.city-flight:not(.date-break)   { border-left: 4px solid #9b284a; }
+
+    tbody tr:not(.date-break) td {
+      display: block;
+      padding: 0;
+      border: 0 !important;
+      max-width: none !important;
+      white-space: normal !important;
+    }
+    tbody tr:not(.date-break) td:nth-child(1),
+    tbody tr:not(.date-break) td:nth-child(2),
+    tbody tr:not(.date-break) td:nth-child(3),
+    tbody tr:not(.date-break) td:nth-child(10) { display: none; }
+    tbody tr:not(.date-break) td:nth-child(4) { margin-bottom: 6px; }
+    tbody tr:not(.date-break) td:nth-child(5) { margin-bottom: 7px; }
+    tbody tr:not(.date-break) td:nth-child(6),
+    tbody tr:not(.date-break) td:nth-child(7),
+    tbody tr:not(.date-break) td:nth-child(8),
+    tbody tr:not(.date-break) td:nth-child(9) {
+      display: inline-block;
+      margin: 3px 4px 0 0;
+      vertical-align: middle;
+    }
+    tbody tr:not(.date-break) .act-sub { display: block; max-width: none; }
+
+    tbody tr.date-break {
+      display: block;
+      margin-top: 12px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    tbody tr.date-break td {
+      display: block;
+      padding: 9px 11px;
+    }
+    tbody tr.sub-stop { padding-left: 14px; }
+  }
 </style>
 </head>
 <body>

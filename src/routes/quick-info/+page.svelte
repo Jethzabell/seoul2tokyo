@@ -351,7 +351,7 @@
     </div>
 
     <div class="flex items-center justify-between px-6 pb-6">
-      <a href="/transport" class="font-sans text-xs font-semibold text-[#c8705a] hover:text-[#a85540]">← Flights &amp; Trains</a>
+      <a href="/itinerary-table.html" class="font-sans text-xs font-semibold text-[#c8705a] hover:text-[#a85540]">← Itinerary Table</a>
       <a href="/" class="font-sans text-xs font-semibold text-[#9b3a3a] flex items-center gap-1 hover:text-[#7a2828]">
         <span class="material-symbols-rounded text-base leading-none">home</span> Home
       </a>

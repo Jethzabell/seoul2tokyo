@@ -226,7 +226,7 @@
       <a href="/" class="font-sans text-xs font-semibold text-[#c8705a] hover:text-[#a85540] flex items-center gap-1">
         <span class="material-symbols-rounded text-base leading-none">home</span> Home
       </a>
-      <a href="/transport" class="font-sans text-xs font-semibold text-[#c8705a] hover:text-[#a85540]">Flights & Trains →</a>
+      <a href="/itinerary-table.html" class="font-sans text-xs font-semibold text-[#c8705a] hover:text-[#a85540]">Itinerary Table →</a>
     </div>
 
   </div>

@@ -265,9 +265,6 @@
       <a href="/checklist" class="font-sans text-xs font-semibold text-[#c8705a] hover:text-[#a85540]">Checklist →</a>
     </div>
     <div class="flex justify-center pb-5">
-      <a href="/admin" class="font-sans text-[10px] text-[#c8b0a8] hover:text-[#a08878] flex items-center gap-1 transition-colors">
-        <span class="material-symbols-rounded text-sm leading-none">lock</span> Admin
-      </a>
     </div>
 
   </div>
