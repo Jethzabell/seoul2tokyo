@@ -164,7 +164,7 @@
     <div class="relative z-10 w-full px-5 mt-4">
       <div class="grid grid-cols-2 gap-2">
         {#each [
-          ['/itinerary-table.html','flight','Itinerary','Flights & trains'],
+          ['/itinerary-table.html','calendar_month','Itinerary','Daily plan'],
           ['/quick-info','info','Quick Info','Essentials & links'],
           ['/checklist','checklist','Checklist','Bookings & tasks'],
           ['/budget','payments','Budget','Confirmed spend']
