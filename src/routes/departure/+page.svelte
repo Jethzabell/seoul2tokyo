@@ -1,7 +1,7 @@
 <script>
   import { segmentColors, tbd } from '$lib/segmentColors.js';
   export let data;
-  const { seg, prevHref, nextHref, nextLabel, index, total } = data;
+  const { seg, companionSegments, prevHref, nextHref, nextLabel, index, total } = data;
   const c = segmentColors[seg.style_tag] ?? segmentColors.sakura;
 
   function fmtPrice(p) {
@@ -139,6 +139,69 @@
             </div>
           {/if}
 
+        </div>
+      </div>
+
+      <!-- Frances, James & Carlos flight -->
+      {#if companionSegments?.length}
+        <div class="glass-card overflow-hidden border-[#c8b8d8]">
+          <div class="h-1.5 w-full bg-[#8c6bb1]"></div>
+          <div class="px-3 py-2.5 flex flex-col gap-2">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-rounded text-sm text-[#74549a]">flight_takeoff</span>
+              <div>
+                <p class="font-sans font-bold text-[11px] text-[#5a3d38]">Frances, James &amp; Carlos</p>
+                <p class="font-sans text-[9px] text-[#a08878]">Sat, Oct 17 → Sun, Oct 18 · Terminal 3</p>
+              </div>
+            </div>
+
+            {#each companionSegments as flight, i}
+              <div class="glass-subtle rounded-lg px-2.5 py-2 flex items-center gap-2">
+                <div class="min-w-0 flex-1">
+                  <div class="flex items-center gap-1.5">
+                    <span class="font-sans font-bold text-[11px] text-[#74549a]">{flight.from.code} → {flight.to.code}</span>
+                    <span class="font-sans text-[9px] text-[#a08878]">{i === 0 ? 'Outbound' : 'Connection'}</span>
+                  </div>
+                  <div class="flex items-center gap-2 mt-0.5">
+                    <span class="font-sans font-bold text-[10px] text-[#3a2020]">{flight.time_depart} → {flight.time_arrive}</span>
+                    <span class="font-sans text-[9px] text-[#7a5c56]">{flight.flight_number || 'Delta'}</span>
+                  </div>
+                </div>
+              </div>
+            {/each}
+
+            <p class="font-sans text-[9px] leading-relaxed text-[#7a5c56]">
+              They leave Raleigh early Saturday, connect in Detroit, and arrive at Haneda Sunday at 4:15 PM.
+            </p>
+          </div>
+        </div>
+      {/if}
+
+      <!-- Visit Japan Web reminder -->
+      <div class="glass-subtle rounded-2xl border border-[#d8c0b8] px-3.5 py-3">
+        <div class="flex items-start gap-2.5">
+          <span class="material-symbols-rounded text-lg text-[#c8705a]">verified_user</span>
+          <div class="min-w-0 flex-1">
+            <div class="flex items-center justify-between gap-2">
+              <p class="font-sans font-bold text-[11px] text-[#5a3d38]">Before landing in Japan</p>
+              <span class="font-sans text-[8px] font-bold uppercase tracking-wide text-[#9b7a70]">Do before arrival</span>
+            </div>
+            <p class="font-sans text-[9px] leading-relaxed text-[#7a5c56] mt-1">
+              Complete Visit Japan Web before the flight: register each traveler’s passport, flight, and first accommodation, then finish the immigration and customs forms.
+            </p>
+            <p class="font-sans text-[9px] leading-relaxed text-[#7a5c56] mt-1.5">
+              Save the confirmation QR code on your phone so it is ready when you land.
+            </p>
+            <a
+              href="https://www.vjw.digital.go.jp/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1 mt-2 font-sans text-[10px] font-bold text-[#c8705a] hover:text-[#a85540] transition-colors"
+            >
+              Open Visit Japan Web
+              <span class="material-symbols-rounded text-xs">open_in_new</span>
+            </a>
+          </div>
         </div>
       </div>
 

@@ -630,15 +630,16 @@
           "city": "Detroit"
         },
         "date": "2026-10-17",
-        "time_depart": "5:45 AM",
+        "time_depart": "5:20 AM",
         "time_arrive": "7:39 AM",
         "carrier": "Delta / Air France",
         "flight_number": "DL1388",
         "ref": "XMQ7JE",
-        "travelers": 2,
+        "travelers": 3,
         "travelers_names": [
           "Frances",
-          "James"
+          "James",
+          "Carlos"
         ],
         "booking_status": "booked",
         "notes": "Layover in Detroit · Connect to Tokyo",
@@ -658,12 +659,13 @@
         "time_depart": "1:45 PM",
         "time_arrive": "4:15 PM +1",
         "carrier": "Delta / Air France",
-        "flight_number": "",
+        "flight_number": "DL275",
         "ref": "XMQ7JE",
-        "travelers": 2,
+        "travelers": 3,
         "travelers_names": [
           "Frances",
-          "James"
+          "James",
+          "Carlos"
         ],
         "booking_status": "booked",
         "notes": "Arrives Tokyo Oct 18 · 4:15 PM",
@@ -685,10 +687,11 @@
         "carrier": "Delta / Air France",
         "flight_number": "",
         "ref": "XMQ7JE",
-        "travelers": 2,
+        "travelers": 3,
         "travelers_names": [
           "Frances",
-          "James"
+          "James",
+          "Carlos"
         ],
         "booking_status": "booked",
         "notes": "Return leg · layover Detroit",
@@ -710,10 +713,11 @@
         "carrier": "Delta / Air France",
         "flight_number": "",
         "ref": "XMQ7JE",
-        "travelers": 2,
+        "travelers": 3,
         "travelers_names": [
           "Frances",
-          "James"
+          "James",
+          "Carlos"
         ],
         "booking_status": "booked",
         "notes": "Home",

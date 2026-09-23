@@ -75,6 +75,50 @@
         </div>
       </div>
 
+      <!-- JR train booking guide -->
+      <div class="glass-card overflow-hidden border-[#bfd2c1]">
+        <div class="h-1.5 w-full bg-[#286838]"></div>
+        <div class="px-3.5 py-3">
+          <div class="flex items-start gap-2.5">
+            <span class="material-symbols-rounded text-lg text-[#286838]">train</span>
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center justify-between gap-2">
+                <p class="font-sans font-bold text-[12px] text-[#3a2020]">Book long-distance trains separately</p>
+                <span class="font-sans text-[8px] font-bold uppercase tracking-wide text-[#7a9a7c]">SmartEX</span>
+              </div>
+              <p class="font-sans text-[9px] leading-relaxed text-[#7a5c56] mt-1">
+                Use the official SmartEX website or app for the Shinkansen. Reservations open at 10:00 AM Japan time one month before departure.
+              </p>
+
+              <div class="flex flex-col gap-1.5 mt-2.5">
+                <div class="glass-subtle rounded-lg px-2.5 py-1.5">
+                  <p class="font-sans text-[10px] font-bold text-[#3a2020]">Tokyo → Kyoto · Oct 23</p>
+                  <p class="font-sans text-[9px] text-[#7a5c56]">Reserve now — opened Sep 23 at 10:00 AM JST</p>
+                </div>
+                <div class="glass-subtle rounded-lg px-2.5 py-1.5">
+                  <p class="font-sans text-[10px] font-bold text-[#3a2020]">Kyoto → Osaka · Oct 26</p>
+                  <p class="font-sans text-[9px] text-[#7a5c56]">Buy a regular JR ticket at Kyoto Station that day</p>
+                </div>
+                <div class="glass-subtle rounded-lg px-2.5 py-1.5">
+                  <p class="font-sans text-[10px] font-bold text-[#3a2020]">Osaka → Tokyo · Oct 29</p>
+                  <p class="font-sans text-[9px] text-[#7a5c56]">Reserve Sep 29 at 10:00 AM JST</p>
+                </div>
+              </div>
+
+              <a
+                href="https://smart-ex.jp/en/index.php"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 mt-2.5 font-sans text-[10px] font-bold text-[#286838] hover:text-[#1d512b] transition-colors"
+              >
+                Open official SmartEX
+                <span class="material-symbols-rounded text-xs">open_in_new</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Journey route timeline -->
       <div class="glass rounded-2xl border border-[#f0d8d0] p-3 shadow-sm">
         <p class="font-sans text-[9px] uppercase tracking-wider text-[#b08878] mb-2">Route</p>
@@ -224,6 +268,7 @@
           </div>
         </div>
       {/each}
+
     </div>
 
     <!-- Nav footer -->
