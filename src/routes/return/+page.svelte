@@ -144,6 +144,12 @@
                     <p class="mt-1"><strong>Centurion amenities:</strong> premium food, food/snacks, drinks, charging, seating, beer/wine, Wi‑Fi, and flight information.</p>
                     <p class="mt-1"><strong>Second choice:</strong> Priority Pass Sky Lounge South near Gate 108; open 24 hours, max 3 hours, subject to space. For 4 people, Priority Pass covers you + 2 guests; guest 4 is about <strong>$27</strong>.</p>
                     <p class="mt-1"><strong>Sky Lounge amenities:</strong> food/snacks, drinks, charging, seating, beer/wine, Wi‑Fi, and flight monitors.</p>
+                    <div class="flex flex-wrap gap-x-3 gap-y-1 mt-1.5">
+                      <a href="https://www.americanexpress.com/en-us/travel/lounges/the-platinum-card/HND/---3--IAxGAcckdD/" target="_blank" rel="noopener noreferrer" class="font-sans text-[8px] font-bold text-[#74549a]">Centurion details ↗</a>
+                      <a href="https://www.prioritypass.com/en-GB/lounges/japan/haneda/hnd18-sky-lounge-south" target="_blank" rel="noopener noreferrer" class="font-sans text-[8px] font-bold text-[#74549a]">Sky Lounge details ↗</a>
+                      <a href="https://www.americanexpress.com/en-us/travel/faq/travel-benefits/" target="_blank" rel="noopener noreferrer" class="font-sans text-[8px] font-bold text-[#74549a]">Amex guest rules ↗</a>
+                      <a href="https://www.prioritypass.com/en/conditions-of-use" target="_blank" rel="noopener noreferrer" class="font-sans text-[8px] font-bold text-[#74549a]">Priority Pass terms ↗</a>
+                    </div>
                     <div class="mt-2 rounded-lg border border-dashed border-[#e2c9d8] bg-white/70 px-2 py-1.5">
                       <p class="font-bold text-[#74549a]">HND lounge path · same terminal</p>
                       <div class="mt-1 flex flex-wrap items-center gap-x-1 gap-y-1 text-[8px] text-[#7a5c56]">
@@ -163,6 +169,12 @@
                     <p class="font-bold text-[#c8705a]">YYZ · Toronto connection</p>
                     <p><strong>Backup only:</strong> Plaza Premium Terminal 1 Transborder near Gate F55 only if customs, security, and the connection are moving quickly.</p>
                     <p class="mt-1"><strong>Party of 4:</strong> if entering with Priority Pass and the lounge accepts it, you + 2 guests are included and guest 4 is about <strong>$27</strong>; Plaza Premium rules can vary.</p>
+                    <div class="flex flex-wrap gap-x-3 gap-y-1 mt-1.5">
+                      <a href="https://www.torontopearson.com/en/while-you-are-here/toronto-airport-services/plaza-premium-lounge-t1-after-usa-f55" target="_blank" rel="noopener noreferrer" class="font-sans text-[8px] font-bold text-[#c8705a]">F55 details ↗</a>
+                      <a href="https://www.americanexpress.com/en-us/travel/faq/travel-benefits/" target="_blank" rel="noopener noreferrer" class="font-sans text-[8px] font-bold text-[#c8705a]">Amex guest rules ↗</a>
+                      <a href="https://www.prioritypass.com/en/conditions-of-use" target="_blank" rel="noopener noreferrer" class="font-sans text-[8px] font-bold text-[#c8705a]">Priority Pass terms ↗</a>
+                      <a href="https://www.torontopearson.com/en/while-you-are-here/terminal-maps" target="_blank" rel="noopener noreferrer" class="font-sans text-[8px] font-bold text-[#c8705a]">Terminal map ↗</a>
+                    </div>
                     <p class="mt-1"><strong>YYZ amenities:</strong> premium food, food/snacks, drinks, charging, seating, beer/wine, Wi‑Fi, flight monitors, and paid showers; maximum stay is 2 hours.</p>
                     <div class="mt-2 rounded-lg border border-dashed border-[#f0d0c5] bg-white/70 px-2 py-1.5">
                       <p class="font-bold text-[#c8705a]">YYZ lounge path</p>

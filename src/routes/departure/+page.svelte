@@ -224,6 +224,14 @@
                     <div class="rounded-lg border border-[#f0d0c5] bg-[#fffaf7] px-2 py-1.5">
                       <p class="font-bold text-[#c8705a]">YYZ · Toronto connection</p>
                       <p><strong>Two-stop plan:</strong> spend about 1 hour at the Terminal 1 Plaza Premium domestic substitute, then about 1 hour at the Infield Concourse lounge.</p>
+                      <p class="mt-1"><strong>Party of 4:</strong> if the lounge accepts your enrolled Priority Pass, you + 2 guests are included and guest 4 is about <strong>$27</strong>. Plaza Premium guest pricing can vary, so confirm at the desk.</p>
+                      <div class="flex flex-wrap gap-x-3 gap-y-1 mt-1.5">
+                        <a href="https://cdn.torontopearson.com/en/while-you-are-here/Services/plaza-premium-lounge-t1-after-can-d20" target="_blank" rel="noopener noreferrer" class="font-sans text-[8px] font-bold text-[#c8705a]">D20 details ↗</a>
+                        <a href="https://www.americanexpress.com/en-us/travel/lounges/the-platinum-card/YYZ/Plaza-Premium-Lounge-Infield-Concourse-8QsE7wQzkh/" target="_blank" rel="noopener noreferrer" class="font-sans text-[8px] font-bold text-[#c8705a]">IFC details ↗</a>
+                        <a href="https://www.americanexpress.com/en-us/travel/faq/travel-benefits/" target="_blank" rel="noopener noreferrer" class="font-sans text-[8px] font-bold text-[#c8705a]">Amex guest rules ↗</a>
+                        <a href="https://www.prioritypass.com/en/conditions-of-use" target="_blank" rel="noopener noreferrer" class="font-sans text-[8px] font-bold text-[#c8705a]">Priority Pass terms ↗</a>
+                        <a href="https://www.torontopearson.com/en/while-you-are-here/terminal-maps" target="_blank" rel="noopener noreferrer" class="font-sans text-[8px] font-bold text-[#c8705a]">Terminal map ↗</a>
+                      </div>
                       <p class="mt-1"><strong>Plaza Premium amenities:</strong> premium food, food/snacks, drinks, charging, seating, beer/wine, Wi‑Fi, and flight monitors.</p>
                       <p class="mt-1"><strong>Infield amenities:</strong> food/snacks, drinks, charging, seating, beer/wine, Wi‑Fi, and flight monitors.</p>
                       <p class="mt-1"><strong>Hard cutoff:</strong> leave the second lounge by about 11:15 AM for the 1:05 PM Tokyo flight; keep at least 60–75 minutes for the shuttle, E gates, and boarding.</p>
