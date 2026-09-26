@@ -890,7 +890,8 @@
       "stay": {
         "hotel_name": "Noël Shibuya Once — Luxury Residence",
         "hotel_link": "https://www.booking.com/hotel/jp/noel-shibuya.html",
-        "address": "Casa Bella, Shibuya Ward, 150-0021 Tokyo",
+        "location": "Ebisu-Nishi, Shibuya, Tokyo",
+        "address": "Tokyo-to, Tokyo, 恵比寿西２丁目１３−１４ カーサベラ代官山, Japan",
         "phone": "+81 90 3536 7337",
         "checkin": "Oct 18 · from 4:00 PM",
         "checkout": "Oct 23 · by 10:00 AM",
@@ -961,7 +962,7 @@
           "duration": "2 hours",
           "notes": "Noël Shibuya Once · Casa Bella, Shibuya · Arrive 4-5PM · 5-bedroom luxury apartment · All 7 together",
           "links": {
-            "map": "https://maps.google.com/?q=Tokyu+Stay+Shibuya"
+            "map": "https://maps.google.com/?q=Tokyo-to%2C+Tokyo%2C+%E6%81%B5%E6%AF%94%E5%AF%BF%E8%A5%BF%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%93%E2%88%92%EF%BC%91%EF%BC%94+%E3%82%AB%E3%83%BC%E3%82%B5%E3%83%99%E3%83%A9%E4%BB%A3%E5%AE%98%E5%B1%B1%2C+Japan"
           },
           "area": "Shibuya",
           "distance_from_hotel": {
@@ -991,44 +992,6 @@
             "mode": "train",
             "duration_minutes": 45,
             "notes": "Keikyu or Monorail toward Shibuya"
-          }
-        },
-        {
-          "id": "tokyo_s_lobby_meetup",
-          "name": "Meet Up in Hotel Lobby",
-          "category": "Hotel",
-          "type": "Meetup",
-          "day": 1,
-          "start_time": "8:30 PM",
-          "duration": "10 min",
-          "notes": "Regroup in lobby before heading out to Shibuya Crossing",
-          "links": {},
-          "area": "Shibuya",
-          "distance_from_hotel": {
-            "text": "0 min (at hotel)",
-            "minutes": 0,
-            "mode": "walk"
-          },
-          "priority": "must",
-          "booking_status": "planned",
-          "date": "2026-10-18",
-          "icon": "hotel",
-          "coordinates": {
-            "lat": 35.6595,
-            "lng": 139.699
-          },
-          "end_time": "8:40 PM",
-          "duration_minutes": 10,
-          "tags": [
-            "indoor",
-            "logistics"
-          ],
-          "energy_cost": "low",
-          "fallback": null,
-          "transport_from_previous": {
-            "from": "Hotel rooms",
-            "mode": "walk",
-            "duration_minutes": 0
           }
         },
         {
@@ -1083,7 +1046,7 @@
           "category": "Shopping",
           "type": "Store",
           "day": 2,
-          "start_time": "11:30 AM",
+          "start_time": "10:00 AM",
           "duration": "1–2 hours",
           "links": {
             "website": "https://www.google.com/search?q=Pokemon+Center+Shibuya",
@@ -1103,7 +1066,7 @@
             "lat": 35.662,
             "lng": 139.6982
           },
-          "end_time": "12:30 PM",
+          "end_time": "11:00 AM",
           "duration_minutes": 90,
           "tags": [
             "indoor",
@@ -1121,11 +1084,11 @@
         },
         {
           "id": "tokyo_s_donki",
-          "name": "Don Quijote Shibuya",
+          "name": "MEGA Don Quijote Shibuya",
           "category": "Shopping",
           "type": "Store",
           "day": 2,
-          "start_time": "12:30 PM",
+          "start_time": "1:00 PM",
           "duration": "1 hour",
           "notes": "28-6 Udagawacho, Shibuya · Tax-free shopping · Snacks, cosmetics, electronics, souvenirs · Open 24h",
           "links": {
@@ -1146,7 +1109,7 @@
             "lat": 35.6614,
             "lng": 139.6976
           },
-          "end_time": "1:30 PM",
+          "end_time": "2:00 PM",
           "duration_minutes": 60,
           "tags": [
             "indoor",
@@ -1157,9 +1120,32 @@
           "energy_cost": "low",
           "fallback": null,
           "transport_from_previous": {
-            "from": "Pokémon Center Shibuya",
+            "from": "UNIQLO Shibuya Dōgenzaka",
             "mode": "walk",
-            "duration_minutes": 2
+            "duration_minutes": 5
+          }
+        },
+        {
+          "id": "tokyo_s_apartment_dropoff_rest",
+          "name": "Apartment Drop-off & Rest",
+          "category": "Logistics",
+          "type": "Rest",
+          "day": 2,
+          "start_time": "2:00 PM",
+          "duration": "1 hour",
+          "notes": "Return to the apartment, leave shopping bags, refresh, and rest before continuing to Takeshita Street",
+          "links": {
+            "map": "https://maps.google.com/?q=Tokyo-to%2C+Tokyo%2C+%E6%81%B5%E6%AF%94%E5%AF%BF%E8%A5%BF%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%93%E2%88%92%EF%BC%91%EF%BC%94+%E3%82%AB%E3%83%BC%E3%82%B5%E3%83%99%E3%83%A9%E4%BB%A3%E5%AE%98%E5%B1%B1%2C+Japan"
+          },
+          "area": "Ebisu-Nishi",
+          "date": "2026-10-19",
+          "icon": "hotel",
+          "end_time": "4:00 PM",
+          "duration_minutes": 60,
+          "transport_from_previous": {
+            "from": "MEGA Don Quijote Shibuya",
+            "mode": "walk",
+            "duration_minutes": 15
           }
         },
         {
@@ -1168,7 +1154,7 @@
           "category": "Shopping",
           "type": "Store",
           "day": 2,
-          "start_time": "1:30 PM",
+          "start_time": "11:00 AM",
           "duration": "1 hour",
           "notes": "Same building as Pokémon Center (Shibuya PARCO 6F) · Exclusive merch, game demos, photo ops",
           "links": {
@@ -1189,7 +1175,7 @@
             "lat": 35.662,
             "lng": 139.6982
           },
-          "end_time": "2:30 PM",
+          "end_time": "12:00 PM",
           "duration_minutes": 60,
           "tags": [
             "indoor",
@@ -1200,9 +1186,36 @@
           "energy_cost": "low",
           "fallback": null,
           "transport_from_previous": {
-            "from": "Don Quijote Shibuya",
+            "from": "Pokémon Center Shibuya",
             "mode": "walk",
             "duration_minutes": 2
+          }
+        },
+        {
+          "id": "tokyo_s_uniqlo_dogenzaka",
+          "name": "UNIQLO Shibuya Dōgenzaka",
+          "category": "Shopping",
+          "type": "Store",
+          "day": 2,
+          "start_time": "12:00 PM",
+          "duration": "1 hour",
+          "notes": "Flexible shopping stop after Harajuku and before the evening sumo show",
+          "links": {
+            "map": "https://maps.google.com/?q=UNIQLO+Shibuya+Dogenzaka"
+          },
+          "area": "Shibuya",
+          "date": "2026-10-19",
+          "icon": "shopping",
+          "end_time": "1:00 PM",
+          "duration_minutes": 60,
+          "tags": [
+            "indoor",
+            "shopping"
+          ],
+          "transport_from_previous": {
+            "from": "Nintendo Tokyo (Shibuya PARCO)",
+            "mode": "walk",
+            "duration_minutes": 5
           }
         },
         {
@@ -1211,7 +1224,7 @@
           "category": "Sightseeing",
           "type": "Neighborhood",
           "day": 2,
-          "start_time": "2:30 PM",
+          "start_time": "4:20 PM",
           "duration": "1.5 hours",
           "links": {
             "website": "https://www.google.com/search?q=Takeshita+Street+Harajuku",
@@ -1231,8 +1244,8 @@
             "lat": 35.6702,
             "lng": 139.7027
           },
-          "end_time": "4:00 PM",
-          "duration_minutes": 150,
+          "end_time": "5:50 PM",
+          "duration_minutes": 90,
           "tags": [
             "outdoor",
             "walkable",
@@ -1246,9 +1259,9 @@
             "if_tired": "Shorten to Takeshita Street only (15 min walk-through)"
           },
           "transport_from_previous": {
-            "from": "Nintendo Tokyo",
+            "from": "Apartment Drop-off & Rest",
             "mode": "walk",
-            "duration_minutes": 10
+            "duration_minutes": 20
           }
         },
         {
@@ -1311,7 +1324,7 @@
           "energy_cost": "medium",
           "fallback": null,
           "transport_from_previous": {
-            "from": "BeBu-Ya (Shibuya)",
+            "from": "Harajuku / Takeshita Street",
             "mode": "train",
             "duration_minutes": 20
           },
@@ -1432,8 +1445,8 @@
           "category": "Shopping",
           "type": "Neighborhood",
           "day": 4,
-          "start_time": "11:00 AM",
-          "duration": "5 hours",
+          "start_time": "10:00 AM",
+          "duration": "1 hour",
           "links": {
             "website": "https://www.google.com/search?q=Akihabara+Tokyo",
             "map": "https://maps.google.com/?q=Akihabara+Tokyo"
@@ -1452,8 +1465,8 @@
             "lat": 35.6984,
             "lng": 139.7731
           },
-          "end_time": "4:00 PM",
-          "duration_minutes": 300,
+          "end_time": "11:00 AM",
+          "duration_minutes": 60,
           "tags": [
             "indoor",
             "rain-safe",
@@ -1478,7 +1491,8 @@
           "type": "Secondhand",
           "day": 4,
           "date": "2026-10-21",
-          "start_time": "TBD",
+          "start_time": "11:00 AM",
+          "end_time": "12:00 PM",
           "duration": "1 hour",
           "duration_minutes": 60,
           "area": "Akihabara",
@@ -1505,7 +1519,8 @@
           "type": "Secondhand",
           "day": 4,
           "date": "2026-10-21",
-          "start_time": "TBD",
+          "start_time": "12:00 PM",
+          "end_time": "1:00 PM",
           "duration": "1 hour",
           "duration_minutes": 60,
           "area": "Akihabara",
@@ -1532,9 +1547,10 @@
           "type": "Secondhand",
           "day": 4,
           "date": "2026-10-21",
-          "start_time": "TBD",
-          "duration": "1-2 hours",
-          "duration_minutes": 90,
+          "start_time": "1:00 PM",
+          "end_time": "2:00 PM",
+          "duration": "1 hour",
+          "duration_minutes": 60,
           "area": "Akihabara",
           "priority": "nice_to_have",
           "booking_status": "planned",
@@ -1560,9 +1576,10 @@
           "type": "Discount Store",
           "day": 4,
           "date": "2026-10-21",
-          "start_time": "TBD",
-          "duration": "30-60 min",
-          "duration_minutes": 45,
+          "start_time": "2:00 PM",
+          "end_time": "3:00 PM",
+          "duration": "1 hour",
+          "duration_minutes": 60,
           "area": "Akihabara",
           "priority": "nice_to_have",
           "booking_status": "planned",
@@ -1586,7 +1603,9 @@
           "category": "Shopping",
           "type": "Store",
           "day": 4,
-          "start_time": "TBD",
+          "start_time": "3:00 PM",
+          "end_time": "4:00 PM",
+          "duration": "1 hour",
           "links": {
             "website": "https://www.google.com/search?q=UNIQLO+Yodobashi+Akiba",
             "map": "https://maps.google.com/?q=UNIQLO+Yodobashi+Akiba"
@@ -1605,7 +1624,7 @@
             "lat": 35.6988,
             "lng": 139.774
           },
-          "duration_minutes": 90,
+          "duration_minutes": 60,
           "tags": [
             "indoor",
             "rain-safe",
@@ -1990,44 +2009,6 @@
           "energy_cost": "low",
           "fallback": null,
           "transport_from_previous": null
-        },
-        {
-          "id": "tokyo_s_lobby_meetup_kyoto",
-          "name": "Meet Up in Hotel Lobby",
-          "category": "Hotel",
-          "type": "Meetup",
-          "day": 6,
-          "start_time": "10:00 AM",
-          "duration": "10 min",
-          "notes": "Regroup with luggage, head to Shibuya Station → Tokyo Station → Shinkansen",
-          "links": {},
-          "area": "Shibuya",
-          "distance_from_hotel": {
-            "text": "0 min (at hotel)",
-            "minutes": 0,
-            "mode": "walk"
-          },
-          "priority": "must",
-          "booking_status": "planned",
-          "date": "2026-10-23",
-          "icon": "hotel",
-          "coordinates": {
-            "lat": 35.6595,
-            "lng": 139.699
-          },
-          "end_time": "10:10 AM",
-          "duration_minutes": 10,
-          "tags": [
-            "indoor",
-            "logistics"
-          ],
-          "energy_cost": "low",
-          "fallback": null,
-          "transport_from_previous": {
-            "from": "Hotel rooms",
-            "mode": "walk",
-            "duration_minutes": 0
-          }
         }
       ],
       "hourly_schedule_templates": [
@@ -2044,11 +2025,6 @@
               "time": "17:30",
               "title": "Hotel Check-in + 7-Eleven Dinner (eat in rooms)",
               "category": "Check-in"
-            },
-            {
-              "time": "20:30",
-              "title": "Meet Up in Hotel Lobby",
-              "category": "Logistics"
             },
             {
               "time": "20:40",
