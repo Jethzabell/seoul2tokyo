@@ -128,23 +128,39 @@
       .sort(([a], [b]) => Number(a) - Number(b))
       .map(([day, items]) => ({
         day: Number(day),
-        items: [...items].sort((a, b) => {
-          const aStart = parseStartToMinutes(a.start_time ?? a.time_of_day ?? null);
-          const bStart = parseStartToMinutes(b.start_time ?? b.time_of_day ?? null);
+        items: (() => {
+          const originalIndex = new Map(items.map((item, idx) => [item.id, idx]));
+          const startFor = (item) => {
+            const parent = item.parent_id ? items.find(candidate => candidate.id === item.parent_id) : null;
+            const start = parseStartToMinutes((parent ?? item).start_time ?? (parent ?? item).time_of_day ?? null);
+            return item.sub_stop && Number.isFinite(start) ? start + 0.01 : start;
+          };
+          return [...items].sort((a, b) => {
+          const aStart = startFor(a);
+          const bStart = startFor(b);
           if (aStart !== bStart) return aStart - bStart;
-          return String(a.name).localeCompare(String(b.name));
-        })
+          return (originalIndex.get(a.id) ?? 0) - (originalIndex.get(b.id) ?? 0);
+          });
+        })()
       }));
   })();
 
-  function dayMapUrl(items) {
-    const stops = items
+  function dayMapStops(items) {
+    const activityStops = items
       .filter(a => a.links?.map)
       .map(a => {
         try { return new URL(a.links.map).searchParams.get('q') ?? ''; }
         catch { return ''; }
       })
       .filter(Boolean);
+    const startingPoint = stay?.address || stay?.location || stay?.hotel_name;
+    return startingPoint && activityStops.length > 0
+      ? [startingPoint, ...activityStops]
+      : activityStops;
+  }
+
+  function dayMapUrl(items) {
+    const stops = dayMapStops(items);
     if (stops.length === 0) return null;
     if (stops.length === 1) return `https://www.google.com/maps/search/${encodeURIComponent(stops[0])}`;
     return `https://www.google.com/maps/dir/${stops.map(s => encodeURIComponent(s)).join('/')}`;
@@ -214,24 +230,13 @@
       </div>
     </div>
 
-    <!-- Tab Bar -->
-    <div class="flex items-center gap-1.5 px-4 pt-3 pb-0">
-      {#each [['summary','Summary'],['itinerary','Itinerary']] as [tabKey, lbl]}
-        <a
-          href={tabHrefs[tabKey]}
-          class="flex-1 text-center font-sans text-xs font-semibold py-1.5 rounded-full border transition-colors"
-          style={tab === tabKey
-            ? `background:${t.accent}; color:white; border-color:${t.accent}`
-            : `background:rgba(255,255,255,0.5); backdrop-filter:blur(8px); color:${t.accent}; border-color:${t.accentBg}`}
-        >{lbl}</a>
-      {/each}
-    </div>
+    <!-- City pages now open directly to the itinerary. -->
 
     <!-- Tab Content -->
     <div class="flex flex-col gap-3 px-4 py-4 flex-1">
 
       <!-- ═══════════ SUMMARY TAB ═══════════ -->
-      {#if tab === 'summary'}
+      {#if false}
       <div in:fade={{ duration: 220, delay: 40 }}>
 
         <!-- Overview card -->
@@ -493,7 +498,7 @@
                 <a href={dMapUrl} target="_blank" rel="noopener" title="View day route on Google Maps"
                   class="shrink-0 flex items-center gap-1 bg-white border border-[#f0d0c8] rounded-full px-2 py-1 text-[#c8705a] hover:bg-[#fde8e0] transition-colors shadow-sm">
                   <span class="material-symbols-rounded text-sm leading-none">route</span>
-                  <span class="font-sans text-[10px] font-semibold">{items.filter(a => a.links?.map).length} {items.filter(a => a.links?.map).length === 1 ? 'stop' : 'stops'}</span>
+                  <span class="font-sans text-[10px] font-semibold">{dayMapStops(items).length} {dayMapStops(items).length === 1 ? 'stop' : 'stops'}</span>
                 </a>
               {/if}
             </div>
@@ -508,16 +513,6 @@
                   <span class="font-sans text-[8px] uppercase tracking-wide px-1.5 py-0.5 rounded-full
                     {ds.day_type === 'full_day' ? 'bg-[#fde8e0] text-[#c8705a]' : ds.day_type === 'chill' ? 'bg-[#e8f4ea] text-[#287040]' : 'bg-[#f0e8f8] text-[#8060a0]'}">{ds.day_type.replace(/_/g, ' ')}</span>
                 {/if}
-                {#if ds.energy}
-                  <span class="flex items-center gap-0.5 font-sans text-[8px] text-[#a08878]">
-                    <span class="material-symbols-rounded text-[10px]">bolt</span>{ds.energy}
-                  </span>
-                {/if}
-                {#if ds.transport}
-                  <span class="flex items-center gap-0.5 font-sans text-[8px] text-[#a08878]">
-                    <span class="material-symbols-rounded text-[10px]">directions</span>{ds.transport}
-                  </span>
-                {/if}
               </div>
               {#if ds.vibe}
                 <p class="font-sans text-[9px] italic text-[#b08878] px-1 -mt-0.5">"{ds.vibe}"</p>
@@ -529,11 +524,10 @@
           {#each items as activity, actIdx}
             {@const iconKey = activity.icon || getIconKey(activity.id, activity.category)}
             {@const desc = descriptions[activity.id] ?? activity.category}
-            {@const isMust = activity.priority === 'must'}
             {@const hasTransport = activity.transport_from_previous?.mode && actIdx > 0}
 
             <!-- Transport connector -->
-            {#if hasTransport}
+            {#if hasTransport && activity.transport_from_previous.duration_minutes > 0}
               <div class="flex items-center gap-2 px-5 -my-1">
                 <div class="w-px h-3 ml-4" style="background:{t.accent}40"></div>
                 <div class="flex items-center gap-1 glass-subtle rounded-full px-2 py-0.5 border border-[#e8d8d0]">
@@ -553,7 +547,6 @@
 
             <!-- Activity card -->
             <div class="{activity.sub_stop ? 'ml-4 border-l-2 rounded-l-none' : ''} glass-card glass-hover shadow-sm overflow-hidden
-              {isMust && !activity.sub_stop ? 'border-l-[3px] border-l-[#c8705a]' : ''}
               {activity.sub_stop ? 'border-l-[#c8d0e0] bg-[#f8faff]/70' : ''}"
               style={activity.sub_stop ? 'border-left-color:#c8d8e8' : ''}>
               <div class="p-3 flex flex-col gap-2">
@@ -588,62 +581,7 @@
                   {#if activity.area}
                     <span class="font-sans text-[8px] font-semibold px-1.5 py-0.5 rounded-full bg-[#f0e8f8] text-[#6050a0] border border-[#d8c8e8]">{activity.area}</span>
                   {/if}
-                  {#if activity.type}
-                    <span class="font-sans text-[8px] text-[#a08878]">{activity.category} · {activity.type}</span>
-                  {/if}
                 </div>
-
-                <!-- Row 3: badges (priority, booking, energy) -->
-                <div class="flex items-center gap-1 flex-wrap">
-                  {#if activity.priority}
-                    {@const priorityLabel = activity.priority === 'nice_to_have' ? 'nice' : activity.priority === 'flex' ? 'optional' : activity.priority}
-                    <span class="font-sans text-[7px] font-bold uppercase px-1.5 py-0.5 rounded-full
-                      {activity.priority === 'must' ? 'bg-[#fde8e0] text-[#c8705a] border border-[#e8b8a8]' :
-                       activity.priority === 'nice_to_have' ? 'bg-[#fef5e4] text-[#8a5a00] border border-[#f0c860]' :
-                       'bg-[#f0ece8] text-[#7a5c56] border border-[#e0c8c0]'}">
-                      {priorityLabel}
-                    </span>
-                  {/if}
-                  {#if activity.booking_status}
-                    <span class="font-sans text-[7px] font-bold uppercase px-1.5 py-0.5 rounded-full border
-                      {activity.booking_status === 'booked' ? 'bg-[#e8f4ea] text-[#287040] border-[#98d098]' :
-                       activity.booking_status === 'planned' ? 'bg-[#e8eef8] text-[#4070a8] border-[#98b0d8]' :
-                       activity.booking_status === 'waitlist' ? 'bg-[#f0e8f8] text-[#8060a0] border-[#c098d8]' :
-                       'bg-[#fdf0e8] text-[#c8705a] border-[#e8c098]'}">
-                      {activity.booking_status.replace(/_/g, ' ')}
-                    </span>
-                  {/if}
-                  {#if activity.energy_cost}
-                    <span class="flex items-center gap-0.5 font-sans text-[7px] uppercase px-1.5 py-0.5 rounded-full border
-                      {activity.energy_cost === 'high' ? 'bg-[#fde8e8] text-[#c04040] border-[#e8a0a0]' :
-                       activity.energy_cost === 'medium' ? 'bg-[#fef5e4] text-[#8a6a00] border-[#e8c880]' :
-                       'bg-[#e8f4ea] text-[#287040] border-[#98d098]'}">
-                      <span class="material-symbols-rounded text-[8px]">bolt</span>{activity.energy_cost}
-                    </span>
-                  {/if}
-                  {#if activity.distance_from_hotel}
-                    <span class="flex items-center gap-0.5 font-sans text-[7px] text-[#a08878] px-1.5 py-0.5 rounded-full bg-[#f8f0ec] border border-[#e8d8d0]">
-                      <span class="material-symbols-rounded text-[8px]">hotel</span>{activity.distance_from_hotel.text}
-                    </span>
-                  {/if}
-                </div>
-
-                <!-- Row 4: tags -->
-                {#if activity.tags?.length}
-                  <div class="flex items-center gap-1 flex-wrap">
-                    {#each activity.tags as tag}
-                      <span class="font-sans text-[7px] px-1.5 py-0.5 rounded-full border
-                        {tag === 'rain-safe' ? 'bg-[#e8f0fd] text-[#4070a8] border-[#a0c0e0]' :
-                         tag === 'iconic' ? 'bg-[#fef5e4] text-[#8a6a00] border-[#e8c880]' :
-                         tag === 'outdoor' ? 'bg-[#e8f4ea] text-[#287040] border-[#98d098]' :
-                         tag === 'indoor' ? 'bg-[#f0e8f8] text-[#6050a0] border-[#c098d8]' :
-                         tag === 'free' ? 'bg-[#e8f4ea] text-[#287040] border-[#98d098]' :
-                         'bg-[#f8f0ec] text-[#7a5c56] border-[#e0d0c8]'}">
-                        {tag}
-                      </span>
-                    {/each}
-                  </div>
-                {/if}
 
                 <!-- Row 5: notes -->
                 {#if activity.notes}

@@ -91,7 +91,6 @@ export function load({ params, url }) {
     index,
     total,
     tabHrefs: {
-      summary:   `/city/${params.id}?tab=summary`,
       itinerary: `/city/${params.id}?tab=itinerary`,
       extra:     `/city/${params.id}?tab=extra`,
     },

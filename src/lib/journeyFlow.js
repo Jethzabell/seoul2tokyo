@@ -1,22 +1,18 @@
 // Linear journey step sequence + navigation helpers
 
-const VALID_TABS = ['summary', 'itinerary'];
+const VALID_TABS = ['itinerary'];
 
-/** Normalise a raw tab string → valid tab, defaulting to 'summary' */
+/** Normalise a raw tab string → valid tab, defaulting to 'itinerary' */
 export function normalizeTab(raw, cityId) {
   if (!cityId) return undefined;
-  return VALID_TABS.includes(raw) ? raw : 'summary';
+  return VALID_TABS.includes(raw) ? raw : 'itinerary';
 }
 
 export const steps = [
   { id: 'departure',                  path: '/departure',                    city: 'Raleigh',           dates: 'Oct 17',      label: 'Departure',  type: 'departure' },
-  { id: 'tokyo-shibuya-summary',      path: '/city/city_tokyo_shibuya',      city: 'Tokyo (Shibuya)',   dates: 'Oct 18–22',   label: 'Summary',    tab: 'summary'    },
   { id: 'tokyo-shibuya-itinerary',    path: '/city/city_tokyo_shibuya',      city: 'Tokyo (Shibuya)',   dates: 'Oct 18–22',   label: 'Itinerary',  tab: 'itinerary'  },
-  { id: 'kyoto-summary',              path: '/city/city_kyoto',              city: 'Kyoto',             dates: 'Oct 23–26',   label: 'Summary',    tab: 'summary'    },
   { id: 'kyoto-itinerary',            path: '/city/city_kyoto',              city: 'Kyoto',             dates: 'Oct 23–26',   label: 'Itinerary',  tab: 'itinerary'  },
-  { id: 'osaka-summary',              path: '/city/city_osaka',              city: 'Osaka',             dates: 'Oct 26–28',   label: 'Summary',    tab: 'summary'    },
   { id: 'osaka-itinerary',            path: '/city/city_osaka',              city: 'Osaka',             dates: 'Oct 26–28',   label: 'Itinerary',  tab: 'itinerary'  },
-  { id: 'tokyo-shinjuku-summary',     path: '/city/city_tokyo_shinjuku',     city: 'Tokyo (Shinjuku)',  dates: 'Oct 28–31',   label: 'Summary',    tab: 'summary'    },
   { id: 'tokyo-shinjuku-itinerary',   path: '/city/city_tokyo_shinjuku',     city: 'Tokyo (Shinjuku)',  dates: 'Oct 28–31',   label: 'Itinerary',  tab: 'itinerary'  },
   { id: 'return',                     path: '/return',                       city: 'Return flight',     dates: 'Oct 31',      label: 'Return flight', type: 'return' },
 ];
