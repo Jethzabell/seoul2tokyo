@@ -4771,16 +4771,43 @@
           }
         },
         {
+          "id": "tokyo_n_onitsuka_shinjuku",
+          "name": "Onitsuka Tiger — Lumine Est Shinjuku",
+          "category": "Shopping",
+          "type": "Flagship Store",
+          "day": 3,
+          "date": "2026-10-30",
+          "start_time": "5:25 PM",
+          "end_time": "6:00 PM",
+          "duration": "35 min",
+          "duration_minutes": 35,
+          "notes": "Onitsuka Tiger at Lumine Est Shinjuku 1F.",
+          "location": "Japan, 〒160-0022 Tokyo, Shinjuku City, Shinjuku, 3 Chome−38−1 ルミネエスト新宿 1F",
+          "links": {
+            "map": "https://maps.google.com/?q=Onitsuka+Tiger+Lumine+Est+Shinjuku"
+          },
+          "area": "Shinjuku · Lumine Est 1F",
+          "priority": "must",
+          "booking_status": "planned",
+          "icon": "shopping",
+          "energy_cost": "low",
+          "transport_from_previous": {
+            "from": "Hard Off — Shinjuku Marui Men",
+            "mode": "walk",
+            "duration_minutes": 10
+          }
+        },
+        {
           "id": "tokyo_n_hotel_dropoff_rest_day3",
           "name": "Hotel Drop-off & Rest",
           "category": "Logistics",
           "type": "Hotel Break",
           "day": 3,
           "date": "2026-10-30",
-          "start_time": "5:30 PM",
-          "end_time": "6:30 PM",
-          "duration": "1 hour",
-          "duration_minutes": 60,
+          "start_time": "6:15 PM",
+          "end_time": "6:45 PM",
+          "duration": "30 min",
+          "duration_minutes": 30,
           "notes": "Return to HOTEL AMANEK Shinjuku Kabukicho after Hard Off, drop off shopping bags, rest, and freshen up before the evening.",
           "links": {
             "map": "https://maps.google.com/?q=HOTEL+AMANEK+Shinjuku+Kabukicho"
@@ -4791,7 +4818,7 @@
           "icon": "hotel",
           "energy_cost": "low",
           "transport_from_previous": {
-            "from": "Hard Off — Shinjuku Marui Men",
+            "from": "Onitsuka Tiger — Lumine Est Shinjuku",
             "mode": "walk",
             "duration_minutes": 10
           }

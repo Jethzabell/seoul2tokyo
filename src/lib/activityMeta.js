@@ -58,6 +58,7 @@ export const descriptions = {
   tokyo_n_hotel_dropoff_rest_day2: 'Drop off shopping bags and rest before dinner',
   tokyo_n_open_evening_day2: 'Flexible dinner and free evening after returning to the hotel',
   tokyo_n_hotel_dropoff_rest_day3: 'Drop off shopping bags and rest before the evening in Shinjuku',
+  tokyo_n_onitsuka_shinjuku: 'Japanese sneakers and heritage styles at Lumine Est Shinjuku',
   tokyo_n_pokemon_mega: 'The biggest Pokémon store in Japan',
   tokyo_s_ikebukuro_dinner_tbd: 'Flexible dinner in Ikebukuro — restaurant TBD',
   tokyo_n_omoide: 'Cozy lantern-lit yakitori alley',
