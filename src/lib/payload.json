@@ -1000,7 +1000,7 @@
           "category": "Sightseeing",
           "type": "Landmark",
           "day": 1,
-          "start_time": "7:35 PM",
+          "start_time": "8:00 PM",
           "duration": "1 hour",
           "links": {
             "website": "https://www.google.com/search?q=Shibuya+Crossing",
@@ -1008,8 +1008,8 @@
           },
           "area": "Shibuya",
           "distance_from_hotel": {
-            "text": "5 min walk",
-            "minutes": 5,
+            "text": "20 min walk",
+            "minutes": 20,
             "mode": "walk"
           },
           "priority": "must",
@@ -1020,7 +1020,7 @@
             "lat": 35.6595,
             "lng": 139.7004
           },
-          "end_time": "8:35 PM",
+          "end_time": "9:00 PM",
           "duration_minutes": 60,
           "tags": [
             "outdoor",
@@ -1037,7 +1037,7 @@
           "transport_from_previous": {
             "from": "Hotel (Shibuya)",
             "mode": "walk",
-            "duration_minutes": 5
+            "duration_minutes": 20
           }
         },
         {
@@ -1132,7 +1132,7 @@
           "type": "Rest",
           "day": 2,
           "start_time": "2:00 PM",
-          "duration": "1 hour",
+          "duration": "2 hours",
           "notes": "Return to the apartment, leave shopping bags, refresh, and rest before continuing to Takeshita Street",
           "links": {
             "map": "https://maps.google.com/?q=Tokyo-to%2C+Tokyo%2C+%E6%81%B5%E6%AF%94%E5%AF%BF%E8%A5%BF%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%93%E2%88%92%EF%BC%91%EF%BC%94+%E3%82%AB%E3%83%BC%E3%82%B5%E3%83%99%E3%83%A9%E4%BB%A3%E5%AE%98%E5%B1%B1%2C+Japan"
@@ -1141,7 +1141,7 @@
           "date": "2026-10-19",
           "icon": "hotel",
           "end_time": "4:00 PM",
-          "duration_minutes": 60,
+          "duration_minutes": 120,
           "transport_from_previous": {
             "from": "MEGA Don Quijote Shibuya",
             "mode": "walk",
@@ -1224,7 +1224,7 @@
           "category": "Sightseeing",
           "type": "Neighborhood",
           "day": 2,
-          "start_time": "4:20 PM",
+          "start_time": "4:30 PM",
           "duration": "1.5 hours",
           "links": {
             "website": "https://www.google.com/search?q=Takeshita+Street+Harajuku",
@@ -1232,9 +1232,9 @@
           },
           "area": "Harajuku",
           "distance_from_hotel": {
-            "text": "10 min walk",
-            "minutes": 10,
-            "mode": "walk"
+            "text": "30 min train + walk",
+            "minutes": 30,
+            "mode": "train"
           },
           "priority": "must",
           "booking_status": "planned",
@@ -1244,7 +1244,7 @@
             "lat": 35.6702,
             "lng": 139.7027
           },
-          "end_time": "5:50 PM",
+          "end_time": "6:00 PM",
           "duration_minutes": 90,
           "tags": [
             "outdoor",
@@ -1260,8 +1260,8 @@
           },
           "transport_from_previous": {
             "from": "Apartment Drop-off & Rest",
-            "mode": "walk",
-            "duration_minutes": 20
+            "mode": "train",
+            "duration_minutes": 30
           }
         },
         {
@@ -1433,11 +1433,60 @@
             "if_tired": "Skip and extend Asakusa exploration or rest at a café"
           },
           "transport_from_previous": {
-            "from": "Lunch (Asakusa)",
+            "from": "Dinner near Gotanda (TBD)",
             "mode": "walk",
-            "duration_minutes": 10
+            "duration_minutes": 15,
+            "notes": "Finish dinner by 6:45 PM and arrive by the required 7:25 PM check-in"
           },
           "cancel_by": "Oct 13, 2026 (7 days before — NO REFUND after)"
+        },
+        {
+          "id": "tokyo_s_asakusa_lunch",
+          "name": "Lunch in Asakusa",
+          "category": "Food",
+          "type": "Flexible Lunch",
+          "day": 3,
+          "date": "2026-10-20",
+          "start_time": "12:05 PM",
+          "end_time": "1:05 PM",
+          "duration": "1 hour",
+          "duration_minutes": 60,
+          "notes": "Flexible lunch near Senso-ji before continuing to Ueno.",
+          "links": {},
+          "area": "Asakusa",
+          "priority": "flex",
+          "booking_status": "planned",
+          "icon": "food",
+          "energy_cost": "low",
+          "transport_from_previous": {
+            "from": "Senso-ji Temple",
+            "mode": "walk",
+            "duration_minutes": 5
+          }
+        },
+        {
+          "id": "tokyo_s_gotanda_dinner_tbd",
+          "name": "Dinner (TBD)",
+          "category": "Food",
+          "type": "Flexible Dinner",
+          "day": 3,
+          "date": "2026-10-20",
+          "start_time": "5:45 PM",
+          "end_time": "6:45 PM",
+          "duration": "1 hour",
+          "duration_minutes": 60,
+          "notes": "Choose a quick dinner near Gotanda so the group can reach Monkey Kart by the 7:25 PM check-in.",
+          "links": {},
+          "area": "Gotanda",
+          "priority": "flex",
+          "booking_status": "planned",
+          "icon": "food",
+          "energy_cost": "low",
+          "transport_from_previous": {
+            "from": "Apartment / afternoon break",
+            "mode": "train",
+            "duration_minutes": 25
+          }
         },
         {
           "id": "tokyo_s_akihabara",
@@ -1446,7 +1495,7 @@
           "type": "Neighborhood",
           "day": 4,
           "start_time": "10:00 AM",
-          "duration": "1 hour",
+          "duration": "7 hours",
           "links": {
             "website": "https://www.google.com/search?q=Akihabara+Tokyo",
             "map": "https://maps.google.com/?q=Akihabara+Tokyo"
@@ -1465,8 +1514,8 @@
             "lat": 35.6984,
             "lng": 139.7731
           },
-          "end_time": "11:00 AM",
-          "duration_minutes": 60,
+          "end_time": "5:00 PM",
+          "duration_minutes": 420,
           "tags": [
             "indoor",
             "rain-safe",
@@ -1541,14 +1590,40 @@
           "parent_id": "tokyo_s_akihabara"
         },
         {
+          "id": "tokyo_s_akiba_lunch",
+          "name": "Lunch in Akihabara",
+          "category": "Food",
+          "type": "Flexible Lunch",
+          "day": 4,
+          "date": "2026-10-21",
+          "start_time": "1:00 PM",
+          "end_time": "2:00 PM",
+          "duration": "1 hour",
+          "duration_minutes": 60,
+          "notes": "Flexible lunch break before continuing the Akihabara shopping route.",
+          "links": {},
+          "area": "Akihabara",
+          "priority": "flex",
+          "booking_status": "planned",
+          "icon": "food",
+          "energy_cost": "low",
+          "sub_stop": true,
+          "parent_id": "tokyo_s_akihabara",
+          "transport_from_previous": {
+            "from": "Hard Off — Akihabara Y's Building",
+            "mode": "walk",
+            "duration_minutes": 5
+          }
+        },
+        {
           "id": "tokyo_s_surugaya_akiba",
           "name": "Suruga-ya Akihabara (多店舗)",
           "category": "Shopping",
           "type": "Secondhand",
           "day": 4,
           "date": "2026-10-21",
-          "start_time": "1:00 PM",
-          "end_time": "2:00 PM",
+          "start_time": "2:00 PM",
+          "end_time": "3:00 PM",
           "duration": "1 hour",
           "duration_minutes": 60,
           "area": "Akihabara",
@@ -1576,8 +1651,8 @@
           "type": "Discount Store",
           "day": 4,
           "date": "2026-10-21",
-          "start_time": "2:00 PM",
-          "end_time": "3:00 PM",
+          "start_time": "3:00 PM",
+          "end_time": "4:00 PM",
           "duration": "1 hour",
           "duration_minutes": 60,
           "area": "Akihabara",
@@ -1603,8 +1678,8 @@
           "category": "Shopping",
           "type": "Store",
           "day": 4,
-          "start_time": "3:00 PM",
-          "end_time": "4:00 PM",
+          "start_time": "4:00 PM",
+          "end_time": "5:00 PM",
           "duration": "1 hour",
           "links": {
             "website": "https://www.google.com/search?q=UNIQLO+Yodobashi+Akiba",
@@ -1647,10 +1722,10 @@
           "name": "SASUGAYA OUTLET — Vintage Brand Bags",
           "category": "Shopping",
           "type": "Vintage Store",
-          "day": 4,
-          "date": "2026-10-21",
-          "start_time": "4:15 PM",
-          "end_time": "5:15 PM",
+          "day": 3,
+          "date": "2026-10-20",
+          "start_time": "1:30 PM",
+          "end_time": "2:30 PM",
           "duration": "1 hour",
           "duration_minutes": 60,
           "notes": "Vintage brand bags · 〒110-0005 Tokyo, Taito City, Ueno, 6 Chome−4−7 アメ横ウェルカムモール 1F",
@@ -1667,9 +1742,9 @@
           "booking_status": "planned",
           "icon": "shopping",
           "transport_from_previous": {
-            "from": "UNIQLO Yodobashi Akiba",
+            "from": "Senso-ji Temple / lunch in Asakusa",
             "mode": "train",
-            "duration_minutes": 15
+            "duration_minutes": 20
           }
         },
         {
@@ -1743,7 +1818,7 @@
           "type": "Neighborhood",
           "day": 5,
           "start_time": "11:00 AM",
-          "duration": "5 hours",
+          "duration": "3h 30m",
           "links": {
             "website": "https://www.google.com/search?q=Ginza+Shopping+Tokyo",
             "map": "https://maps.google.com/?q=Ginza+Tokyo"
@@ -1762,8 +1837,8 @@
             "lat": 35.6717,
             "lng": 139.7649
           },
-          "end_time": "4:00 PM",
-          "duration_minutes": 300,
+          "end_time": "2:30 PM",
+          "duration_minutes": 210,
           "tags": [
             "indoor",
             "rain-safe",
@@ -1784,7 +1859,9 @@
           "category": "Shopping",
           "type": "Store",
           "day": 5,
-          "start_time": "TBD",
+          "start_time": "12:15 PM",
+          "end_time": "1:15 PM",
+          "duration": "1 hour",
           "links": {
             "website": "https://www.google.com/search?q=UNIQLO+Ginza+Flagship",
             "map": "https://maps.google.com/?q=UNIQLO+Ginza+Tokyo"
@@ -1868,10 +1945,10 @@
           "type": "District",
           "day": 5,
           "date": "2026-10-22",
-          "start_time": "5:00 PM",
+          "start_time": "4:00 PM",
           "end_time": "7:30 PM",
-          "duration": "2.5 hours",
-          "duration_minutes": 150,
+          "duration": "3h 30m",
+          "duration_minutes": 210,
           "area": "Ikebukuro",
           "priority": "must",
           "booking_status": "planned",
@@ -1892,7 +1969,10 @@
           "category": "Shopping",
           "type": "Store",
           "day": 5,
-          "start_time": "TBD",
+          "start_time": "4:00 PM",
+          "end_time": "5:00 PM",
+          "duration": "1 hour",
+          "duration_minutes": 60,
           "notes": "World's largest anime store · 10 floors · Exclusive merch",
           "links": {
             "website": "https://www.animate.co.jp/shop/ikebukuro/",
@@ -1934,7 +2014,10 @@
           "category": "Shopping",
           "type": "Store",
           "day": 5,
-          "start_time": "TBD",
+          "start_time": "5:15 PM",
+          "end_time": "6:15 PM",
+          "duration": "1 hour",
+          "duration_minutes": 60,
           "links": {
             "website": "https://www.google.com/search?q=Pokemon+Center+Mega+Tokyo+Ikebukuro",
             "map": "https://maps.google.com/?q=Pokemon+Center+Mega+Tokyo+Ikebukuro"
@@ -1967,6 +2050,32 @@
           },
           "sub_stop": true,
           "parent_id": "tokyo_s_ikebukuro"
+        },
+        {
+          "id": "tokyo_s_ikebukuro_dinner_tbd",
+          "name": "Dinner (TBD)",
+          "category": "Food",
+          "type": "Flexible Dinner",
+          "day": 5,
+          "date": "2026-10-22",
+          "start_time": "6:30 PM",
+          "end_time": "7:30 PM",
+          "duration": "1 hour",
+          "duration_minutes": 60,
+          "notes": "Flexible dinner in Ikebukuro after Pokémon Center Mega Tokyo, before returning to pack for Kyoto.",
+          "links": {},
+          "area": "Ikebukuro",
+          "priority": "flex",
+          "booking_status": "planned",
+          "icon": "food",
+          "energy_cost": "low",
+          "sub_stop": true,
+          "parent_id": "tokyo_s_ikebukuro",
+          "transport_from_previous": {
+            "from": "Pokémon Center Mega Tokyo",
+            "mode": "walk",
+            "duration_minutes": 5
+          }
         },
         {
           "id": "tokyo_s_pack_kyoto",
@@ -3349,18 +3458,18 @@
         },
         {
           "id": "osaka_umeda_dinner",
-          "name": "Dinner Near Umeda",
+          "name": "Dinner at Hotel Hankyu RESPIRE OSAKA",
           "category": "Food",
-          "type": "Restaurant",
+          "type": "Hotel Dining",
           "day": 1,
           "date": "2026-10-26",
           "start_time": "5:00 PM",
           "end_time": "6:30 PM",
           "duration": "1.5 hours",
           "duration_minutes": 90,
-          "notes": "Flexible dinner near Hotel Hankyu RESPIRE OSAKA before heading to Dotonbori",
+          "notes": "Dinner at the hotel — try wagyu or choose the buffet. Confirm the restaurant and availability at check-in.",
           "links": {},
-          "area": "Osaka Umeda",
+          "area": "Hotel Hankyu RESPIRE OSAKA",
           "distance_from_hotel": {
             "text": "Near hotel",
             "minutes": 5,
@@ -4052,43 +4161,174 @@
       },
       "activities": [
         {
-          "id": "tokyo_n_day1_tbd",
-          "name": "Free Day — TBD",
-          "category": "Explore",
-          "type": "Free Time",
+          "id": "tokyo_n_hotel_checkin",
+          "name": "Hotel Check-in (HOTEL AMANEK Shinjuku Kabukicho)",
+          "category": "Hotel",
+          "type": "Hotel",
           "day": 1,
-          "date": "2026-10-29",
-          "start_time": "All Day",
-          "duration": "All Day",
-          "notes": "Extra day in Tokyo — plans TBD. Explore Shinjuku or rest.",
-          "links": {},
-          "area": "Shinjuku",
-          "distance_from_hotel": {
-            "text": "0 min (at hotel)",
-            "minutes": 0,
-            "mode": "walk"
+          "date": "2026-10-28",
+          "start_time": "8:15 PM",
+          "end_time": "8:45 PM",
+          "duration": "30 min",
+          "duration_minutes": 30,
+          "notes": "2 rooms confirmed · Room 1: Jessy & Jurializ · Room 2: Hilary, Carlos & Yamil · 3 nights · Check-in available from 3:00 PM to midnight.",
+          "links": {
+            "website": "https://www.booking.com/hotel/jp/amanek-shinjuku-kabukicho.html",
+            "map": "https://maps.google.com/?q=HOTEL+AMANEK+Shinjuku+Kabukicho"
           },
+          "area": "Shinjuku",
+          "priority": "must",
+          "booking_status": "booked",
+          "icon": "hotel",
+          "energy_cost": "low",
+          "transport_from_previous": {
+            "from": "Shinjuku Station",
+            "mode": "walk",
+            "duration_minutes": 10
+          }
+        },
+        {
+          "id": "tokyo_n_leave_for_teamlab",
+          "name": "Leave Hotel for teamLab Planets",
+          "category": "Logistics",
+          "type": "Transit",
+          "day": 2,
+          "date": "2026-10-29",
+          "start_time": "9:30 AM",
+          "end_time": "10:15 AM",
+          "duration": "45 min",
+          "duration_minutes": 45,
+          "notes": "Leave HOTEL AMANEK Shinjuku Kabukicho at 9:30 AM for the trip to Toyosu.",
+          "links": {},
+          "area": "Shinjuku → Toyosu",
+          "priority": "must",
+          "booking_status": "planned",
+          "icon": "transit",
+          "energy_cost": "low"
+        },
+        {
+          "id": "tokyo_n_teamlab_planets",
+          "name": "teamLab Planets TOKYO",
+          "category": "Sightseeing",
+          "type": "Digital Art Museum",
+          "day": 2,
+          "date": "2026-10-29",
+          "start_time": "10:30 AM",
+          "end_time": "12:30 PM",
+          "duration": "2 hours",
+          "duration_minutes": 120,
+          "notes": "Timed-entry immersive art experience in Toyosu. Target the 10:30 AM slot and book it in advance.",
+          "links": {
+            "website": "https://teamlabplanets.dmm.com/en",
+            "map": "https://maps.google.com/?q=teamLab+Planets+TOKYO+Toyosu"
+          },
+          "area": "Toyosu",
+          "priority": "must",
+          "booking_status": "not_booked",
+          "icon": "sightseeing",
+          "energy_cost": "medium",
+          "transport_from_previous": {
+            "from": "Leave Hotel for teamLab Planets",
+            "mode": "train",
+            "duration_minutes": 45
+          }
+        },
+        {
+          "id": "tokyo_n_toyosu_lunch",
+          "name": "Lunch in Toyosu",
+          "category": "Food",
+          "type": "Flexible Lunch",
+          "day": 2,
+          "date": "2026-10-29",
+          "start_time": "12:30 PM",
+          "end_time": "1:30 PM",
+          "duration": "1 hour",
+          "duration_minutes": 60,
+          "notes": "Keep lunch flexible near Toyosu before heading to Ginza.",
+          "links": {},
+          "area": "Toyosu",
           "priority": "flex",
           "booking_status": "planned",
-          "icon": "explore"
+          "icon": "food",
+          "energy_cost": "low",
+          "transport_from_previous": {
+            "from": "teamLab Planets TOKYO",
+            "mode": "walk",
+            "duration_minutes": 5
+          }
+        },
+        {
+          "id": "tokyo_n_uniqlo_tokyo",
+          "name": "UNIQLO TOKYO",
+          "category": "Shopping",
+          "type": "Flagship Store",
+          "day": 2,
+          "date": "2026-10-29",
+          "start_time": "2:15 PM",
+          "end_time": "4:15 PM",
+          "duration": "2 hours",
+          "duration_minutes": 120,
+          "notes": "Four-floor global flagship at Marronnier Gate Ginza 2.",
+          "links": {
+            "website": "https://www.uniqlo.com/jp/en/special-feature/uniqlo-tokyo/",
+            "map": "https://maps.google.com/?q=UNIQLO+TOKYO+Marronnier+Gate+Ginza+2"
+          },
+          "area": "Ginza",
+          "priority": "must",
+          "booking_status": "planned",
+          "icon": "shopping",
+          "energy_cost": "medium",
+          "transport_from_previous": {
+            "from": "Toyosu",
+            "mode": "train",
+            "duration_minutes": 25
+          }
+        },
+        {
+          "id": "tokyo_n_nakano_broadway",
+          "name": "Nakano Broadway",
+          "category": "Shopping",
+          "type": "Anime & Collectibles",
+          "day": 3,
+          "date": "2026-10-30",
+          "start_time": "1:00 PM",
+          "end_time": "3:30 PM",
+          "duration": "2h 30m",
+          "duration_minutes": 150,
+          "notes": "Explore floors 2–4 for anime, manga, retro toys, watches, and collectibles. Individual shop hours vary.",
+          "links": {
+            "website": "https://nakano-broadway.com/",
+            "map": "https://maps.google.com/?q=Nakano+Broadway+5-52-15+Nakano+Tokyo"
+          },
+          "area": "Nakano",
+          "priority": "must",
+          "booking_status": "planned",
+          "icon": "shopping",
+          "energy_cost": "medium",
+          "transport_from_previous": {
+            "from": "Shinjuku Gyoen / lunch",
+            "mode": "train",
+            "duration_minutes": 30
+          }
         },
         {
           "id": "tokyo_n_hardoff_shinjuku",
           "name": "Hard Off — Shinjuku Marui Men",
           "category": "Shopping",
           "type": "Secondhand",
-          "day": 1,
-          "start_time": "TBD",
-          "duration": "1-2 hours",
-          "duration_minutes": 90,
-          "date": "2026-10-29",
+          "day": 3,
+          "start_time": "4:15 PM",
+          "end_time": "5:15 PM",
+          "duration": "1 hour",
+          "duration_minutes": 60,
+          "date": "2026-10-30",
           "area": "Shinjuku",
           "priority": "nice_to_have",
           "booking_status": "planned",
           "icon": "shopping",
           "notes": "新宿マルイメン 5階 · 5 Chome-16-4 Shinjuku, Shinjuku City · Secondhand electronics, instruments, collectibles",
           "links": {
-            "website": "https://www.hardoff.co.jp/",
+            "website": "https://www.hardoff.co.jp/shop/detail/?p=101139",
             "map": "https://maps.google.com/?q=5+Chome-16-4+Shinjuku+Shinjuku+City+Tokyo+160-0022"
           },
           "tags": [
@@ -4096,7 +4336,12 @@
             "rain-safe",
             "shopping"
           ],
-          "energy_cost": "low"
+          "energy_cost": "low",
+          "transport_from_previous": {
+            "from": "Nakano Broadway",
+            "mode": "train",
+            "duration_minutes": 25
+          }
         },
         {
           "id": "tokyo_n_gyoen",
@@ -4105,7 +4350,7 @@
           "type": "Garden",
           "day": 3,
           "start_time": "10:00 AM",
-          "duration": "1 hour",
+          "duration": "1h 30m",
           "notes": "Calm green reset before the city rush — autumn foliage may be starting",
           "links": {
             "website": "https://fng.or.jp/shinjuku/en/",
@@ -4125,8 +4370,8 @@
             "lat": 35.6852,
             "lng": 139.71
           },
-          "end_time": "10:00 AM",
-          "duration_minutes": 60,
+          "end_time": "11:30 AM",
+          "duration_minutes": 90,
           "tags": [
             "outdoor",
             "walkable",
@@ -4150,7 +4395,7 @@
           "name": "Omoide Yokocho",
           "category": "Food",
           "type": "Neighborhood",
-          "day": 2,
+          "day": 3,
           "start_time": "7:00 PM",
           "duration": "2 hours",
           "links": {
@@ -4198,11 +4443,11 @@
           "category": "Shopping",
           "type": "Secondhand",
           "day": 2,
-          "start_time": "7:00 PM",
-          "end_time": "9:00 PM",
-          "duration": "1-2 hours",
-          "duration_minutes": 90,
-          "date": "2026-10-30",
+          "start_time": "4:45 PM",
+          "end_time": "6:00 PM",
+          "duration": "1h 15m",
+          "duration_minutes": 75,
+          "date": "2026-10-29",
           "area": "Azabu-Juban",
           "priority": "nice_to_have",
           "booking_status": "planned",
@@ -4217,14 +4462,19 @@
             "rain-safe",
             "shopping"
           ],
-          "energy_cost": "low"
+          "energy_cost": "low",
+          "transport_from_previous": {
+            "from": "UNIQLO TOKYO",
+            "mode": "train",
+            "duration_minutes": 25
+          }
         },
         {
           "id": "tokyo_n_bar_centifolia",
           "name": "Bar Centifolia",
           "category": "Nightlife",
           "type": "Speakeasy",
-          "day": 2,
+          "day": 3,
           "start_time": "9:30 PM",
           "duration": "1-2 hours",
           "links": {
@@ -4267,7 +4517,7 @@
           "name": "Pack + Travel to HND + Fly Home",
           "category": "Logistics",
           "type": "Departure",
-          "day": 3,
+          "day": 4,
           "start_time": "10:00 AM",
           "duration": "Full Day",
           "notes": "Air Canada AC 2 · HND 6:50 PM → RDU 9:51 PM via YYZ · Yamil, Jurializ, Jessy, Hilary · Seat selection complimentary",
@@ -4354,14 +4604,21 @@
         }
       ],
       "day_summaries": {
-        "1": {
-          "focus": "Gyoen + Ginza + Ikebukuro + Shinjuku",
+        "2": {
+          "focus": "Toyosu → Ginza → Azabu-Juban → Shinjuku",
           "energy": "high",
           "transport": "metro-heavy",
-          "vibe": "Grand finale — shopping spree and farewell drinks",
+          "vibe": "Immersive art, flagship shopping, and vintage fashion",
           "day_type": "full_day"
         },
-        "2": {
+        "3": {
+          "focus": "Shinjuku Gyoen → Nakano → Shinjuku",
+          "energy": "medium",
+          "transport": "metro + walking",
+          "vibe": "Garden calm, collectible hunting, and a relaxed final evening",
+          "day_type": "full_day"
+        },
+        "4": {
           "focus": "Shinjuku → HND",
           "energy": "low",
           "transport": "airport transfer",
