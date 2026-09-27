@@ -885,7 +885,7 @@
       "country": "Japan",
       "dates": {
         "arrival": "2026-10-18",
-        "departure": "2026-10-22"
+        "departure": "2026-10-23"
       },
       "stay": {
         "hotel_name": "Noël Shibuya Once — Luxury Residence",
@@ -922,7 +922,7 @@
           "type": "Transit",
           "day": 1,
           "start_time": "3:40 PM",
-          "duration": "2 hours",
+          "duration": "1h 50m",
           "notes": "Air Canada AC 1 from YYZ · Yamil, Jurializ, Jessy, Hilary",
           "links": {
             "map": "https://maps.google.com/?q=Haneda+Airport+Tokyo"
@@ -942,7 +942,7 @@
             "lng": 139.7798
           },
           "end_time": "5:30 PM",
-          "duration_minutes": 120,
+          "duration_minutes": 110,
           "tags": [
             "indoor",
             "rain-safe",
@@ -988,10 +988,10 @@
           "energy_cost": "low",
           "fallback": null,
           "transport_from_previous": {
-            "from": "Haneda Airport (HND)",
-            "mode": "train",
-            "duration_minutes": 45,
-            "notes": "Keikyu or Monorail toward Shibuya"
+            "from": "Arrive HND — Train to Shibuya",
+            "mode": "walk",
+            "duration_minutes": 0,
+            "notes": "Airport-to-apartment transfer is included in the previous card"
           }
         },
         {
@@ -1047,15 +1047,15 @@
           "type": "Store",
           "day": 2,
           "start_time": "10:00 AM",
-          "duration": "1–2 hours",
+          "duration": "1 hour",
           "links": {
             "website": "https://www.google.com/search?q=Pokemon+Center+Shibuya",
             "map": "https://maps.google.com/?q=Pokemon+Center+Shibuya"
           },
           "area": "Shibuya",
           "distance_from_hotel": {
-            "text": "5 min walk",
-            "minutes": 5,
+            "text": "20 min walk from Noël Shibuya Once",
+            "minutes": 20,
             "mode": "walk"
           },
           "priority": "must",
@@ -1067,7 +1067,7 @@
             "lng": 139.6982
           },
           "end_time": "11:00 AM",
-          "duration_minutes": 90,
+          "duration_minutes": 60,
           "tags": [
             "indoor",
             "rain-safe",
@@ -1077,9 +1077,9 @@
           "energy_cost": "low",
           "fallback": null,
           "transport_from_previous": {
-            "from": "Breakfast (Shibuya)",
+            "from": "Noël Shibuya Once",
             "mode": "walk",
-            "duration_minutes": 5
+            "duration_minutes": 20
           }
         },
         {
@@ -1088,7 +1088,7 @@
           "category": "Shopping",
           "type": "Store",
           "day": 2,
-          "start_time": "1:00 PM",
+          "start_time": "1:15 PM",
           "duration": "1 hour",
           "notes": "28-6 Udagawacho, Shibuya · Tax-free shopping · Snacks, cosmetics, electronics, souvenirs · Open 24h",
           "links": {
@@ -1109,7 +1109,7 @@
             "lat": 35.6614,
             "lng": 139.6976
           },
-          "end_time": "2:00 PM",
+          "end_time": "2:15 PM",
           "duration_minutes": 60,
           "tags": [
             "indoor",
@@ -1131,8 +1131,8 @@
           "category": "Logistics",
           "type": "Rest",
           "day": 2,
-          "start_time": "2:00 PM",
-          "duration": "2 hours",
+          "start_time": "2:30 PM",
+          "duration": "1h 30m",
           "notes": "Return to the apartment, leave shopping bags, refresh, and rest before continuing to Takeshita Street",
           "links": {
             "map": "https://maps.google.com/?q=Tokyo-to%2C+Tokyo%2C+%E6%81%B5%E6%AF%94%E5%AF%BF%E8%A5%BF%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%93%E2%88%92%EF%BC%91%EF%BC%94+%E3%82%AB%E3%83%BC%E3%82%B5%E3%83%99%E3%83%A9%E4%BB%A3%E5%AE%98%E5%B1%B1%2C+Japan"
@@ -1141,7 +1141,7 @@
           "date": "2026-10-19",
           "icon": "hotel",
           "end_time": "4:00 PM",
-          "duration_minutes": 120,
+          "duration_minutes": 90,
           "transport_from_previous": {
             "from": "MEGA Don Quijote Shibuya",
             "mode": "walk",
@@ -1154,7 +1154,7 @@
           "category": "Shopping",
           "type": "Store",
           "day": 2,
-          "start_time": "11:00 AM",
+          "start_time": "11:05 AM",
           "duration": "1 hour",
           "notes": "Same building as Pokémon Center (Shibuya PARCO 6F) · Exclusive merch, game demos, photo ops",
           "links": {
@@ -1175,7 +1175,7 @@
             "lat": 35.662,
             "lng": 139.6982
           },
-          "end_time": "12:00 PM",
+          "end_time": "12:05 PM",
           "duration_minutes": 60,
           "tags": [
             "indoor",
@@ -1197,7 +1197,7 @@
           "category": "Shopping",
           "type": "Store",
           "day": 2,
-          "start_time": "12:00 PM",
+          "start_time": "12:10 PM",
           "duration": "1 hour",
           "notes": "Flexible shopping stop after Harajuku and before the evening sumo show",
           "links": {
@@ -1206,7 +1206,7 @@
           "area": "Shibuya",
           "date": "2026-10-19",
           "icon": "shopping",
-          "end_time": "1:00 PM",
+          "end_time": "1:10 PM",
           "duration_minutes": 60,
           "tags": [
             "indoor",
@@ -1372,9 +1372,9 @@
             "if_tired": "See Kaminarimon gate + quick photo, skip inner grounds"
           },
           "transport_from_previous": {
-            "from": "Breakfast (Asakusa)",
-            "mode": "walk",
-            "duration_minutes": 10
+            "from": "Noël Shibuya Once",
+            "mode": "train",
+            "duration_minutes": 30
           }
         },
         {
@@ -1420,7 +1420,7 @@
             "lat": 35.71,
             "lng": 139.794
           },
-          "duration_minutes": 90,
+          "duration_minutes": 75,
           "tags": [
             "outdoor",
             "reservation-required",
@@ -1451,7 +1451,7 @@
           "end_time": "1:05 PM",
           "duration": "1 hour",
           "duration_minutes": 60,
-          "notes": "Flexible lunch near Senso-ji before continuing to Ueno.",
+          "notes": "Place TBD — flexible lunch near Senso-ji before continuing to Ueno.",
           "links": {},
           "area": "Asakusa",
           "priority": "flex",
@@ -1465,14 +1465,45 @@
           }
         },
         {
-          "id": "tokyo_s_gotanda_dinner_tbd",
-          "name": "Dinner (TBD)",
-          "category": "Food",
-          "type": "Flexible Dinner",
+          "id": "tokyo_s_hotel_dropoff_rest_day3",
+          "name": "Hotel Drop-off & Rest",
+          "category": "Logistics",
+          "type": "Hotel Break",
           "day": 3,
           "date": "2026-10-20",
-          "start_time": "5:45 PM",
-          "end_time": "6:45 PM",
+          "start_time": "3:15 PM",
+          "end_time": "4:45 PM",
+          "duration": "1h 30m",
+          "duration_minutes": 90,
+          "notes": "Return to Noël Shibuya Once, drop off anything from the day, refresh, and rest before dinner near Gotanda.",
+          "links": {
+            "map": "https://maps.google.com/?q=Tokyo-to%2C+Tokyo%2C+%E6%81%B5%E6%AF%94%E5%AF%BF%E8%A5%BF%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%93%E2%88%92%EF%BC%91%EF%BC%94+%E3%82%AB%E3%83%BC%E3%82%B5%E3%83%99%E3%83%A9%E4%BB%A3%E5%AE%98%E5%B1%B1%2C+Japan"
+          },
+          "area": "Shibuya",
+          "distance_from_hotel": {
+            "text": "At the apartment",
+            "minutes": 0,
+            "mode": "walk"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "icon": "hotel",
+          "energy_cost": "low",
+          "transport_from_previous": {
+            "from": "SASUGAYA OUTLET — Vintage Brand Bags",
+            "mode": "train",
+            "duration_minutes": 35
+          }
+        },
+        {
+          "id": "tokyo_s_gotanda_dinner_tbd",
+          "name": "Open Evening — Dinner TBD",
+          "category": "Free Time",
+          "type": "Open Evening",
+          "day": 3,
+          "date": "2026-10-20",
+          "start_time": "5:15 PM",
+          "end_time": "6:15 PM",
           "duration": "1 hour",
           "duration_minutes": 60,
           "notes": "Choose a quick dinner near Gotanda so the group can reach Monkey Kart by the 7:25 PM check-in.",
@@ -1483,7 +1514,7 @@
           "icon": "food",
           "energy_cost": "low",
           "transport_from_previous": {
-            "from": "Apartment / afternoon break",
+            "from": "Hotel Drop-off & Rest",
             "mode": "train",
             "duration_minutes": 25
           }
@@ -1936,7 +1967,9 @@
             "from": "UNIQLO Ginza",
             "mode": "train",
             "duration_minutes": 5
-          }
+          },
+          "sub_stop": true,
+          "parent_id": "tokyo_s_ginza"
         },
         {
           "id": "tokyo_s_ikebukuro",
@@ -1946,9 +1979,9 @@
           "day": 5,
           "date": "2026-10-22",
           "start_time": "4:00 PM",
-          "end_time": "7:30 PM",
-          "duration": "3h 30m",
-          "duration_minutes": 210,
+          "end_time": "6:15 PM",
+          "duration": "2h 15m",
+          "duration_minutes": 135,
           "area": "Ikebukuro",
           "priority": "must",
           "booking_status": "planned",
@@ -1962,6 +1995,24 @@
             "indoor"
           ],
           "energy_cost": "medium"
+        },
+        {
+          "id": "tokyo_s_ginza_lunch_tbd",
+          "name": "Lunch (TBD)",
+          "category": "Food",
+          "type": "Flexible Lunch",
+          "day": 5,
+          "start_time": "2:30 PM",
+          "end_time": "3:15 PM",
+          "duration": "45 min",
+          "duration_minutes": 45,
+          "notes": "Choose a convenient restaurant or café near Ginza / Nihonbashi before heading to Ikebukuro.",
+          "links": {},
+          "area": "Nihonbashi",
+          "priority": "flex",
+          "booking_status": "planned",
+          "icon": "food",
+          "energy_cost": "low"
         },
         {
           "id": "tokyo_s_animate",
@@ -2052,27 +2103,55 @@
           "parent_id": "tokyo_s_ikebukuro"
         },
         {
+          "id": "tokyo_s_hotel_dropoff_rest_day5",
+          "name": "Hotel Drop-off & Rest",
+          "category": "Logistics",
+          "type": "Hotel Break",
+          "day": 5,
+          "start_time": "6:45 PM",
+          "end_time": "7:30 PM",
+          "duration": "45 min",
+          "duration_minutes": 45,
+          "notes": "Return to Noël Shibuya Once, leave shopping bags, refresh, and rest before dinner.",
+          "links": {
+            "map": "https://maps.google.com/?q=Tokyo-to%2C+Tokyo%2C+%E6%81%B5%E6%AF%94%E5%AF%BF%E8%A5%BF%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%93%E2%88%92%EF%BC%91%EF%BC%94+%E3%82%AB%E3%83%BC%E3%82%B5%E3%83%99%E3%83%A9%E4%BB%A3%E5%AE%98%E5%B1%B1%2C+Japan"
+          },
+          "area": "Shibuya",
+          "distance_from_hotel": {
+            "text": "25 min train from Ikebukuro",
+            "minutes": 25,
+            "mode": "train"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "icon": "hotel",
+          "energy_cost": "low",
+          "transport_from_previous": {
+            "from": "Pokémon Center Mega Tokyo",
+            "mode": "train",
+            "duration_minutes": 25
+          }
+        },
+        {
           "id": "tokyo_s_ikebukuro_dinner_tbd",
-          "name": "Dinner (TBD)",
-          "category": "Food",
-          "type": "Flexible Dinner",
+          "name": "Open Evening — Dinner TBD",
+          "category": "Free Time",
+          "type": "Open Evening",
           "day": 5,
           "date": "2026-10-22",
-          "start_time": "6:30 PM",
-          "end_time": "7:30 PM",
+          "start_time": "7:35 PM",
+          "end_time": "8:35 PM",
           "duration": "1 hour",
           "duration_minutes": 60,
-          "notes": "Flexible dinner in Ikebukuro after Pokémon Center Mega Tokyo, before returning to pack for Kyoto.",
+          "notes": "Flexible dinner near the apartment after dropping off shopping bags and resting. Restaurant TBD.",
           "links": {},
-          "area": "Ikebukuro",
+          "area": "Shibuya",
           "priority": "flex",
           "booking_status": "planned",
           "icon": "food",
           "energy_cost": "low",
-          "sub_stop": true,
-          "parent_id": "tokyo_s_ikebukuro",
           "transport_from_previous": {
-            "from": "Pokémon Center Mega Tokyo",
+            "from": "Hotel Drop-off & Rest",
             "mode": "walk",
             "duration_minutes": 5
           }
@@ -2083,7 +2162,8 @@
           "category": "Logistics",
           "type": "Packing",
           "day": 5,
-          "start_time": "8:00 PM",
+          "start_time": "9:00 PM",
+          "end_time": "10:00 PM",
           "duration": "1 hour",
           "links": {},
           "area": "Shibuya",
@@ -2100,7 +2180,6 @@
             "lat": 35.6595,
             "lng": 139.699
           },
-          "end_time": "9:00 PM",
           "duration_minutes": 60,
           "tags": [
             "indoor",
@@ -2110,9 +2189,41 @@
           "energy_cost": "low",
           "fallback": null,
           "transport_from_previous": {
-            "from": "Pokémon Center Mega Tokyo (Ikebukuro)",
+            "from": "Dinner near the apartment",
+            "mode": "walk",
+            "duration_minutes": 5
+          }
+        },
+        {
+          "id": "tokyo_s_train_kyoto",
+          "name": "Transfer to Tokyo Station + Boarding",
+          "category": "Train",
+          "type": "Transit",
+          "day": 6,
+          "start_time": "10:00 AM",
+          "end_time": "12:00 PM",
+          "duration": "2 hours",
+          "duration_minutes": 120,
+          "notes": "After checkout, transfer to Tokyo Station with luggage and allow time to find the platform, buy food, and board the noon Tokaido Shinkansen to Kyoto.",
+          "links": {
+            "map": "https://maps.google.com/?q=Tokyo+Station",
+            "website": "https://smart-ex.jp/en/index.php"
+          },
+          "area": "Tokyo Station",
+          "distance_from_hotel": {
+            "text": "45 min train from the apartment",
+            "minutes": 45,
+            "mode": "train"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-23",
+          "icon": "transit",
+          "energy_cost": "low",
+          "transport_from_previous": {
+            "from": "Hotel Checkout (Noël Shibuya Once)",
             "mode": "train",
-            "duration_minutes": 25
+            "duration_minutes": 0
           }
         },
         {
@@ -2300,28 +2411,36 @@
           "energy": "medium",
           "transport": "walk-only",
           "vibe": "Harajuku fashion, Pokémon, and a serene shrine",
-          "day_type": "full_day"
+          "day_type": "full_day",
+          "leave_hotel_by": "9:30 AM",
+          "leave_hotel_for": "Pokémon Center Shibuya"
         },
         "3": {
           "focus": "East Tokyo",
           "energy": "high",
           "transport": "metro-heavy",
           "vibe": "Temples, go-karts, and anime paradise",
-          "day_type": "full_day"
+          "day_type": "full_day",
+          "leave_hotel_by": "9:15 AM",
+          "leave_hotel_for": "Senso-ji Temple"
         },
         "4": {
           "focus": "Akihabara + Shinjuku",
           "energy": "medium",
           "transport": "train",
           "vibe": "Anime shopping by day, bar hopping through Shinjuku by night",
-          "day_type": "full_day"
+          "day_type": "full_day",
+          "leave_hotel_by": "9:20 AM",
+          "leave_hotel_for": "Akihabara"
         },
         "5": {
           "focus": "Ginza + Ikebukuro",
           "energy": "medium",
           "transport": "metro-heavy",
           "vibe": "Ginza flagship shopping, anime mega-store, Pokémon, then pack for Kyoto",
-          "day_type": "full_day"
+          "day_type": "full_day",
+          "leave_hotel_by": "10:15 AM",
+          "leave_hotel_for": "Ginza Shopping"
         }
       },
       "recommended_food_spots": [
@@ -2502,7 +2621,7 @@
           "start_time": "3:00 PM",
           "duration": "30 min",
           "links": {
-            "map": "https://maps.google.com/?q=Mitsui+Garden+Hotel+Kyoto+Kawaramachi+Jokyoji"
+            "map": "https://maps.google.com/?q=Tokyu+Stay+Kyoto+Sakaiza+Shijo+Kawaramachi"
           },
           "area": "Kawaramachi",
           "distance_from_hotel": {
@@ -2540,7 +2659,7 @@
           "category": "Food",
           "type": "Market",
           "day": 1,
-          "start_time": "3:30 PM",
+          "start_time": "3:35 PM",
           "duration": "30 min",
           "notes": "Grab a quick snack near the hotel — choose any convenient konbini, café, or bakery; save the full market visit for Day 2",
           "links": {},
@@ -2558,7 +2677,7 @@
             "lat": 35.005,
             "lng": 135.765
           },
-          "end_time": "4:00 PM",
+          "end_time": "4:05 PM",
           "duration_minutes": 30,
           "tags": [
             "outdoor",
@@ -2581,7 +2700,7 @@
           "type": "Temple",
           "day": 1,
           "start_time": "4:45 PM",
-          "duration": "1 hr 45 min",
+          "duration": "1h 15m",
           "notes": "One of the top sunset spots in all Japan — arrive before golden hour",
           "links": {
             "website": "https://www.google.com/search?q=Kiyomizu-dera+Kyoto",
@@ -2601,8 +2720,8 @@
             "lat": 34.9949,
             "lng": 135.785
           },
-          "end_time": "6:30 PM",
-          "duration_minutes": 105,
+          "end_time": "6:00 PM",
+          "duration_minutes": 75,
           "tags": [
             "outdoor",
             "cultural",
@@ -2627,7 +2746,7 @@
           "category": "Sightseeing",
           "type": "Walk",
           "day": 1,
-          "start_time": "6:30 PM",
+          "start_time": "6:05 PM",
           "duration": "30 min",
           "notes": "Historic stone-paved slopes lined with traditional shops — downhill from Kiyomizu-dera",
           "links": {
@@ -2648,7 +2767,7 @@
             "lat": 34.9969,
             "lng": 135.781
           },
-          "end_time": "7:00 PM",
+          "end_time": "6:35 PM",
           "duration_minutes": 30,
           "tags": [
             "outdoor",
@@ -2674,7 +2793,7 @@
           "category": "Sightseeing",
           "type": "Landmark",
           "day": 1,
-          "start_time": "7:00 PM",
+          "start_time": "6:40 PM",
           "duration": "20 min",
           "notes": "Iconic 5-story pagoda — great evening photo spot",
           "links": {
@@ -2695,7 +2814,7 @@
             "lat": 34.9981,
             "lng": 135.7803
           },
-          "end_time": "7:20 PM",
+          "end_time": "7:00 PM",
           "duration_minutes": 20,
           "tags": [
             "outdoor",
@@ -2717,7 +2836,7 @@
           "category": "Sightseeing",
           "type": "Walk",
           "day": 1,
-          "start_time": "7:30 PM",
+          "start_time": "7:10 PM",
           "duration": "30 min",
           "notes": "Quick evening walk through the geisha district — Hanamikoji Street",
           "links": {
@@ -2738,7 +2857,7 @@
             "lat": 35.0037,
             "lng": 135.7756
           },
-          "end_time": "8:00 PM",
+          "end_time": "7:40 PM",
           "duration_minutes": 30,
           "tags": [
             "outdoor",
@@ -2760,14 +2879,45 @@
           }
         },
         {
-          "id": "kyoto_pontocho_dinner",
-          "name": "Dinner — TBD",
-          "category": "Food",
-          "type": "Restaurant",
+          "id": "kyoto_hotel_dropoff_rest_day1",
+          "name": "Hotel Stop — Drop-off & Refresh",
+          "category": "Logistics",
+          "type": "Hotel Break",
           "day": 1,
-          "start_time": "TBD",
-          "end_time": "",
-          "duration": "TBD",
+          "start_time": "7:50 PM",
+          "end_time": "8:20 PM",
+          "duration": "30 min",
+          "duration_minutes": 30,
+          "notes": "Return to Tokyu Stay Kyoto after the short Gion stroll to drop things off and refresh before dinner.",
+          "links": {
+            "map": "https://maps.google.com/?q=Tokyu+Stay+Kyoto+Sakaiza+Shijo+Kawaramachi"
+          },
+          "area": "Kawaramachi",
+          "distance_from_hotel": {
+            "text": "10 min walk from Gion",
+            "minutes": 10,
+            "mode": "walk"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-23",
+          "icon": "hotel",
+          "energy_cost": "low",
+          "transport_from_previous": {
+            "from": "Gion Stroll",
+            "mode": "walk",
+            "duration_minutes": 10
+          }
+        },
+        {
+          "id": "kyoto_pontocho_dinner",
+          "name": "Open Evening — Dinner TBD",
+          "category": "Free Time",
+          "type": "Open Evening",
+          "day": 1,
+          "start_time": "8:30 PM",
+          "end_time": "TBD",
+          "duration": "Open",
           "duration_minutes": 0,
           "notes": "Dinner location and time TBD after the Gion stroll",
           "links": {},
@@ -2782,9 +2932,9 @@
           "date": "2026-10-23",
           "icon": "food",
           "transport_from_previous": {
-            "from": "Gion Stroll",
+            "from": "Hotel Stop — Drop-off & Refresh",
             "mode": "walk",
-            "duration_minutes": 0
+            "duration_minutes": 10
           }
         },
         {
@@ -2854,17 +3004,18 @@
         },
         {
           "id": "kyoto_nishiki",
-          "name": "Nishiki Market",
+          "name": "Nishiki Market + Coffee",
           "category": "Food",
-          "type": "Market",
+          "type": "Market + Coffee",
           "day": 2,
-          "start_time": "3:00 PM",
-          "duration": "1.5–2 hours",
+          "start_time": "9:40 AM",
+          "duration": "2 hours",
           "links": {
             "website": "https://www.google.com/search?q=Nishiki+Market+Kyoto",
             "map": "https://maps.google.com/?q=Nishiki+Market+Kyoto"
           },
           "area": "Nishiki",
+          "notes": "Browse Nishiki Market and take a coffee break here or nearby. Coffee place TBD.",
           "distance_from_hotel": {
             "text": "5 min walk",
             "minutes": 5,
@@ -2878,8 +3029,8 @@
             "lat": 35.005,
             "lng": 135.765
           },
-          "end_time": "4:30 PM",
-          "duration_minutes": 105,
+          "end_time": "11:40 AM",
+          "duration_minutes": 120,
           "tags": [
             "indoor",
             "rain-safe",
@@ -2892,9 +3043,40 @@
             "if_tired": "Walk half the market and grab one signature item (tamagoyaki)"
           },
           "transport_from_previous": {
-            "from": "Samurai Ninja Museum",
+            "from": "Hotel (Kawaramachi)",
             "mode": "walk",
             "duration_minutes": 5
+          }
+        },
+        {
+          "id": "kyoto_hotel_dropoff_day2",
+          "name": "Quick Hotel Drop-off",
+          "category": "Logistics",
+          "type": "Hotel Stop",
+          "day": 2,
+          "start_time": "4:45 PM",
+          "end_time": "5:05 PM",
+          "duration": "20 min",
+          "duration_minutes": 20,
+          "notes": "Quick stop at Tokyu Stay Kyoto to drop off anything picked up before continuing to Gion.",
+          "links": {
+            "map": "https://maps.google.com/?q=Tokyu+Stay+Kyoto+Sakaiza+Shijo+Kawaramachi"
+          },
+          "area": "Kawaramachi",
+          "distance_from_hotel": {
+            "text": "10 min walk from the tea ceremony",
+            "minutes": 10,
+            "mode": "walk"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-24",
+          "icon": "hotel",
+          "energy_cost": "low",
+          "transport_from_previous": {
+            "from": "Kimono Tea Ceremony & Samurai Experience",
+            "mode": "walk",
+            "duration_minutes": 10
           }
         },
         {
@@ -2939,7 +3121,7 @@
             "if_tired": "Taxi through instead of walking — or combine with Hanamikoji only"
           },
           "transport_from_previous": {
-            "from": "Nishiki Market",
+            "from": "Quick Hotel Drop-off",
             "mode": "walk",
             "duration_minutes": 15
           }
@@ -2950,7 +3132,7 @@
           "category": "Sightseeing",
           "type": "Historic Street",
           "day": 2,
-          "start_time": "7:30 PM",
+          "start_time": "7:35 PM",
           "duration": "1 hour",
           "links": {
             "website": "https://www.google.com/search?q=Hanamikoji+Street+Kyoto",
@@ -2970,7 +3152,7 @@
             "lat": 35.0032,
             "lng": 135.7747
           },
-          "end_time": "8:30 PM",
+          "end_time": "8:35 PM",
           "duration_minutes": 60,
           "tags": [
             "outdoor",
@@ -2988,6 +3170,60 @@
             "from": "Gion District",
             "mode": "walk",
             "duration_minutes": 2
+          }
+        },
+        {
+          "id": "kyoto_gion_dinner_tbd",
+          "name": "Open Evening — Dinner TBD",
+          "category": "Free Time",
+          "type": "Open Evening",
+          "day": 2,
+          "start_time": "8:45 PM",
+          "end_time": "9:45 PM",
+          "duration": "1 hour",
+          "duration_minutes": 60,
+          "notes": "Dinner after Hanamikoji Street — restaurant TBD, ideally near Gion or Pontocho.",
+          "links": {},
+          "area": "Gion / Pontocho",
+          "priority": "flex",
+          "booking_status": "planned",
+          "icon": "food",
+          "energy_cost": "low",
+          "transport_from_previous": {
+            "from": "Hanamikoji Street",
+            "mode": "walk",
+            "duration_minutes": 5
+          }
+        },
+        {
+          "id": "kyoto_hotel_dropoff_reset_day2",
+          "name": "Hotel Return & Reset",
+          "category": "Logistics",
+          "type": "Hotel Break",
+          "day": 2,
+          "start_time": "9:55 PM",
+          "end_time": "10:15 PM",
+          "duration": "20 min",
+          "duration_minutes": 20,
+          "notes": "Return to Tokyu Stay Kyoto, reset for the night, and prepare for the early Fushimi Inari start tomorrow.",
+          "links": {
+            "map": "https://maps.google.com/?q=Tokyu+Stay+Kyoto+Sakaiza+Shijo+Kawaramachi"
+          },
+          "area": "Kawaramachi",
+          "distance_from_hotel": {
+            "text": "10 min walk from Gion / Pontocho",
+            "minutes": 10,
+            "mode": "walk"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-24",
+          "icon": "hotel",
+          "energy_cost": "low",
+          "transport_from_previous": {
+            "from": "Open Evening — Dinner TBD",
+            "mode": "walk",
+            "duration_minutes": 10
           }
         },
         {
@@ -3054,8 +3290,8 @@
           },
           "area": "Arashiyama",
           "distance_from_hotel": {
-            "text": "40 min train from Fushimi",
-            "minutes": 40,
+            "text": "60 min train from Fushimi",
+            "minutes": 60,
             "mode": "train"
           },
           "priority": "must",
@@ -3081,6 +3317,59 @@
           "transport_from_previous": {
             "from": "Fushimi Inari",
             "mode": "train",
+            "duration_minutes": 60
+          }
+        },
+        {
+          "id": "kyoto_day3_lunch_tbd",
+          "name": "Lunch (TBD)",
+          "category": "Food",
+          "type": "Flexible Lunch",
+          "day": 3,
+          "start_time": "1:00 PM",
+          "end_time": "2:00 PM",
+          "duration": "1 hour",
+          "duration_minutes": 60,
+          "notes": "Lunch after Arashiyama Bamboo Forest before returning to the hotel. Restaurant TBD.",
+          "links": {},
+          "area": "Arashiyama",
+          "priority": "flex",
+          "booking_status": "planned",
+          "icon": "food",
+          "energy_cost": "low",
+          "transport_from_previous": {
+            "from": "Arashiyama Bamboo Forest",
+            "mode": "walk",
+            "duration_minutes": 0
+          }
+        },
+        {
+          "id": "kyoto_hotel_dropoff_rest_day3",
+          "name": "Hotel Drop-off & Rest",
+          "category": "Logistics",
+          "type": "Hotel Break",
+          "day": 3,
+          "start_time": "3:00 PM",
+          "end_time": "5:00 PM",
+          "duration": "2 hours",
+          "duration_minutes": 120,
+          "notes": "Return to Tokyu Stay Kyoto, leave anything from the morning, refresh, and rest before teamLab.",
+          "links": {
+            "map": "https://maps.google.com/?q=Tokyu+Stay+Kyoto+Sakaiza+Shijo+Kawaramachi"
+          },
+          "area": "Kawaramachi",
+          "distance_from_hotel": {
+            "text": "40 min train from Arashiyama",
+            "minutes": 40,
+            "mode": "train"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "icon": "hotel",
+          "energy_cost": "low",
+          "transport_from_previous": {
+            "from": "Lunch (TBD)",
+            "mode": "train",
             "duration_minutes": 40
           }
         },
@@ -3091,16 +3380,16 @@
           "type": "Art / Immersive",
           "day": 3,
           "start_time": "5:30 PM",
-          "duration": "Open-ended after entry",
+          "duration": "2h 30m",
           "notes": "Admission window 5:30–6:00 PM · 7 Adult Entrance Passes · Tickets purchased in two orders · ¥33,600 incl. tax · Credit card charges $152.10 + $60.84 = $212.94 · Inquiry numbers KYL3YXKFYXPTR-0001 and KYFVUPXHJCHVT-0001 · 21-5 Higashikujo Higashi-Iwamotocho, Minami-ku, Kyoto",
           "links": {
             "website": "https://www.teamlab.art/e/kyoto/",
             "map": "https://maps.google.com/?q=teamLab+Biovortex+Kyoto"
           },
-          "area": "Higashiyama",
+          "area": "Minami-ku / Kyoto Station",
           "distance_from_hotel": {
-            "text": "15 min bus/train",
-            "minutes": 15,
+            "text": "20 min train + walk",
+            "minutes": 20,
             "mode": "train"
           },
           "priority": "must",
@@ -3111,8 +3400,8 @@
             "lat": 34.9886,
             "lng": 135.7823
           },
-          "end_time": "6:00 PM",
-          "duration_minutes": null,
+          "end_time": "8:00 PM",
+          "duration_minutes": 150,
           "tags": [
             "indoor",
             "rain-safe",
@@ -3122,9 +3411,9 @@
           "energy_cost": "medium",
           "fallback": null,
           "transport_from_previous": {
-            "from": "Lunch (Fushimi)",
+            "from": "Hotel Drop-off & Rest",
             "mode": "train",
-            "duration_minutes": 15
+            "duration_minutes": 20
           },
           "price": {
             "amount": 212.94,
@@ -3139,6 +3428,29 @@
           "ticket_number": "KYL3YXKFYXPTR-0001",
           "ticket_numbers": ["KYL3YXKFYXPTR-0001", "KYFVUPXHJCHVT-0001"],
           "venue_address": "21-5 Higashikujo Higashi-Iwamotocho, Minami-ku, Kyoto"
+        },
+        {
+          "id": "kyoto_teamlab_evening_open",
+          "name": "Open Evening — Dinner TBD",
+          "category": "Logistics",
+          "type": "Open Evening",
+          "day": 3,
+          "start_time": "8:00 PM",
+          "end_time": "TBD",
+          "duration": "Open",
+          "duration_minutes": 0,
+          "notes": "Keep the evening open after teamLab Biovortex. Decide on dinner, a relaxed walk, or an early night.",
+          "links": {},
+          "area": "Kyoto",
+          "priority": "flex",
+          "booking_status": "planned",
+          "icon": "nightlife",
+          "energy_cost": "low",
+          "transport_from_previous": {
+            "from": "teamLab Biovortex Kyoto",
+            "mode": "walk",
+            "duration_minutes": 0
+          }
         },
         {
           "id": "kyoto_checkout",
@@ -3305,26 +3617,32 @@
           "vibe": "Sunset at Kiyomizu-dera, then evening in Gion",
           "day_type": "travel_light"
         },
-        "2": {
-          "focus": "Central Kyoto + Gion",
-          "energy": "medium",
-          "transport": "walk-heavy",
-          "vibe": "Tea ceremony, samurai swords, and geisha streets",
-          "day_type": "full_day"
-        },
+      "2": {
+        "focus": "Central Kyoto + Gion",
+        "energy": "medium",
+        "transport": "walk-heavy",
+        "vibe": "Tea ceremony, samurai swords, and geisha streets",
+        "day_type": "full_day",
+        "leave_hotel_by": "9:30 AM",
+        "leave_hotel_for": "Nishiki Market + coffee"
+      },
         "3": {
           "focus": "Fushimi + teamLab Biovortex",
           "energy": "medium",
           "transport": "metro-light",
           "vibe": "Thousands of torii gates, then immersive digital art",
-          "day_type": "chill"
+          "day_type": "chill",
+          "leave_hotel_by": "7:40 AM",
+          "leave_hotel_for": "Fushimi Inari Shrine"
         },
         "4": {
           "focus": "Arashiyama → Osaka",
           "energy": "medium",
           "transport": "train + transfer",
           "vibe": "Bamboo forest morning, then onward to Osaka",
-          "day_type": "travel_light"
+          "day_type": "travel_light",
+          "leave_hotel_by": "12:15 PM",
+          "leave_hotel_for": "Train to Osaka"
         }
       },
       "recommended_food_spots": [
@@ -3403,7 +3721,7 @@
       "country": "Japan",
       "dates": {
         "arrival": "2026-10-26",
-        "departure": "2026-10-29"
+        "departure": "2026-10-28"
       },
       "stay": {
         "hotel_name": "Hotel Hankyu RESPIRE OSAKA",
@@ -3443,7 +3761,8 @@
           "duration": "30 min",
           "notes": "Check-in at 3:00 PM · Hotel Hankyu RESPIRE OSAKA",
           "links": {
-            "website": "https://www.hankyu-hotel.com/en/hotels/respire_osaka"
+            "website": "https://www.hankyu-hotel.com/en/hotels/respire_osaka",
+            "map": "https://maps.google.com/?q=Hotel+Hankyu+RESPIRE+OSAKA"
           },
           "area": "Osaka Umeda",
           "distance_from_hotel": {
@@ -3531,7 +3850,7 @@
             "if_tired": "Quick Glico sign photo + one street food item, then hotel"
           },
           "transport_from_previous": {
-            "from": "Dinner Near Umeda",
+            "from": "Dinner at Hotel Hankyu RESPIRE OSAKA",
             "mode": "train",
             "duration_minutes": 15
           }
@@ -3550,8 +3869,8 @@
           },
           "area": "Chūō-ku",
           "distance_from_hotel": {
-            "text": "15 min train",
-            "minutes": 15,
+            "text": "25 min train + walk",
+            "minutes": 25,
             "mode": "train"
           },
           "priority": "must",
@@ -3579,7 +3898,7 @@
           "transport_from_previous": {
             "from": "Hotel (Umeda)",
             "mode": "train",
-            "duration_minutes": 15
+            "duration_minutes": 25
           }
         },
         {
@@ -3588,8 +3907,8 @@
           "category": "Food",
           "type": "Lunch",
           "day": 2,
-          "start_time": "12:00 PM",
-          "end_time": "1:15 PM",
+          "start_time": "12:05 PM",
+          "end_time": "1:20 PM",
           "duration": "1h 15m",
           "duration_minutes": 75,
           "notes": "Flexible lunch near Osaka Castle before heading to Pokémon Center Osaka",
@@ -3619,22 +3938,22 @@
           "start_time": "2:00 PM",
           "duration": "1 hour",
           "links": {
-            "website": "https://www.google.com/search?q=Pokemon+Center+Osaka",
-            "map": "https://maps.google.com/?q=Pokemon+Center+Osaka"
+            "website": "https://shop.pokemon.co.jp/en/shop/pokemoncenter-osaka/",
+            "map": "https://maps.google.com/?q=Pokemon+Center+Osaka+LUCUA+SOUTH+13F"
           },
-          "area": "Shinsaibashi",
+          "area": "Umeda · LUCUA SOUTH 13F",
           "distance_from_hotel": {
-            "text": "15 min train",
-            "minutes": 15,
-            "mode": "train"
+            "text": "5 min walk",
+            "minutes": 5,
+            "mode": "walk"
           },
           "priority": "must",
           "booking_status": "planned",
           "date": "2026-10-27",
           "icon": "pokeball",
           "coordinates": {
-            "lat": 34.674,
-            "lng": 135.5021
+            "lat": 34.7025,
+            "lng": 135.4959
           },
           "end_time": "3:00 PM",
           "duration_minutes": 60,
@@ -3649,20 +3968,20 @@
           "transport_from_previous": {
             "from": "Lunch After Osaka Castle",
             "mode": "train",
-            "duration_minutes": 10
+            "duration_minutes": 20
           }
         },
         {
           "id": "osaka_umeda_explore",
-          "name": "Explore Umeda + Hotel Break",
+          "name": "Explore Umeda",
           "category": "Free Time",
           "type": "Flexible",
           "day": 2,
           "start_time": "3:30 PM",
-          "end_time": "7:15 PM",
-          "duration": "3h 45m",
-          "duration_minutes": 225,
-          "notes": "Explore Grand Front Osaka, Osaka Station City, and Yodobashi Umeda; return to the nearby hotel whenever ready to rest and freshen up before dinner",
+          "end_time": "6:15 PM",
+          "duration": "2h 45m",
+          "duration_minutes": 165,
+          "notes": "Explore Grand Front Osaka, Osaka Station City, and Yodobashi Umeda before returning to the nearby hotel.",
           "links": {
             "map": "https://maps.google.com/?q=Umeda+Osaka"
           },
@@ -3680,8 +3999,39 @@
           "fallback": null,
           "transport_from_previous": {
             "from": "Pokémon Center Osaka",
-            "mode": "train",
-            "duration_minutes": 20
+            "mode": "walk",
+            "duration_minutes": 5
+          }
+        },
+        {
+          "id": "osaka_hotel_dropoff_rest_day2",
+          "name": "Hotel Break",
+          "category": "Logistics",
+          "type": "Hotel Break",
+          "day": 2,
+          "start_time": "6:20 PM",
+          "end_time": "7:20 PM",
+          "duration": "1 hour",
+          "duration_minutes": 60,
+          "notes": "Return to Hotel Hankyu RESPIRE OSAKA to drop off anything, rest, and freshen up before the booked dinner.",
+          "links": {
+            "map": "https://maps.google.com/?q=Hotel+Hankyu+RESPIRE+OSAKA"
+          },
+          "area": "Umeda",
+          "distance_from_hotel": {
+            "text": "At the hotel",
+            "minutes": 0,
+            "mode": "walk"
+          },
+          "priority": "must",
+          "booking_status": "planned",
+          "date": "2026-10-27",
+          "icon": "hotel",
+          "energy_cost": "low",
+          "transport_from_previous": {
+            "from": "Explore Umeda",
+            "mode": "walk",
+            "duration_minutes": 5
           }
         },
         {
@@ -3715,8 +4065,8 @@
           "date": "2026-10-27",
           "icon": "food",
           "coordinates": {
-            "lat": 34.695,
-            "lng": 135.193
+            "lat": 34.7047,
+            "lng": 135.4964
           },
           "end_time": "10:00 PM",
           "duration": "2 hours",
@@ -3732,7 +4082,7 @@
             "if_tired": "Rest at the hotel longer, then leave by 7:40 PM; dinner is booked and paid"
           },
           "transport_from_previous": {
-            "from": "Explore Umeda + Hotel Break",
+            "from": "Hotel Break",
             "mode": "walk",
             "duration_minutes": 5
           },
@@ -3783,6 +4133,25 @@
             "mode": "train",
             "duration_minutes": 20
           }
+        },
+        {
+          "id": "osaka_day3_breakfast_tbd",
+          "name": "Breakfast (TBD)",
+          "category": "Food",
+          "type": "Breakfast",
+          "day": 3,
+          "date": "2026-10-28",
+          "start_time": "9:30 AM",
+          "end_time": "10:15 AM",
+          "duration": "45 min",
+          "duration_minutes": 45,
+          "notes": "Keep breakfast light because the ramen and gyoza cooking class includes the meal. Choose the hotel breakfast or a convenient café around Umeda.",
+          "links": {},
+          "area": "Umeda / Hotel",
+          "priority": "flex",
+          "booking_status": "planned",
+          "icon": "food",
+          "energy_cost": "low"
         },
         {
           "id": "osaka_ramen",
@@ -3846,9 +4215,9 @@
             "if_tired": "Cannot skip — reservation is booked and paid. It is hands-on but seated"
           },
           "transport_from_previous": {
-            "from": "Ramen and Gyoza Cooking Class",
+            "from": "Breakfast (TBD)",
             "mode": "train",
-            "duration_minutes": 15
+            "duration_minutes": 20
           },
           "confirmation_code": "1810158293",
           "operator": "Sakura Cook",
@@ -4047,14 +4416,18 @@
           "energy": "high",
           "transport": "metro-heavy",
           "vibe": "Castle, Pokémon, Umeda, steak, and karaoke",
-          "day_type": "full_day"
+          "day_type": "full_day",
+          "leave_hotel_by": "9:30 AM",
+          "leave_hotel_for": "Osaka Castle"
         },
         "3": {
           "focus": "Nishi-ku → Namba → Tokyo",
           "energy": "medium",
           "transport": "metro + shinkansen",
           "vibe": "Cook ramen, browse Kuromon, then bullet train to Tokyo",
-          "day_type": "travel_light"
+          "day_type": "travel_light",
+          "leave_hotel_by": "10:45 AM",
+          "leave_hotel_for": "Ramen and Gyoza Cooking Class"
         },
         "4": {
           "focus": "Namba → Shin-Osaka",
@@ -4188,23 +4561,30 @@
           }
         },
         {
-          "id": "tokyo_n_leave_for_teamlab",
-          "name": "Leave Hotel for teamLab Planets",
-          "category": "Logistics",
-          "type": "Transit",
-          "day": 2,
-          "date": "2026-10-29",
-          "start_time": "9:30 AM",
-          "end_time": "10:15 AM",
-          "duration": "45 min",
-          "duration_minutes": 45,
-          "notes": "Leave HOTEL AMANEK Shinjuku Kabukicho at 9:30 AM for the trip to Toyosu.",
-          "links": {},
-          "area": "Shinjuku → Toyosu",
-          "priority": "must",
+          "id": "tokyo_n_open_evening_day1",
+          "name": "Shinjuku Golden-Gai — Dinner TBD",
+          "category": "Free Time",
+          "type": "Open Evening",
+          "day": 1,
+          "date": "2026-10-28",
+          "start_time": "8:45 PM",
+          "end_time": "TBD",
+          "duration": "TBD",
+          "duration_minutes": 0,
+          "notes": "Explore Shinjuku Golden-Gai after check-in; choose a casual dinner or a relaxed walk through the lantern-lit alleyways.",
+          "links": {
+            "map": "https://maps.google.com/?q=Shinjuku+Golden-Gai+Tokyo"
+          },
+          "area": "Shinjuku Golden-Gai",
+          "priority": "flex",
           "booking_status": "planned",
-          "icon": "transit",
-          "energy_cost": "low"
+          "icon": "nightlife",
+          "energy_cost": "low",
+          "transport_from_previous": {
+            "from": "Hotel Check-in (HOTEL AMANEK Shinjuku Kabukicho)",
+            "mode": "walk",
+            "duration_minutes": 0
+          }
         },
         {
           "id": "tokyo_n_teamlab_planets",
@@ -4228,7 +4608,7 @@
           "icon": "sightseeing",
           "energy_cost": "medium",
           "transport_from_previous": {
-            "from": "Leave Hotel for teamLab Planets",
+            "from": "HOTEL AMANEK Shinjuku Kabukicho",
             "mode": "train",
             "duration_minutes": 45
           }
@@ -4240,11 +4620,11 @@
           "type": "Flexible Lunch",
           "day": 2,
           "date": "2026-10-29",
-          "start_time": "12:30 PM",
-          "end_time": "1:30 PM",
+          "start_time": "12:35 PM",
+          "end_time": "1:35 PM",
           "duration": "1 hour",
           "duration_minutes": 60,
-          "notes": "Keep lunch flexible near Toyosu before heading to Ginza.",
+          "notes": "Keep lunch flexible near Toyosu before heading to Ginza. Restaurant TBD.",
           "links": {},
           "area": "Toyosu",
           "priority": "flex",
@@ -4391,6 +4771,32 @@
           }
         },
         {
+          "id": "tokyo_n_hotel_dropoff_rest_day3",
+          "name": "Hotel Drop-off & Rest",
+          "category": "Logistics",
+          "type": "Hotel Break",
+          "day": 3,
+          "date": "2026-10-30",
+          "start_time": "5:30 PM",
+          "end_time": "6:30 PM",
+          "duration": "1 hour",
+          "duration_minutes": 60,
+          "notes": "Return to HOTEL AMANEK Shinjuku Kabukicho after Hard Off, drop off shopping bags, rest, and freshen up before the evening.",
+          "links": {
+            "map": "https://maps.google.com/?q=HOTEL+AMANEK+Shinjuku+Kabukicho"
+          },
+          "area": "Shinjuku",
+          "priority": "must",
+          "booking_status": "planned",
+          "icon": "hotel",
+          "energy_cost": "low",
+          "transport_from_previous": {
+            "from": "Hard Off — Shinjuku Marui Men",
+            "mode": "walk",
+            "duration_minutes": 10
+          }
+        },
+        {
           "id": "tokyo_n_omoide",
           "name": "Omoide Yokocho",
           "category": "Food",
@@ -4432,9 +4838,9 @@
             "if_tired": "Pick one stall for yakitori and move on — no need to explore the full alley"
           },
           "transport_from_previous": {
-            "from": "Pokémon Center Ikebukuro",
-            "mode": "train",
-            "duration_minutes": 15
+            "from": "Hotel Drop-off & Rest",
+            "mode": "walk",
+            "duration_minutes": 5
           }
         },
         {
@@ -4470,13 +4876,63 @@
           }
         },
         {
+          "id": "tokyo_n_hotel_dropoff_rest_day2",
+          "name": "Hotel Drop-off & Rest",
+          "category": "Logistics",
+          "type": "Hotel Break",
+          "day": 2,
+          "date": "2026-10-29",
+          "start_time": "6:40 PM",
+          "end_time": "7:40 PM",
+          "duration": "1 hour",
+          "duration_minutes": 60,
+          "notes": "Return to HOTEL AMANEK Shinjuku Kabukicho, drop off shopping bags, rest, and freshen up before dinner.",
+          "links": {
+            "map": "https://maps.google.com/?q=HOTEL+AMANEK+Shinjuku+Kabukicho"
+          },
+          "area": "Shinjuku",
+          "priority": "must",
+          "booking_status": "planned",
+          "icon": "hotel",
+          "energy_cost": "low",
+          "transport_from_previous": {
+            "from": "Rehello by BOOKOFF 麻布十番店",
+            "mode": "train",
+            "duration_minutes": 30
+          }
+        },
+        {
+          "id": "tokyo_n_open_evening_day2",
+          "name": "Open Evening — Dinner TBD",
+          "category": "Free Time",
+          "type": "Open Evening",
+          "day": 2,
+          "date": "2026-10-29",
+          "start_time": "7:45 PM",
+          "end_time": "TBD",
+          "duration": "Open",
+          "duration_minutes": 0,
+          "notes": "Choose dinner near the hotel, explore Shinjuku, or keep the rest of the evening relaxed. Restaurant TBD.",
+          "links": {},
+          "area": "Shinjuku",
+          "priority": "flex",
+          "booking_status": "planned",
+          "icon": "nightlife",
+          "energy_cost": "low",
+          "transport_from_previous": {
+            "from": "Hotel Drop-off & Rest",
+            "mode": "walk",
+            "duration_minutes": 5
+          }
+        },
+        {
           "id": "tokyo_n_bar_centifolia",
           "name": "Bar Centifolia",
           "category": "Nightlife",
           "type": "Speakeasy",
           "day": 3,
           "start_time": "9:30 PM",
-          "duration": "1-2 hours",
+          "duration": "1 hour",
           "links": {
             "website": "https://www.google.com/search?q=Bar+Centifolia+Tokyo",
             "map": "https://maps.google.com/?q=Bar+Centifolia+Tokyo"
@@ -4496,7 +4952,7 @@
             "lng": 139.701
           },
           "end_time": "10:30 PM",
-          "duration_minutes": 90,
+          "duration_minutes": 60,
           "tags": [
             "indoor",
             "rain-safe",
@@ -4519,7 +4975,7 @@
           "type": "Departure",
           "day": 4,
           "start_time": "10:00 AM",
-          "duration": "Full Day",
+          "duration": "11h 51m",
           "notes": "Air Canada AC 2 · HND 6:50 PM → RDU 9:51 PM via YYZ · Yamil, Jurializ, Jessy, Hilary · Seat selection complimentary",
           "links": {
             "map": "https://maps.google.com/?q=Haneda+Airport+Tokyo"
@@ -4539,7 +4995,7 @@
             "lng": 139.7024
           },
           "end_time": "9:51 PM",
-          "duration_minutes": 720,
+          "duration_minutes": 711,
           "tags": [
             "indoor",
             "rain-safe",
@@ -4609,14 +5065,18 @@
           "energy": "high",
           "transport": "metro-heavy",
           "vibe": "Immersive art, flagship shopping, and vintage fashion",
-          "day_type": "full_day"
+          "day_type": "full_day",
+          "leave_hotel_by": "9:30 AM",
+          "leave_hotel_for": "teamLab Planets"
         },
         "3": {
           "focus": "Shinjuku Gyoen → Nakano → Shinjuku",
           "energy": "medium",
           "transport": "metro + walking",
           "vibe": "Garden calm, collectible hunting, and a relaxed final evening",
-          "day_type": "full_day"
+          "day_type": "full_day",
+          "leave_hotel_by": "9:30 AM",
+          "leave_hotel_for": "Shinjuku Gyoen National Garden"
         },
         "4": {
           "focus": "Shinjuku → HND",

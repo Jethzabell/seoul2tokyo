@@ -165,7 +165,11 @@
     const stops = dayMapStops(items);
     if (stops.length === 0) return null;
     if (stops.length === 1) return `https://www.google.com/maps/search/${encodeURIComponent(stops[0])}`;
-    return `https://www.google.com/maps/dir/${stops.map(s => encodeURIComponent(s)).join('/')}`;
+    const [origin, ...remaining] = stops;
+    const destination = remaining.pop();
+    const params = new URLSearchParams({ api: '1', origin, destination });
+    if (remaining.length > 0) params.set('waypoints', remaining.join('|'));
+    return `https://www.google.com/maps/dir/?${params.toString()}`;
   }
 
   const petals = [
@@ -483,6 +487,7 @@
         {#each activityDays as { day, items }}
           {@const ds = daySummaryMap[day]}
           {@const dMapUrl = dayMapUrl(items)}
+          {@const firstTravel = items[0]?.transport_from_previous}
 
           <!-- Day header -->
           <div class="flex flex-col gap-1.5 pt-1">
@@ -519,6 +524,21 @@
               {#if ds.vibe}
                 <p class="font-sans text-[9px] italic text-[#b08878] px-1 -mt-0.5">"{ds.vibe}"</p>
               {/if}
+              {#if ds.leave_hotel_by}
+                <div class="flex items-center gap-1 px-1 -mt-0.5">
+                  <span class="material-symbols-rounded text-[13px]" style="color:{t.accent}">directions_walk</span>
+                  <span class="font-sans text-[9px] font-semibold" style="color:{t.accent}">Leave hotel by {ds.leave_hotel_by}</span>
+                  {#if ds.leave_hotel_for}
+                    <span class="font-sans text-[8px] text-[#a08878]">for {ds.leave_hotel_for}</span>
+                  {/if}
+                </div>
+                {#if firstTravel?.duration_minutes > 0 && ds.leave_hotel_for}
+                  <div class="flex items-center gap-1 px-1 -mt-0.5">
+                    <span class="material-symbols-rounded text-[12px] text-[#a08878]">{transportIcons[firstTravel.mode] || 'route'}</span>
+                    <span class="font-sans text-[8px] text-[#a08878]">{firstTravel.duration_minutes} min {firstTravel.mode} from hotel to {ds.leave_hotel_for}</span>
+                  </div>
+                {/if}
+              {/if}
             {/if}
           </div>
 
@@ -527,6 +547,11 @@
             {@const iconKey = activity.icon || getIconKey(activity.id, activity.category)}
             {@const desc = descriptions[activity.id] ?? activity.category}
             {@const hasTransport = activity.transport_from_previous?.mode && actIdx > 0}
+            {@const isSunsetActivity = activity.id === 'kyoto_kiyomizudera'}
+            {@const isReservedActivity = activity.booking_status === 'booked'}
+            {@const isRestActivity = activity.id.includes('dropoff_rest') || activity.id.includes('apartment_dropoff_rest') || activity.id.includes('hotel_dropoff')}
+            {@const isOpenEveningActivity = activity.type === 'Open Evening' || /open evening/i.test(activity.name ?? '')}
+            {@const isTbdActivity = !isReservedActivity && !isOpenEveningActivity && /\bTBD\b/i.test([activity.name, activity.type, activity.start_time, activity.end_time, activity.duration, activity.notes].filter(Boolean).join(' '))}
 
             <!-- Transport connector -->
             {#if hasTransport && activity.transport_from_previous.duration_minutes > 0}
@@ -550,7 +575,18 @@
             <!-- Activity card -->
             <div class="{activity.sub_stop ? 'ml-4 border-l-2 rounded-l-none' : ''} glass-card glass-hover shadow-sm overflow-hidden
               {activity.sub_stop ? 'border-l-[#c8d0e0] bg-[#f8faff]/70' : ''}"
-              style={activity.sub_stop ? 'border-left-color:#c8d8e8' : ''}>
+              style={activity.sub_stop ? 'border-left-color:#c8d8e8' : isOpenEveningActivity ? 'border-color:#e3a0a0; background:linear-gradient(135deg,#fff8f7 0%,#ffe8e6 55%,#f8d0cc 100%)' : isSunsetActivity ? 'border-color:#e9aa80; background:linear-gradient(135deg,#fff8f0 0%,#ffe8cf 52%,#f8c49f 100%)' : isRestActivity ? 'border-color:#a8d0b2; background:linear-gradient(135deg,#f7fcf7 0%,#eaf7ed 55%,#dcefe1 100%)' : isReservedActivity ? 'border-color:#9ebfe8; background:linear-gradient(135deg,#f8fbff 0%,#eaf3ff 55%,#dcecff 100%)' : isTbdActivity ? 'border-color:#e3c56f; background:linear-gradient(135deg,#fffdf3 0%,#fff5c9 55%,#fbe6a0 100%)' : ''}>
+              {#if isOpenEveningActivity}
+                <div class="h-1.5" style="background:linear-gradient(90deg,#d46b67 0%,#e48b78 52%,#f0b08d 100%)"></div>
+              {:else if isSunsetActivity}
+                <div class="h-1.5" style="background:linear-gradient(90deg,#e88368 0%,#f2a35f 52%,#f4cf78 100%)"></div>
+              {:else if isRestActivity}
+                <div class="h-1.5" style="background:linear-gradient(90deg,#78ae83 0%,#9bcba2 52%,#c2e1c3 100%)"></div>
+              {:else if isReservedActivity}
+                <div class="h-1.5" style="background:linear-gradient(90deg,#5b8fd1 0%,#79b5df 52%,#a8d7e8 100%)"></div>
+              {:else if isTbdActivity}
+                <div class="h-1.5" style="background:linear-gradient(90deg,#d2a72e 0%,#e8c65a 52%,#f3dd91 100%)"></div>
+              {/if}
               <div class="p-2.5 flex flex-col gap-1.5">
                 <!-- Row 1: icon + name + price -->
                 <div class="flex items-start gap-2">
