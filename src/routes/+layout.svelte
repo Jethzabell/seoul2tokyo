@@ -2,6 +2,7 @@
   import '../app.css';
   import { onMount } from 'svelte';
   import { fade, fly } from 'svelte/transition';
+  import OfflineStatus from '$lib/OfflineStatus.svelte';
 
   const PASSWORD   = 'ready!';
   const STORAGE_KEY = 'jp26_access';
@@ -151,6 +152,7 @@
 {:else}
   <div in:fade={{ duration: 400 }}>
     <slot />
+    <OfflineStatus />
   </div>
 {/if}
 

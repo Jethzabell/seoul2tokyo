@@ -1,0 +1,13 @@
+{
+  "name": "Japan 2026 Trip",
+  "short_name": "Japan 2026",
+  "description": "Offline itinerary for the Japan 2026 group trip",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f5ede8",
+  "theme_color": "#9b3a3a",
+  "icons": [
+    { "src": "/app-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

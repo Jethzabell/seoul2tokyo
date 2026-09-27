@@ -3274,24 +3274,72 @@
           }
         },
         {
+          "id": "kyoto_day3_lunch_after_fushimi",
+          "name": "Lunch (TBD)",
+          "category": "Food",
+          "type": "Flexible Lunch",
+          "day": 3,
+          "start_time": "11:00 AM",
+          "end_time": "12:00 PM",
+          "duration": "1 hour",
+          "duration_minutes": 60,
+          "notes": "Flexible lunch after Fushimi Inari. Restaurant TBD.",
+          "links": {},
+          "area": "Fushimi / Kyoto",
+          "priority": "flex",
+          "booking_status": "planned",
+          "date": "2026-10-25",
+          "icon": "food",
+          "energy_cost": "low",
+          "transport_from_previous": {
+            "from": "Fushimi Inari Shrine",
+            "mode": "train",
+            "duration_minutes": 15
+          }
+        },
+        {
+          "id": "kyoto_day3_free_afternoon",
+          "name": "Free Afternoon",
+          "category": "Free Time",
+          "type": "Open Block",
+          "day": 3,
+          "start_time": "12:00 PM",
+          "end_time": "3:00 PM",
+          "duration": "3 hours",
+          "duration_minutes": 180,
+          "notes": "Keep the afternoon open for rest, a café, shopping, or an optional Kyoto walk before the hotel break and teamLab.",
+          "links": {},
+          "area": "Kyoto",
+          "priority": "flex",
+          "booking_status": "planned",
+          "date": "2026-10-25",
+          "icon": "coffee",
+          "energy_cost": "low",
+          "transport_from_previous": {
+            "from": "Lunch (TBD)",
+            "mode": "walk",
+            "duration_minutes": 0
+          }
+        },
+        {
           "id": "kyoto_arashiyama_forest",
           "name": "Arashiyama Bamboo Forest",
           "category": "Sightseeing",
           "type": "Nature Walk",
           "day": 3,
-          "start_time": "11:30 AM",
-          "end_time": "1:00 PM",
-          "duration": "1.5 hours",
-          "duration_minutes": 90,
-          "notes": "Walk the iconic bamboo grove, cross Togetsukyo Bridge, explore Tenryu-ji garden area",
+          "start_time": "7:45 PM",
+          "end_time": "9:00 PM",
+          "duration": "1h 15m",
+          "duration_minutes": 75,
+          "notes": "Walk the iconic bamboo grove, cross Togetsukyo Bridge, explore Tenryu-ji garden area. Target arrival is 7:45 PM; last entry is 8:40 PM.",
           "links": {
             "website": "https://www.google.com/search?q=Arashiyama+Bamboo+Forest+Kyoto",
             "map": "https://maps.google.com/?q=Arashiyama+Bamboo+Forest+Kyoto"
           },
           "area": "Arashiyama",
           "distance_from_hotel": {
-            "text": "60 min train from Fushimi",
-            "minutes": 60,
+            "text": "30 min train from teamLab",
+            "minutes": 30,
             "mode": "train"
           },
           "priority": "must",
@@ -3315,9 +3363,9 @@
             "if_tired": "Walk just the main grove path (15 min) and skip Tenryu-ji"
           },
           "transport_from_previous": {
-            "from": "Fushimi Inari",
+            "from": "teamLab Biovortex Kyoto",
             "mode": "train",
-            "duration_minutes": 60
+            "duration_minutes": 30
           }
         },
         {
@@ -3325,22 +3373,23 @@
           "name": "Lunch (TBD)",
           "category": "Food",
           "type": "Flexible Lunch",
-          "day": 3,
+          "day": 4,
           "start_time": "1:00 PM",
           "end_time": "2:00 PM",
           "duration": "1 hour",
           "duration_minutes": 60,
-          "notes": "Lunch after Arashiyama Bamboo Forest before returning to the hotel. Restaurant TBD.",
+          "name": "Lunch before Osaka (TBD)",
+          "notes": "Lunch before continuing to Osaka. Restaurant TBD.",
           "links": {},
-          "area": "Arashiyama",
+          "area": "Kyoto Station",
           "priority": "flex",
           "booking_status": "planned",
           "icon": "food",
           "energy_cost": "low",
           "transport_from_previous": {
-            "from": "Arashiyama Bamboo Forest",
-            "mode": "walk",
-            "duration_minutes": 0
+            "from": "Hotel Check-out (Tokyu Stay Kyoto)",
+            "mode": "train",
+            "duration_minutes": 15
           }
         },
         {
@@ -3359,18 +3408,18 @@
           },
           "area": "Kawaramachi",
           "distance_from_hotel": {
-            "text": "40 min train from Arashiyama",
-            "minutes": 40,
-            "mode": "train"
+            "text": "0 min (at hotel)",
+            "minutes": 0,
+            "mode": "walk"
           },
           "priority": "must",
           "booking_status": "planned",
           "icon": "hotel",
           "energy_cost": "low",
           "transport_from_previous": {
-            "from": "Lunch (TBD)",
-            "mode": "train",
-            "duration_minutes": 40
+            "from": "Free Afternoon",
+            "mode": "walk",
+            "duration_minutes": 0
           }
         },
         {
@@ -3380,7 +3429,7 @@
           "type": "Art / Immersive",
           "day": 3,
           "start_time": "5:30 PM",
-          "duration": "2h 30m",
+          "duration": "1h 44m",
           "notes": "Admission window 5:30–6:00 PM · 7 Adult Entrance Passes · Tickets purchased in two orders · ¥33,600 incl. tax · Credit card charges $152.10 + $60.84 = $212.94 · Inquiry numbers KYL3YXKFYXPTR-0001 and KYFVUPXHJCHVT-0001 · 21-5 Higashikujo Higashi-Iwamotocho, Minami-ku, Kyoto",
           "links": {
             "website": "https://www.teamlab.art/e/kyoto/",
@@ -3400,8 +3449,8 @@
             "lat": 34.9886,
             "lng": 135.7823
           },
-          "end_time": "8:00 PM",
-          "duration_minutes": 150,
+          "end_time": "7:15 PM",
+          "duration_minutes": 105,
           "tags": [
             "indoor",
             "rain-safe",
@@ -3431,23 +3480,23 @@
         },
         {
           "id": "kyoto_teamlab_evening_open",
-          "name": "Open Evening — Dinner TBD",
-          "category": "Logistics",
-          "type": "Open Evening",
+          "name": "Dinner (TBD)",
+          "category": "Food",
+          "type": "Flexible Dinner",
           "day": 3,
-          "start_time": "8:00 PM",
+          "start_time": "TBD",
           "end_time": "TBD",
-          "duration": "Open",
+          "duration": "TBD",
           "duration_minutes": 0,
-          "notes": "Keep the evening open after teamLab Biovortex. Decide on dinner, a relaxed walk, or an early night.",
+          "notes": "Dinner after teamLab and Arashiyama. Restaurant TBD.",
           "links": {},
           "area": "Kyoto",
           "priority": "flex",
           "booking_status": "planned",
-          "icon": "nightlife",
+          "icon": "food",
           "energy_cost": "low",
           "transport_from_previous": {
-            "from": "teamLab Biovortex Kyoto",
+            "from": "Arashiyama Bamboo Forest",
             "mode": "walk",
             "duration_minutes": 0
           }
@@ -3459,8 +3508,8 @@
           "type": "Logistics",
           "day": 4,
           "date": "2026-10-26",
-          "start_time": "10:00 AM",
-          "end_time": "11:00 AM",
+          "start_time": "9:30 AM",
+          "end_time": "10:30 AM",
           "duration": "1 hour",
           "notes": "Pack, checkout by 11AM · Store luggage if needed",
           "links": {},
@@ -3480,7 +3529,7 @@
           "category": "Train",
           "type": "Train",
           "day": 4,
-          "start_time": "1:00 PM",
+          "start_time": "2:00 PM",
           "duration": "30 min",
           "links": {},
           "area": "Kyoto Station",
@@ -3497,7 +3546,7 @@
             "lat": 34.9858,
             "lng": 135.7588
           },
-          "end_time": "1:30 PM",
+          "end_time": "2:30 PM",
           "duration_minutes": 30,
           "tags": [
             "indoor",
@@ -3507,7 +3556,7 @@
           "energy_cost": "low",
           "fallback": null,
           "transport_from_previous": {
-            "from": "Arashiyama",
+            "from": "Lunch (TBD)",
             "mode": "train",
             "duration_minutes": 15
           }
@@ -3592,17 +3641,17 @@
           "label": "Day 10 — Oct 26 (Arashiyama + Osaka)",
           "blocks": [
             {
-              "time": "08:30",
+              "time": "09:30",
               "title": "Arashiyama Bamboo Grove",
               "category": "Sightseeing"
             },
             {
-              "time": "12:30",
+              "time": "13:00",
               "title": "Lunch near Arashiyama",
               "category": "Food"
             },
             {
-              "time": "13:00",
+              "time": "14:00",
               "title": "Train to Osaka",
               "category": "Transit"
             }

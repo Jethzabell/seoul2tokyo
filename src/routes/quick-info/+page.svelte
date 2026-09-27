@@ -50,6 +50,22 @@
         </div>
       </section>
 
+      <!-- Offline access -->
+      <section class="glass-card rounded-3xl border border-white/60 p-5 shadow-sm">
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-rounded text-[#9b3a3a]">download_for_offline</span>
+          <div>
+            <h2 class="font-sans text-base font-bold text-[#3a2d32]">Save the trip for offline use</h2>
+            <ol class="mt-3 list-decimal space-y-2 pl-5 font-sans text-sm text-[#6f5d60]">
+              <li>Open the site once while connected to Wi-Fi.</li>
+              <li>Use the browser’s Add to Home Screen or Install action.</li>
+              <li>Open the installed app once and test it in airplane mode before departure.</li>
+            </ol>
+            <p class="mt-3 font-sans text-xs font-semibold text-[#9b685f]">Maps and external booking websites still require internet.</p>
+          </div>
+        </div>
+      </section>
+
       <!-- Before You Travel -->
       <section>
         <h2 class="font-cursive text-[#9b3a3a] text-2xl mb-3 flex items-center gap-2">

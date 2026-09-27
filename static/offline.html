@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Japan 2026 · Offline</title>
+  <style>
+    body { min-height: 100vh; margin: 0; display: grid; place-items: center; background: #f5ede8; color: #3a2d32; font-family: Arial, sans-serif; }
+    main { width: min(88vw, 440px); padding: 30px; border-radius: 24px; background: #fff; box-shadow: 0 12px 36px #0001; text-align: center; }
+    h1 { color: #9b3a3a; }
+    .actions { display: flex; gap: 10px; justify-content: center; margin-top: 20px; }
+    button { border: 0; border-radius: 999px; padding: 10px 16px; background: #9b3a3a; color: #fff; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>You’re offline</h1>
+    <p>Previously loaded trip pages are still available. Maps and external booking websites require internet.</p>
+    <div class="actions"><button onclick="history.back()">Go back</button><button onclick="location.reload()">Try again</button></div>
+  </main>
+</body>
+</html>

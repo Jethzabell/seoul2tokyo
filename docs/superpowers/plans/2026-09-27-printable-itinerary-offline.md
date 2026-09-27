@@ -26,8 +26,7 @@
 - Create `src/service-worker.js` — versioned same-origin precache and runtime cache.
 - Create `static/manifest.webmanifest` — install metadata.
 - Create `static/app-icon.svg` — install icon with safe maskable padding.
-- Create `static/app-icon-192.png` — Chromium/Android install icon.
-- Create `static/app-icon-512.png` — high-resolution install and maskable icon.
+- Use `static/app-icon.svg` directly for install metadata and the app shell icon.
 - Create `static/offline.html` — fallback for uncached navigation.
 - Modify `src/app.html` — link the manifest and theme metadata.
 - Create `src/lib/OfflineStatus.svelte` — online/offline status and external-link warning.
@@ -651,8 +650,6 @@ git commit -m "feat: add ten-page printable itinerary"
 - Create: `src/service-worker.js`
 - Create: `static/manifest.webmanifest`
 - Create: `static/app-icon.svg`
-- Create: `static/app-icon-192.png`
-- Create: `static/app-icon-512.png`
 - Create: `static/offline.html`
 - Modify: `src/app.html`
 - Create: `tests/offline-assets.test.mjs`
@@ -711,15 +708,9 @@ Create `static/manifest.webmanifest`:
   "theme_color": "#9b3a3a",
   "icons": [
     {
-      "src": "/app-icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/app-icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
+      "src": "/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
       "purpose": "any maskable"
     }
   ]
@@ -739,14 +730,7 @@ Create `static/app-icon.svg`:
 </svg>
 ```
 
-Generate the required PNG files from the SVG:
-
-```bash
-sips -s format png -z 192 192 static/app-icon.svg --out static/app-icon-192.png
-sips -s format png -z 512 512 static/app-icon.svg --out static/app-icon-512.png
-```
-
-Expected: `file static/app-icon-192.png static/app-icon-512.png` reports 192×192 and 512×512 PNG images.
+The SVG is used directly by the manifest and app shell, preserving the artwork at any display size.
 
 - [ ] **Step 4: Add manifest metadata to the app shell**
 
@@ -757,7 +741,7 @@ Add inside `src/app.html` `<head>`:
 <meta name="theme-color" content="#9b3a3a" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-<link rel="apple-touch-icon" href="%sveltekit.assets%/app-icon-192.png" />
+<link rel="apple-touch-icon" href="%sveltekit.assets%/app-icon.svg" />
 ```
 
 - [ ] **Step 5: Create the offline fallback**
@@ -876,7 +860,7 @@ Expected: tests pass; `build/service-worker.js`, `build/manifest.webmanifest`, a
 - [ ] **Step 8: Commit PWA infrastructure**
 
 ```bash
-git add src/app.html src/service-worker.js static/app-icon.svg static/app-icon-192.png static/app-icon-512.png static/manifest.webmanifest static/offline.html tests/offline-assets.test.mjs
+git add src/app.html src/service-worker.js static/app-icon.svg static/manifest.webmanifest static/offline.html tests/offline-assets.test.mjs
 git commit -m "feat: add full-site offline caching"
 ```
 
