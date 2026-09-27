@@ -3544,13 +3544,44 @@
           }
         },
         {
+          "id": "osaka_umeda_explore",
+          "name": "Explore Umeda + Hotel Break",
+          "category": "Free Time",
+          "type": "Flexible",
+          "day": 2,
+          "start_time": "3:30 PM",
+          "end_time": "7:15 PM",
+          "duration": "3h 45m",
+          "duration_minutes": 225,
+          "notes": "Explore Grand Front Osaka, Osaka Station City, and Yodobashi Umeda; return to the nearby hotel whenever ready to rest and freshen up before dinner",
+          "links": {
+            "map": "https://maps.google.com/?q=Umeda+Osaka"
+          },
+          "area": "Umeda",
+          "distance_from_hotel": {
+            "text": "At / near hotel",
+            "minutes": 0,
+            "mode": "walk"
+          },
+          "priority": "nice_to_have",
+          "booking_status": "planned",
+          "date": "2026-10-27",
+          "icon": "city",
+          "energy_cost": "low",
+          "fallback": null,
+          "transport_from_previous": {
+            "from": "Pokémon Center Osaka",
+            "mode": "train",
+            "duration_minutes": 20
+          }
+        },
+        {
           "id": "osaka_kobe",
           "name": "Kobe Steak Ishida — LINKS UMEDA",
           "category": "Food",
           "type": "Dinner",
           "day": 2,
           "start_time": "8:00 PM",
-          "duration": "2h",
           "price": {
             "amount": 1152.86,
             "currency": "USD",
@@ -3566,8 +3597,8 @@
           },
           "area": "Umeda",
           "distance_from_hotel": {
-            "text": "15 min walk",
-            "minutes": 15,
+            "text": "5 min walk",
+            "minutes": 5,
             "mode": "walk"
           },
           "priority": "must",
@@ -3582,20 +3613,19 @@
           "duration": "2 hours",
           "duration_minutes": 120,
           "tags": [
-            "day-trip",
             "food",
             "reservation-required",
             "iconic"
           ],
-          "energy_cost": "high",
+          "energy_cost": "low",
           "fallback": {
-            "if_rain": "Kobe is still fine — restaurant is indoors. Skip waterfront walk",
-            "if_tired": "Cancel Kobe trip — eat wagyu at a local Osaka restaurant instead"
+            "if_rain": "The restaurant is indoors and Umeda has extensive covered walkways",
+            "if_tired": "Rest at the hotel longer, then leave by 7:40 PM; dinner is booked and paid"
           },
           "transport_from_previous": {
-            "from": "Pokémon Center Osaka",
-            "mode": "train",
-            "duration_minutes": 20
+            "from": "Explore Umeda + Hotel Break",
+            "mode": "walk",
+            "duration_minutes": 5
           },
           "reservation_code": "596212",
           "invoice": "Mycon1537900663",
@@ -3904,18 +3934,18 @@
           "day_type": "travel_light"
         },
         "2": {
-          "focus": "Central Osaka",
+          "focus": "Central Osaka + Umeda",
           "energy": "high",
           "transport": "metro-heavy",
-          "vibe": "Castle, Pokémon, karaoke, and cocktails",
+          "vibe": "Castle, Pokémon, Umeda, steak, and karaoke",
           "day_type": "full_day"
         },
         "3": {
-          "focus": "Nishi-ku + Kobe",
-          "energy": "high",
-          "transport": "train-heavy",
-          "vibe": "Cook ramen, then train to Kobe for wagyu",
-          "day_type": "full_day"
+          "focus": "Nishi-ku → Namba → Tokyo",
+          "energy": "medium",
+          "transport": "metro + shinkansen",
+          "vibe": "Cook ramen, browse Kuromon, then bullet train to Tokyo",
+          "day_type": "travel_light"
         },
         "4": {
           "focus": "Namba → Shin-Osaka",

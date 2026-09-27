@@ -567,14 +567,14 @@
                         {#if activity.links?.map}
                           <a href={activity.links.map} target="_blank" rel="noopener"
                             title="View on Map" aria-label="View on Map"
-                            class="flex items-center justify-center text-[#c8705a] hover:text-[#a85540]">
+                            class="w-7 h-7 rounded-full flex items-center justify-center text-[#c8705a] hover:text-[#a85540] hover:bg-[#fde8e0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#c8705a] transition-colors">
                             <span class="material-symbols-rounded text-[16px] leading-none">location_on</span>
                           </a>
                         {/if}
                         {#if activity.links?.website}
                           <a href={activity.links.website} target="_blank" rel="noopener"
                             title="Open Website" aria-label="Open Website"
-                            class="flex items-center justify-center text-[#c8705a] hover:text-[#a85540]">
+                            class="w-7 h-7 rounded-full flex items-center justify-center text-[#c8705a] hover:text-[#a85540] hover:bg-[#fde8e0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#c8705a] transition-colors">
                             <span class="material-symbols-rounded text-[16px] leading-none">language</span>
                           </a>
                         {/if}
@@ -604,7 +604,7 @@
                 <!-- Secondary information stays available without making every card tall. -->
                 {#if activity.notes || activity.fallback}
                   <details class="group">
-                    <summary class="list-none cursor-pointer font-sans text-[9px] text-[#a08878] leading-snug flex items-center gap-1">
+                    <summary class="w-fit min-h-7 list-none cursor-pointer font-sans text-[10px] font-semibold text-[#8a6f66] leading-snug flex items-center gap-1 rounded-full border border-[#ead8d0] bg-white/45 px-2 py-1 hover:bg-white/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#c8705a] transition-colors">
                       <span class="material-symbols-rounded text-[12px] transition-transform group-open:rotate-90">chevron_right</span>
                       <span>{activity.notes ? 'Details' : 'Alternatives'}</span>
                     </summary>

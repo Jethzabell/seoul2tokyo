@@ -28,7 +28,7 @@ export const descriptions = {
   osaka_karaoke: 'Belt your favorites in a private room',
   osaka_soparro: 'Intimate craft cocktail bar',
   osaka_ramen: 'Hand-craft your own bowl from scratch',
-  osaka_kobe: 'World-famous wagyu just 30 min from Osaka',
+  osaka_kobe: 'Booked wagyu dinner in LINKS UMEDA',
   osaka_kuromon: 'Fresh seafood market — Osaka\'s kitchen',
   tokyo_n_gyoen: 'Serene national garden — your calm reset before the city rush',
   tokyo_n_ginza: 'Upscale shopping district with flagship stores',
