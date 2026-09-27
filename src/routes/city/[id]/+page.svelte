@@ -154,7 +154,9 @@
       })
       .filter(Boolean);
     const startingPoint = stay?.address || stay?.location || stay?.hotel_name;
-    return startingPoint && activityStops.length > 0
+    const beginsAtAirport = items[0]?.area === 'Haneda' || /Arrive HND/i.test(items[0]?.name ?? '');
+    const shouldPrependOrigin = startingPoint && activityStops.length > 0 && !beginsAtAirport && activityStops[0] !== startingPoint;
+    return shouldPrependOrigin
       ? [startingPoint, ...activityStops]
       : activityStops;
   }
@@ -549,23 +551,39 @@
             <div class="{activity.sub_stop ? 'ml-4 border-l-2 rounded-l-none' : ''} glass-card glass-hover shadow-sm overflow-hidden
               {activity.sub_stop ? 'border-l-[#c8d0e0] bg-[#f8faff]/70' : ''}"
               style={activity.sub_stop ? 'border-left-color:#c8d8e8' : ''}>
-              <div class="p-3 flex flex-col gap-2">
+              <div class="p-2.5 flex flex-col gap-1.5">
                 <!-- Row 1: icon + name + price -->
-                <div class="flex items-start gap-2.5">
-                  <div class="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center p-2" style="background:{t.accentBg}; border:1px solid {t.accent}30">
+                <div class="flex items-start gap-2">
+                  <div class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center p-1.5" style="background:{t.accentBg}; border:1px solid {t.accent}30">
                     <ActivityIcon icon={iconKey} />
                   </div>
                   <div class="flex-1 min-w-0">
                     <div class="flex items-start justify-between gap-1.5">
                       <div class="min-w-0">
-                        <p class="font-sans font-bold text-[13px] text-[#3a2020] leading-tight">{activity.name}</p>
-                        <p class="font-sans text-[10px] text-[#9a7070] mt-0.5 leading-snug">{desc}</p>
+                        <p class="font-sans font-bold text-[12px] text-[#3a2020] leading-tight">{activity.name}</p>
+                        <p class="font-sans text-[9px] text-[#9a7070] mt-0.5 leading-snug">{desc}</p>
                       </div>
-                      {#if displayPrice(activity.price)}
-                        <span class="shrink-0 font-sans text-[10px] font-bold text-[#287040] bg-[#e8f4ea] border border-[#98d098] px-1.5 py-0.5 rounded-full">
-                          {displayPrice(activity.price)}
-                        </span>
-                      {/if}
+                      <div class="shrink-0 flex items-center gap-1">
+                        {#if activity.links?.map}
+                          <a href={activity.links.map} target="_blank" rel="noopener"
+                            title="View on Map" aria-label="View on Map"
+                            class="flex items-center justify-center text-[#c8705a] hover:text-[#a85540]">
+                            <span class="material-symbols-rounded text-[16px] leading-none">location_on</span>
+                          </a>
+                        {/if}
+                        {#if activity.links?.website}
+                          <a href={activity.links.website} target="_blank" rel="noopener"
+                            title="Open Website" aria-label="Open Website"
+                            class="flex items-center justify-center text-[#c8705a] hover:text-[#a85540]">
+                            <span class="material-symbols-rounded text-[16px] leading-none">language</span>
+                          </a>
+                        {/if}
+                        {#if displayPrice(activity.price)}
+                          <span class="font-sans text-[10px] font-bold text-[#287040] bg-[#e8f4ea] border border-[#98d098] px-1.5 py-0.5 rounded-full">
+                            {displayPrice(activity.price)}
+                          </span>
+                        {/if}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -573,57 +591,44 @@
                 <!-- Row 2: time range + area + category/type -->
                 <div class="flex items-center gap-1.5 flex-wrap">
                   {#if displayStart(activity)}
-                    <span class="font-sans font-semibold text-[10px] text-[#5a3d38] glass-subtle px-1.5 py-0.5 rounded">
+                    <span class="font-sans font-semibold text-[9px] text-[#5a3d38] glass-subtle px-1.5 py-0.5 rounded">
                       {displayStart(activity)}{#if activity.end_time} – {activity.end_time}{/if}
                     </span>
                   {/if}
-                  <span class="font-sans text-[10px] font-bold text-[#7a5c56]">{activity.duration}</span>
+                  <span class="font-sans text-[9px] font-bold text-[#7a5c56]">{activity.duration}</span>
                   {#if activity.area}
                     <span class="font-sans text-[8px] font-semibold px-1.5 py-0.5 rounded-full bg-[#f0e8f8] text-[#6050a0] border border-[#d8c8e8]">{activity.area}</span>
                   {/if}
                 </div>
 
-                <!-- Row 5: notes -->
-                {#if activity.notes}
-                  <p class="font-sans text-[9px] text-[#a08878] leading-snug italic">{activity.notes}</p>
-                {/if}
-
-                <!-- Row 6: fallback hints -->
-                {#if activity.fallback}
-                  <div class="flex flex-col gap-0.5">
-                    {#if activity.fallback.if_rain}
-                      <p class="font-sans text-[8px] text-[#4070a8] leading-snug flex items-start gap-1">
-                        <span class="material-symbols-rounded text-[10px] shrink-0 mt-px">water_drop</span>
-                        <span>{activity.fallback.if_rain}</span>
-                      </p>
-                    {/if}
-                    {#if activity.fallback.if_tired}
-                      <p class="font-sans text-[8px] text-[#8a6a00] leading-snug flex items-start gap-1">
-                        <span class="material-symbols-rounded text-[10px] shrink-0 mt-px">hotel</span>
-                        <span>{activity.fallback.if_tired}</span>
-                      </p>
-                    {/if}
-                  </div>
+                <!-- Secondary information stays available without making every card tall. -->
+                {#if activity.notes || activity.fallback}
+                  <details class="group">
+                    <summary class="list-none cursor-pointer font-sans text-[9px] text-[#a08878] leading-snug flex items-center gap-1">
+                      <span class="material-symbols-rounded text-[12px] transition-transform group-open:rotate-90">chevron_right</span>
+                      <span>{activity.notes ? 'Details' : 'Alternatives'}</span>
+                    </summary>
+                    <div class="mt-1.5 flex flex-col gap-0.5 pl-4">
+                      {#if activity.notes}
+                        <p class="font-sans text-[9px] text-[#a08878] leading-snug italic">{activity.notes}</p>
+                      {/if}
+                      {#if activity.fallback?.if_rain}
+                        <p class="font-sans text-[8px] text-[#4070a8] leading-snug flex items-start gap-1">
+                          <span class="material-symbols-rounded text-[10px] shrink-0 mt-px">water_drop</span>
+                          <span>{activity.fallback.if_rain}</span>
+                        </p>
+                      {/if}
+                      {#if activity.fallback?.if_tired}
+                        <p class="font-sans text-[8px] text-[#8a6a00] leading-snug flex items-start gap-1">
+                          <span class="material-symbols-rounded text-[10px] shrink-0 mt-px">hotel</span>
+                          <span>{activity.fallback.if_tired}</span>
+                        </p>
+                      {/if}
+                    </div>
+                  </details>
                 {/if}
               </div>
 
-              <!-- Card footer: links -->
-              {#if activity.links?.map || activity.links?.website}
-                <div class="flex items-center justify-end gap-2 px-3 py-1.5 glass-subtle border-t border-white/30">
-                  {#if activity.links?.map}
-                    <a href={activity.links.map} target="_blank" rel="noopener"
-                      title="View on Map" class="flex items-center gap-0.5 text-[#c8705a] hover:text-[#a85540] font-sans text-[9px]">
-                      <span class="material-symbols-rounded text-sm leading-none">location_on</span>Map
-                    </a>
-                  {/if}
-                  {#if activity.links?.website}
-                    <a href={activity.links.website} target="_blank" rel="noopener"
-                      title="Website" class="flex items-center gap-0.5 text-[#c8705a] hover:text-[#a85540] font-sans text-[9px]">
-                      <span class="material-symbols-rounded text-sm leading-none">language</span>Web
-                    </a>
-                  {/if}
-                </div>
-              {/if}
             </div>
           {/each}
         {/each}

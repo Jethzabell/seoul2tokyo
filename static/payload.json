@@ -433,8 +433,8 @@
         "id": "seg_02",
         "mode": "train",
         "date": "2026-10-23",
-        "time_depart": "TBD",
-        "time_arrive": "TBD",
+        "time_depart": "12:00 PM",
+        "time_arrive": "2:15 PM",
         "from": {
           "city": "Tokyo",
           "code": "TYO",
@@ -958,9 +958,9 @@
           "category": "Hotel",
           "type": "Hotel",
           "day": 1,
-          "start_time": "4:00 PM",
+          "start_time": "5:30 PM",
           "duration": "2 hours",
-          "notes": "Noël Shibuya Once · Casa Bella, Shibuya · Arrive 4-5PM · 5-bedroom luxury apartment · All 7 together",
+          "notes": "Noël Shibuya Once · Casa Bella, Shibuya · Arrive after airport transfer · 5-bedroom luxury apartment · All 7 together",
           "links": {
             "map": "https://maps.google.com/?q=Tokyo-to%2C+Tokyo%2C+%E6%81%B5%E6%AF%94%E5%AF%BF%E8%A5%BF%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%93%E2%88%92%EF%BC%91%EF%BC%94+%E3%82%AB%E3%83%BC%E3%82%B5%E3%83%99%E3%83%A9%E4%BB%A3%E5%AE%98%E5%B1%B1%2C+Japan"
           },
@@ -1000,7 +1000,7 @@
           "category": "Sightseeing",
           "type": "Landmark",
           "day": 1,
-          "start_time": "8:40 PM",
+          "start_time": "7:35 PM",
           "duration": "1 hour",
           "links": {
             "website": "https://www.google.com/search?q=Shibuya+Crossing",
@@ -1020,7 +1020,7 @@
             "lat": 35.6595,
             "lng": 139.7004
           },
-          "end_time": "9:40 PM",
+          "end_time": "8:35 PM",
           "duration_minutes": 60,
           "tags": [
             "outdoor",
@@ -1643,6 +1643,36 @@
           "parent_id": "tokyo_s_akihabara"
         },
         {
+          "id": "tokyo_s_sasugaya_ueno",
+          "name": "SASUGAYA OUTLET — Vintage Brand Bags",
+          "category": "Shopping",
+          "type": "Vintage Store",
+          "day": 4,
+          "date": "2026-10-21",
+          "start_time": "4:15 PM",
+          "end_time": "5:15 PM",
+          "duration": "1 hour",
+          "duration_minutes": 60,
+          "notes": "Vintage brand bags · 〒110-0005 Tokyo, Taito City, Ueno, 6 Chome−4−7 アメ横ウェルカムモール 1F",
+          "links": {
+            "map": "https://maps.google.com/?q=〒110-0005+Tokyo,+Taito+City,+Ueno,+6+Chome-4-7+アメ横ウェルカムモール+1F"
+          },
+          "area": "Ueno",
+          "distance_from_hotel": {
+            "text": "15 min train from Akihabara",
+            "minutes": 15,
+            "mode": "train"
+          },
+          "priority": "nice_to_have",
+          "booking_status": "planned",
+          "icon": "shopping",
+          "transport_from_previous": {
+            "from": "UNIQLO Yodobashi Akiba",
+            "mode": "train",
+            "duration_minutes": 15
+          }
+        },
+        {
           "id": "tokyo_s_bar_hopping",
           "name": "Tokyo Bar Hopping Night Tour (Shinjuku)",
           "category": "Nightlife",
@@ -1839,9 +1869,9 @@
           "day": 5,
           "date": "2026-10-22",
           "start_time": "5:00 PM",
-          "end_time": "8:00 PM",
-          "duration": "3 hours",
-          "duration_minutes": 180,
+          "end_time": "7:30 PM",
+          "duration": "2.5 hours",
+          "duration_minutes": 150,
           "area": "Ikebukuro",
           "priority": "must",
           "booking_status": "planned",
@@ -1944,7 +1974,7 @@
           "category": "Logistics",
           "type": "Packing",
           "day": 5,
-          "start_time": "7:00 PM",
+          "start_time": "8:00 PM",
           "duration": "1 hour",
           "links": {},
           "area": "Shibuya",
@@ -1961,7 +1991,7 @@
             "lat": 35.6595,
             "lng": 139.699
           },
-          "end_time": "8:00 PM",
+          "end_time": "9:00 PM",
           "duration_minutes": 60,
           "tags": [
             "indoor",
@@ -2327,8 +2357,8 @@
           "category": "Train",
           "type": "Transit",
           "day": 1,
-          "start_time": "1:00 PM",
-          "duration": "2 hours",
+          "start_time": "12:00 PM",
+          "duration": "2h 15m",
           "notes": "Shinkansen Tokyo → Kyoto (~2h 15m)",
           "links": {},
           "area": "Kyoto Station",
@@ -2345,8 +2375,8 @@
             "lat": 34.9856,
             "lng": 135.7585
           },
-          "end_time": "3:00 PM",
-          "duration_minutes": 120,
+          "end_time": "2:15 PM",
+          "duration_minutes": 135,
           "tags": [
             "transit"
           ],
@@ -2397,17 +2427,14 @@
         },
         {
           "id": "kyoto_nishiki_snack",
-          "name": "Nishiki Market (quick snack)",
+          "name": "Quick Snack Stop",
           "category": "Food",
           "type": "Market",
           "day": 1,
           "start_time": "3:30 PM",
-          "duration": "45 min",
-          "notes": "Quick snack run — don't linger, save the full market for Day 2",
-          "links": {
-            "website": "https://www.google.com/search?q=Nishiki+Market+Kyoto",
-            "map": "https://maps.google.com/?q=Nishiki+Market+Kyoto"
-          },
+          "duration": "30 min",
+          "notes": "Grab a quick snack near the hotel — choose any convenient konbini, café, or bakery; save the full market visit for Day 2",
+          "links": {},
           "area": "Kawaramachi",
           "distance_from_hotel": {
             "text": "5 min walk",
@@ -2422,8 +2449,8 @@
             "lat": 35.005,
             "lng": 135.765
           },
-          "end_time": "4:15 PM",
-          "duration_minutes": 45,
+          "end_time": "4:00 PM",
+          "duration_minutes": 30,
           "tags": [
             "outdoor",
             "food",
@@ -2431,10 +2458,7 @@
             "iconic"
           ],
           "energy_cost": "low",
-          "fallback": {
-            "if_rain": "Market is covered — still great in rain",
-            "if_tired": "Skip and grab konbini snacks instead"
-          },
+          "fallback": null,
           "transport_from_previous": {
             "from": "Hotel (Kawaramachi)",
             "mode": "walk",
@@ -2624,6 +2648,34 @@
             "from": "Yasaka Pagoda",
             "mode": "walk",
             "duration_minutes": 8
+          }
+        },
+        {
+          "id": "kyoto_pontocho_dinner",
+          "name": "Dinner — TBD",
+          "category": "Food",
+          "type": "Restaurant",
+          "day": 1,
+          "start_time": "TBD",
+          "end_time": "",
+          "duration": "TBD",
+          "duration_minutes": 0,
+          "notes": "Dinner location and time TBD after the Gion stroll",
+          "links": {},
+          "area": "Gion / Pontocho",
+          "distance_from_hotel": {
+            "text": "Nearby",
+            "minutes": 0,
+            "mode": "walk"
+          },
+          "priority": "nice_to_have",
+          "booking_status": "planned",
+          "date": "2026-10-23",
+          "icon": "food",
+          "transport_from_previous": {
+            "from": "Gion Stroll",
+            "mode": "walk",
+            "duration_minutes": 0
           }
         },
         {
@@ -3277,10 +3329,10 @@
           "type": "Logistics",
           "day": 1,
           "date": "2026-10-26",
-          "start_time": "TBD",
-          "end_time": "",
-          "duration": "",
-          "notes": "Check-in time TBD · Hotel Hankyu RESPIRE OSAKA",
+          "start_time": "3:00 PM",
+          "end_time": "3:30 PM",
+          "duration": "30 min",
+          "notes": "Check-in at 3:00 PM · Hotel Hankyu RESPIRE OSAKA",
           "links": {
             "website": "https://www.hankyu-hotel.com/en/hotels/respire_osaka"
           },
@@ -3291,8 +3343,37 @@
             "mode": "walk"
           },
           "priority": "must",
-          "booking_status": "not_booked",
+          "booking_status": "planned",
+          "duration_minutes": 30,
           "icon": "hotel"
+        },
+        {
+          "id": "osaka_umeda_dinner",
+          "name": "Dinner Near Umeda",
+          "category": "Food",
+          "type": "Restaurant",
+          "day": 1,
+          "date": "2026-10-26",
+          "start_time": "5:00 PM",
+          "end_time": "6:30 PM",
+          "duration": "1.5 hours",
+          "duration_minutes": 90,
+          "notes": "Flexible dinner near Hotel Hankyu RESPIRE OSAKA before heading to Dotonbori",
+          "links": {},
+          "area": "Osaka Umeda",
+          "distance_from_hotel": {
+            "text": "Near hotel",
+            "minutes": 5,
+            "mode": "walk"
+          },
+          "priority": "nice_to_have",
+          "booking_status": "planned",
+          "icon": "food",
+          "transport_from_previous": {
+            "from": "Hotel Hankyu RESPIRE OSAKA",
+            "mode": "walk",
+            "duration_minutes": 5
+          }
         },
         {
           "id": "osaka_dotonbori_arrival",
@@ -3301,7 +3382,7 @@
           "type": "Neighborhood",
           "day": 1,
           "start_time": "7:00 PM",
-          "duration": "2-3 hours",
+          "duration": "2 hours",
           "details": [
             "Ebisu Bridge",
             "Don Quijote"
@@ -3325,7 +3406,7 @@
             "lng": 135.5013
           },
           "end_time": "9:00 PM",
-          "duration_minutes": 150,
+          "duration_minutes": 120,
           "tags": [
             "outdoor",
             "walkable",
@@ -3341,7 +3422,7 @@
             "if_tired": "Quick Glico sign photo + one street food item, then hotel"
           },
           "transport_from_previous": {
-            "from": "Hotel (Umeda)",
+            "from": "Dinner Near Umeda",
             "mode": "train",
             "duration_minutes": 15
           }
@@ -3353,7 +3434,7 @@
           "type": "Landmark",
           "day": 2,
           "start_time": "10:00 AM",
-          "duration": "2-3 hours",
+          "duration": "2 hours",
           "links": {
             "website": "https://www.google.com/search?q=Osaka+Castle",
             "map": "https://maps.google.com/?q=Osaka+Castle"
@@ -3373,7 +3454,7 @@
             "lng": 135.5262
           },
           "end_time": "12:00 PM",
-          "duration_minutes": 150,
+          "duration_minutes": 120,
           "tags": [
             "outdoor",
             "cultural",
@@ -3393,13 +3474,41 @@
           }
         },
         {
+          "id": "osaka_castle_lunch",
+          "name": "Lunch After Osaka Castle",
+          "category": "Food",
+          "type": "Lunch",
+          "day": 2,
+          "start_time": "12:00 PM",
+          "end_time": "1:15 PM",
+          "duration": "1h 15m",
+          "duration_minutes": 75,
+          "notes": "Flexible lunch near Osaka Castle before heading to Pokémon Center Osaka",
+          "links": {},
+          "area": "Osaka Castle",
+          "distance_from_hotel": {
+            "text": "5 min walk",
+            "minutes": 5,
+            "mode": "walk"
+          },
+          "priority": "nice_to_have",
+          "booking_status": "planned",
+          "date": "2026-10-27",
+          "icon": "food",
+          "transport_from_previous": {
+            "from": "Osaka Castle",
+            "mode": "walk",
+            "duration_minutes": 5
+          }
+        },
+        {
           "id": "osaka_pokemon",
           "name": "Pokémon Center Osaka",
           "category": "Shopping",
           "type": "Store",
           "day": 2,
           "start_time": "2:00 PM",
-          "duration": "1–2 hours",
+          "duration": "1 hour",
           "links": {
             "website": "https://www.google.com/search?q=Pokemon+Center+Osaka",
             "map": "https://maps.google.com/?q=Pokemon+Center+Osaka"
@@ -3419,7 +3528,7 @@
             "lng": 135.5021
           },
           "end_time": "3:00 PM",
-          "duration_minutes": 90,
+          "duration_minutes": 60,
           "tags": [
             "indoor",
             "rain-safe",
@@ -3429,7 +3538,7 @@
           "energy_cost": "low",
           "fallback": null,
           "transport_from_previous": {
-            "from": "Osaka Castle",
+            "from": "Lunch After Osaka Castle",
             "mode": "train",
             "duration_minutes": 10
           }
@@ -3469,8 +3578,9 @@
             "lat": 34.695,
             "lng": 135.193
           },
-          "end_time": "9:00 PM",
-          "duration_minutes": 300,
+          "end_time": "10:00 PM",
+          "duration": "2 hours",
+          "duration_minutes": 120,
           "tags": [
             "day-trip",
             "food",
@@ -3483,9 +3593,9 @@
             "if_tired": "Cancel Kobe trip — eat wagyu at a local Osaka restaurant instead"
           },
           "transport_from_previous": {
-            "from": "Ramen Class (Kitahorie)",
+            "from": "Pokémon Center Osaka",
             "mode": "train",
-            "duration_minutes": 40
+            "duration_minutes": 20
           },
           "reservation_code": "596212",
           "invoice": "Mycon1537900663",
@@ -3517,8 +3627,8 @@
             "lat": 34.6654,
             "lng": 135.5013
           },
-          "end_time": "11:00 PM",
-          "duration_minutes": 150,
+          "end_time": "12:30 AM",
+          "duration_minutes": 120,
           "tags": [
             "indoor",
             "rain-safe",
@@ -3530,9 +3640,9 @@
             "if_tired": "One-hour session instead of two. Or swap for a chill izakaya"
           },
           "transport_from_previous": {
-            "from": "Pokémon Center Osaka",
-            "mode": "walk",
-            "duration_minutes": 10
+            "from": "Kobe Steak Ishida — LINKS UMEDA",
+            "mode": "train",
+            "duration_minutes": 20
           }
         },
         {
@@ -3597,7 +3707,7 @@
             "if_tired": "Cannot skip — reservation is booked and paid. It is hands-on but seated"
           },
           "transport_from_previous": {
-            "from": "Hotel (Umeda)",
+            "from": "Ramen and Gyoza Cooking Class",
             "mode": "train",
             "duration_minutes": 15
           },
@@ -3612,7 +3722,7 @@
           "type": "Market",
           "day": 3,
           "start_time": "2:30 PM",
-          "duration": "1-2 hours",
+          "duration": "1.5 hours",
           "links": {
             "website": "https://www.google.com/search?q=Kuromon+Market+Osaka",
             "map": "https://maps.google.com/?q=Kuromon+Market+Osaka"
@@ -3645,7 +3755,7 @@
             "if_tired": "Pick 2–3 stalls for sashimi and tamagoyaki, skip the full walk"
           },
           "transport_from_previous": {
-            "from": "Hotel (Umeda)",
+            "from": "Ramen and Gyoza Cooking Class",
             "mode": "train",
             "duration_minutes": 15
           }
@@ -3673,7 +3783,7 @@
             "lat": 34.7334,
             "lng": 135.5001
           },
-          "end_time": "6:30 PM",
+          "end_time": "7:30 PM",
           "duration_minutes": 150,
           "tags": [
             "indoor",
@@ -3683,7 +3793,7 @@
           "energy_cost": "low",
           "fallback": null,
           "transport_from_previous": {
-            "from": "Namba area",
+            "from": "Kuromon Market",
             "mode": "train",
             "duration_minutes": 15
           }
